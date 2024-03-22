@@ -4,7 +4,7 @@
 # 
 # latexmk at unix command line will compile the paper
 $do_cd = 1;
-$clean_ext = "bbl nav out snm dvi idv tmp 4tc 4ct out aux log fls fdb_latexmk synctex.gz toc ps out.ps upa upb lg out";
+$clean_ext = "bbl nav out snm tmp 4tc 4ct out log fls fdb_latexmk synctex.gz ps out.ps lg out";
 $bibtex_use=2;
 $pdf_mode = 1;
 $rc_report = 1;

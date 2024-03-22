@@ -14,8 +14,21 @@
 .ecbx-1728{ font-weight: bold;}
 .ecbx-1728{ font-weight: bold;}
 .ecbx-1728{ font-weight: bold;}
+.ecbx-1728{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
 .ecrm-0900{font-size:81%;}
 .ectt-0900{font-size:81%; font-family: monospace,monospace;}
+.ectt-0900{ font-family: monospace,monospace;}
 .ectt-0900{ font-family: monospace,monospace;}
 .ectt-0900{ font-family: monospace,monospace;}
 .ectt-0900{ font-family: monospace,monospace;}
@@ -33,16 +46,6 @@
 .cmsy-6{font-size:54%;}
 .cmex-9{font-size:81%;}
 .ecrm-1000{font-size:90%;}
-.ecti-1095{ font-style: italic;}
-.ecti-1095{ font-style: italic;}
-.ecti-1095{ font-style: italic;}
-.ecti-1095{ font-style: italic;}
-.ecti-1095{ font-style: italic;}
-.ecti-1095{ font-style: italic;}
-.ecti-1095{ font-style: italic;}
-.ecti-1095{ font-style: italic;}
-.ecti-1095{ font-style: italic;}
-.ecti-1095{ font-style: italic;}
 .cmr-8{font-size:72%;}
 .cmmi-10x-x-109{font-style: italic;}
 .cmmi-8{font-size:72%;font-style: italic;}
@@ -50,18 +53,30 @@
 .cmsy-8{font-size:72%;}
 .cmex-10x-x-109{}
 .msbm-10x-x-109{}
+.ecbx-0900{font-size:81%; font-weight: bold;}
+.ecbx-0900{ font-weight: bold;}
+.ecbx-0900{ font-weight: bold;}
+.ecbx-0900{ font-weight: bold;}
+.ecbx-0900{ font-weight: bold;}
+.ecbx-0900{ font-weight: bold;}
+.ecbx-0900{ font-weight: bold;}
+.ecbx-0900{ font-weight: bold;}
+.ecbx-0900{ font-weight: bold;}
+.ecbx-0900{ font-weight: bold;}
+.ecbx-0900{ font-weight: bold;}
+.ecti-1095{ font-style: italic;}
+.ecti-1095{ font-style: italic;}
+.ecti-1095{ font-style: italic;}
+.ecti-1095{ font-style: italic;}
+.ecti-1095{ font-style: italic;}
+.ecti-1095{ font-style: italic;}
+.ecti-1095{ font-style: italic;}
+.ecti-1095{ font-style: italic;}
+.ecti-1095{ font-style: italic;}
+.ecti-1095{ font-style: italic;}
+.ecti-1095{ font-style: italic;}
 .cmbx-10x-x-109{ font-weight: bold;}
 .ecrm-0800{font-size:72%;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
 .ecbx-1000{font-size:90%; font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
@@ -72,9 +87,8 @@
 .ecbx-1000{ font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
 .tcrm-0800{font-size:72%;}
-.eccc1095-{font-size:90%;}
-.small-caps{font-variant: small-caps; }
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
 p + p{margin-top:1em;}
@@ -177,12 +191,6 @@ div.pmatrix {text-align:center;}
 table.pmatrix {width:100%;}
 span.bar-css {text-decoration:overline;}
 img.cdots{vertical-align:middle;}
-div.verbatiminput {font-family: monospace,monospace; white-space: nowrap; }
-table.boxedverbatim {width:100%;}
- pre.boxedverbatim{border:solid 1px; padding-right:1em;} 
-table.boxedverbatim {text-align:center;}
-.listinginput p{ margin-bottom:0em; margin-top:0em; }
-pre.fancyvrb {white-space: pre-wrap; margin:0em;font-family:monospace,monospace;}
 .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
 .index-item, .index-subitem, .index-subsubitem {display:block}
 div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
@@ -219,6 +227,12 @@ figure.figure {text-align:center;}
 figcaption.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:center;}
 figcaption.caption span.id{font-weight: bold; white-space: nowrap; }
 p + figcaption, img + figcaption{margin-top: 1em;}
+div.verbatiminput {font-family: monospace,monospace; white-space: nowrap; }
+table.boxedverbatim {width:100%;}
+ pre.boxedverbatim{border:solid 1px; padding-right:1em;} 
+table.boxedverbatim {text-align:center;}
+.listinginput p{ margin-bottom:0em; margin-top:0em; }
+pre.fancyvrb {white-space: pre-wrap; margin:0em;font-family:monospace,monospace;}
 .rotatebox{display: inline-block;}
 td p:first-child{ margin-top:0em; }
 td p:last-child{ margin-bottom:0em; }
@@ -248,7 +262,6 @@ table.multline, table.multline-star {width:100%;}
 td.gather {text-align:center; }
 table.gather {width:100%;}
 div.gather-star {text-align:center;}
-.underline-d{ border-bottom: 3px double black; margin-bottom:1pt; }
 div.subfigure {text-align:center;display:inline-block; max-width:45%;}
 div.caption {text-align:left;font-size:83%;text-indent:0em; margin-left:2em; margin-right:2em; }
 div.caption span.id{font-variant: small-caps; white-space: nowrap; }
