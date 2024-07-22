@@ -10,7 +10,8 @@ from HARK.ConsumptionSaving.ConsAggShockModel import MargValueFunc2D, AggShockCo
 from HARK.interpolation import LinearInterp, BilinearInterp, VariableLowerBoundFunc2D, \
                                 LinearInterpOnInterp1D, LowerEnvelope2D, UpperEnvelope, ConstantFunction
 from HARK import Market
-from HARK.core import distanceMetric, HARKobject
+from HARK.metric import distance_metric
+from HARK.core import Model
 from EstimParameters import makeFullMrkvArray, T_sim, makeCondMrkvArrays_base
 from copy import copy, deepcopy
 import matplotlib.pyplot as plt
@@ -339,7 +340,7 @@ class AggFiscalType(MarkovConsumerType):
         '''
         # Check whether MrkvArray has changed (and whether they exist at all!)
         try: 
-            same_MrkvArray = distanceMetric(self.MrkvArray, self.MrkvArray_prev) == 0.
+            same_MrkvArray = distance_metric(self.MrkvArray, self.MrkvArray_prev) == 0.
             if (same_MrkvArray):
                 return
         except:
@@ -649,7 +650,7 @@ class AggregateDemandEconomy(Market):
         self.CratioPrev = self.CratioNow
         RecState = EconomyMrkvNext % 2 == 1
         AggDemandFacNext = self.ADFunc(CratioNext,RecState)
-        mill_return = HARKobject()
+        mill_return = Model()
         mill_return.CratioNow = CratioNext
         mill_return.AggDemandFac = AggDemandFacNext
         mill_return.AggDemandFacPrev = self.AggDemandFacPrev
@@ -835,7 +836,7 @@ class AggregateDemandEconomy(Market):
         self.storeADsolution('baseline')
             
     def storeADsolution(self, name):
-        self.stored_solutions[name] = HARKobject()
+        self.stored_solutions[name] = Model()
         self.stored_solutions[name].CFunc = copy(self.CFunc)
         self.stored_solutions[name].ADelasticity = self.ADelasticity
         self.stored_solutions[name].agent_solutions = []
@@ -900,7 +901,7 @@ class AggregateDemandEconomy(Market):
         return Total_Diff
           
 
-class CRule(HARKobject):
+class CRule(Model):
     '''
     A class to represent agent beliefs about aggregate consumption dynamics.
     '''

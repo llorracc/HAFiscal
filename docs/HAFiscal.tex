@@ -1,20 +1,25 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*-     # Configure emacs auctex viewer
+\input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
 \input{./.econtexRoot} % Set paths (like, \LaTeXInputs) to find resources
 
-\documentclass[titlepage, headings=optiontotocandhead]{scrartcl} 
-
-% Definitions unique to this paper
-\usepackage{\LaTeXInputs/local} % local.sty imports packages
-
 % Document has title page and table of contents and header:
+\documentclass[titlepage, headings=optiontotocandhead]{econark}
+
 \newcommand{\texname}{HAFiscal} % Keyname for paper (optional)
 
+% Definitions unique to this paper
+\usepackage{@local/local} % local.sty imports packages
+\usepackage{@local/owner} % for urls that are constructed
+
 % To include Appendix and Table of Contents? false->true
-\provideboolean{Appendix}\setboolean{Appendix}{false}
+\provideboolean{Appendix}\setboolean{Appendix}{true}
 \provideboolean{TOC}\setboolean{TOC}{false}
 
 % Standard useful packages for economics
-\usepackage{\LaTeXInputs/pdforhtml}
+\usepackage{pdforhtml}
+\usepackage{econark-multibib}  % Only use bib files that exist
+\bibliographystyle{econtex}
+%\usepackage{econark-titlepage} 
 
 % When compiling Web version of paper, construct targets/anchors
 \ifthenelse{\boolean{Web}}{\hypersetup{destlabel=true}
@@ -25,12 +30,16 @@
 }
 
 % Custom author (year) bib style
-\bibliographystyle{\econtexBibStyle} 
+%\bibliographystyle{\econtexBibStyle} 
+%\bibliographystyle{plainnat}
 
 \begin{document}
-
 % Tell subfiles they are not being compiled as standalone files
-\input{\LaTeXInputs/econtex_notinsubfile} % instead are part of larger document
+\renewcommand{\onlyinsubfile}[1]{}
+\renewcommand{\notinsubfile}[1]{#1}
+
+
+%\input{\LaTeXInputs/econtex_notinsubfile} % instead are part of larger document
 \subfile{HAFiscal-titlepage}\pagebreak
 
 % Table of contents; to omit, \setboolean{TOC}{false} above
@@ -51,8 +60,8 @@
 }{}
 
 % Make the bibliography
-\input{\LaTeXInputs/bibliography_blend}
-
+%\input{\LaTeXInputs/bibliography_blend}
+\econarkmultibib{\texname}
 \end{document}\endinput
 
 % Lines below help configure AucTeX if that is your editor

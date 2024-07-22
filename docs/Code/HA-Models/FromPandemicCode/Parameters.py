@@ -31,7 +31,7 @@ def returnParameters(Parametrization='Baseline',OutputFor='_Main.py'):
     Rfree_base = [1.01]
     Rspell = 6            # Expected length of recession, in quarters. If R_shared = True, must be an integer
     betas_txt_location = Abs_Path_Results+'/Results/DiscFacEstim_CRRA_2.0_R_1.01.txt' 
-    Splurge_txt_location = Abs_Path_Results+'/Target_AggMPCX_LiquWealth/Result_CRRA_2.0.txt'
+    Splurge_txt_location = Abs_Path_Results+'/Target_AggMPCX_LiquWealth/Result_AllTarget.txt'
     IncUnempNoBenefits = 0.5   # Unemployment income when benefits run out (proportion of permanent income)
     ADelasticity = 0.3      
     

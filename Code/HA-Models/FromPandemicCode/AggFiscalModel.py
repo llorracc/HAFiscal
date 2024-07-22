@@ -3,6 +3,7 @@ This file has an extension of MarkovConsumerType that is used for the Fiscal pro
 '''
 import warnings
 import numpy as np
+import scipy.sparse as sp
 from HARK.distribution import DiscreteDistribution, Uniform
 from HARK.ConsumptionSaving.ConsMarkovModel import MarkovConsumerType
 from HARK.ConsumptionSaving.ConsIndShockModel import ConsumerSolution
@@ -10,7 +11,7 @@ from HARK.ConsumptionSaving.ConsAggShockModel import MargValueFunc2D, AggShockCo
 from HARK.interpolation import LinearInterp, BilinearInterp, VariableLowerBoundFunc2D, \
                                 LinearInterpOnInterp1D, LowerEnvelope2D, UpperEnvelope, ConstantFunction
 from HARK import Market
-from HARK.core import distance_metric
+from HARK.metric import distance_metric
 from HARK.core import Model
 
 from copy import copy, deepcopy
@@ -441,9 +442,9 @@ class AggFiscalType(MarkovConsumerType):
         self.state_now['cLvl_splurge'] = (1.0-self.Splurge)*self.state_now['cLvl'] + self.Splurge*self.state_now['pLvl']*self.shocks['TranShk']*self.AggDemandFac   #added last term relaive to Edmund's Version
         
     def reset(self):
-        return # do nothing
-                    
-                
+        return # do nothing           
+            
+            
 def solveAggConsMarkovALT(solution_next,IncShkDstn,LivPrb,DiscFac,CRRA,Rfree,PermGroFac,
                                  MrkvArray,BoroCnstArt,aXtraGrid, Cgrid, CFunc, ADFunc,
                                  num_experiment_periods, num_base_MrkvStates):

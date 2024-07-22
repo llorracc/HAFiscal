@@ -79,8 +79,8 @@ Agg_MPCX_target = np.array([0.5056845, 0.1759051, 0.1035106, 0.0444222, 0.033661
 # Define the four lottery sizes, in thousands of USD; these are eyeballed centers/averages
 # 5th element is used as rep. lottery win to get at aggregate MPC / MPCX 
 lottery_size_USD = np.array([1.625, 3.3741, 7.129, 40.0, 7.129])
-lottery_size_NOK = lottery_size_USD * (10/1.1) #in Fagereng et al it is mention that 1000 NOK = 110 USD
-lottery_size = lottery_size_NOK / (270/4); # divide by permanent income.
+lottery_size_NOK = lottery_size_USD * (10/1.1) #in Fagereng et al it is mentioned that 1000 NOK = 110 USD
+lottery_size = lottery_size_NOK / (270/4); # Income after tax according to Table 1 is approx. 24k USD.
 RandomLotteryWin = True #if True, then the 5th element will be replaced with a random lottery size win draw from the 1st to 4th element for each agent
 
 # Liquid wealth target from US
@@ -573,7 +573,7 @@ if Run_SplurgeZero:
 
 #%% Output results for paper
 
-Plot_Output = False
+Plot_Output = True
 if Plot_Output:
     target = 'AGG_MPC_plus_Liqu_Wealth_plusKY_plusMPC'
     # Splurge=0 solution 
@@ -654,8 +654,29 @@ if Plot_Output:
         x = np.vstack(( np.array([20,40,60,80,100]), np.hstack([lorenz_target,1]) ) )
         df = pd.DataFrame(x.T,columns=['Percentile','Data'])
         df.to_excel(Abs_Path+'/LiquWealth_Distribution_b.xlsx')
-    
-    
+        
+        
+def error_two_arrays(x,y):
+    return np.linalg.norm(x-y);
+
+print('Errors for MPC over time: ')
+print('Splurge > 0:', error_two_arrays(Agg_MPCX_target,SplurgeNot0_Sol['simulated_MPC_mean_add_Lottery_Bin']))
+print('Splurge = 0:', error_two_arrays(Agg_MPCX_target, Splurge0_Sol['simulated_MPC_mean_add_Lottery_Bin']))
+
+print('Errors for MPC across wealth: ')
+print('Splurge > 0:', error_two_arrays(MPC_target[2,:], SplurgeNot0_Sol['simulated_MPC_means_smoothed']))
+print('Splurge = 0:', error_two_arrays(MPC_target[2,:], Splurge0_Sol['simulated_MPC_means_smoothed']))
+ 
+print('Errors for Lorentz curve: ')
+print('Splurge > 0:', error_two_arrays(np.hstack([lorenz_target,1]), SplurgeNot0_Sol['Lorenz_Data_Adj'][[20,40,60,80,100]]))
+print('Splurge = 0:', error_two_arrays(np.hstack([lorenz_target,1]), Splurge0_Sol['Lorenz_Data_Adj'][[20,40,60,80,100]]))
+   
+print('Errors for K/Y: ')
+print('Splurge > 0:', error_two_arrays(KY_target, SplurgeNot0_Sol['KY_Model']))
+print('Splurge = 0:', error_two_arrays(KY_target, Splurge0_Sol['KY_Model']))
+     
+   
+
 
 #%%
 Run_other_CRRA_values = True

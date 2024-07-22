@@ -5,3 +5,4 @@
 \subfile{Subfiles/Comparing-policies}
 \subfile{Subfiles/Robustness}
 \subfile{Subfiles/Conclusion}
+% \subfile{Subfiles/Appendix} % is controlled by boolean in main file
