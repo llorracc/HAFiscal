@@ -1,11 +1,12 @@
 \RequireVersions{
-  *{application}{pdfTeX}  {0000/00/00 v1.40.25}
+  *{application}{TeX}     {1990/03/25 v3.x}
   *{format} {LaTeX2e}     {2023-11-01 v2.e}
+  *{file}   {HAFiscal.tex}{0000/00/00 v0.0}
   *{file}   {@resources/tex-add-search-paths.tex}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {./Resources/econtexPaths.tex}{0000/00/00 v0.0}
   *{class}  {@resources/texlive/texmf-local/tex/latex//econark}{2024/06/04 v0.0}
-  *{package}{snapshot}    {2020/06/17 v2.14}
+  *{package}{snapshot}    {2002/03/05 v1.14}
   *{package}{ifthen}      {2022/04/13 v1.1d}
   *{package}{changepage}  {2009/10/20 v1.0c}
   *{package}{currfile}    {2022/10/10 v0.8}
@@ -118,11 +119,6 @@
   *{package}{scrlayer-scrpage}{2023/07/07 v3.41}
   *{package}{scrlayer}    {2023/07/07 v3.41}
   *{package}{@resources/texlive/texmf-local/tex/latex//econark-multibib}{2024/06/08 v0.0}
-  *{file}   {umsa.fd}     {2013/01/14 v3.01}
-  *{file}   {umsb.fd}     {2013/01/14 v3.01}
-  *{file}   {t1cmtt.fd}   {2023/04/13 v2.5m}
-  *{file}   {t1cmss.fd}   {2023/04/13 v2.5m}
-  *{-------}{Document-specific files:}{----}
   *{file}   {supp-pdf.mkii}{0000/00/00 v0.0}
   *{package}{epstopdf-base}{2020-01-24 v2.11}
   *{file}   {epstopdf-sys.cfg}{2010/07/13 v1.3}
@@ -130,46 +126,50 @@
   *{file}   {HAFiscal.out}{0000/00/00 v0.0}
   *{package}{bookmark}    {2023-12-10 v1.31}
   *{file}   {bkm-pdftex.def}{2023-12-10 v1.31}
-  *{file}   {HAFiscal-titlepage}{0000/00/00 v0.0}
-  *{file}   {@resources/tex-add-search-paths}{0000/00/00 v0.0}
+  *{file}   {HAFiscal-titlepage.tex}{0000/00/00 v0.0}
+  *{file}   {@resources/tex-add-search-paths.tex}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {./Resources/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {./Resources/econtexPaths.tex}{0000/00/00 v0.0}
+  *{file}   {umsa.fd}     {2013/01/14 v3.01}
+  *{file}   {umsb.fd}     {2013/01/14 v3.01}
   *{file}   {./Subfiles/Abstract.vrb}{0000/00/00 v0.0}
+  *{file}   {t1cmtt.fd}   {2023/04/13 v2.5m}
   *{file}   {Subfiles.texinput}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Intro}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Intro.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Resources/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Model}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Resources/econtexPaths.tex}{0000/00/00 v0.0}
+  *{file}   {t1cmss.fd}   {2023/04/13 v2.5m}
+  *{file}   {Subfiles/Model.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Resources/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {./Equations/splurge}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Parameterization}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Resources/econtexPaths.tex}{0000/00/00 v0.0}
+  *{file}   {./Equations/splurge.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Parameterization.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Resources/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../@resources/tex-add-search-paths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Resources/econtexPaths.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../@resources/tex-add-search-paths.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin_comparison.pdf}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/LiquWealth_Distribution_comparison.pdf}{0000/00/00 v0.0}
   *{file}   {@local//../Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/Comparison_Splurge_Table.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Figures/LorenzPoints_CRRA_2.0_R_1.01.pdf}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Comparing-policies}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Comparing-policies.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Resources/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Resources/econtexPaths.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Figures/recession_Check_relrecession.pdf}{0000/00/00 v0.0}
   *{file}   {Code/HA-Models/FromPandemicCode/Figures/recession_UI_relrecession.pdf}{0000/00/00 v0.0}
   *{file}   {Code/HA-Models/FromPandemicCode/Figures/recession_taxcut_relrecession.pdf}{0000/00/00 v0.0}
   *{file}   {Code/HA-Models/FromPandemicCode/Figures/Cummulative_multipliers.pdf}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/CRRA2/Multiplier.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/CRRA2_PVSame/welfare4.tex}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Robustness}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Robustness.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Resources/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Resources/econtexPaths.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Figures/LorenzPoints_robustness_CRRA.pdf}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Conclusion}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Conclusion.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Resources/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Appendix}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Resources/econtexPaths.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Appendix.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Resources/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Resources/econtexPaths.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Figures/LorenzPoints_robustness_R.pdf}{0000/00/00 v0.0}
   *{file}   {HAFiscal.bbl}{0000/00/00 v0.0}
 }
