@@ -2,5 +2,5 @@
 liquid:
   exclude:
     - "*.tex"
-    - @resources/markdown/econark-shortcuts.md  # Exclude because misinterpreted as a Liquid file
+    - "*.md"  # Exclude to avoid misinterpretation as a Liquid file
     
