@@ -3,7 +3,7 @@
   *{format} {LaTeX2e}     {2022-11-01 v2.e}
   *{file}   {@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {./Resources/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
   *{package}{tex4ht}      {0000/00/00 v0.0}
   *{class}  {econark}     {2024/06/04 v0.0}
   *{package}{snapshot}    {2020/06/17 v2.14}
@@ -69,8 +69,9 @@
   *{package}{nccfoots}    {2005/02/03 v1.2}
   *{package}{perpage}     {2014/10/25 v2.0}
   *{package}{setspace}    {2022/12/04 v6.7b}
+  *{package}{fontenc}     {0000/00/00 v0.0}
   *{package}{@local/local}{0000/00/00 v0.0}
-  *{file}   {./Resources/owner}{0000/00/00 v0.0}
+  *{file}   {@local//owner}{0000/00/00 v0.0}
   *{package}{moreverb}    {2008/06/03 v2.3a}
   *{package}{fancyvrb}    {2023/01/19 v4.5a}
   *{package}{hyperref}    {2023-02-07 v7.00v}
@@ -114,6 +115,7 @@
   *{package}{caption3}    {2023/03/12 v2.4}
   *{file}   {caption-koma.sto}{2022/12/27 v2.0c}
   *{package}{@local/owner}{0000/00/00 v0.0}
+  *{package}{showlabels}  {2022/07/18 v1.9.2}
   *{package}{pdforhtml}   {0000/00/00 v0.0}
   *{package}{scrlayer-scrpage}{2022/10/12 v3.38}
   *{package}{scrlayer}    {2022/10/12 v3.38}
@@ -167,34 +169,13 @@
   *{file}   {HAFiscal-titlepage}{0000/00/00 v0.0}
   *{file}   {@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {./Resources/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Subfiles/Abstract.vrb}{0000/00/00 v0.0}
   *{file}   {Subfiles.texinput}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Intro}{0000/00/00 v0.0}
-  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles//../Resources/econtexPaths}{0000/00/00 v0.0}
   *{file}   {Subfiles/Model}{0000/00/00 v0.0}
-  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles//../Resources/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/@resources/tex-add-search-paths}{0000/00/00 v0.0}
+  *{file}   {./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Equations/splurge}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Parameterization}{0000/00/00 v0.0}
-  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles//../Resources/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {Subfiles//../@resources/tex-add-search-paths}{0000/00/00 v0.0}
-  *{file}   {@local///../Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/Comparison_Splurge_Table.tex}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Comparing-policies}{0000/00/00 v0.0}
-  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles//../Resources/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {Subfiles//../Code/HA-Models/FromPandemicCode/Tables/CRRA2/Multiplier.tex}{0000/00/00 v0.0}
-  *{file}   {Subfiles//../Code/HA-Models/FromPandemicCode/Tables/CRRA2_PVSame/welfare4.tex}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Robustness}{0000/00/00 v0.0}
-  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles//../Resources/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Conclusion}{0000/00/00 v0.0}
-  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles//../Resources/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Appendix}{0000/00/00 v0.0}
-  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles//../Resources/econtexPaths}{0000/00/00 v0.0}
   *{file}   {HAFiscal.bbl}{0000/00/00 v0.0}
 }

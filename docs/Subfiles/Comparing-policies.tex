@@ -103,25 +103,25 @@ In this section, we look at the welfare implications of each stimulus policy. To
 \end{enumerate} 
 
 The first of these principles would suggest that a simple aggregation of consumers' utilities, discounted at the social planner's discount rate, is appropriate. However, this simple aggregation would give the social planner a large incentive to redistribute income from high- to low-consumption households, even during normal times, which runs against the second principle. Instead, we use the aggregated utility function as a building block. Let  $\mathcal{W}(\text{policy},Rec,AD)$ be the aggregated utility function:
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \mathcal{W}(\text{policy},Rec,AD) =\frac{1}{N}\sum_{i=1}^{N} \sum_{t=0}^{\infty} \beta_S^t u(\mathbf{c}_{it,\text{policy},Rec,AD}) ,
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 where $\text{policy}\in \{\text{None, Stimulus Check, UI extension, Payroll Tax Cut}\}$ is the stimulus policy followed, $Rec\in\{1,0\}$ is an indicator for whether the policy coincides with the start of a recession or is implemented in nonrecessionary times, and $AD\in\{1,0\}$ is an indicator for whether the aggregate demand effects are active during the recession. $\mathbf{c}_{it,\text{policy},Rec,AD}$ are the consumption paths (including the splurge) for each consumer $i$ in each scenario. $\beta_S$ is the social planner's discount factor that we will set equal to the inverse of the real interest rate $R$. $N$ is the number of consumers simulated.
 
 We use the steady-state baseline as a way to convert from welfare units to consumption units. Using this baseline, we define the marginal increase in welfare that occurs when every consumer increases consumption proportionally to baseline consumption as the following\footnote{Note that with log utility, $\mathcal{W}^c =\frac{1}{N}\sum_{i=1}^{N} \sum_{t=0}^{\infty} \beta_S^t = \frac{1}{1-\beta_S}$}
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \mathcal{W}^c =\frac{1}{N}\sum_{i=1}^{N} \sum_{t=0}^{\infty} \beta_S^t \mathbf{c}_{it,\text{None},0,0} u'(\mathbf{c}_{it,\text{None},0,0}) .
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 With this definition, we consider, in steady-state consumption units $\mathcal{W}^c$, the increase in welfare induced by a policy: $\frac{\mathcal{W}(\text{policy},Rec,AD)-\mathcal{W}(\text{None},Rec,AD)}{\mathcal{W}^c}$. However, this welfare increase ignores the cost of the policy to the government, $PV(\text{policy},Rec)$.\footnote{For the stimulus check and extended UI, the payments made by the government are clearly defined and do not depend on aggregate demand effects. For the payroll tax cut, we define the payments as the difference between the take-home pay with and without the tax cut, but ignoring any aggregate demand effects. Aggregate demand effects would increase the value of the tax cut because incomes would rise, but, in fact, the effects increase rather than decrease the tax receipts of the government.} We therefore subtract the fiscal cost of each policy in steady-state consumption units:  $\frac{PV(\text{policy},Rec)}{{P}^c}$, where ${P}^c$, the marginal cost of increasing every consumer's steady-state consumption proportionally, is given by
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \mathcal{P}^c = \frac{1}{N}\sum_{i=1}^{N} \sum_{t=0}^{\infty} R^{-t} \mathbf{c}_{it,\text{None},0,0} .
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 Finally, we normalize the welfare benefit by subtracting the welfare effect of the policy in non-recessionary times. This normalization can be thought to encompass both the preferences of society not to redistribute and the negative incentive effects of redistribution in normal times. Our final welfare measure, expressed in units of steady-state consumption, is
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \mathcal{C}(\text{policy},Rec,AD) &= \bigg(\frac{\mathcal{W}(\text{policy},Rec,AD)-\mathcal{W}(\text{None},Rec,AD)}{\mathcal{W}^c} - \frac{PV(\text{policy},Rec)}{\mathcal{P}^c} \bigg) \nonumber \\  
                                     & \qquad -
                                       \bigg(\frac{\mathcal{W}(\text{policy},0,0) - \mathcal{W}(\text{None},0,0)}{\mathcal{W}^c} - \frac{PV(\text{policy},0)}{\mathcal{P}^c} \bigg) \notinsubfile{\label{welfare_defn}}.
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 
 Table \ref{welfare} shows the welfare benefits of each policy as defined by equation \eqref{welfare_defn}. The stimulus check and payroll tax cut policies have been adjusted to be the same fiscal size (in the absence of a recession) as the UI extension.\footnote{Specifically, we reduce the size of the stimulus check from \$1200 to \$80 per person, while the payroll tax cut is reduced from a 2 pp to a 0.05 pp cut. We have verified that the multiplier for check stimulus and the tax cut is only marginally changed by the downscaling.} The table shows consumption-equivalent welfare gains in basis points, which are to be interpreted as follows. A welfare gain of $x$ implies that the social planner is indifferent between the stimulus policy being implemented in response to a recession and a permanent increase in the baseline consumption of the total population by $x$ basis points (that is a one-hundredth of~1 percent of the baseline consumption). We will, however, first discuss the relative differences across the policies and then discuss the magnitude of the welfare effects.
 
