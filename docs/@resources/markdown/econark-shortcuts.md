@@ -213,8 +213,8 @@
 \newcommand{\Rport}{\mathfrak{R}}       % Portfolio -weighted return
 \newcommand{\rport}{\mathfrak{r}}
 
-\newcommand{\uPP}{{{\mathrm{u}^{\prime\prime}}}}
-\newcommand{\uP}{{{\mathrm{u}^{\prime}}}}
+\newcommand{\uPP}{\mathrm{u}^{\prime\prime}}
+\newcommand{\uP}{\mathrm{u}^{\prime}}
 \newcommand{\util}{u}
 
 \newcommand{\Kap}{K}
