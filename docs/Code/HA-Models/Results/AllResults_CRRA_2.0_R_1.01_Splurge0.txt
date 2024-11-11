@@ -37,7 +37,21 @@ Population calculations:
 	Wealth shares = [1.571, 18.693, 79.736]
 	Average LW/PI-ratios: D = 137.20 H = 128.61 C = 507.95
 	Total LW/Total PI: D = 149.38 H = 134.12 C = 540.14
-	Average MPCs by Ed. (incl. splurge) = [0.818, 0.685, 0.341, 0.567]
+	Average MPCs by Ed. (simple, incl. splurge) = [0.818, 0.685, 0.341, 0.567]
 	Average annual MPCs by Wealth (incl. splurge) = [0.944, 0.701, 0.447, 0.175, 0.567]
-	Average lottery-win-year MPCs by Wealth (simple, incl. splurge) = [0.851, 0.519, 0.311, 0.118, 0.45]
-	Average lottery-win-year MPCs by Wealth (incl. splurge) = [0.685, 0.531, 0.357, 0.138, 0.428]
+	Average lottery-win-year MPCs by Wealth (simple, incl. splurge) = [0.851, 0.52, 0.312, 0.116, 0.45]
+	Average lottery-win-year MPCs by Wealth (incl. splurge) = [0.684, 0.532, 0.359, 0.138, 0.428]
+	Average lottery-win-year MPCs by Education (incl. splurge) = [0.7, 0.526, 0.226, 0.428]
+	IMPCs over time = [0.428, 0.24, 0.088, 0.047, 0.03]
+Population calculations:
+	Median LW/PI-ratios = [4.36, 29.92, 112.57]
+	Lorenz Points = [0.0354, 0.5486, 2.2179, 7.3758]
+	Wealth shares = [1.571, 18.693, 79.736]
+	Average LW/PI-ratios: D = 137.20 H = 128.61 C = 507.95
+	Total LW/Total PI: D = 149.38 H = 134.12 C = 540.14
+	Average MPCs by Ed. (simple, incl. splurge) = [0.818, 0.685, 0.341, 0.567]
+	Average annual MPCs by Wealth (incl. splurge) = [0.944, 0.701, 0.447, 0.175, 0.567]
+	Average lottery-win-year MPCs by Wealth (simple, incl. splurge) = [0.85, 0.518, 0.311, 0.117, 0.449]
+	Average lottery-win-year MPCs by Wealth (incl. splurge) = [0.688, 0.531, 0.36, 0.138, 0.429]
+	Average lottery-win-year MPCs by Education (incl. splurge) = [0.704, 0.527, 0.227, 0.429]
+	IMPCs over time = [0.429, 0.239, 0.088, 0.047, 0.03]

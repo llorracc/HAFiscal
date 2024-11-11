@@ -1,6 +1,0 @@
-# _config.yml
-liquid:
-  exclude:
-    - "*.tex"
-    - "*.md"  # Exclude to avoid misinterpretation as a Liquid file
-    

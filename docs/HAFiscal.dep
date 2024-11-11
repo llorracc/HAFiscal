@@ -114,6 +114,10 @@
   *{package}{caption}     {2023/03/12 v3.6j}
   *{package}{caption3}    {2023/03/12 v2.4}
   *{file}   {caption-koma.sto}{2022/12/27 v2.0c}
+  *{package}{enumitem}    {2019/06/20 v3.9}
+  *{package}{ulem}        {2019/11/18 v0.0}
+  *{package}{soul}        {2023-02-18 v3.0}
+  *{package}{soul-ori}    {2023-02-18 v3.0}
   *{package}{@local/owner}{0000/00/00 v0.0}
   *{package}{showlabels}  {2022/07/18 v1.9.2}
   *{package}{pdforhtml}   {0000/00/00 v0.0}
@@ -159,6 +163,9 @@
   *{file}   {xr-hyper.4ht}{0000/00/00 v0.0}
   *{file}   {subcaption.4ht}{0000/00/00 v0.0}
   *{file}   {caption.4ht} {0000/00/00 v0.0}
+  *{file}   {enumitem.4ht}{0000/00/00 v0.0}
+  *{file}   {ulem.4ht}    {0000/00/00 v0.0}
+  *{file}   {soul.4ht}    {0000/00/00 v0.0}
   *{file}   {scrlayer.4ht}{0000/00/00 v0.0}
   *{file}   {umsa.fd}     {2013/01/14 v3.01}
   *{file}   {umsb.fd}     {2013/01/14 v3.01}
