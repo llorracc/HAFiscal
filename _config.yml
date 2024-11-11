@@ -2,4 +2,4 @@
 liquid:
   exclude:
     - "*.tex"
-    - "*.md"  # If you want to exclude specific markdown files
+    - @resources/markdown/econark-shortcuts.md    - "*.md"  # If you want to exclude specific markdown files
