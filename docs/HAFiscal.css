@@ -20,12 +20,10 @@
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
 .ecrm-1440{font-size:116%;}
 .ecrm-1095{font-size:83%;}
 .ecrm-1000{font-size:83%;}
 .ectt-1000{font-size:83%; font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
@@ -41,19 +39,6 @@
 .cmmi-8{font-size:66%;font-style: italic;}
 .cmmi-6{font-size:50%;font-style: italic;}
 .cmsy-8{font-size:66%;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ecti-1200{ font-style: italic;}
 .ecti-1200{ font-style: italic;}
 .ecti-1200{ font-style: italic;}
 .ecti-1200{ font-style: italic;}
@@ -78,7 +63,6 @@
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
 .ecbx-1095{font-size:83%; font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
@@ -90,9 +74,8 @@
 .ecbx-1095{ font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
 .cmsy-10x-x-109{font-size:90%;}
-.tcrm-1095{font-size:83%;}
+.tcrm-0800{font-size:66%;}
 .small-caps{font-variant: small-caps; }
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
@@ -135,6 +118,7 @@ div.obeylines-v p { margin-top:0; margin-bottom:0; }
 td.displaylines {text-align:center; white-space:nowrap;}
 .centerline {text-align:center;}
 .rightline {text-align:right;}
+div.pic-tabular {text-align:center;}
 pre.verbatim {font-family: monospace,monospace; text-align:left; clear:both; }
 .fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
 div.fbox {display:table}
@@ -153,9 +137,6 @@ div.flushleft {text-align: left;}
 .framebox-r {text-align:right;}
 span.thank-mark{ vertical-align: super }
 span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
-div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
-table.tabular td p{margin-top:0em;}
-table.tabular {margin-left: auto; margin-right: auto;}
 td p:first-child{ margin-top:0em; }
 td p:last-child{ margin-bottom:0em; }
 div.td00{ margin-left:0pt; margin-right:0pt; }
@@ -242,9 +223,6 @@ div.gather-star {text-align:center;}
 .bcancel{background: linear-gradient(to bottom left, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%);}
 .xcancel{background: linear-gradient(to bottom left, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%), linear-gradient(to left top, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%);}
 div.verbatiminput {font-family: monospace,monospace; white-space: nowrap; }
-div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
-table.tabular td p{margin-top:0em;}
-table.tabular {margin-left: auto; margin-right: auto;}
 td p:first-child{ margin-top:0em; }
 td p:last-child{ margin-bottom:0em; }
 div.td00{ margin-left:0pt; margin-right:0pt; }
@@ -278,64 +256,5 @@ div.subfigure {text-align:center;display:inline-block; max-width:45%;}
 .equation td:last-child{ width: 0.01; text-align: right; vertical-align: middle; }
 .equation-star{ display: block; text-align: center; margin-top: 1.5em; margin-bottom: 1.5em; }
 .math-display img{ /* Targets images within elements with class math-display */ display: block; /* Makes the image a block element */ margin-left: auto; /* These two margin settings together */ margin-right: auto; /* center the image horizontally */ width: 1.0; } 
-tr#TBL-2-1- {border-top:0.13156em solid #000;} 
-tr#TBL-2-2- {border-bottom:0.08223em solid #000}
-tr#TBL-4-1- {border-top:0.13156em solid #000;} 
-tr#TBL-4-1- {border-bottom:0.08223em solid #000}
-tr#TBL-4-2- {border-bottom:0.08223em solid #000}
-tr#TBL-4-14- {border-bottom:0.13156em solid #000}
-tr#TBL-5-1- {border-top:0.13156em solid #000;} 
-tr#TBL-5-1- {border-bottom:0.08223em solid #000}
-tr#TBL-5-2- {border-bottom:0.08223em solid #000}
-tr#TBL-5-8- {border-bottom:0.13156em solid #000}
-tr#TBL-6-1- {border-top:0.13156em solid #000;} 
-tr#TBL-6-1- {border-bottom:0.08223em solid #000}
-tr#TBL-6-2- {border-bottom:0.08223em solid #000}
-tr#TBL-6-12- {border-bottom:0.13156em solid #000}
-tr#TBL-8-2- {border-bottom:0.08223em solid #000}
-tr#TBL-8-4- {border-bottom:0.08223em solid #000}
-tr#TBL-9-1- {border-bottom:0.08223em solid #000}
-tr#TBL-9-2- {border-bottom:0.08223em solid #000}
-tr#TBL-9-4- {border-bottom:0.08223em solid #000}
-tr#TBL-10-2- {border-bottom:0.08223em solid #000}
-tr#TBL-10-5- {border-bottom:0.13156em solid #000}
-tr#TBL-11-1- {border-top:0.13156em solid #000;} 
-tr#TBL-11-1- {border-bottom:0.08223em solid #000}
-tr#TBL-12-1- {border-top:0.13156em solid #000;} 
-tr#TBL-12-1- {border-bottom:0.08223em solid #000}
-#TBL-13-2{border-right:1px solid black;}
-tr#TBL-13-1- {border-top:0.13156em solid #000;} 
-tr#TBL-13-1- {border-bottom:0.08223em solid #000}
-tr#TBL-13-2- {border-bottom:0.08223em solid #000}
-tr#TBL-13-5- {border-bottom:0.13156em solid #000}
-tr#TBL-14-1- {border-top:0.13156em solid #000;} 
-td#TBL-14-2-5{border-bottom:0.04933em solid #000}
-td#TBL-14-6-5{border-bottom:0.04933em solid #000}
-td#TBL-14-10-5{border-bottom:0.04933em solid #000}
-#TBL-15-2{border-right:1px solid black;}
-tr#TBL-15-1- {border-top:0.13156em solid #000;} 
-tr#TBL-15-1- {border-bottom:0.08223em solid #000}
-tr#TBL-15-2- {border-bottom:0.08223em solid #000}
-tr#TBL-15-5- {border-bottom:0.13156em solid #000}
-tr#TBL-16-1- {border-bottom:0.08223em solid #000}
-tr#TBL-16-2- {border-bottom:0.08223em solid #000}
-tr#TBL-16-6- {border-bottom:0.13156em solid #000}
-tr#TBL-17-1- {border-top:0.13156em solid #000;} 
-td#TBL-17-2-5{border-bottom:0.04933em solid #000}
-td#TBL-17-5-5{border-bottom:0.04933em solid #000}
-td#TBL-17-8-5{border-bottom:0.04933em solid #000}
-#TBL-18-3{border-right:1px solid black;}
-tr#TBL-18-1- {border-top:0.13156em solid #000;} 
-tr#TBL-18-1- {border-bottom:0.08223em solid #000}
-tr#TBL-18-2- {border-bottom:0.08223em solid #000}
-tr#TBL-18-4- {border-bottom:0.13156em solid #000}
-tr#TBL-19-1- {border-top:0.13156em solid #000;} 
-td#TBL-19-2-5{border-bottom:0.04933em solid #000}
-td#TBL-19-5-5{border-bottom:0.04933em solid #000}
-td#TBL-19-8-5{border-bottom:0.04933em solid #000}
-tr#TBL-20-1- {border-top:0.13156em solid #000;} 
-td#TBL-20-2-5{border-bottom:0.04933em solid #000}
-td#TBL-20-6-5{border-bottom:0.04933em solid #000}
-td#TBL-20-10-5{border-bottom:0.04933em solid #000}
 /* end css.sty */
 
