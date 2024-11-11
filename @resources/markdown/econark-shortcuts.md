@@ -1,3 +1,4 @@
+{% raw %}
 
 \newcommand{\aLvl}{\pmb{a}}}
 \newcommand{\bLvl}{\pmb{b}}}
@@ -315,7 +316,8 @@
 \newcommand{\Ex}{\mathbb{E}} % Expectations operator
 \newcommand{\Mean}{\mathbb{M}} % Mean operator
 \newcommand{\cncl}{} % cancellation
-\renewcommand\cncl[1]{\cancel{#1}}
+\renewcommand\cncl[1]{\
+\newcomm}}
 
 
 
@@ -398,3 +400,4 @@
 \newcommand{\ARKurl}{\href{https://econ-ark.org}{Econ-ARK}}
 \newcommand{\REMARK}{\href{https://github.com/econ-ark/REMARK}{REMARK}}
 
+{% endraw %}
