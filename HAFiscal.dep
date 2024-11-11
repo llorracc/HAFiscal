@@ -1,6 +1,7 @@
 \RequireVersions{
   *{application}{pdfTeX}  {0000/00/00 v1.40.25}
   *{format} {LaTeX2e}     {2022-11-01 v2.e}
+  *{file}   {HAFiscal}    {0000/00/00 v0.0}
   *{file}   {@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
@@ -130,6 +131,8 @@
   *{file}   {supp-pdf.mkii}{0000/00/00 v0.0}
   *{package}{epstopdf-base}{2020-01-24 v2.11}
   *{file}   {epstopdf-sys.cfg}{2010/07/13 v1.3}
+  *{file}   {HAFiscal.out}{0000/00/00 v0.0}
+  *{file}   {HAFiscal.out}{0000/00/00 v0.0}
   *{package}{bookmark}    {2020-11-06 v1.29}
   *{file}   {bkm-pdftex.def}{2020-11-06 v1.29}
   *{file}   {HAFiscal-titlepage}{0000/00/00 v0.0}
@@ -139,8 +142,9 @@
   *{file}   {./Subfiles/Abstract.vrb}{0000/00/00 v0.0}
   *{file}   {Subfiles.texinput}{0000/00/00 v0.0}
   *{file}   {Subfiles/Model}{0000/00/00 v0.0}
-  *{file}   {Subfiles/@resources/tex-add-search-paths}{0000/00/00 v0.0}
+  *{file}   {@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Equations/splurge}{0000/00/00 v0.0}
+  *{file}   {HAFiscal.bbl}{0000/00/00 v0.0}
 }
