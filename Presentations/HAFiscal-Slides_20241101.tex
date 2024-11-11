@@ -206,14 +206,14 @@
 	\itemsep = .5\bigskipamount 
 	\item Education groups $e(i)$: "Dropout", "Highschool", "College" \\[1ex] 
 	\ra\ different distributions of subjective discount factors $\beta_i$
-	\item Stochastic income process $\yLvl_{i,t}$
+	\item Stochastic income process $\mathbf{y}_{i,t}$
 	\item An exogenously given fraction of income is consumed directly (the `splurge')
 		\begin{align}
-		\cLvl_{sp,i,t} = \varsigma \yLvl_{i,t}
+		\mathbf{c}_{sp,i,t} = \varsigma \mathbf{y}_{i,t}
 		\end{align}
 	\item Given the splurge, remaining consumption $c_{opt,i,t}$ is chosen to to maximize the perpetual-youth lifetime expected-utility
 		\begin{align}
-		\sum_{t=0}^{\infty}\beta_i^t (1-D)^t \mathbb{E}_0 u(\cLvl_{opt,i,t}).
+		\sum_{t=0}^{\infty}\beta_i^t (1-D)^t \mathbb{E}_0 u(\mathbf{c}_{opt,i,t}).
 		\end{align}
 		where $D$ is the end-of-life probability and $u(\cdot)$ is a standard CRRA utility function	
 \end{itemize}
@@ -225,8 +225,8 @@
 	\begin{itemize}
 		\item The optimization is subject to the budget constraint, given existing market resources $\mathbf{m}_{i,t}$ and income state, and a no-borrowing constraint: 
 		\begin{align}
-		\mathbf{a}_{i,t} &= \mathbf{m}_{i,t} - \cLvl_{sp,i,t} - \cLvl_{opt,i,t} \\
-		\mathbf{m}_{i,t+1} &= R \mathbf{a}_{i,t} + \yLvl_{i,t+1}, \\
+		\mathbf{a}_{i,t} &= \mathbf{m}_{i,t} - \mathbf{c}_{sp,i,t} - \mathbf{c}_{opt,i,t} \\
+		\mathbf{m}_{i,t+1} &= R \mathbf{a}_{i,t} + \mathbf{y}_{i,t+1}, \\
 		\mathbf{a}_{i,t} &\geq 0,   \notag
 		\end{align}
 		where $R$ is the gross interest factor.
@@ -251,7 +251,7 @@
 	 	$\Gamma_{e(i)}$: educaton-specific average growth rate of income 
 		\item Total income s.t. transitory shock $\xi_{i,t}$ and  employment status
 		\begin{align}
-		\yLvl_{i,t} =   \begin{cases}
+		\mathbf{y}_{i,t} =   \begin{cases}
 		\xi_{i,t}\mathbf{p}_{i,t}, & \text{if employed} \\
 		\rho_b \mathbf{p}_{i,t}, & \text{if unemployed with benefits} \\
 		\rho_{nb} \mathbf{p}_{i,t}, & \text{if unemployed without benefits} 
@@ -303,7 +303,7 @@
 		
 		\item Idiosyncratic income in the extension model is then given by
 		\begin{align}
-			\yLvl_{AD,i,t} = AD(C_t)\yLvl_{i,t}.
+			\mathbf{y}_{AD,i,t} = AD(C_t)\mathbf{y}_{i,t}.
 		\end{align}
 	\end{itemize}
 \end{frame}
@@ -521,11 +521,11 @@ M^P_t = \frac{\text{Net present value of policy-induced consumption up to $t$}}{
 	
 	Simple aggregation of consumer util. only satisfies principle 1 \& 2:
 	\begin{align*}
-	\mathcal{W}(\text{policy},Rec,AD) =\frac{1}{N}\sum_{i=1}^{N} \sum_{t=0}^{\infty} \beta_S^t u(\cLvl_{it,\text{policy},Rec,AD}) 
+	\mathcal{W}(\text{policy},Rec,AD) =\frac{1}{N}\sum_{i=1}^{N} \sum_{t=0}^{\infty} \beta_S^t u(\mathbf{c}_{it,\text{policy},Rec,AD}) 
 	\end{align*}
 	
 	\begin{itemize}
-		\item $\cLvl_{it,\text{policy},Rec,AD}$: consumption paths (including splurge) for each consumer / policy
+		\item $\mathbf{c}_{it,\text{policy},Rec,AD}$: consumption paths (including splurge) for each consumer / policy
 		\item $Rec\in\{1,0\}$: recession indicator, $AD\in\{1,0\}$: AD ind.
 		\item $\beta_S = 1/R$: social planner's discount factor 
 	\end{itemize}	
