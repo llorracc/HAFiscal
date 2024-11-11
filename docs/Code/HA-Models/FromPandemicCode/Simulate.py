@@ -261,7 +261,7 @@ def Simulate(Run_Dict,figs_dir,Parametrization='Baseline'):
            
             print('Calculating 1st round AD effects for shock_type: ', shock_type)
             AggDemandEconomy_Routine.switch_shock_type(shock_type)
-            AggDemandEconomy_Routine.restoreADsolution(name = shock_type + '1stRoundAD')
+            AggDemandEconomy_Routine.restore_ADsolution(name = shock_type + '1stRoundAD')
             [results_firstRoundAD,all_results_firstRoundAD] = runExperimentsAllRecessions(changes,AggDemandEconomy_Routine)
             saveAsPickle(shock_type + '_results_firstRoundAD',results_firstRoundAD,figs_dir)
             saveAsPickle(shock_type + '_all_results_firstRoundAD',all_results_firstRoundAD,figs_dir)

@@ -1,5 +1,5 @@
+\input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
 \input{./.econtexRoot}
-\input{\econtexRoot/@resources/tex-add-search-paths}  % allow latex to find custom stuff
 \documentclass[\econtexRoot/HAFiscal]{subfiles}
 
 % \onlyinsubfile{\renewcommand{\econtexRoot}{..}} % 
@@ -8,50 +8,78 @@
 
 \hypertarget{parameterizing-the-model}{}\par\section{Parameterizing the model}
 
-This section describes how we set the model's parameters. First, we estimate the extent to which consumers `splurge' when receiving an income shock. We do so using Norwegian data to allow the model to match the best available evidence on the profile of the marginal propensity to spend over time and across different wealth levels, as provided by \citet{fagereng2021mpc}. We also show that a consumer model without the splurge is inferior in matching these profiles.
+This section describes how we set the model's parameters. First, we estimate the extent to which consumers `splurge' when receiving an income shock. We do so using Norwegian data to allow the model to match the best available evidence on the profile of the marginal propensity to spend over time and across different wealth levels, as provided by \citet{fagereng_mpc_2021}. We also show that a consumer model without the splurge is inferior in matching these profiles.
 
-Second, we calibrate the full model on U.S. data, taking the splurge factor as given from the Norwegian calibration. In the model, agents differ according to their level of education and their subjective discount factors. 
-
-Finally, a distribution of subjective discount factors is estimated separately for each education group to match features of each within-group liquid wealth distribution. 
+Second, we set up the full model on U.S. data, taking the splurge factor as given from the Norwegian estimation. In the full model, agents differ according to their level of education and their subjective discount factors. A subset of the parameters in the model are calibrated equally for all types, and some parameters are calibrated to be specific to each education group. Finally, a distribution of subjective discount factors is estimated separately for each education group to match features of each within-group liquid wealth distribution. 
 
 \hypertarget{estimation-of-the-splurge-factor}{}\par\subsection{Estimation of the splurge factor}
 \notinsubfile{\label{sec:splurge}}
 
-We define splurging as the act of spending our of current labor income without concern for intertemporal maximization of utility. (\textit{The previous sentence needs to be discussed.}) The splurge allows us to capture the shorter- and longer-term response of consumption to income shocks, especially for consumers with significant liquid wealth, that a standard model cannot. Specifically, we show that our model can account well for the results of \citet{fagereng2021mpc}, who study the effect of lottery winnings in Norway on consumption using millions of records from the Norwegian population registry. We calibrate our model to reflect the Norwegian economy and, using their results, estimate the splurge factor, as well as the distribution of discount factors in the population, to match two empirical moments. 
+We define splurging as the act of spending our of current labor income without concern for intertemporal maximization of utility. (\textit{The previous sentence needs to be discussed.}) The splurge allows us to capture the shorter- and longer-term response of consumption to income shocks, especially for consumers with significant liquid wealth, that a standard model cannot. Specifically, we show that our model can account well for the results of \citet{fagereng_mpc_2021}, who study the effect of lottery winnings in Norway on consumption using millions of records from the Norwegian population registry. We calibrate our model to reflect the Norwegian economy and, using their results, estimate the splurge factor, as well as the distribution of discount factors in the population, to match two empirical moments. 
 
-First, we take from \citet{fagereng2021mpc} the marginal propensity to consume out of a one-period income shock. We target not only the initial (aggregate) response of consumption to the income shock, but also the subsequent effect on consumption in years one through four after the shock. We also target the initial consumption response in the cross-section, i.e. across the quartiles of the liquid wealth distribution, for which empirical estimates also exist. 
+First, we take from \citet{fagereng_mpc_2021} the marginal propensity to consume out of a one-period income shock. We target not only the initial (aggregate) response of consumption to the income shock, but also the subsequent effect on consumption in years one through four after the shock. We also target the initial consumption response in the cross-section, i.e. across the quartiles of the liquid wealth distribution, for which empirical estimates also exist. 
 
-The shares of lottery winnings expended at different time horizons, as found in \citet{fagereng2021mpc}, are plotted in figure \ref{fig:aggmpclotterywin}. Table \ref{tab:ComparisonSplurge} (last row) shows the initial consumption response across liquid wealth quartiles. 
-% Note that the first-year expenditure, shown in figure \ref{fig:aggmpclotterywin} to be around 0.5, is not equivalent to the initial annual MPC because the lottery winnings may occur toward the end of the year. %\citet{fagereng2021mpc} estimate that their suggests an initial annual MPC of 0.63.
+The shares of lottery winnings expended at different time horizons, as found in \citet{fagereng_mpc_2021}, are plotted in figure \ref{fig:aggmpclotterywin}. Table \ref{tab:ComparisonSplurge} (last row) shows the initial consumption response across liquid wealth quartiles. 
+% Note that the first-year expenditure, shown in figure \ref{fig:aggmpclotterywin} to be around 0.5, is not equivalent to the initial annual MPC because the lottery winnings may occur toward the end of the year. %\citet{fagereng_mpc_2021} estimate that their suggests an initial annual MPC of 0.63.
 
 Second, we match the steady-state distribution of liquid wealth in the model to its empirical counterpart. Because of the lack of data on the liquid wealth distribution in Norway, we use the corresponding data from the United States, assuming that liquid wealth inequality is comparable across these countries.\footnote{Data from the Norwegian tax registry contains information on liquid assets, but not liquid debt. Only total debt is reported -- which is mainly mortgage debt. Therefore, we cannot construct liquid wealth as \citet{kaplan2014model} can for the U.S. \notinsubfile{\label{foot:liqwealth}}} 
 Specifically, we impose as targets the cumulative liquid wealth shares for the entire population at the 20th, 40th, 60th, and 80th income percentiles, which, in data from the Survey of Consumer Finances (SCF) in 2004 (see section~\ref{sec:SCFdata} for further details), equal $0.03$ percent, $0.35$ percent, $1.84$ percent, and $7.42$ percent, respectively. Hence, $92.6$ percent of the total liquid wealth is held by the top income quintile. We also target the mean liquid wealth to income ratio of 6.60. The data are plotted in figure \ref{fig:liquwealthdistribution}.
 
+
+
+\newcommand{\iMPC}{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin_comparison}
+\newcommand{\LiqDist}{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/LiquWealth_Distribution_comparison}
 \begin{figure}[htb]
+  \ifdefined\HCode
+    \HCode{<div style="text-align: center;">}
+  \fi
   \centering
-  \begin{subfigure}[b]{.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin_comparison}
-    \caption{Share of lottery win spent}
-    \notinsubfile{\label{fig:aggmpclotterywin}}
-  \end{subfigure}
-  \begin{subfigure}[b]{.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/LiquWealth_Distribution_comparison}
-    \caption{Distribution of liquid wealth}
-    \notinsubfile{\label{fig:liquwealthdistribution}}
-  \end{subfigure}%
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}cc@{}}
+    \ifdefined\HCode
+      \HCode{<div style="display: flex; flex-direction: column; align-items: center; width: 48\%;">}
+    \fi
+    \subfloat[Share of lottery win spent\label{fig:aggmpclotterywin}]{%
+      \ifdefined\HCode
+        \includegraphics[width=\linewidth]{\iMPC}
+      \else
+        \includegraphics[width=0.48\textwidth]{\iMPC}
+      \fi
+    }
+    \ifdefined\HCode
+      \HCode{</div>}
+    \fi
+    &
+    \ifdefined\HCode
+      \HCode{<div style="display: flex; flex-direction: column; align-items: center; width: 48\%;">}
+    \fi
+    \subfloat[Distribution of liquid wealth\label{fig:liquwealthdistribution}]{%
+      \ifdefined\HCode
+        \includegraphics[width=\linewidth]{\LiqDist}
+      \else
+        \includegraphics[width=0.48\textwidth]{\LiqDist}
+      \fi
+    }
+    \ifdefined\HCode
+      \HCode{</div>}
+    \fi
+  \end{tabular*}
+  \ifdefined\HCode
+    \HCode{<figcaption style="text-align: center; width: auto; max-width: 800px;">}
+  \fi
   \caption{Targets and model moments from the estimation}
   \notinsubfile{\label{fig:splurge_estimation}}
-  \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) shows the fit of the model to the dynamic consumption response estimated in \citet{fagereng2021mpc}; see their figure~A5. Panel (b) shows the fit of the model to the distribution of liquid wealth (see Section~\ref{sec:SCFdata} for the definition) from the 2004 SCF.\normalsize}
+  \ifdefined\HCode
+    \HCode{<div style="text-align: justify; width: 16cm;  margin: 1em auto 0 auto;">}
+  \fi
+
+\parbox{14cm}{
+  \footnotesize \vspace{.15cm} Panel (a) shows the fit of the model to the dynamic consumption response estimated in \citet{fagereng_mpc_2021}; see their figure~A5. Panel (b) shows the fit of the model to the distribution of liquid wealth (see Section~\ref{sec:SCFdata} for the definition) from the 2004 SCF.\normalsize}
 \end{figure}
-
-
 
 \begin{table}[t]
   \center
   \input{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/Comparison_Splurge_Table.tex}
-  \caption{Multipliers as well as the share of the policy occurring during the recession}
+  \caption{Marginal propensities to consume across wealth quartiles and the total population as well as the wealth to income ratio, in the model with or without splurge an according to the data}
   \notinsubfile{\label{tab:ComparisonSplurge}}
 \end{table}
 
@@ -60,9 +88,9 @@ For this estimation exercise, the remaining model parameters are calibrated to r
 
 Estimates of the standard deviations of the permanent and transitory shocks are taken from \citet{crawley2022parsimonious}, who estimate an income process on administrative data for Norwegian males from 1971 to 2014. The estimated annual variances for the permanent and transitory shocks are 0.004 and 0.033, respectively.\footnote{As shown in \citet{crawley2022parsimonious}, an income process of the form that we use here is more accurately estimated using moments in levels not differences. Hence, we take the numbers from column 3 of their table 4.} As in \citet{carroll2020sticky}, these are converted to quarterly values by multiplying the permanent and transitory shock variances by $1/4$ and $4$, respectively. Thus, we obtain quarterly standard deviations of $\sigma_\psi=0.0316$ and $\sigma_\xi=0.363$.
 
-Using the calibrated model, we simulated unexpected lottery winnings and calculate the share of the lottery spent in each year. Specifically, each simulated agent receives a lottery win in a random quarter of the first year of the simulation. The size of the lottery win is itself random and spans the range of lottery sizes found in \citet{fagereng2021mpc}. The estimation procedure minimizes the distance between the target and model moments by selecting the splurge factor and the distribution of discount factors in the population, where the latter are assumed to be uniformly distributed in the range $[\beta-\nabla, \beta+\nabla]$. We approximate the uniform distribution of discount factors with a discrete approximation and let the population consist of eight different types.
+Using the calibrated model, we simulated unexpected lottery winnings and calculate the share of the lottery spent in each year. Specifically, each simulated agent receives a lottery win in a random quarter of the first year of the simulation. The size of the lottery win is itself random and spans the range of lottery sizes found in \citet{fagereng_mpc_2021}. The estimation procedure minimizes the distance between the target and model moments by selecting the splurge factor and the distribution of discount factors in the population, where the latter are assumed to be uniformly distributed in the range $[\beta-\nabla, \beta+\nabla]$. We approximate the uniform distribution of discount factors with a discrete approximation and let the population consist of eight different types.
 
-The estimation yields a splurge factor of $0.249$ and a distribution of discount factors described by $\beta = 0.968$ and $\nabla=0.0578$. Given these estimated parameters and the remaining calibrated ones, the model is able to replicate the time path of consumption in response to a lottery win from \citet{fagereng2021mpc} and the targeted distribution of liquid wealth very well (see the solid, blue line in figure \ref{fig:splurge_estimation}).
+The estimation yields a splurge factor of $0.249$ and a distribution of discount factors described by $\beta = 0.968$ and $\nabla=0.0578$. Given these estimated parameters and the remaining calibrated ones, the model is able to replicate the time path of consumption in response to a lottery win from \citet{fagereng_mpc_2021} and the targeted distribution of liquid wealth very well (see the solid, blue line in figure \ref{fig:splurge_estimation}).
 
 The splurge is essential in matching the empirical evidence mentioned above. If we impose a zero splurge in our estimation, the model is not able to account for the exact empirical profiles. In order to generate a high initial marginal propensity to consume, the estimation yields a very wide distribution of discount factors ($\beta = 0.921$ and $\nabla=0.116$). This ensures that sufficient agents are at the liquidity constraint and sensitive to transitory income shocks to generate a high initial MPC in absence of the splurge. However, the large differences in discount factor lead to a strongly unequal distribution of liquid wealth, exceeding that observed in data. The model without the splurge also misses the time profile of the marginal propensity to consume and the distribution of initial consumption responses across wealth quartiles. Specifically, the model cannot account for the high initial MPC among the wealthiest. To compensate for that, the estimation yields more liquidity-constrained agents, and thus a higher MPC among the least wealthy. This in turn leads also to a higher spending propensity in the first year after the shock as liquidity-constrained agents spend the additional income quicker. Overall, the model fit with the data deteriorates roughly by a factor of two measured by the Euclidean norm of the targeting error.\footnote{Specifically, the Euclidean norm of the targeting error increases from 0.04 to 0.08 for the time-profile of the marginal propensity to consume when the splurge is removed, from 0.16 to 0.29 for the marginal propensity to consume across wealth quartiles and from 0.027 to 0.032 for the Lorentz curve.}
 
@@ -83,18 +111,30 @@ Households are classified into three educational groups. The first group, ``Drop
 
 With our sample selection criteria, we are left with a sample representing about 61.3 million U.S. households.
 
-\subsection{Calibrated parameters} 
+\subsection{Parameters in the full model}
+\notinsubfile{\label{sec:paramsFull}}
+
+With households classified into the three education groups using the SCF data, we proceed to set the parameters of the model as follows. First, we calibrate a set of parameters that apply to all types of houesholds in the model. Second, we calibrate another set of parameters that are specific to each education group to capture broad differences across these groups. Finally, given the calibrated parameters we estimate discount factor distributions for each education group that allow us to match the distribution of liquid wealth in each group. 
+
+The model is a simplified model for households in that we do not take into account heterogeneity across household size or composition. The households are ex-ante heterogeneous in their subjective discount factors as well as their level of education. We classify the education level of the household based on the education of the head of the household, and we typically think of individual characteristics as applying to that person. 
+
+A period in the model is one quarter. This choice makes it realistic to consider stimulus policies that are implemented in the same period as a recession starts. 
+
+\subsubsection{Calibrated parameters} 
 \notinsubfile{\label{sec:calib}}
 
-With households divided into the three education groups, some parameters, presented in panel~A of table~\ref{tab:calibration}, are calibrated equally across all groups, while other parameters, presented in panel~B of table~\ref{tab:calibration}, are education specific.  Households are also assumed to be ex-ante heterogeneous in their subjective discount factors as well as their level of education. For completeness, panel~C of table~\ref{tab:calibration} summarizes the parameters describing how we model a recession and the three policies we consider as potential responses to a recession. 
+Panel~A of table~\ref{tab:calibration}, lists parameters that are calibrated equally across all types in the model. Panel~B of table~\ref{tab:calibration}, lists parameters in the model that are education specific. For completeness, panel~C of table~\ref{tab:calibration} summarizes the parameters describing how we model a recession and the three policies we consider as potential responses to a recession. 
 
-All households are assumed to have a coefficient of relative risk aversion equal to $\gamma=2$. We also assume that all households have the same propensity to splurge out of transitory income gains and set $\varsigma=0.306$, the value estimated in section~\ref{sec:splurge}. However, each education group is divided into types that differ in their subjective discount factors. The distributions of discount factors for each education group are estimated to fit the distribution of liquid wealth within that group, and this estimation is described in detail in section~\ref{sec:estimBetas}. Regardless of type, households face a constant survival probability each quarter. This probability is set to $1-1/160$, reflecting an expected working life of 40 years. The real interest rate on households' savings is set to $1$ percent per quarter. 
+\textbf{Preferences, survival and interest rates.} All households are assumed to have a coefficient of relative risk aversion equal to $\gamma=2$. We also assume that all households have the same propensity to splurge out of transitory income gains and set $\varsigma=0.306$, the value estimated in section~\ref{sec:splurge}. However, each education group is divided into types that differ in their subjective discount factors. The distributions of discount factors for each education group are estimated to fit the distribution of liquid wealth within that group, and this estimation is described in detail in section~\ref{sec:estimBetas}. Regardless of type, households face a constant survival probability each quarter. This probability is set to $1-1/160$, reflecting an expected working life of 40 years. The real interest rate on households' savings is set to $1$ percent per quarter. 
+
 
 \afterpage{
   \thispagestyle{empty}
   \begin{table}[p]
-    \begin{center}
-      \begin{tabular}{l}
+    \caption{Model Parameters and Recession Configuration}
+    \center
+%    \begin{center}
+      \begin{tabular}{c}
         \begin{tabular}{lcd{3}} 
           \toprule
           \multicolumn{3}{l}{Panel (A) Parameters that apply to all types} \\ \midrule
@@ -126,7 +166,10 @@ All households are assumed to have a coefficient of relative risk aversion equal
           Probability of entering unemployment ($\pi_{eu}^{e}$, percent) & \phantom{0}6.2 & \phantom{0}3.1 & \phantom{0}1.8 
           \\ \bottomrule 
         \end{tabular} \\
-        \parbox{16cm}{\small \vspace{.25cm} \textbf{Note}: The first three rows show numbers from the 2004 SCF. The fourth row are averages of growth rates from \cite{carroll2020modeling}. The fifth row are numbers for 2004 from statista.com, and the sixth row are calculated from these unemployment rates.\normalsize}
+        \ifdefined\HCode
+        \HCode{<div style="text-align: justify; width: 16cm;  margin: 1em auto 0 auto;">}
+        \fi
+        \parbox{16cm}{\footnotesize \vspace{.25cm} \textbf{Note}: The first three rows show numbers from the 2004 SCF. The fourth row are averages of growth rates from \cite{carroll2020modeling}. The fifth row are numbers for 2004 from statista.com, and the sixth row are calculated from these unemployment rates.\normalsize}
         \\ \\
 
         \begin{tabular}{lc}
@@ -147,65 +190,38 @@ All households are assumed to have a coefficient of relative risk aversion equal
         \end{tabular} 
 
       \end{tabular}
-    \end{center}
-    \caption{Panel (A) shows parameters calibrated the same for all types. Panel (B) shows parameters calibrated for each education group. Panel (C) shows the numbers describing how we model a recession and the three policies we consider. ``PI'' refers to permanent income.}
+%    \end{center}
+    \begin{tabular}{p{16cm}}
+%      \parbox{16cm}{
+      \medskip
+      \small Panel (A) shows parameters calibrated the same for all types. Panel (B) shows parameters calibrated for each education group. Panel (C) shows the numbers describing how we model a recession and the three policies we consider. ``PI'' refers to permanent income.
+      % }
+      \end{tabular}
     \notinsubfile{\label{tab:calibration}}
   \end{table}
   \clearpage
 }
 
-% \begin{table}[th]
-%   \begin{center}
-%     \begin{tabular}{lcd{3}} 
-        %         \toprule
-        %         Parameter & Notation & $\text{Value}$ \\ \midrule 
-        %         Risk aversion & $\gamma$ & 1.0 \\ 
-        %         Splurge & $\varsigma$ & 0.32 \\ 
-        %         Survival probability, quarterly & $1-D$ & 0.994 \\
-        %         Risk free interest rate, quarterly (gross) & $R$ & 1.01 \\ 
-        %         Standard deviation of transitory shock & $\sigma_\xi$ & 0.346 \\
-        %         Standard deviation of permanent shock & $\sigma_\psi$ & 0.0548 \\ 
-        %         Unemployment benefits replacement rate (share of PI) & $\rho_b$ & 0.3 \\ 
-        %         Unemployment income w/o benefits (share of PI) & $\rho_{nb}$ & 0.05 \\ 
-        %         Avg. duration of unemp. spell in normal times (quarters) & & 1.5 \\
-        %         Avg. duration of unemp. benefits in normal times (quarters) & & 2 
-                                                                                  %         \\ \bottomrule 
-        %       \end{tabular}
-        %         \caption{Calibrated parameters that apply to all types. ``PI'' refers to permanent income.}
-        %         \notinsubfile{\label{tab:calibAll}}
-        %         \end{center}	
-        %         \end{table}
+\textbf{Labor market risk while employed.} When consumers are born, they receive an initial level of permanent income. This initial value is drawn from a log-normal distribution that depends on the education level the household is born with. For each education group, the parameters of the distribution are determined by the mean and standard deviation of log-permanent income for households in that group where the head of the household is of age 25 in the SCF 2004. For the Dropout group, the mean initial value of quarterly permanent income is \$6,200; for the Highschool group, it is \$11,100; and for the College group, it is \$14,500. The standard deviations of the log-normal distributions for each group are, respectively, $0.32$, $0.42$, and $0.53$. 
 
-When consumers are born, they receive an initial level of permanent income. This initial value is drawn from a log-normal distribution that depends on the education level the household is born with. For each education group, the parameters of the distribution are determined by the mean and standard deviation of log-permanent income for households of age 25 in that education group in the SCF 2004. For the Dropout group, the mean initial value of quarterly permanent income is \$6,200; for the Highschool group, it is \$11,100; and for the College group, it is \$14,500. The standard deviations of the log-normal distributions for each group are, respectively, $0.32$, $0.42$, and $0.53$. 
+While households remain employed, their income is subject to both permanent and transitory idiosyncratic shocks. These shocks are distributed equally for the three education groups. The standard deviations of these shocks are taken from \cite{carroll2020sticky}, who set the standard deviations of the transitory and permanent shocks to $\sigma_\xi=0.346$ and $\sigma_\psi=0.0548$, respectively. 
 
-        %         \begin{table}[th]
-        %         \begin{center}
-        %         \begin{tabular}{lccc}
-        %         \toprule 
-        %         \multicolumn{4}{l}{Parameters calibrated for each education group} \\ 
-        %                             & Dropout & Highschool & College \\ \midrule
-        %         Percent of population & \phantom{0}9.3 & 52.7 & 38.0 \\ 
-        %         Avg. quarterly PI of ``newborn'' agent (\$1000) & \phantom{0}6.2 & 11.1 & 14.5 \\
-        %         Std. dev. of $\log($PI$)$ of ``newborn'' agent & 0.32 & 0.42 & 0.53 \\
-        %         Avg. quarterly gross growth rate of PI & 1.0036 & 1.0045 & 1.0049 \\
-        %         Unemployment rate in normal times (percent) & \phantom{0}8.5 & \phantom{0}4.4 & \phantom{0}2.7  			
-                                                                                                  %         \\ \bottomrule 
-        %       \end{tabular}
-        %         \caption{Parameters calibrated for each education group. ``PI'' refers to permanent income.}
-        %         \notinsubfile{\label{tab:calibEd}}
-        %         \end{center}
-        %         \end{table}
+Permanent income also grows, on average, with a growth rate $\Gamma_{e(i)}$ that depends on the level of education. These average growth rates are based on numbers from \cite{carroll2020modeling}, who construct age-dependent expected permanent income growth factors using numbers from \cite{cagetti2003wealth} and fit the age-dependent numbers to their life-cycle model. We construct the quarterly growth rates of permanent income in our perpetual-youth model by taking the average of the age-dependent growth rates during a household's working life. The average gross quarterly growth rates that we obtain for the three education groups are then $\Gamma_d=1.0036$, $\Gamma_h=1.0045$, and $\Gamma_c=1.0049$.
 
-While households remain employed, their income is subject to both permanent and transitory idiosyncratic shocks. These shocks are distributed equally for the three education groups. The standard deviations of these shocks are taken from \cite{carroll2020sticky}, who set the standard deviations of the transitory and permanent shocks to $\sigma_\xi=0.346$ and $\sigma_\psi=0.0548$, respectively. Permanent income also grows, on average, with a growth rate $\Gamma_{e(i)}$ that depends on the level of education. These average growth rates are based on numbers from \cite{carroll2020modeling}, who construct age-dependent expected permanent income growth factors using numbers from \cite{cagetti2003wealth} and fit the age-dependent numbers to their life-cycle model. We construct the quarterly growth rates of permanent income in our perpetual-youth model by taking the average of the age-dependent growth rates during a household's working life. The average gross quarterly growth rates that we obtain for the three education groups are then $\Gamma_d=1.0036$, $\Gamma_h=1.0045$, and $\Gamma_c=1.0049$.
+\textbf{Unemployment.} Consumers also face the risk of becoming unemployed and will then have access to unemployment benefits for a certain period. The parameters describing the unemployment benefits in normal times are based on the work of \cite{rothstein2017scraping}, who study the effects on household income of unemployment and of running out of eligibility for benefits. The unemployment benefits replacement rate is thus set to $\rho_b=0.7$ for all households, and when benefits run out, the unemployment replacement rate without any benefits is set to $\rho_{nb}=0.5$. These replacement rates are set as a share of the households' permanent income and are based on the initial drop in income upon entering an unemployment spell, presented in figure~3 in \cite{rothstein2017scraping}.\footnote{See the lines for their UI exhaustee sample including and excluding UI income. \cite{rothstein2017scraping} also point out that ``UI benefits replace about 40 percent of the lost earnings on average'' (page 894). For a household with two income earners with equal income, these findings would mean that income drops to 70 percent when one earner becomes unemployed and to 50 percent when benefits run out. In this paper we ignore several of the channels studied by \cite{rothstein2017scraping} such as within household insurance and other social programs that can provide income even after UI benefits have run out.} 
 
-Consumers also face the risk of becoming unemployed and will then have access to unemployment benefits for a certain period. The parameters describing the unemployment benefits in normal times are based on the work of \cite{rothstein2017scraping}, who study the effects on household income of unemployment and of running out of eligibility for benefits. The unemployment benefits replacement rate is thus set to $\rho_b=0.7$ for all households, and when benefits run out, the unemployment replacement rate without any benefits is set to $\rho_{nb}=0.5$. These replacement rates are set as a share of the households' permanent income and are based on the initial drop in income upon entering an unemployment spell, presented in figure~3 in \cite{rothstein2017scraping}.\footnote{See the lines for their UI exhaustee sample including and excluding UI income. \cite{rothstein2017scraping} also point out that ``UI benefits replace about 40 percent of the lost earnings on average'' (page 894). For a household with two income earners with equal income, these findings would mean that income drops to 70 percent when one earner becomes unemployed and to 50 percent when benefits run out. In this paper we ignore several of the channels studied by \cite{rothstein2017scraping} such as within household insurance and other social programs that can provide income even after UI benefits have run out.} The duration of unemployment benefits in normal times is set to two quarters, so that our Markov transition matrix $\Pi$ has four states. This length of time corresponds to the mean duration of unemployment benefits across U.S. states from 2004 to mid-2008 of 26 weeks, reported by \cite{rothstein2017scraping}. 
+The duration of unemployment benefits in normal times is set to two quarters, so that our Markov transition matrix $\Pi$ has four states. This length of time corresponds to the mean duration of unemployment benefits across U.S. states from 2004 to mid-2008 of 26 weeks, reported by \cite{rothstein2017scraping}. 
 
-The probability of transitioning out of unemployment is the same for all households and is set to $\pi_{ue}=2/3$. This probability implies that the average duration of an unemployment spell in normal times is one and a half quarters, which is also the value used in \cite{carroll2020modeling}. However, the different education groups do differ in the probability of transitioning into unemployment in the first place. These probabilities are set to match the average U.S. unemployment rate by education group in 2004.\footnote{Source: https://www.statista.com/statistics/232942/unemployment-rate-by-level-of-education-in-the-us/.} This average was 8.5 percent for the Dropout group, 4.4 percent for the Highschool group, and 2.7 percent for the College group. These values imply that the probabilities of transitioning into unemployment in normal times are $\pi_{eu}^d=6.2$ percent, $\pi_{eu}^h=3.1$ percent, and $\pi_{eu}^c=1.8$ percent, respectively. 
+The probability of transitioning out of unemployment is set to match the average duration of an unemployment spell in normal times. In data from the Bureau of Labor Statistics, this average duration was 19.6 weeks or 1.5 quarters in 2004. We do not have data on  education-specific duration rates, however, so we set the average duration of unemployment to 1.5 quarters for all households. This implies that the transition probability from unemployment to employment is set to $\pi_{ue}=2/3$. 
+
+The Bureau of Labor Statistics provide data on unemployment rates for different education groups, and we match the average rate in each group in 2004 by setting an education-specific probability of transitioning from employment into unemployment. Note that this calibration strategy is consistent with the results in \citet{mincer1991education} who finds that the main difference between education groups is in the incidence of unemployment, and not its duration.\footnote{\citet{mincer1991education} states that ``the reduction of the incidence of unemployment [at higher education levels] is found to be far more important than the reduced duration of unemployment in creating the educational differentials in unemployment rates'' (page 1).} More recent work by \citet{elsby2010labor} includes data upto 2009 and echoes \citeauthor{mincer1991education}'s results. 
+
+The average unemployment rate in 2004 was 8.5 percent for the Dropout group, 4.4 percent for the Highschool group, and 2.7 percent for the College group. These values imply that the probabilities of transitioning into unemployment in normal times are $\pi_{eu}^d=6.2$ percent, $\pi_{eu}^h=3.1$ percent, and $\pi_{eu}^c=1.8$ percent, respectively.\footnote{Also note that the probability of transitioning from employment to unemployment is the probability of a job separation times the conditional probability of unemployment given a job separation. \citet{mincer1991education} reports that both of these are lower for higher education levels. For our calibration, this means that a higher job finding rate \textit{within} the quarter of the job separation for more educated workers translates	into a lower probability of transitioning from employment to unemployment during a quarter. In that sense, our calibration is consistent with short-term job-finding rates being higher for more educated workers.}
 
 Finally, the strength of the aggregate demand effect in recessions is determined by the consumption elasticity of productivity. We follow \cite{kmpHandbook2016} and set this to $\kappa=0.3$. 
 
 
-\hypertarget{estimating-the-discount-factor-distributions}{}\par\subsection{Estimating the discount factor distributions} 
+\hypertarget{estimating-the-discount-factor-distributions}{}\par\subsubsection{Estimating the discount factor distributions} 
 \notinsubfile{\label{sec:estimBetas}}
 
 Discount factor distributions are estimated separately for each education group to match the distribution of liquid wealth for households in that group. To do so, we let each education group consist of types that differ in their subjective discount factor,~$\beta$. The discount factors within each group $e\in \{d, h, c\}$ are assumed to be uniformly distributed in the range $[\beta_e-\nabla_e, \beta_e+\nabla_e]$. The parameters $\beta_e$ and $\nabla_e$ are chosen for each group separately to match the median liquid-wealth-to-permanent-income ratio and the $\nth{20}$, $\nth{40}$, $\nth{60}$, and $\nth{80}$ percentile points of the Lorenz curve for liquid wealth for that group. We approximate the uniform distribution of discount factors with a discrete approximation and let each education group consist of seven different types.
@@ -260,7 +276,7 @@ One point we should note concerns the estimated discount factor distribution for
 
 Also, note that several of the types in the Dropout group have very low discount factors and are very impatient. In this way, the model fits the feature of the data for the Dropout group that the bottom quintiles do not save at all and do not accumulate any liquid wealth. Very low estimates for discount factors are in line with those obtained in the literature on payday lending.\footnote{See, for example, \cite{skiba2008payday}, who estimate two-week discount rates of $21$ percent, and \cite{allcott2021high}, who estimate an initial period discount factor between $0.74$ and $0.83$ in a model where a period is eight weeks long. Both of these papers use quasi-hyperbolic preferences, so the estimates are not directly comparable with parameters in our model. Nevertheless, they support the point that very high discount rates are necessary to model the part of the population that takes out payday loans at very high interest rates.} 
 
-Finally, panel~C of table~\ref{tab:estimBetas} shows the wealth distribution across the three education groups in the data and in the model. The model matches these shares quite closely, which may not be surprising given that we calibrate the size of each group and we manage to fit the wealth distribution within each group separately. The panel also reports the average marginal propensity to consume within a year after an income shock for each education group. This measure of the annual MPC takes into account the initial splurge factor when an income shock is first received, as well as the decisions to consume out of additional income over four quarters after the shock. The average annual MPC for the population as a whole is $0.64$ in the model, which is slightly higher than the $0.63$ estimated for Norway by \cite{fagereng2021mpc}. 
+Finally, panel~C of table~\ref{tab:estimBetas} shows the wealth distribution across the three education groups in the data and in the model. The model matches these shares quite closely, which may not be surprising given that we calibrate the size of each group and we manage to fit the wealth distribution within each group separately. The panel also reports the average marginal propensity to consume within a year after an income shock for each education group. This measure of the annual MPC takes into account the initial splurge factor when an income shock is first received, as well as the decisions to consume out of additional income over four quarters after the shock. The average annual MPC for the population as a whole is $0.64$ in the model, which is slightly higher than the $0.63$ estimated for Norway by \cite{fagereng_mpc_2021}. 
 
 \ifthenelse{\boolean{Web}}{}{
   \end{document} \endinput

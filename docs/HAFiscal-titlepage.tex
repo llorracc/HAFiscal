@@ -2,16 +2,15 @@
 \input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
 \input{./.econtexRoot}\documentclass[HAFiscal]{subfiles}
 \externaldocument{\econtexRoot/HAFiscal}
-\input{\econtexRoot/Resources/owner}
+\input{}
 
 \begin{document}
 % Attempted to make all lines used for Web version contain {Web} (or version with only single curly brace at end) so can be removed with sed
 \ifthenelse{\boolean{Web}}{\newcommand{\versn}{Web}}{}  % {Web}
-\hfill{\tiny \href{https://github.com/llorracc/HAFiscal/blob/master/Resources/.git-public-commit}{latest-public-commit}}
 
 \title{Welfare and Spending Effects \\ of Consumption Stimulus Policies}
 
-\author{Christopher D. Carroll\authNum \and Edmund Crawley\authNum \and Ivan Frankovic\authNum \and H{\aa}kon Tretvoll\authNum}
+\author{Christopher D. Carroll\authNum \and Edmund Crawley\authNum \and William Du\authNum \and Ivan Frankovic\authNum \and H{\aa}kon Tretvoll\authNum}
 
 \keywords{}
 
@@ -28,7 +27,7 @@
 
 \hypertarget{abstract}{}
 \begin{verbatimwrite}{\econtexRoot/Subfiles/Abstract.vrb}
-  Using a heterogeneous agent model calibrated to match measured spending dynamics over four years following an income shock (\cite{fagereng2021mpc}), we assess the effectiveness of three fiscal stimulus policies employed during recent recessions.  Unemployment insurance (UI) extensions are the clear ``bang for the buck'' winner when effectiveness is measured in utility terms.  Stimulus checks are second best and have two advantages (over UI): they arrive and are spent faster, and they are scalable to any desired size.  A temporary (two-year) cut in the rate of wage taxation is considerably less effective than the other policies and has negligible effects in the version of our model without a multiplier.
+  Using a heterogeneous agent model calibrated to match measured spending dynamics over four years following an income shock (\cite{fagereng_mpc_2021}), we assess the effectiveness of three fiscal stimulus policies employed during recent recessions.  Unemployment insurance (UI) extensions are the clear ``bang for the buck'' winner when effectiveness is measured in utility terms.  Stimulus checks are second best and have two advantages (over UI): they arrive and are spent faster, and they are scalable to any desired size.  A temporary (two-year) cut in the rate of wage taxation is considerably less effective than the other policies and has negligible effects in the version of our model without a multiplier.
 \end{verbatimwrite}
 \input{\econtexRoot/Subfiles/Abstract.vrb}
 
@@ -56,6 +55,7 @@
 \begin{authorsinfo}
   \noindent \name{\href{https://www.econ2.jhu.edu/people/ccarroll}{Carroll: Department of Economics, Johns Hopkins University}, \href{mailto:ccarroll@jhu.edu}{\texttt{ccarroll@jhu.edu}}, and \href{https://nber.org}{NBER}}. \newline
   \name{Crawley: Federal Reserve Board, \href{mailto:edmund.s.crawley@frb.gov}{\texttt{edmund.s.crawley@frb.gov}} } \newline
+    \name{Du: Johns Hopkins University, \href{mailto:wdu9@jhu.edu}{\texttt{wdu9@jhu.edu}} } \newline
   \name{Frankovic: Deutsche Bundesbank, \href{mailto:ivan.frankovic@bundesbank.de}{\texttt{ivan.frankovic@bundesbank.de}}} \newline
   \name{Tretvoll: Statistics Norway, \href{mailto:Hakon.Tretvoll@ssb.no}{\texttt{Hakon.Tretvoll@ssb.no}}}
 \end{authorsinfo}
@@ -85,7 +85,7 @@
 % \end{minipage}
 } % {Web}
 
-%\input{\LaTeXInputs/bibliography_blend}
+%\input{bibliography_blend}
 % Do not include appendix figures and tables in ToC unless for Web version
 \ifthenelse{\boolean{Web}}{}{
   \onlyinsubfile{\captionsetup[figure]{list=no}}
@@ -93,10 +93,10 @@
 }
 
 
-% \input{\LaTeXInputs/bibliography_blend}
+% \input{bibliography_blend}
 
 \onlyinsubfile{
-  \input{\LaTeXInputs/bibliography_blend}}
+  \input{bibliography_blend}}
 
 \end{document}
 

@@ -31,7 +31,7 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     mystr = lambda x : '{:.2f}'.format(x)
     
     
-    [max_recession_duration, Rspell, Rfree_base, figs_dir_FullRun]  = returnParameters(Parametrization=Parametrization,OutputFor='_Output_Results.py')
+    [max_recession_duration, Rspell, Rfree_base, figs_dir_FullRun, CRRA]  = returnParameters(Parametrization=Parametrization,OutputFor='_Output_Results.py')
     
     
     Plot_1stRoundAd         = False

@@ -46,6 +46,11 @@ if len(sys.argv) < 2:
     resFile = open(res_dir+'/AllResults_CRRA_2.0_R_1.01.txt', 'r')  
     model_LorenzPts = []
     
+    plotWithSplurgeZero = True
+    if plotWithSplurgeZero:
+        resFileSplZero = open(res_dir+'/AllResults_CRRA_2.0_R_1.01_Splurge0.txt', 'r')
+        model_LorenzPtsSplZero = []
+    
     for line in resFile:
         if "Lorenz Points" in line:
             theLPstr = line[line.find('[')+1:line.find(']')].split(', ')
@@ -56,7 +61,19 @@ if len(sys.argv) < 2:
                 model_LorenzPts = np.array([theLPfloat])
             else:
                 model_LorenzPts = np.append(model_LorenzPts,[theLPfloat],axis=0)
-    
+ 
+    if plotWithSplurgeZero:
+        for line in resFileSplZero:
+            if "Lorenz Points" in line:
+                theLPstr = line[line.find('[')+1:line.find(']')].split(', ')
+                theLPfloat = []
+                for ii in range(0,len(theLPstr)):
+                    theLPfloat.append(float(theLPstr[ii]))
+                if np.array_equal(model_LorenzPtsSplZero, []):
+                    model_LorenzPtsSplZero = np.array([theLPfloat])
+                else:
+                    model_LorenzPtsSplZero = np.append(model_LorenzPtsSplZero,[theLPfloat],axis=0)
+ 
     for row in range(2):
         for col in range(2):
             idx = col+row*(row+1)+1
@@ -74,6 +91,10 @@ if len(sys.argv) < 2:
                                   linestyle='solid', linewidth=1.5, label='Data')
             axs[row,col].plot(x_axis, model_LorenzPts[col+row*(row+1)], color="tab:red", 
                               linestyle='dashed', linewidth=1.5,label='Model')
+            if plotWithSplurgeZero:
+                axs[row,col].plot(x_axis, model_LorenzPtsSplZero[col+row*(row+1)], color="tab:green", 
+                                  linestyle='dotted', linewidth=1.5,label='Model - Splurge=0')
+                
             axs[row,col].set_xticks(ticks=[0,20,40,60,80,100])
             axs[row,col].set_yticks(ticks=myYticks[col+row*(row+1)])
             axs[row,col].set_title(mytitles[col+row*(row+1)])
@@ -87,13 +108,20 @@ if len(sys.argv) < 2:
         #ax.label_outer()
     plt.rc('axes', labelsize=12)
     
-    lgd = fig.legend(handles, labels, loc='lower center', ncol=2, fancybox=True, shadow=False, 
-              bbox_to_anchor=(0.5, -0.005), fontsize=12)
+    if plotWithSplurgeZero:
+        lgd = fig.legend(handles, labels, loc='lower center', ncol=3, fancybox=True, shadow=False, 
+                  bbox_to_anchor=(0.5, -0.01), fontsize=12)
+    else:
+        lgd = fig.legend(handles, labels, loc='lower center', ncol=2, fancybox=True, shadow=False, 
+                  bbox_to_anchor=(0.5, -0.01), fontsize=12)
     fig.set_facecolor(color="white")
     
-    plt.gcf().subplots_adjust(bottom=0.125)
+    plt.gcf().subplots_adjust(bottom=0.14)
 #    fig.savefig('LorenzPoints_CRRA_2.0_R_1.01.pdf')
-    make_figs('LorenzPoints_CRRA_2.0_R_1.01', True , False, target_dir=figs_dir)
+    if plotWithSplurgeZero:
+        make_figs('LorenzPoints_CRRA_2.0_R_1.01_wSplZero', True , False, target_dir=figs_dir)
+    else:
+        make_figs('LorenzPoints_CRRA_2.0_R_1.01', True , False, target_dir=figs_dir)
 
 elif len(sys.argv) >= 2: 
     if int(sys.argv[1]) == 1:
@@ -167,6 +195,7 @@ elif len(sys.argv) >= 2:
     plt.gcf().subplots_adjust(bottom=0.175)
 #    fig.savefig(myFigFile+'.pdf')
     make_figs(myFigFile, True , False, target_dir=figs_dir)
+    
     
     #%% Plot figure of the data only for motivation slide in presentation
     plot_data_only = False

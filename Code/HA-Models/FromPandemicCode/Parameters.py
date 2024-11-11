@@ -603,4 +603,4 @@ def returnParameters(Parametrization='Baseline',OutputFor='_Main.py'):
             
     elif OutputFor=='_Output_Results.py':
 
-        return [max_recession_duration, Rspell, Rfree_base, figs_dir_FullRun] 
+        return [max_recession_duration, Rspell, Rfree_base, figs_dir_FullRun, CRRA] 

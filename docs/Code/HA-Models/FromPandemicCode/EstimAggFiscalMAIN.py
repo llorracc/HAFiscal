@@ -1,3 +1,4 @@
+# %%
 '''
 This is the main script for estimating the discount factor distributions.
 '''
@@ -47,6 +48,7 @@ print('Parameters: R = '+str(round(Rfree_base[0],3))+', CRRA = '+str(round(CRRA,
       +', Splurge = '+str(Splurge))
 
 
+# %%
 # -----------------------------------------------------------------------------
 def calcEstimStats(Agents):
     '''
@@ -73,7 +75,7 @@ def calcEstimStats(Agents):
         (liquid) wealth.
     '''
 
-    aLvlAll = np.concatenate([ThisType.state_now["aLvl"] for ThisType in Agents])
+    aLvlAll = np.concatenate([(1-ThisType.Splurge)*ThisType.state_now["aLvl"] for ThisType in Agents])
     numAgents = 0
     for ThisType in Agents: 
         numAgents += ThisType.AgentCount
@@ -89,11 +91,13 @@ def calcEstimStats(Agents):
         aNrmAll_byEd = []
         aNrmAll_byEd = np.concatenate([(1-ThisType.Splurge)*ThisType.state_now['aNrm'] for ThisType in \
                           Agents[e*DiscFacCount:(e+1)*DiscFacCount]])
+        # aNrmAll_byEd = np.concatenate([ThisType.state_now['aNrm'] for ThisType in \
+        #                   Agents[e*DiscFacCount:(e+1)*DiscFacCount]])
         weights = np.ones(len(aNrmAll_byEd))/len(aNrmAll_byEd)
         avgLWPI[e] = np.dot(aNrmAll_byEd, weights) * 100
         
         aLvlAll_byEd = []
-        aLvlAll_byEd = np.concatenate([ThisType.state_now["aLvl"] for ThisType in \
+        aLvlAll_byEd = np.concatenate([(1-ThisType.Splurge)*ThisType.state_now["aLvl"] for ThisType in \
                           Agents[e*DiscFacCount:(e+1)*DiscFacCount]])
         pLvlAll_byEd = []
         pLvlAll_byEd = np.concatenate([ThisType.state_now['pLvl'] for ThisType in \
@@ -123,13 +127,13 @@ def calcWealthShareByEd(Agents):
     WealthShares : np.array(float)
         The share of total liquid wealth held by each education type. 
     '''
-    aLvlAll = np.concatenate([ThisType.state_now["aLvl"] for ThisType in Agents])
+    aLvlAll = np.concatenate([(1-ThisType.Splurge)*ThisType.state_now["aLvl"] for ThisType in Agents])
     totLiqWealth = np.sum(aLvlAll)
     
     WealthShares = [0]*num_types
     for e in range(num_types):
         aLvlAll_byEd = []
-        aLvlAll_byEd = np.concatenate([ThisType.state_now["aLvl"] for ThisType in \
+        aLvlAll_byEd = np.concatenate([(1-ThisType.Splurge)*ThisType.state_now["aLvl"] for ThisType in \
                                        Agents[e*DiscFacCount:(e+1)*DiscFacCount]])
         WealthShares[e] = np.sum(aLvlAll_byEd)/totLiqWealth * 100
     
@@ -151,7 +155,7 @@ def calcLorenzPts(Agents):
         The 20th, 40th, 60th, and 80th percentile points of the Lorenz curve for 
         (liquid) wealth.
     '''
-    aLvlAll = np.concatenate([ThisType.state_now["aLvl"] for ThisType in Agents])
+    aLvlAll = np.concatenate([(1-ThisType.Splurge)*ThisType.state_now["aLvl"] for ThisType in Agents])
     numAgents = 0
     for ThisType in Agents: 
         numAgents += ThisType.AgentCount
@@ -187,7 +191,7 @@ def calcMPCbyEd(Agents):
     MPCsA = [0]*(num_types+1)   # Annual MPCs with splurge (each ed. type + population)
     for e in range(num_types):
         MPC_byEd_Q = []
-        MPC_byEd_Q = np.concatenate([ThisType.MPCnow for ThisType in \
+        MPC_byEd_Q = np.concatenate([ThisType.MPCNow for ThisType in \
                                        Agents[e*DiscFacCount:(e+1)*DiscFacCount]])
 
         MPC_byEd_A = Splurge + (1-Splurge)*MPC_byEd_Q
@@ -197,7 +201,7 @@ def calcMPCbyEd(Agents):
         MPCsQ[e] = np.mean(MPC_byEd_Q)
         MPCsA[e] = np.mean(MPC_byEd_A)
         
-    MPC_all_Q = np.concatenate([ThisType.MPCnow for ThisType in Agents])
+    MPC_all_Q = np.concatenate([ThisType.MPCNow for ThisType in Agents])
     MPC_all_A = Splurge + (1-Splurge)*MPC_all_Q
     for qq in range(3):
         MPC_all_A += (1-MPC_all_A)*MPC_all_Q
@@ -210,9 +214,9 @@ def calcMPCbyEd(Agents):
     return MPCs(MPCsQ,MPCsA)
  
 # -----------------------------------------------------------------------------
-def calcMPCbyWealth(Agents):
+def calcMPCbyWealthQsimple(Agents):
     '''
-    Calculate the average MPC for each wealth quartile. 
+    Calculate the average annual MPC for each wealth quartile. 
     Assumption: Agents is organized by EducType and there are DiscFacCount
     AgentTypes of each EducType. 
     
@@ -224,14 +228,18 @@ def calcMPCbyWealth(Agents):
 
     Returns
     -------
-    MPCs : namedtuple("MPCsQ", "MPCsA")    
+    MPCs : namedtuple("MPCsQ", "MPCsA", "MPCsFYL")    
     MPCsQ : [float]
         The average MPC for each wealth quartile - Quarterly, ignores splurge.
     MPCsA : [float]
         The average MPC for each wealth quartile - Annualized, taking splurge into account. 
         (Only splurge in the first quarter.)
+    MPCsFYL : [float]
+        The average MPC for each wealth quartile - MPC in the year of a lottery win, 
+        taking the splurge into account. For different individuals the lottery win happens
+        in different quarters.
     '''
-    WealthNow = np.concatenate([ThisType.state_now["aLvl"] for ThisType in Agents])
+    WealthNow = np.concatenate([(1-ThisType.Splurge)*ThisType.state_now["aLvl"] for ThisType in Agents])
     
     # Get wealth quartile cutoffs and distribute them to each consumer type
     quartile_cuts = get_percentiles(WealthNow,percentiles=[0.25,0.50,0.75])
@@ -239,28 +247,42 @@ def calcMPCbyWealth(Agents):
     for ThisType in Agents:
         WealthQ = np.zeros(ThisType.AgentCount,dtype=int)
         for n in range(3):
-            WealthQ[ThisType.state_now["aLvl"] > quartile_cuts[n]] += 1
-        ThisType(WealthQ = WealthQ)
+            WealthQ[(1-ThisType.Splurge)*ThisType.state_now["aLvl"] > quartile_cuts[n]] += 1
+        ThisType.WealthQ = WealthQ
         WealthQsAll = np.concatenate([WealthQsAll, WealthQ])
     
-    MPC_agents_Q = np.concatenate([ThisType.MPCnow for ThisType in Agents])
+    MPC_agents_Q = np.concatenate([ThisType.MPCNow for ThisType in Agents])
     # Annual MPC: first Q includes Splurge, other three Qs do not
     MPC_agents_A = Splurge+(1-Splurge)*MPC_agents_Q
     for qq in range(3):
         MPC_agents_A += (1-MPC_agents_A)*MPC_agents_Q
 
+    # Vector of how many quarters of spending each agent has after a lottery win
+    SpendAfterLW_all = np.array([])
+    for ThisType in Agents: 
+        SpendQs = np.random.randint(0,4,ThisType.AgentCount)
+        ThisType.SpendQs = SpendQs
+        SpendAfterLW_all = np.concatenate([SpendAfterLW_all, SpendQs])
+    
+    MPC_agents_FYL = Splurge + (1-Splurge)*MPC_agents_Q
+    for qq in range(1,4):
+        MPC_agents_FYL[SpendAfterLW_all >= qq] += (1-MPC_agents_FYL[SpendAfterLW_all >= qq])*MPC_agents_Q[SpendAfterLW_all >= qq]
+    
     MPCsQ = [0]*(4+1)       # MPC for each quartile + for whole population
     MPCsA = [0]*(4+1)       # Annual MPCs with splurge (each quartile + population)
+    MPCsFYL = [0]*(4+1)     # First-year MPC in the year of a lottery win that occurs in a random quarter
     # Mean MPCs for each of the 4 quartiles of wealth + all agents         
     for qq in range(4):
         MPCsQ[qq] = np.mean(MPC_agents_Q[WealthQsAll==qq])
         MPCsA[qq] = np.mean(MPC_agents_A[WealthQsAll==qq])
+        MPCsFYL[qq] = np.mean(MPC_agents_FYL[WealthQsAll==qq])
     MPCsQ[4] = np.mean(MPC_agents_Q)
     MPCsA[4] = np.mean(MPC_agents_A)
+    MPCsFYL[4] = np.mean(MPC_agents_FYL)
     
-    MPCs = namedtuple("MPCs", ["MPCsQ", "MPCsA"])
+    MPCs = namedtuple("MPCs", ["MPCsQ", "MPCsA", "MPCsFYL"])
  
-    return MPCs(MPCsQ,MPCsA)    
+    return MPCs(MPCsQ,MPCsA,MPCsFYL)    
  
 # -----------------------------------------------------------------------------
 def checkDiscFacDistribution(beta, nabla, GICfactor, educ_type, print_mode=False, print_file=False, filename='DefaultResultsFile.txt'):
@@ -324,6 +346,278 @@ def checkDiscFacDistribution(beta, nabla, GICfactor, educ_type, print_mode=False
     dfCheck = namedtuple("dfCheck", ["betaMin", "betaMax", "GICsatisfied"])
     return dfCheck(betaMin, betaMax, GICsatisfied)    
 
+# -----------------------------------------------------------------------------
+def calcMPCbyWealthQ(Agents,lotterySize):
+    '''
+    Modified objective function to calculate MPCs by wealth in a consistent way. 
+
+    Parameters
+    ----------
+    Agents : [AgentType]
+        List of all AgentTypes in the economy. They are assumed to differ in 
+        their EducType attribute.
+    lotterySize : int 
+        Size of lottery win in thousands of USD.
+
+    Returns
+    -------
+    MPCsByWealthQ : [float]
+        Array with MPCs for each wealth quartile for these agents. 
+    '''
+
+    TypeCount = len(Agents)
+    multi_thread_commands_fake(Agents, ['solve()', 'initialize_sim()', 'simulate()', 'unpack_cFunc()'])
+    WealthNow = np.concatenate([(1-ThisType.Splurge)*ThisType.state_now["aLvl"] for ThisType in Agents])
+
+    # Get wealth quartile cutoffs and distribute them to each consumer type
+    quartile_cuts = get_percentiles(WealthNow,percentiles=[0.25,0.50,0.75])
+    WealthQsAll = np.array([])
+    wealth_list = np.array([])
+    betasAll = np.array([])
+    PIsAll = np.array([])
+    UnempAll = np.array([])
+    educAll = np.array([])
+    for ThisType in Agents:
+        WealthQ = np.zeros(ThisType.AgentCount,dtype=int)
+        for n in range(3):
+            WealthQ[(1-ThisType.Splurge)*ThisType.state_now["aLvl"] > quartile_cuts[n]] += 1
+        ThisType.WealthQ = WealthQ
+        WealthQsAll = np.concatenate([WealthQsAll, WealthQ])
+        wealth_list = np.concatenate((wealth_list, (1-ThisType.Splurge)*ThisType.state_now["aLvl"] ))
+        betasAll = np.concatenate((betasAll, ThisType.DiscFac*np.ones(ThisType.AgentCount)))
+        PIsAll = np.concatenate((PIsAll, ThisType.state_now["pLvl"]))
+        UnempAll = np.concatenate((UnempAll, ThisType.MicroMrkvNow))
+        educAll = np.concatenate((educAll, ThisType.EducType*np.ones(ThisType.AgentCount)))
+    
+    N_Quarter_Sim = 20; # Needs to be dividable by four
+    N_Year_Sim = int(N_Quarter_Sim/4)
+    N_Lottery_Win_Sizes = 5 # 4 lottery size bin + 1 representative one for agg MPCX
+    
+    # Calculate average PI and store the AgentCount for each education type
+    PI_list_d = np.array([])
+    PI_list_h = np.array([])
+    PI_list_c = np.array([])
+    agCount = np.zeros(3,dtype=int)
+    for ThisType in Agents :
+        if ThisType.EducType == 0:
+            PI_list_d = np.concatenate((PI_list_d, ThisType.state_now["pLvl"]))
+            agCount[0] = ThisType.AgentCount
+        elif ThisType.EducType == 1:
+            PI_list_h = np.concatenate((PI_list_h, ThisType.state_now["pLvl"]))
+            agCount[1] = ThisType.AgentCount
+        elif ThisType.EducType == 2:
+            PI_list_c = np.concatenate((PI_list_c, ThisType.state_now["pLvl"]))
+            agCount[2] = ThisType.AgentCount
+    avgPI = [np.mean(PI_list_d), np.mean(PI_list_h), np.mean(PI_list_c)]
+
+    # Lottery size in thousands of USD. This code only uses one lottery size
+    lottery_size_vec = np.array([0, 0, 0, 0, lotterySize])
+    lottery_size = np.zeros(5)  # Fill this in when needed
+
+    EmptyList = [[],[],[],[],[]]
+    MPC_set_list = [deepcopy(EmptyList),deepcopy(EmptyList),deepcopy(EmptyList),deepcopy(EmptyList)]
+    MPC_Lists    = [deepcopy(MPC_set_list),deepcopy(MPC_set_list),deepcopy(MPC_set_list),deepcopy(MPC_set_list),deepcopy(MPC_set_list)]    
+    # additional list for 5th Lottery bin, just need for elements for four years
+    MPC_List_Add_Lottery_Bin = EmptyList
+    MPC_this_type_d = np.zeros((TypeCount, agCount[0],N_Lottery_Win_Sizes,N_Year_Sim)) #Empty array, MPC for each Lottery size and agent
+    MPC_this_type_h = np.zeros((TypeCount, agCount[1],N_Lottery_Win_Sizes,N_Year_Sim)) #Empty array, MPC for each Lottery size and agent
+    MPC_this_type_c = np.zeros((TypeCount, agCount[2],N_Lottery_Win_Sizes,N_Year_Sim)) #Empty array, MPC for each Lottery size and agent
+
+    k = 4 # Only one lottery size considered
+
+    for type_num, ThisType in zip(range(TypeCount), Agents):
+            
+        c_base = np.zeros((ThisType.AgentCount,N_Quarter_Sim))                        #c_base (in case of no lottery win) for each quarter
+        c_base_Lvl = np.zeros((ThisType.AgentCount,N_Quarter_Sim))                    #same in levels
+        c_actu = np.zeros((ThisType.AgentCount,N_Quarter_Sim,N_Lottery_Win_Sizes))    #c_actu (actual consumption in case of lottery win in one random quarter) for each quarter and lottery size
+        c_actu_Lvl = np.zeros((ThisType.AgentCount,N_Quarter_Sim,N_Lottery_Win_Sizes))#same in levels
+        a_actu = np.zeros((ThisType.AgentCount,N_Quarter_Sim,N_Lottery_Win_Sizes))    #a_actu captures the actual market resources after potential lottery win (last index) was added and c_actu deducted
+        T_hist = np.zeros((ThisType.AgentCount,N_Quarter_Sim))
+        P_hist = np.zeros((ThisType.AgentCount,N_Quarter_Sim)) 
+                
+        # LotteryWin is an array with AgentCount x 4 periods many entries; there is only one 1 in each row indicating the quarter of the Lottery win for the agent in each row
+        # This can be coded more efficiently
+        LotteryWin = np.zeros((ThisType.AgentCount,N_Quarter_Sim))   
+        for i in range(ThisType.AgentCount):
+            LotteryWin[i,random.randint(0,3)] = 1
+            
+        # Scale lottery win with the average PI for this education group
+        # lottery_size = lottery_size_vec/avgPI[ThisType.EducType]     
+        lottery_size = lottery_size_vec   
+
+        for period in range(N_Quarter_Sim): #Simulate for 4 quarters as opposed to 1 year
+            
+            # Simulate forward for one quarter
+            ThisType.simulate(1)           
+            
+            # capture base consumption which is consumption in absence of lottery win
+            c_base[:,period] = ThisType.controls["cNrm"] 
+            c_base_Lvl[:,period] = c_base[:,period] * ThisType.state_now["pLvl"]
+            
+            # #for k in range(N_Lottery_Win_Sizes): # Loop through different lottery sizes, only this will produce values in simulated_MPC_means
+            # k = 4; # do not loop to save time 
+            
+            Llvl = lottery_size[k]*LotteryWin[:,period]  #Lottery win occurs only if LotteryWin = 1 for that agent
+            Lnrm = Llvl/ThisType.state_now["pLvl"]
+            SplurgeNrm = ThisType.Splurge*Lnrm  #Splurge occurs only if LotteryWin = 1 for that agent
+    
+            R_kink = np.zeros((ThisType.AgentCount))       
+            for i in range(ThisType.AgentCount):
+                if a_actu[i,period-1,k] < 0:
+                    R_kink[i] = Rfree_base[0] #base_params['Rboro']
+                else:
+                    R_kink[i] = Rfree_base[0] #base_params['Rsave']  
+            
+            if period == 0:
+                m_adj = ThisType.state_now["mNrm"]  + Lnrm - SplurgeNrm
+                for aa in range(0,ThisType.AgentCount):
+                    c_actu[aa,period,k] = ThisType.cFunc[0][ThisType.MicroMrkvNow[aa]](m_adj[aa],1) + SplurgeNrm[aa]
+                # c_actu[:,period,k] = ThisType.cFunc[0](m_adj) + SplurgeNrm
+                c_actu_Lvl[:,period,k] = c_actu[:,period,k] * ThisType.state_now["pLvl"]
+                a_actu[:,period,k] = ThisType.state_now["mNrm"] + Lnrm - c_actu[:,period,k] #save for next periods
+            else:
+                T_hist[:,period] = ThisType.shocks["TranShk"] 
+                P_hist[:,period] = ThisType.shocks["PermShk"]
+                for i_agent in range(ThisType.AgentCount):
+                    if ThisType.shocks["TranShk"][i_agent] == 1.0: # indicator of death
+                        a_actu[i_agent,period-1,k] = np.exp(np.log(0.00001)) #base_params['aNrmInitMean']
+                m_adj = a_actu[:,period-1,k]*R_kink/ThisType.shocks["PermShk"] + ThisType.shocks["TranShk"] + Lnrm - SplurgeNrm #continue with resources from last period
+                for aa in range(0,ThisType.AgentCount):
+                    c_actu[aa,period,k] = ThisType.cFunc[0][ThisType.MicroMrkvNow[aa]](m_adj[aa],1) + SplurgeNrm[aa]
+                # c_actu[:,period,k] = ThisType.cFunc[0](m_adj) + SplurgeNrm
+                c_actu_Lvl[:,period,k] = c_actu[:,period,k] * ThisType.state_now["pLvl"]
+                a_actu[:,period,k] = a_actu[:,period-1,k]*R_kink/ThisType.shocks["PermShk"] + ThisType.shocks["TranShk"] + Lnrm - c_actu[:,period,k] 
+                
+            if period%4 + 1 == 4: #if we are in the 4th quarter of a year
+                year = int((period+1)/4)
+                c_actu_Lvl_year = c_actu_Lvl[:,(year-1)*4:year*4,k]
+                c_base_Lvl_year = c_base_Lvl[:,(year-1)*4:year*4]
+                if ThisType.EducType == 0:
+                    MPC_this_type_d[type_num,:,k,year-1] = (np.sum(c_actu_Lvl_year,axis=1) - np.sum(c_base_Lvl_year,axis=1))/(lottery_size[k])
+                elif ThisType.EducType == 1:
+                    MPC_this_type_h[type_num,:,k,year-1] = (np.sum(c_actu_Lvl_year,axis=1) - np.sum(c_base_Lvl_year,axis=1))/(lottery_size[k])
+                elif ThisType.EducType == 2:
+                    MPC_this_type_c[type_num,:,k,year-1] = (np.sum(c_actu_Lvl_year,axis=1) - np.sum(c_base_Lvl_year,axis=1))/(lottery_size[k])
+                    
+            # Sort the MPCs into the proper MPC sets
+            for q in range(4):
+                these = ThisType.WealthQ == q
+                
+                # for k in range(N_Lottery_Win_Sizes):
+                #     for y in range(N_Year_Sim):
+                #         MPC_Lists[k][q][y].append(MPC_this_type[type_num,these,k,y])
+                for y in range(N_Year_Sim):
+                    if ThisType.EducType == 0:
+                        MPC_Lists[k][q][y].append(MPC_this_type_d[type_num,these,k,y])
+                    elif ThisType.EducType == 1:
+                        MPC_Lists[k][q][y].append(MPC_this_type_h[type_num,these,k,y])
+                    elif ThisType.EducType == 2:
+                        MPC_Lists[k][q][y].append(MPC_this_type_c[type_num,these,k,y])
+                        
+            # sort MPCs for addtional Lottery bin
+            for y in range(N_Year_Sim):
+                if ThisType.EducType == 0:
+                    MPC_List_Add_Lottery_Bin[y].append(MPC_this_type_d[type_num,:,k,y])
+                elif ThisType.EducType == 1:
+                    MPC_List_Add_Lottery_Bin[y].append(MPC_this_type_h[type_num,:,k,y])
+                elif ThisType.EducType == 0:
+                    MPC_List_Add_Lottery_Bin[y].append(MPC_this_type_c[type_num,:,k,y])
+
+    #Create a list of wealth and MPCs
+    MPC_list = np.array([])
+    for type_num, ThisType in zip(range(TypeCount), Agents):
+        if ThisType.EducType == 0:
+            MPC_list = np.concatenate((MPC_list, MPC_this_type_d[type_num, :, 4, 0] ))
+        elif ThisType.EducType == 1:
+            MPC_list = np.concatenate((MPC_list, MPC_this_type_h[type_num, :, 4, 0] ))
+        elif ThisType.EducType == 2:
+            MPC_list = np.concatenate((MPC_list, MPC_this_type_c[type_num, :, 4, 0] ))
+
+    MPCbyWQ = np.zeros(5)
+    betaByWQ = np.zeros(5)
+    PIbyWQ = np.zeros(5)
+    wealthByWQ = np.zeros(5)
+    UnempByWQ = np.zeros(5)
+    UnempAll = UnempAll > 0
+    educByWQ = np.zeros(5)
+    numWQ = np.zeros(5)
+    for qq in range(4):
+        MPCbyWQ[qq] = np.mean(MPC_list[WealthQsAll==qq])
+        betaByWQ[qq] = np.mean(betasAll[WealthQsAll==qq])
+        PIbyWQ[qq] = np.mean(PIsAll[WealthQsAll==qq])
+        wealthByWQ[qq] = np.mean(wealth_list[WealthQsAll==qq])
+        UnempByWQ[qq] = np.sum(UnempAll[WealthQsAll==qq])/np.sum(WealthQsAll==qq)
+        educByWQ[qq] = np.mean(educAll[WealthQsAll==qq])
+        numWQ[qq] = np.sum(WealthQsAll==qq)
+    MPCbyWQ[4] = np.mean(MPC_list)
+    betaByWQ[4] = np.mean(betasAll)
+    PIbyWQ[4] = np.mean(PIsAll)
+    wealthByWQ[4] = np.mean(wealth_list)
+    UnempByWQ[4] = np.sum(UnempAll)/len(UnempAll)
+    educByWQ[4] = np.mean(educAll)
+    numWQ[4] = len(WealthQsAll)
+    
+    sorted_wealth_MPC = np.stack((wealth_list, MPC_list))[:,wealth_list.argsort()]
+    total_agents = len(MPC_list)
+    quartile1_weights = np.zeros(total_agents)
+    quartile1_weights[0:int(np.floor(total_agents*9/40))] = 1.0
+    quartile1_slope_length = (int(np.floor(total_agents*11/40)-np.floor(total_agents*9/40)))
+    quartile1_weights[int(np.floor(total_agents*9/40)):int(np.floor(total_agents*11/40))] = (quartile1_slope_length-np.arange(quartile1_slope_length))/quartile1_slope_length
+    quartile2_weights = np.zeros(total_agents)
+    quartile2_weights[0:int(np.floor(total_agents*19/40))] = 1- quartile1_weights[0:int(np.floor(total_agents*19/40))]
+    quartile2_slope_length = (int(np.floor(total_agents*21/40)-np.floor(total_agents*19/40)))
+    quartile2_weights[int(np.floor(total_agents*19/40)):int(np.floor(total_agents*21/40))] = (quartile2_slope_length-np.arange(quartile2_slope_length))/quartile2_slope_length
+    quartile3_weights = np.flip(quartile2_weights)
+    quartile4_weights = np.flip(quartile1_weights)
+    simulated_MPC_means_smoothed = np.zeros(5)
+    simulated_MPC_means_smoothed[0] = np.average(sorted_wealth_MPC[1],weights=quartile1_weights)
+    simulated_MPC_means_smoothed[1] = np.average(sorted_wealth_MPC[1],weights=quartile2_weights)
+    simulated_MPC_means_smoothed[2] = np.average(sorted_wealth_MPC[1],weights=quartile3_weights)
+    simulated_MPC_means_smoothed[3] = np.average(sorted_wealth_MPC[1],weights=quartile4_weights)
+    simulated_MPC_means_smoothed[4] = np.average(sorted_wealth_MPC[1])
+    
+    # #if estimation_mode==False or target == 'AGG_MPC_plus_Liqu_Wealth_plusKY_plusMPC':     
+    # # Calculate average within each MPC set
+    # simulated_MPC_means = np.zeros((N_Lottery_Win_Sizes,k,N_Year_Sim))
+    
+    # for q in range(4):
+    #     for y in range(N_Year_Sim):
+    #         MPC_array = np.concatenate(MPC_Lists[k][q][y])
+    #         simulated_MPC_means[k,q,y] = np.mean(MPC_array)
+            
+    # # Calculate aggregate MPC and MPCx
+    # simulated_MPC_mean_add_Lottery_Bin = np.zeros((N_Year_Sim))
+    # for y in range(N_Year_Sim):
+    #     MPC_array = np.concatenate(MPC_List_Add_Lottery_Bin[y])
+    #     simulated_MPC_mean_add_Lottery_Bin[y] = np.mean(MPC_array)
+            
+    
+    # MPCs = namedtuple("MPCs", ["simulated_MPC_means_smoothed", "sorted_wealth_MPC", 
+    #                            "quartile_cuts", "q1w", "q2w", "q3w", "q4w"])
+    # return MPCs(simulated_MPC_means_smoothed, sorted_wealth_MPC, quartile_cuts,
+    #             quartile1_weights, quartile2_weights, quartile3_weights, quartile4_weights) 
+
+    print('Average PIs: ['+str(np.round(avgPI[0],3))+', '+str(np.round(avgPI[1],3))+', '+str(np.round(avgPI[2],3))+']\n' )
+
+    sMPCs = simulated_MPC_means_smoothed
+    print('Wealth by WQ = ['+str(round(wealthByWQ[0],4))+', '+str(round(wealthByWQ[1],4))+', '+str(round(wealthByWQ[2],4))+', '
+              +str(round(wealthByWQ[3],4))+', '+str(round(wealthByWQ[4],4))+']')
+    print('sMPCs = ['+str(round(sMPCs[0],3))+', '+str(round(sMPCs[1],3))+', '+str(round(sMPCs[2],3))+', '
+                  +str(round(sMPCs[3],3))+', '+str(round(sMPCs[4],3))+']')
+    print('betas by WQ = ['+str(round(betaByWQ[0],4))+', '+str(round(betaByWQ[1],4))+', '+str(round(betaByWQ[2],4))+', '
+                  +str(round(betaByWQ[3],4))+', '+str(round(betaByWQ[4],4))+']')
+    print('PIs by WQ = ['+str(round(PIbyWQ[0],4))+', '+str(round(PIbyWQ[1],4))+', '+str(round(PIbyWQ[2],4))+', '
+                  +str(round(PIbyWQ[3],4))+', '+str(round(PIbyWQ[4],4))+']')
+    print('Unemp frac by WQ = ['+str(round(UnempByWQ[0],4))+', '+str(round(UnempByWQ[1],4))+', '+str(round(UnempByWQ[2],4))+', '
+                  +str(round(UnempByWQ[3],4))+', '+str(round(UnempByWQ[4],4))+']')
+    print('Education by WQ = ['+str(round(educByWQ[0],2))+', '+str(round(educByWQ[1],2))+', '+str(round(educByWQ[2],2))+', '
+                  +str(round(educByWQ[3],2))+', '+str(round(educByWQ[4],2))+']')
+    print('Num in each WQ = ['+str(numWQ[0])+', '+str(numWQ[1])+', '+str(numWQ[2])+', '
+                  +str(numWQ[3])+', '+str(numWQ[4])+']\n')
+    
+    return MPCbyWQ
+
+
 # =============================================================================
 #%% Initialize economy
 # Make education types
@@ -381,6 +675,10 @@ AggDemandEconomy.make_history()
 AggDemandEconomy.save_state()   
 #AggDemandEconomy.switchToCounterfactualMode("base")
 #AggDemandEconomy.makeIdiosyncraticShockHistories()
+
+baseline_commands = ['solve()', 'initialize_sim()', 'simulate()', 'save_state()', 'unpack_cFunc()']
+multi_thread_commands_fake(TypeList, baseline_commands)
+
 
 output_keys = ['NPV_AggIncome', 'NPV_AggCons', 'AggIncome', 'AggCons']
 
@@ -451,7 +749,7 @@ def betasObjFunc(betas, spreads, GICfactors, target_option=1, print_mode=False, 
             ThisType = deepcopy(BaseTypeList[e])
             ThisType.AgentCount = AgentCount
             ThisType.DiscFac = dfs[e].atoms[0][b]
-            ThisType.seed = n
+            ThisType.seed = n + 100
             TypeListNew.append(ThisType)
             n += 1
     base_dict['Agents'] = TypeListNew
@@ -472,7 +770,8 @@ def betasObjFunc(betas, spreads, GICfactors, target_option=1, print_mode=False, 
     # Simulate each type to get a new steady state solution 
     # solve: done in AggDemandEconomy.solve(), initializeSim: done in AggDemandEconomy.reset() 
     # baseline_commands = ['solve()', 'initializeSim()', 'simulate()', 'saveState()']
-    baseline_commands = ['simulate()', 'save_state()']
+    # baseline_commands = ['simulate()', 'save_state()']
+    baseline_commands = ['solve()', 'initialize_sim()', 'simulate()', 'save_state()', 'unpack_cFunc()']
     multi_thread_commands_fake(TypeListNew, baseline_commands)
     
     Stats = calcEstimStats(TypeListNew)
@@ -494,7 +793,8 @@ def betasObjFunc(betas, spreads, GICfactors, target_option=1, print_mode=False, 
     if print_mode or print_file:
         WealthShares = calcWealthShareByEd(TypeListNew)
         MPCsByEd = calcMPCbyEd(TypeListNew)
-        MPCsByW  = calcMPCbyWealth(TypeListNew)
+        MPCsByWQsimple = calcMPCbyWealthQsimple(TypeListNew)
+        MPCsByWQ = calcMPCbyWealthQ(TypeListNew, 5)
 
     # If not estimating, print stats by education level
     if print_mode:
@@ -523,9 +823,15 @@ def betasObjFunc(betas, spreads, GICfactors, target_option=1, print_mode=False, 
         print('Average MPCs by Ed. (incl. splurge) = ['+str(round(MPCsByEd.MPCsA[0],3))+', '
                       +str(round(MPCsByEd.MPCsA[1],3))+', '+str(round(MPCsByEd.MPCsA[2],3))+', '
                       +str(round(MPCsByEd.MPCsA[3],3))+']')
-        print('Average MPCs by Wealth (incl. splurge) = ['+str(round(MPCsByW.MPCsA[0],3))+', '
-                      +str(round(MPCsByW.MPCsA[1],3))+', '+str(round(MPCsByW.MPCsA[2],3))+', '
-                      +str(round(MPCsByW.MPCsA[3],3))+', '+str(round(MPCsByW.MPCsA[4],3))+']\n')
+        print('Average annual MPCs by Wealth (incl. splurge) = ['+str(round(MPCsByWQsimple.MPCsA[0],3))+', '
+                      +str(round(MPCsByWQsimple.MPCsA[1],3))+', '+str(round(MPCsByWQsimple.MPCsA[2],3))+', '
+                      +str(round(MPCsByWQsimple.MPCsA[3],3))+', '+str(round(MPCsByWQsimple.MPCsA[4],3))+']\n')
+        print('Average lottery-win-year MPCs by Wealth (simple, incl. splurge) = ['+str(round(MPCsByWQsimple.MPCsFYL[0],3))+', '
+                      +str(round(MPCsByWQsimple.MPCsFYL[1],3))+', '+str(round(MPCsByWQsimple.MPCsFYL[2],3))+', '
+                      +str(round(MPCsByWQsimple.MPCsFYL[3],3))+', '+str(round(MPCsByWQsimple.MPCsFYL[4],3))+']\n')
+        print('Average lottery-win-year MPCs by Wealth (incl. splurge) = ['+str(round(MPCsByWQ[0],3))+', '
+                      +str(round(MPCsByWQ[1],3))+', '+str(round(MPCsByWQ[2],3))+', '
+                      +str(round(MPCsByWQ[3],3))+', '+str(round(MPCsByWQ[4],3))+']\n')
 
     if print_file:
         with open(filename, 'a') as resFile: 
@@ -537,12 +843,24 @@ def betasObjFunc(betas, spreads, GICfactors, target_option=1, print_mode=False, 
                           +str(round(Stats.LorenzPts[3],4))+']\n')
             resFile.write('\tWealth shares = ['+str(round(WealthShares[0],3))+', '
                           +str(round(WealthShares[1],3))+', '+str(round(WealthShares[2],3))+']\n')
+            
+            resFile.write('\tAverage LW/PI-ratios: D = ' + mystr(Stats.avgLWPI[0]) + ' H = ' + mystr(Stats.avgLWPI[1]) \
+                  + ' C = ' + mystr(Stats.avgLWPI[2])+'\n') 
+            resFile.write('\tTotal LW/Total PI: D = ' + mystr(Stats.LWoPI[0]) + ' H = ' + mystr(Stats.LWoPI[1]) \
+                  + ' C = ' + mystr(Stats.LWoPI[2])+'\n')
+            
             resFile.write('\tAverage MPCs by Ed. (incl. splurge) = ['+str(round(MPCsByEd.MPCsA[0],3))+', '
                           +str(round(MPCsByEd.MPCsA[1],3))+', '+str(round(MPCsByEd.MPCsA[2],3))+', '
                           +str(round(MPCsByEd.MPCsA[3],3))+']\n')
-            resFile.write('\tAverage MPCs by Wealth (incl. splurge) = ['+str(round(MPCsByW.MPCsA[0],3))+', '
-                          +str(round(MPCsByW.MPCsA[1],3))+', '+str(round(MPCsByW.MPCsA[2],3))+', '
-                          +str(round(MPCsByW.MPCsA[3],3))+', '+str(round(MPCsByW.MPCsA[4],3))+']\n')
+            resFile.write('\tAverage annual MPCs by Wealth (incl. splurge) = ['+str(round(MPCsByWQsimple.MPCsA[0],3))+', '
+                          +str(round(MPCsByWQsimple.MPCsA[1],3))+', '+str(round(MPCsByWQsimple.MPCsA[2],3))+', '
+                          +str(round(MPCsByWQsimple.MPCsA[3],3))+', '+str(round(MPCsByWQsimple.MPCsA[4],3))+']\n')
+            resFile.write('\tAverage lottery-win-year MPCs by Wealth (simple, incl. splurge) = ['+str(round(MPCsByWQsimple.MPCsFYL[0],3))+', '
+                          +str(round(MPCsByWQsimple.MPCsFYL[1],3))+', '+str(round(MPCsByWQsimple.MPCsFYL[2],3))+', '
+                          +str(round(MPCsByWQsimple.MPCsFYL[3],3))+', '+str(round(MPCsByWQsimple.MPCsFYL[4],3))+']\n')
+            resFile.write('\tAverage lottery-win-year MPCs by Wealth (incl. splurge) = ['+str(round(MPCsByWQ[0],3))+', '
+                          +str(round(MPCsByWQ[1],3))+', '+str(round(MPCsByWQ[2],3))+', '
+                          +str(round(MPCsByWQ[3],3))+', '+str(round(MPCsByWQ[4],3))+']\n')
         
     return distance 
 # -----------------------------------------------------------------------------
@@ -618,7 +936,8 @@ def betasObjFuncEduc(beta, spread, GICx, educ_type=2, print_mode=False, print_fi
     # Simulate each type to get a new steady state solution 
     # solve: done in AggDemandEconomy.solve(), initializeSim: done in AggDemandEconomy.reset() 
     # baseline_commands = ['solve()', 'initializeSim()', 'simulate()', 'saveState()']
-    baseline_commands = ['simulate()', 'save_state()']
+    # baseline_commands = ['simulate()', 'save_state()']
+    baseline_commands = ['solve()', 'initialize_sim()', 'simulate()', 'save_state()']
     multi_thread_commands_fake(TypeListAll, baseline_commands)
     
     Stats = calcEstimStats(TypeListAll)
@@ -656,102 +975,110 @@ def betasObjFuncEduc(beta, spread, GICx, educ_type=2, print_mode=False, print_fi
         
     return distance 
 # -----------------------------------------------------------------------------
+
 #%% Estimate discount factor distributions separately for each education type
-
-if IncUnemp == 0.7 and IncUnempNoBenefits == 0.5:
-    # Baseline unemployment system: 
-    print('Estimating for CRRA = '+str(round(CRRA,1))+' and R = ' + str(round(Rfree_base[0],3))+':\n')
-    df_resFileStr = res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])
-else:
-    print('Estimating for an alternativ unemployment system with IncUnemp = '+str(round(IncUnemp,2))+
-          ' and IncUnempNoBenefits = ' + str(round(IncUnempNoBenefits,2))+':\n')
-    df_resFileStr = res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'_altBenefits'
-
-if Splurge == 0:
-    print('Estimating for special case of Splurge = 0\n')
-    df_resFileStr = df_resFileStr + '_Splurge0'
-df_resFileStr = df_resFileStr + '.txt'
-
-print('Estimation results saved in ' + df_resFileStr)
-
-for edType in [0,1,2]:
-    f_temp = lambda x : betasObjFuncEduc(x[0],x[1],x[2], educ_type=edType)
-    if edType == 0:
-        initValues = [0.75, 0.3, 6]       # Dropouts
-    elif edType == 1:
-        initValues = [0.93, 0.12, 5]      # HighSchool
-    elif edType == 2:
-        initValues = [0.98, 0.015, 6]     # College
+estimateDiscFacs = True 
+if estimateDiscFacs:
+    if IncUnemp == 0.7 and IncUnempNoBenefits == 0.5:
+        # Baseline unemployment system: 
+        print('Estimating for CRRA = '+str(round(CRRA,1))+' and R = ' + str(round(Rfree_base[0],3))+':\n')
+        df_resFileStr = res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])
     else:
-        initValues = [0.90,0.02,6]
-
-    opt_params = minimize_nelder_mead(f_temp, initValues, verbose=True)
-    print('Finished estimating for education type = '+str(edType)+'. Optimal beta, spread and GIC factor are:')
-    print('Beta = ' + mystr4(opt_params[0]) +'  Nabla = ' + mystr4(opt_params[1]) + 
-          ' GIC factor = ' + mystr4(np.exp(opt_params[2])/(1+np.exp(opt_params[2]))))
-
-    if edType == 0:
-        mode = 'a'      # Overwrite old file...
-    else:
-        mode = 'a'      # ...but append all results in same file 
-    with open(df_resFileStr, mode) as f: 
-        outStr = repr({'EducationGroup' : edType, 'beta' : opt_params[0], 'nabla' : opt_params[1], 'GICx' : opt_params[2]})
-        f.write(outStr+'\n')
-        f.close()
-        
-with open(df_resFileStr, 'a') as f: 
-    f.write('\nParameters: R = '+str(round(Rfree_base[0],2))+', CRRA = '+str(round(CRRA,2))
-          +', IncUnemp = '+str(round(IncUnemp,2))+', IncUnempNoBenefits = '+str(round(IncUnempNoBenefits,2))
-          +', Splurge = '+str(Splurge) +'\n')
+        print('Estimating for an alternativ unemployment system with IncUnemp = '+str(round(IncUnemp,2))+
+              ' and IncUnempNoBenefits = ' + str(round(IncUnempNoBenefits,2))+':\n')
+        df_resFileStr = res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'_altBenefits'
+    
+    if Splurge == 0:
+        print('Estimating for special case of Splurge = 0\n')
+        df_resFileStr = df_resFileStr + '_Splurge0'
+    df_resFileStr = df_resFileStr + '.txt'
+    
+    print('Estimation results saved in ' + df_resFileStr)
+    
+    for edType in [1]:
+        f_temp = lambda x : betasObjFuncEduc(x[0],x[1],x[2], educ_type=edType)
+        if edType == 0:
+            initValues = [0.75, 0.3, 6]       # Dropouts
+        elif edType == 1:
+            initValues = [0.93, 0.12, 5]      # HighSchool
+        elif edType == 2:
+            initValues = [0.98, 0.015, 6]     # College
+        else:
+            initValues = [0.90,0.02,6]
+    
+        opt_params = minimize_nelder_mead(f_temp, initValues, verbose=True)
+        print('Finished estimating for education type = '+str(edType)+'. Optimal beta, spread and GIC factor are:')
+        print('Beta = ' + mystr4(opt_params[0]) +'  Nabla = ' + mystr4(opt_params[1]) + 
+              ' GIC factor = ' + mystr4(np.exp(opt_params[2])/(1+np.exp(opt_params[2]))))
+    
+        if edType == 0:
+            mode = 'w'      # Overwrite old file...
+        else:
+            mode = 'a'      # ...but append all results in same file 
+        with open(df_resFileStr, mode) as f: 
+            outStr = repr({'EducationGroup' : edType, 'beta' : opt_params[0], 'nabla' : opt_params[1], 'GICx' : opt_params[2]})
+            f.write(outStr+'\n')
+            f.close()
+            
+    with open(df_resFileStr, 'a') as f: 
+        f.write('\nParameters: R = '+str(round(Rfree_base[0],2))+', CRRA = '+str(round(CRRA,2))
+              +', IncUnemp = '+str(round(IncUnemp,2))+', IncUnempNoBenefits = '+str(round(IncUnempNoBenefits,2))
+              +', Splurge = '+str(Splurge) +'\n')
 
 #%% Read in estimates and calculate all results:
-if IncUnemp == 0.7 and IncUnempNoBenefits == 0.5:
-    # Baseline unemployment system: 
-    print('Calculating all results for CRRA = '+str(round(CRRA,1))+' and R = ' + str(round(Rfree_base[0],3))+':\n')
-    df_resFileStr = res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])
-    ar_resFileStr = res_dir+'/AllResults_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])
-else:
-    print('Calculating all results for an alternativ unemployment system with IncUnemp = '+str(round(IncUnemp,2))+
-          ' and IncUnempNoBenefits = ' + str(round(IncUnempNoBenefits,2))+':\n')
-    df_resFileStr = res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'_altBenefits'
-    ar_resFileStr = res_dir+'/AllResults_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'_altBenefits'
-
-if Splurge == 0:
-    df_resFileStr = df_resFileStr + '_Splurge0'
-    ar_resFileStr = ar_resFileStr + '_Splurge0'
-df_resFileStr = df_resFileStr + '.txt'
-ar_resFileStr = ar_resFileStr + '.txt'
-print('Loading estimates from ' + df_resFileStr + ' and saving all model results in ' + ar_resFileStr)
-
-with open(ar_resFileStr, 'w') as resFile: 
-    resFile.write('Results for parameters:\n')
-    resFile.write('R = '+str(round(Rfree_base[0],2))+', CRRA = '+str(round(CRRA,2))
-          +', IncUnemp = '+str(round(IncUnemp,2))+', IncUnempNoBenefits = '+str(round(IncUnempNoBenefits,2))
-          +', Splurge = '+str(Splurge) +'\n\n')
-           
-# Calculate results by education group    
-myEstim = [[],[],[]]
-betFile = open(df_resFileStr, 'r')
-readStr = betFile.readline().strip()
-while readStr != '' :
-    dictload = eval(readStr)
-    edType = dictload['EducationGroup']
-    beta = dictload['beta']
-    nabla = dictload['nabla']
-    GICx = dictload['GICx']
-    GICfactor = np.exp(GICx)/(1+np.exp(GICx))
-    myEstim[edType] = [beta,nabla,GICx, GICfactor]
-    betasObjFuncEduc(beta, nabla, GICx, educ_type = edType, print_mode=True, print_file=True, filename=ar_resFileStr)
-    checkDiscFacDistribution(beta, nabla, GICfactor, edType, print_mode=True, print_file=True, filename=ar_resFileStr)
+calcAllResults = False
+if calcAllResults:
+    printResToFile  = True
+    
+    if IncUnemp == 0.7 and IncUnempNoBenefits == 0.5:
+        # Baseline unemployment system: 
+        print('Calculating all results for CRRA = '+str(round(CRRA,1))+' and R = ' + str(round(Rfree_base[0],3))+':\n')
+        df_resFileStr = res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])
+        ar_resFileStr = res_dir+'/AllResults_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])
+    else:
+        print('Calculating all results for an alternativ unemployment system with IncUnemp = '+str(round(IncUnemp,2))+
+              ' and IncUnempNoBenefits = ' + str(round(IncUnempNoBenefits,2))+':\n')
+        df_resFileStr = res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'_altBenefits'
+        ar_resFileStr = res_dir+'/AllResults_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'_altBenefits'
+    
+    if Splurge == 0:
+        df_resFileStr = df_resFileStr + '_Splurge0'
+        ar_resFileStr = ar_resFileStr + '_Splurge0'
+    df_resFileStr = df_resFileStr + '.txt'
+    ar_resFileStr = ar_resFileStr + '.txt'
+    print('Loading estimates from ' + df_resFileStr + '\n')
+    
+    if printResToFile:
+        with open(ar_resFileStr, 'w') as resFile: 
+            print('Saving all model results in ' + ar_resFileStr + '\n')
+            resFile.write('Results for parameters:\n')
+            resFile.write('R = '+str(round(Rfree_base[0],2))+', CRRA = '+str(round(CRRA,2))
+                  +', IncUnemp = '+str(round(IncUnemp,2))+', IncUnempNoBenefits = '+str(round(IncUnempNoBenefits,2))
+                  +', Splurge = '+str(Splurge) +'\n\n')
+               
+    # Calculate results by education group    
+    myEstim = [[],[],[]]
+    betFile = open(df_resFileStr, 'r')
     readStr = betFile.readline().strip()
-betFile.close()
-
-# Also calculate results for the whole population 
-betasObjFunc([myEstim[0][0], myEstim[1][0], myEstim[2][0]], \
-             [myEstim[0][1], myEstim[1][1], myEstim[2][1]], \
-             [myEstim[0][3], myEstim[1][3], myEstim[2][3]], \
-             target_option = 1, print_mode=True, print_file=True, filename=ar_resFileStr)
-
+    while readStr != '' :
+        dictload = eval(readStr)
+        edType = dictload['EducationGroup']
+        beta = dictload['beta']
+        nabla = dictload['nabla']
+        GICx = dictload['GICx']
+        GICfactor = np.exp(GICx)/(1+np.exp(GICx))
+        myEstim[edType] = [beta,nabla,GICx, GICfactor]
+        betasObjFuncEduc(beta, nabla, GICx, educ_type = edType, print_mode=True, print_file=printResToFile, filename=ar_resFileStr)
+        checkDiscFacDistribution(beta, nabla, GICfactor, edType, print_mode=True, print_file=printResToFile, filename=ar_resFileStr)
+        readStr = betFile.readline().strip()
+    betFile.close()
+    
+    # Also calculate results for the whole population 
+    betasObjFunc([myEstim[0][0], myEstim[1][0], myEstim[2][0]], \
+                 [myEstim[0][1], myEstim[1][1], myEstim[2][1]], \
+                 [myEstim[0][3], myEstim[1][3], myEstim[2][3]], \
+                 target_option = 1, print_mode=True, print_file=printResToFile, filename=ar_resFileStr)
+    
 
 
 #%% 
@@ -775,9 +1102,12 @@ if run_additional_analysis:
 if run_additional_analysis:
     #%% Read in estimates and save resulting discount factor distributions:
     myEstim = [[],[],[]]
-    if IncUnemp == 0.7 and IncUnempNoBenefits == 0.5:
+    if IncUnemp == 0.7 and IncUnempNoBenefits == 0.5 and Splurge != 0:
         # Baseline unemployment system: 
         betFile = open(res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'.txt', 'r')
+    elif IncUnemp == 0.7 and IncUnempNoBenefits == 0.5 and Splurge == 0:
+        # Baseline unemployment system: 
+        betFile = open(res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'_Splurge0.txt', 'r')
     else:
         betFile = open(res_dir+'/DiscFacEstim_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'_altBenefits.txt', 'r')
     readStr = betFile.readline().strip()
@@ -792,9 +1122,12 @@ if run_additional_analysis:
         readStr = betFile.readline().strip()
     betFile.close()
 
-    if IncUnemp == 0.7 and IncUnempNoBenefits == 0.5:
+    if IncUnemp == 0.7 and IncUnempNoBenefits == 0.5 and Splurge != 0:
         # Baseline unemployment system: 
         outFileStr = res_dir+'/DiscFacDistributions_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'.txt'
+    elif IncUnemp == 0.7 and IncUnempNoBenefits == 0.5 and Splurge == 0:
+        # Baseline unemployment system: 
+        outFileStr = res_dir+'/DiscFacDistributions_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'_Splurge0.txt'
     else:
         outFileStr = res_dir+'/DiscFacDistributions_CRRA_'+str(CRRA)+'_R_'+str(Rfree_base[0])+'_altBenefits.txt'
     outFile = open(outFileStr, 'w')

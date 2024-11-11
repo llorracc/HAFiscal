@@ -15,13 +15,13 @@ Using a heterogeneous agent model calibrated to match measured spending dynamics
 To reproduce all the computational results of the paper:
 
 ```
-	/bin/bash reproduce_code.sh
+	/bin/bash reproduce_document.sh
 ```
 
 To produce pdf version of the paper from a unix (macOS/linux) command line:
 
 ```
-	/bin/bash reproduce_text.sh
+	/bin/bash reproduce_document.sh
 ```
 
 To reproduce both computational results and the paper:

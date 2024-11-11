@@ -1,39 +1,43 @@
 Results for parameters:
-R = 1.01, CRRA = 2.0, IncUnemp = 0.7, IncUnempNoBenefits = 0.5, Splurge = 0.302
+R = 1.01, CRRA = 2.0, IncUnemp = 0.7, IncUnempNoBenefits = 0.5, Splurge = 0.24904508521012406
 
-Education group = 0.00: beta = 0.7350, nabla = 0.2984, GICfactor = 0.9983
+Education group = 0.00: beta = 0.7190, nabla = 0.3175, GICfactor = 0.9976
 	Median LW/PI-ratio = 4.64
-	Lorenz Points = [0.0, 0.0072, 0.6521, 3.5703]
+	Lorenz Points = [0.0, 0.0009, 0.5795, 3.5833]
 	Base approximation to beta distribution:
-	[0.4792 0.5645 0.6497 0.735  0.8202 0.9055 0.9907]
+	[0.4468 0.5375 0.6282 0.719  0.8097 0.9004 0.9911]
 	Actual approximation to beta distribution:
-	[0.4792 0.5645 0.6497 0.735  0.8202 0.9055 0.9907]
+	[0.4468 0.5375 0.6282 0.719  0.8097 0.9004 0.9911]
 	GIC satisfied = True	GICmaxBeta = 1.0034
-	Imposed GIC-consistent maximum beta = 1.00171
+	Imposed GIC-consistent maximum beta = 1.00103
 
-Education group = 1.00: beta = 0.9234, nabla = 0.1315, GICfactor = 0.9840
-	Median LW/PI-ratio = 30.19
-	Lorenz Points = [0.058, 0.8506, 3.3256, 11.4454]
+Education group = 1.00: beta = 0.9107, nabla = 0.1374, GICfactor = 0.9849
+	Median LW/PI-ratio = 30.18
+	Lorenz Points = [0.0468, 0.7863, 3.1192, 11.4932]
 	Base approximation to beta distribution:
-	[0.8106 0.8482 0.8858 0.9234 0.9609 0.9985 1.0361]
+	[0.7929 0.8321 0.8714 0.9107 0.9499 0.9892 1.0285]
 	Actual approximation to beta distribution:
-	[0.8106 0.8482 0.8858 0.9234 0.9609 0.9892 0.9892]
+	[0.7929 0.8321 0.8714 0.9107 0.9499 0.9892 0.9902]
 	GIC satisfied = False	GICmaxBeta = 1.0053
-	Imposed GIC-consistent maximum beta = 0.98921
+	Imposed GIC-consistent maximum beta = 0.9902
 
-Education group = 2.00: beta = 0.9838, nabla = 0.0096, GICfactor = 0.9991
+Education group = 2.00: beta = 0.9826, nabla = 0.0139, GICfactor = 0.9959
 	Median LW/PI-ratio = 112.80
-	Lorenz Points = [0.3334, 1.4679, 3.9257, 9.8583]
+	Lorenz Points = [0.2834, 1.2989, 3.5991, 10.0674]
 	Base approximation to beta distribution:
-	[0.9756 0.9783 0.9811 0.9838 0.9866 0.9893 0.9921]
+	[0.9707 0.9746 0.9786 0.9826 0.9865 0.9905 0.9945]
 	Actual approximation to beta distribution:
-	[0.9756 0.9783 0.9811 0.9838 0.9866 0.9893 0.9921]
+	[0.9707 0.9746 0.9786 0.9826 0.9865 0.9905 0.9945]
 	GIC satisfied = True	GICmaxBeta = 1.0061
-	Imposed GIC-consistent maximum beta = 1.00518
+	Imposed GIC-consistent maximum beta = 1.00191
 
 Population calculations:
-	Median LW/PI-ratios = [4.64, 30.54, 113.43]
-	Lorenz Points = [0.0467, 0.6069, 2.6058, 8.8753]
-	Wealth shares = [1.143, 21.968, 76.889]
-	Average MPCs by Ed. (incl. splurge) = [0.866, 0.711, 0.475, 0.636]
-	Average MPCs by Wealth (incl. splurge) = [0.947, 0.718, 0.496, 0.383, 0.636]
+	Median LW/PI-ratios = [4.18, 29.60, 112.62]
+	Lorenz Points = [0.0333, 0.4736, 2.1017, 7.8938]
+	Wealth shares = [1.159, 20.139, 78.703]
+	Average LW/PI-ratios: D = 114.75 H = 158.98 C = 568.86
+	Total LW/Total PI: D = 125.35 H = 164.38 C = 606.52
+	Average MPCs by Ed. (incl. splurge) = [0.859, 0.702, 0.451, 0.621]
+	Average annual MPCs by Wealth (incl. splurge) = [0.95, 0.729, 0.483, 0.323, 0.621]
+	Average lottery-win-year MPCs by Wealth (simple, incl. splurge) = [0.875, 0.602, 0.41, 0.297, 0.546]
+	Average lottery-win-year MPCs by Wealth (incl. splurge) = [0.779, 0.629, 0.437, 0.305, 0.538]

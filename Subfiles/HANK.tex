@@ -1,0 +1,56 @@
+\input{./.econtexRoot}
+\documentclass[\econtexRoot/HAFiscal]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/HAFiscal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+	
+\FloatBarrier
+\hypertarget{hank}{}\par\section{Robustness in a General Equilibrium HANK Model}
+\notinsubfile{\label{sec:hank}}
+
+
+The main results of this paper are presented in a partial equilibrium setup with aggregate demand effects that do not arise from a general equilibrium setup. We think there are many advantages to studying the welfare and multiplier effects in this setting without embedding the model in general equilibrium.  First, general equilibrium models often struggle to adequately capture the feedback mechanisms between consumption and income, particularly the asymmetric nature of these relationships during recessionary versus expansionary periods. Additionally, a complete general equilibrium treatment would necessitate the analysis of numerous complex channels including investment dynamics, firm ownership structures and dividend distribution policies, inventory management, and international trade flows—elements that, while important in their own right, would potentially obscure the core mechanisms we aim to investigate.
+
+
+
+Despite the advantages of our partial equilibrium approach, here we complement our analysis with a  general equilibrium HANK model, as standard as possible, but able to capture supply-side effects that are absent from the partial equilibrium setup. In particular, fiscal policies can generate labor market responses that our partial equilibrium analysis does not address. Employee tax cuts, for instance, may increase employment through changes in workers' incentives. These supply-side channels can affect both the welfare implications and the fiscal multipliers of different policy interventions.
+
+
+
+We embed the consumption choices of our households—--with heterogeneity over education type and discount factors—--in a New Keynesian model with search and matching. Aside from the consumption block of the model, the framework closely follows **Du (2024)**, with complete details provided in appendix \ref{sec:hank_appendix}.\footnote{**Du (2024) in turn builds of Bardoczy (....) and Auclert et al. (....). WILL - CAN YOU FILL IN THESE CITATIONS?**} The general equilibrium structure generates fiscal multipliers through a Keynesian cross mechanism, which becomes particularly pronounced when monetary policy is passive. Moreover, the search and matching framework allows for a supply-side response to policy interventions, allowing us to capture both demand and supply effects of fiscal policies.
+
+
+
+Our approach in this section relies on linearizing the macro dynamics of the model and employs the Sequence Space Jacobian methods developed by **Auclert et al. (2022)**. This linearization imposes certain constraints on our analysis. Notably, we cannot evaluate the effects of different policies starting from a deep recessionary state, as we do in our main results. This limitation prevents us from conducting welfare comparisons between recessionary periods and the steady state. Additionally, the Keynesian cross mechanism embedded in the model exhibits uniform behavior regardless of the degree of economic slack—--a feature that stands in contrast to the state-dependent multipliers we apply in our partial equilibrium analysis****CHRIS - CAN YOU ADD TEXT ABOUT CENTRAL BANKS REACTING LATE, ETC*****.\footnote{We note two additional technical limitations of our general equilibrium implementation. First, stimulus payments in the model are specified as proportional to permanent income, rather than as means-tested fixed dollar amounts as implemented in practice. Second, we do not include the splurge in consumption.}
+
+
+
+The consumption response in this general equilibrium model to each of the three policies is shown in figure \ref{fig:HANK_IRFs} For each of the three fiscal policies, we have shown the consumption response under three different monetary policy rules: 1) an active Taylor rule with a coefficent of 1.5 on inflation; 2) a fixed nominal rate (simulating a effective lower bound); and 3) a fixed real rate (closest in spirit to our partial equilibrium analysis).
+
+
+\begin{figure}[th]
+	\begin{center}
+		\includegraphics[width=.9\textwidth]{../Figures/HANK_IRFs}
+		\caption{Consumption Impulse Responses to Each Policy in the HANK Model}
+		\notinsubfile{\label{fig:HANK_IRFs}}
+	\end{center}
+\end{figure}
+
+
+Overall, the IRFs from this model are similar to those from the partial equilibrium analysis, especially under the fixed real-rate rule.\footnote{Note that the dynamics of the UI extension IRF are somewhat faster acting. This is because, under the recession that we study in the partial equilibrium analysis, the large mass of newly-unemployed households do not start receiving extended UI for six months. } Furthermore, although we are unable to repeat our welfare analysis under a recession in this model, the distributional effects of the policies are similar. Most importantly, the mechanism leading to far greater welfare benefits for the UI extension, namely that the newly unemployed have high marginal utility, are robust to the supply-side effects of a general equilibrium HANK model.
+
+\begin{figure}[th]
+	\begin{center}
+		\includegraphics[width=.9\textwidth]{../Figures/HANK_multipliers}
+		\caption{Consumption Multipliers over Different Horizons in the HANK Model}
+		\notinsubfile{\label{fig:HANK_multipliers}}
+	\end{center}
+\end{figure}
+
+
+Figure \ref{fig:HANK_multipliers} shows the consumption multipliers over different horizons under a fixed real rate rule. This figure can be compared to figure \ref{fig:cumulativemultipliers} which shows a similar figure in our partial equilirium analysis. In both versions of the model, the consumption multipliers over time horizons are similar, with the effect of the tax cut substantially smaller than the stimulus check or UI extension policies, despite the inclusion of supply-side effects in this HANK model.
+
+
+\ifthenelse{\boolean{Web}}{}{
+\end{document} \endinput
+}

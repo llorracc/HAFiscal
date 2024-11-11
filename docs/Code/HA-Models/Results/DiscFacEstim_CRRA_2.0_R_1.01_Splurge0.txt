@@ -1,5 +1,5 @@
-{'EducationGroup': 0, 'beta': 0.7015979189526772, 'nabla': 0.6007400922107125}
-{'EducationGroup': 1, 'beta': 0.9040887956731334, 'nabla': 0.09922690869714172}
-{'EducationGroup': 2, 'beta': 0.9781172660530426, 'nabla': 0.015259168320553722}
+{'EducationGroup': 0, 'beta': np.float64(0.7001170241385564), 'nabla': np.float64(0.33919748446677633), 'GICx': np.float64(5.827531657297868)}
+{'EducationGroup': 1, 'beta': np.float64(0.8991815015222728), 'nabla': np.float64(0.10577091081769854), 'GICx': np.float64(5.519580208328268)}
+{'EducationGroup': 2, 'beta': np.float64(0.9774794313046824), 'nabla': np.float64(0.018523250050409532), 'GICx': np.float64(5.8103599196932505)}
 
-Parameters: R = 1.01, CRRA = 2.0, Ub = 0.7, Unb = 0.5, Splurge = 0
+Parameters: R = 1.01, CRRA = 2.0, IncUnemp = 0.7, IncUnempNoBenefits = 0.5, Splurge = 0

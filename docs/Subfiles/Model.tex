@@ -1,6 +1,27 @@
-\input{./.econtexRoot}
+% allow latex to find custom stuff
+\input{@resources/tex-add-search-paths}  
+
+% Set paths (like, \LaTeXInputs) to find resources
+\input{./.econtexRoot} 
+
 \documentclass[\econtexRoot/HAFiscal]{subfiles}
+%\documentclass{article}
 \onlyinsubfile{\externaldocument{\econtexRoot/HAFiscal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = *}
+
+% \usepackage[T1]{fontenc}
+% \def\nolig#1{\def\do##1{\catcode`##1=\active
+%     \begingroup\lccode`\~=`##1\lowercase{\endgroup
+%         \def~}{##1}}\do#1}
+%   \nolig{f}
+  
+% \usepackage[disable=ligatures]{microtype}
+\usepackage[tightpage]{preview}
+%\usepackage{fontspec}
+%\defaultfontfeatures{Ligatures=NoCommon}
+
 
 \begin{document}
 \notinsubfile{\renewcommand{\econtexRoot}{.}}
@@ -10,25 +31,25 @@
 
 Consumers differ by their level of education and, within education group, by subjective discount factors (calibrated to match the within-group distribution of liquid wealth). We first describe each kind of consumer's problem, given an income process with permanent and transitory shocks calibrated to their type, as well as type-specific shocks to employment. The next step describes the arrival of a recession and the policies we study as potential fiscal policy responses. The last section discusses an extension incorporating aggregate demand effects that induce feedback from aggregate consumption to income and (via the marginal propensity to consume) back to consumption, amplifying the effect of a recession when it occurs. 
 
-A consumer $i$ has education $e(i)$ and a subjective discount factor $\beta_i$. The consumer faces a stochastic income stream, $\mathbf{y}_{i,t}$, and chooses to consume some of that income when it arrives (the `splurge') and then to optimize consumption with what is left over. Therefore, consumption each period for consumer $i$ can be written as
+A consumer $i$ has education $e(i)$ and a subjective discount factor $\beta_i$. The consumer faces a stochastic income stream, $\yLvl_{i,t}$, and chooses to consume some of that income when it arrives (the `splurge') and then to optimize consumption with what is left over. Therefore, consumption each period for consumer $i$ can be written as
 \begin{verbatimwrite}{\EqDir/splurge}
 \begin{align}
-  \mathbf{c}_{i,t} &= \mathbf{c}_{sp,i,t} + \mathbf{c}_{opt,i,t}, \notinsubfile{\label{sec:model}}
+  \cLvl_{i,t} &= \cLvl_{sp,i,t} + \cLvl_{opt,i,t}, \notinsubfile{\label{eq:model}}
 \end{align}
 \end{verbatimwrite}
 \input{\EqDir/splurge}
-where $\mathbf{c}_{i,t}$ is total consumption, $\mathbf{c}_{sp,i,t}$ is the splurge consumption, and $\mathbf{c}_{opt,i,t}$ is the consumer's optimal choice of consumption after splurging. Splurge consumption is simply a fraction of income:
+where $\cLvl_{i,t}$ is total consumption, $\cLvl_{sp,i,t}$ is the splurge consumption, and $\cLvl_{opt,i,t}$ is the consumer's optimal choice of consumption after splurging. Splurge consumption is simply a fraction of income:
 \begin{align}
-  \mathbf{c}_{sp,i,t} = \varsigma \mathbf{y}_{i,t},
+  \cLvl_{sp,i,t} = \varsigma \yLvl_{i,t},
 \end{align}
 while the optimized portion of consumption is chosen to maximize the perpetual-youth lifetime expected-utility-maximizing consumption, where $D$ is the end-of-life probability:
 \begin{align}
-  \sum_{t=0}^{\infty}\beta_i^t (1-D)^t \mathbb{E}_0 u(\mathbf{c}_{opt,i,t}).
+  \sum_{t=0}^{\infty}\beta_i^t (1-D)^t \mathbb{E}_0 u(\cLvl_{opt,i,t}).
 \end{align}
 We use a standard CRRA (constant relative risk aversion) utility function, so $u(c) = c^{1-\gamma}/(1-\gamma)$ for $\gamma \neq 1$ and $u(c) = \log(c)$ for $\gamma=1$, where $\gamma$ is the coefficient of relative risk aversion. The optimization is subject to the budget constraint, given existing market resources $\mathbf{m}_{i,t}$ and income state, and a no-borrowing constraint: 
 \begin{align}
-  \mathbf{a}_{i,t} &= \mathbf{m}_{i,t} - \mathbf{c}_{i,t}, \notag \\ 
-  \mathbf{m}_{i,t+1} &= R \mathbf{a}_{i,t} + \mathbf{y}_{i,t+1}, \\
+  \mathbf{a}_{i,t} &= \mathbf{m}_{i,t} - \cLvl_{i,t}, \notag \\ 
+  \mathbf{m}_{i,t+1} &= R \mathbf{a}_{i,t} + \yLvl_{i,t+1}, \\
   \mathbf{a}_{i,t} &\geq 0,   \notag
 \end{align}
 where $R$ is the gross interest factor for accumulated assets $\mathbf{a}_{i,t}$.
@@ -43,7 +64,7 @@ where $\psi_{i,t+1}$ is the shock to permanent income and $\Gamma_{e(i)}$ is the
 
 The actual income a consumer receives will be subject to the individual's employment status as well as transitory shocks, $\xi_{i,t}$:
 \begin{align}
-  \mathbf{y}_{i,t} =   \begin{cases}
+  \yLvl_{i,t} =   \begin{cases}
     \xi_{i,t}\mathbf{p}_{i,t}, & \text{if employed} \\
     \rho_b \mathbf{p}_{i,t}, & \text{if unemployed with benefits} \\
     \rho_{nb} \mathbf{p}_{i,t}, & \text{if unemployed without benefits} 
@@ -67,13 +88,15 @@ We model the arrival of a recession, and the government policy response to it, a
 
 \paragraph{Financing the policies.} Some work in the HA macro literature has shown that if taxes are raised immediately to offset any fiscal stimulus, results can be very different than they would be if, as occurs in reality, recessionary policies are debt financed.  Typical fiscal rules assume that any increase in debt gets financed over a long interval.  Since much of our analysis effectively normalizes our policies' size so that the total cost of each policy (and therefore the associated debt) is the same, almost all of the effects of any particular fiscal rule should be very similar for each of our policies so long as the great majority of the debt is repaid after the short recessionary period that is our main focus.
 
-To keep our analysis as simple as possible, we assume that our policies are debt financed and that none of the policy-induced government debt is repaid during that short period.  Any of a variety of fiscal rules could be imposed for the period following our short period of interest, but we did not want to choose any particular fiscal rule in order to avoid making a choice that should have little consequence for our key question. Advocates of alternative fiscal rules likely already have intuitions about how such rules' economic consequences differ, but under our approach, those consequences should be nearly the same for all three policies we consider.  Alternative choices of fiscal rules should therefore not affect the ranking of policies that is our principal concern. 
+To keep our analysis as simple as possible, we do not model the debt repayment.  Any of a variety of fiscal rules could be imposed for the period following our short period of interest, but we did not want to choose any particular fiscal rule in order to avoid making a choice that has little consequence for our key question. Advocates of alternative fiscal rules likely already have intuitions about how such rules' economic consequences differ, but those consequences---under our partial equilibrium analysis---will be similar for all three policies we consider.  Alternative choices of fiscal rules will therefore not affect the ranking of policies that is our principal concern.\footnote{In our general equilibrium analysis in section\ref{sec:hank}, we apply a fiscal rule that assumes debt is slowly paid back over time.}
 
 
 \hypertarget{aggregate-demand-effects}{}\par\subsection{Aggregate demand effects}
 \notinsubfile{\label{sec:ADeffects}}
 
-Our baseline model is a partial equilibrium model that does not include any feedback from aggregate consumption to income. In an extension to the model, we add aggregate demand effects during the recession. With this extension, any changes in consumption away from the steady-state consumption level feed back into labor income. Aggregate demand effects are evaluated as
+Our baseline model is a partial equilibrium model that does not include any feedback from aggregate consumption to income. In an extension to the model, we add aggregate demand effects during the recession. The motivation for this specification comes from the idea that spending in an economy with substantial slack and in which the central bank is unable to prevent a recession will result in higher utilization rates and greater output. By contrast, government spending in an economy running at potential with an active monetary policy will not succeed in increasing output. The recent inflation experience of the U.S. provides some evidence that output responds highly non-linearly to aggregate demand. This idea is explored in a recent revival of research into non-linear Phillips curves, such as \cite{benigno2023baaack} and \cite{blanco2024nonlinear}.     
+
+With this extension, any changes in consumption away from the steady-state consumption level feed back into labor income. Aggregate demand effects are evaluated as
 \begin{align}
   AD(C_t) =   \begin{cases}
     \Big(\frac{C_t}{\tilde{C}}\Big)^\kappa, & \text{if in a recession} \\
@@ -82,11 +105,11 @@ Our baseline model is a partial equilibrium model that does not include any feed
 \end{align}
 where $\tilde{C}$ is the level of consumption in the steady state. Idiosyncratic income in the aggregate demand extension is multiplied by $AD(C_t)$:
 \begin{align}
-  \mathbf{y}_{AD,i,t} = AD(C_t)\mathbf{y}_{i,t}.
+  \yLvl_{AD,i,t} = AD(C_t)\yLvl_{i,t}.
 \end{align}
-The series $\mathbf{y}_{AD,i,t}$ is then used for each consumer's budget constraint.
+The series $\yLvl_{AD,i,t}$ is then used for each consumer's budget constraint.
 
-\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+\onlyinsubfile{\input{bibliography_blend}}
 
 \ifthenelse{\boolean{Web}}{}{
   \onlyinsubfile{\captionsetup[figure]{list=no}}

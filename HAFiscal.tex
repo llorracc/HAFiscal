@@ -1,9 +1,21 @@
-% -*- mode: LaTeX; TeX-PDF-mode: t; -*-     # Configure emacs auctex viewer
-\input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
-\input{./.econtexRoot} % Set paths (like, \LaTeXInputs) to find resources
+% -*- mode: LaTeX; TeX-PDF-mode: t; -*-  # Config emacs auctex
+
+% allow latex to find custom stuff
+\input{@resources/tex-add-search-paths}  
+
+% Set paths (like, \LaTeXInputs) to find resources
+\input{./.econtexRoot} 
 
 % Document has title page and table of contents and header:
 \documentclass[titlepage, headings=optiontotocandhead]{econark}
+
+\usepackage[T1]{fontenc}
+
+%\usepackage{lmodern}
+%\renewcommand{\familydefault}{\ttdefault} % Ban ugly ligatures
+
+% executeAllowed boolean true if able to run shell scripts
+%\usepackage{set-boolean-indicating-execute-permissions} 
 
 \newcommand{\texname}{HAFiscal} % Keyname for paper (optional)
 
@@ -12,34 +24,37 @@
 \usepackage{@local/owner} % for urls that are constructed
 
 % To include Appendix and Table of Contents? false->true
-\provideboolean{Appendix}\setboolean{Appendix}{true}
+\provideboolean{Appendix}
+\setboolean{Appendix}{false} % uncomment next line to include
+% \setboolean{Appendix}{true}
 \provideboolean{TOC}\setboolean{TOC}{false}
 
+\provideboolean{draftmode}\setboolean{draftmode}{true}
+\newcommand{\Draft}{\ifthenelse{\boolean{draftmode}}}
+\Draft{\usepackage{showlabels}
+  \renewcommand{\showlabelsetlabel}[1]{\tiny #1}
+}{}
+
 % Standard useful packages for economics
-\usepackage{pdforhtml}
+\usepackage{pdforhtml}         % allow compile as pdf or html
 \usepackage{econark-multibib}  % Only use bib files that exist
 \bibliographystyle{econtex}
 %\usepackage{econark-titlepage} 
 
 % When compiling Web version of paper, construct targets/anchors
-\ifthenelse{\boolean{Web}}{\hypersetup{destlabel=true}
-}{
+\ifthenelse{\boolean{Web}}{
+  \hypersetup{destlabel=true} % set up html labels
+}{ % begin non Web instructions
   \provideboolean{showPageHead}{\setboolean{showPageHead}{true}}
-  \usepackage{scrlayer-scrpage} % Package for page headers if PDF
-  \usepackage{caption} % allow suppression of appendix figures in NoAppendix PDF
+  \usepackage{scrlayer-scrpage}  % Package for page headers if PDF
+  \usepackage{caption}           % allow suppression of appendix figures
 }
-
-% Custom author (year) bib style
-%\bibliographystyle{\econtexBibStyle} 
-%\bibliographystyle{plainnat}
 
 \begin{document}
 % Tell subfiles they are not being compiled as standalone files
 \renewcommand{\onlyinsubfile}[1]{}
 \renewcommand{\notinsubfile}[1]{#1}
 
-
-%\input{\LaTeXInputs/econtex_notinsubfile} % instead are part of larger document
 \subfile{HAFiscal-titlepage}\pagebreak
 
 % Table of contents; to omit, \setboolean{TOC}{false} above
@@ -60,7 +75,7 @@
 }{}
 
 % Make the bibliography
-%\input{\LaTeXInputs/bibliography_blend}
+%\input{bibliography_blend}
 \econarkmultibib{\texname}
 \end{document}\endinput
 
