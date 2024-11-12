@@ -1,9 +1,16 @@
  
 /* start css.sty */
+.cmex-10{font-size:83%;}
+.cmr-5{font-size:41%;}
+.cmr-7{font-size:58%;}
 .cmr-10{font-size:83%;}
+.cmmi-5{font-size:41%;font-style: italic;}
+.cmmi-7{font-size:58%;font-style: italic;}
 .cmmi-10{font-size:83%;font-style: italic;}
+.cmsy-5{font-size:41%;}
+.cmsy-7{font-size:58%;}
+.cmsy-10{font-size:83%;}
 .ectt-1000{font-size:83%; font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
@@ -29,17 +36,17 @@
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
 .ecrm-0600{font-size:50%;}
 .ecrm-1440{font-size:116%;}
 .ecrm-1095{font-size:83%;}
 .ecrm-1000{font-size:83%;}
 .cmr-8{font-size:66%;}
+.cmr-6{font-size:50%;}
 .cmmi-12{font-style: italic;}
 .cmmi-8{font-size:66%;font-style: italic;}
 .cmmi-6{font-size:50%;font-style: italic;}
 .cmsy-8{font-size:66%;}
-.ecti-1200{ font-style: italic;}
+.cmsy-6{font-size:50%;}
 .ecti-1200{ font-style: italic;}
 .ecti-1200{ font-style: italic;}
 .ecti-1200{ font-style: italic;}
@@ -67,21 +74,6 @@
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1000{font-size:83%; font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
 .ecbx-1095{font-size:83%; font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
@@ -95,7 +87,19 @@
 .ecbx-1095{ font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
+.ecbx-1000{font-size:83%; font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
 .ecti-1000{font-size:83%; font-style: italic;}
 .ecti-1000{ font-style: italic;}
 .ecti-1000{ font-style: italic;}
@@ -109,11 +113,8 @@
 .ecti-1000{ font-style: italic;}
 .ecti-1000{ font-style: italic;}
 .ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
 .cmsy-10x-x-109{font-size:90%;}
-.ecrm-0700{font-size:58%;}
 .ecti-0800{font-size:66%; font-style: italic;}
-.ecti-0800{ font-style: italic;}
 .ecti-0800{ font-style: italic;}
 .ecti-0800{ font-style: italic;}
 .ecti-0800{ font-style: italic;}
@@ -318,143 +319,15 @@ span.textso{letter-spacing: 0.3em; word-spacing: 0.3em}
 span.textul{text-decoration:underline}
 span.textst{text-decoration:line-through}
 span.textcaps{font-variant:small-caps}
-.pic-tabular { display: block; margin: 0 auto; text-align: center; }
-.pic-tabular img { display: block; margin: 0 auto; }
 .equation{ display: table; width: 1.0; margin-top: 1.5em; margin-bottom: 1.5em; }
 .equation td:first-child{ width: 0.99; text-align: center; vertical-align: middle; }
 .equation td:last-child{ width: 0.01; text-align: right; vertical-align: middle; }
 .equation-star{ display: block; text-align: center; margin-top: 1.5em; margin-bottom: 1.5em; }
 .math-display img{ /* Targets images within elements with class math-display */ display: block; /* Makes the image a block element */ margin-left: auto; /* These two margin settings together */ margin-right: auto; /* center the image horizontally */ width: 1.0; } 
-img[src="HAFiscal0x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal1x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal2x.svg"]{vertical-align:-21.87489271123013%;}
-img[src="HAFiscal3x.svg"]{vertical-align:-45.14284638069663%;}
-img[src="HAFiscal4x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal6x.svg"]{vertical-align:-38.6189420002002%;}
-img[src="HAFiscal7x.svg"]{vertical-align:-38.6189420002002%;}
-img[src="HAFiscal8x.svg"]{vertical-align:-38.6189420002002%;}
-img[src="HAFiscal10x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal12x.svg"]{vertical-align:-23.98029938783202%;}
-img[src="HAFiscal13x.svg"]{vertical-align:-21.8748614188705%;}
-img[src="HAFiscal14x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal15x.svg"]{vertical-align:-23.17867845336025%;}
-img[src="HAFiscal16x.svg"]{vertical-align:-31.11090313904447%;}
-img[src="HAFiscal17x.svg"]{vertical-align:-38.6189420002002%;}
-img[src="HAFiscal19x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal20x.svg"]{vertical-align:-38.6189420002002%;}
-img[src="HAFiscal22x.svg"]{vertical-align:-28.70721018848861%;}
-img[src="HAFiscal23x.svg"]{vertical-align:-32.04430438972081%;}
-img[src="HAFiscal24x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal25x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal26x.svg"]{vertical-align:-25.38306433437407%;}
-img[src="HAFiscal27x.svg"]{vertical-align:-32.96301196149863%;}
-img[src="HAFiscal28x.svg"]{vertical-align:-28.70721018848861%;}
-img[src="HAFiscal30x.svg"]{vertical-align:-28.70721018848861%;}
-img[src="HAFiscal31x.svg"]{vertical-align:-32.96301196149863%;}
-img[src="HAFiscal32x.svg"]{vertical-align:-31.11090313904447%;}
-img[src="HAFiscal33x.svg"]{vertical-align:-31.11090313904447%;}
-img[src="HAFiscal34x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal35x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal36x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal37x.svg"]{vertical-align:-19.82381119949344%;}
-img[src="HAFiscal38x.svg"]{vertical-align:-9.211426196584562%;}
-img[src="HAFiscal39x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal40x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal41x.svg"]{vertical-align:-25.83717176230433%;}
-img[src="HAFiscal42x.svg"]{vertical-align:-18.88103717338242%;}
-img[src="HAFiscal44x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal45x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal47x.svg"]{vertical-align:-38.6189420002002%;}
 span#colorbox1{background-color:#FFFF00;}
 span#textcolor2{background-color:#FFFF00}
 span#textcolor3{background-color:#FFFF00}
-img[src="HAFiscal48x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal49x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal50x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal51x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal52x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal54x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal55x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal56x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal57x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal58x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal59x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal60x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal61x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal62x.svg"]{vertical-align:-30.2604854689564%;}
-img[src="HAFiscal63x.svg"]{vertical-align:-30.2604854689564%;}
-img[src="HAFiscal64x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal65x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal66x.svg"]{vertical-align:-21.87489271123013%;}
-img[src="HAFiscal67x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal68x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal69x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal70x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal71x.svg"]{vertical-align:-23.17867845336025%;}
-img[src="HAFiscal72x.svg"]{vertical-align:-13.10853139803418%;}
-img[src="HAFiscal73x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal74x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal77x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal78x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal79x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal80x.svg"]{vertical-align:-30.2604854689564%;}
-img[src="HAFiscal81x.svg"]{vertical-align:-30.2604854689564%;}
-img[src="HAFiscal82x.svg"]{vertical-align:-32.04430438972081%;}
-img[src="HAFiscal83x.svg"]{vertical-align:-17.99990539536346%;}
-img[src="HAFiscal84x.svg"]{vertical-align:-17.99990539536346%;}
-img[src="HAFiscal85x.svg"]{vertical-align:-17.99990539536346%;}
-img[src="HAFiscal86x.svg"]{vertical-align:-23.17867845336025%;}
-img[src="HAFiscal87x.svg"]{vertical-align:-23.17867845336025%;}
-img[src="HAFiscal88x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal89x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal90x.svg"]{vertical-align:-23.03821077902779%;}
-img[src="HAFiscal91x.svg"]{vertical-align:-23.03821077902779%;}
-img[src="HAFiscal92x.svg"]{vertical-align:-27.55590012812809%;}
-img[src="HAFiscal93x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal94x.svg"]{vertical-align:-21.87489271123013%;}
-img[src="HAFiscal95x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal96x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal97x.svg"]{vertical-align:-21.87489271123013%;}
-img[src="HAFiscal98x.svg"]{vertical-align:-17.99993286112323%;}
-img[src="HAFiscal99x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal100x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal101x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal102x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal103x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal105x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal106x.svg"]{vertical-align:-21.87489271123013%;}
-img[src="HAFiscal107x.svg"]{vertical-align:-17.99993286112323%;}
-img[src="HAFiscal108x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal109x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal110x.svg"]{vertical-align:-21.87489271123013%;}
-img[src="HAFiscal111x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal112x.svg"]{vertical-align:-17.99993286112323%;}
-img[src="HAFiscal113x.svg"]{vertical-align:-18.70662117884699%;}
-img[src="HAFiscal114x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal115x.svg"]{vertical-align:-22.83112022151092%;}
-img[src="HAFiscal116x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal117x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal118x.svg"]{vertical-align:-0%;}
 span#colorbox4{background-color:#FFFF00;}
-img[src="HAFiscal120x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal121x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal123x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal124x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal125x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal126x.svg"]{vertical-align:-17.99990539536346%;}
-img[src="HAFiscal127x.svg"]{vertical-align:-36.11127790442295%;}
-img[src="HAFiscal129x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal130x.svg"]{vertical-align:-38.6189420002002%;}
-img[src="HAFiscal131x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal132x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal133x.svg"]{vertical-align:-27.15821141042788%;}
-img[src="HAFiscal134x.svg"]{vertical-align:-38.6189420002002%;}
-img[src="HAFiscal135x.svg"]{vertical-align:-22.0125786163522%;}
-img[src="HAFiscal136x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal137x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal138x.svg"]{vertical-align:-0%;}
-img[src="HAFiscal139x.svg"]{vertical-align:-25%;}
-img[src="HAFiscal141x.svg"]{vertical-align:-27.15821141042788%;}
 span#textcolor5{background-color:#FFFF00}
 /* end css.sty */
 

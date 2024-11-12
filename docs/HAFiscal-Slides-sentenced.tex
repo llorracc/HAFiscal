@@ -1,13 +1,20 @@
-\input{./.econtexRoot}
+% -*- mode: LaTeX; TeX-PDF-mode: t; -*-  # Config emacs auctex
+
+% allow latex to find custom stuff
+\input{@resources/tex-add-search-paths}  
+
+% Set paths (like, \LaTeXInputs) to find resources
+\input{./.econtexRoot} 
+
 \documentclass[pdflatex,aspectratio=169]{beamer}
-\usepackage{HAFiscal-Slides}
+%\usepackage{HAFiscal-Slides}
 
 \usepackage{multirow}
 
 \newbool{fullcon}\global\booltrue{fullcon}\boolfalse{fullcon} %full content, 30-40 min
 \newbool{bundesb}\global\booltrue{bundesb}\boolfalse{bundesb} %reduced, 20 min presentation
 \newbool{upenn}\global\booltrue{upenn}%\boolfalse{upenn} %reduced, 20 min presentation
-\usepackage{\econark,\econtexShortcuts}
+\usepackage{\econark}
 
 
 % _____________ Opening slide _______________________
@@ -27,7 +34,7 @@ Carroll (JHU)
   H{\aa}kon Tretvoll (SSB)
 }
 
-\ifbool{upenn}{\date[\today]{University of Pennsylvania, 2024-11-06  \\ \medskip \medskip \medskip \href{https://econ-ark.org/}{\small Powered By} \\ \includegraphics[width=0.5in]{econ-ark-logo-small.png}}}
+\ifbool{upenn}{\date[\today]{University of Pennsylvania, 2024-11-06  \\ \medskip \medskip \medskip \href{https://econ-ark.org/}{\small Powered By} \\ \includegraphics[width=0.5in]{./@resources/econ-ark/econ-ark-logo-small.png}}}
 
 \ifbool{bundesb}{
       \date[\today]{CEF - July 6, 2023  \\ \medskip \medskip \medskip

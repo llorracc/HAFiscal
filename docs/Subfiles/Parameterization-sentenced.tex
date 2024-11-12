@@ -441,25 +441,25 @@ Our quarterly model is broadly consistent with this, and the drop in spending th
 
 
 \begin{figure}[htb]
-	\centering
-	\begin{subfigure}[b]{.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{\econtexRoot/Figures/IMPCs_wSplEstimated}
-		\caption{Share of lottery win spent}
-		\notinsubfile{\label{fig:USaggmpclotterywin}}
-	\end{subfigure}
-	\begin{subfigure}[b]{.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/FromPandemicCode/Figures/UnempSpell_Dynamics}
-		\caption{Spending upon expiry of UI benefits}
-		\notinsubfile{\label{fig:expiryUI}}
-	\end{subfigure}%
-	\caption{Untargeted moments}
-	\notinsubfile{\label{fig:untargetedMoments}}
-	\parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in \citet{fagereng_mpc_2021}; see their Figure~A5.
+    \centering
+    \begin{minipage}[b]{.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{\econtexRoot/Figures/IMPCs_wSplEstimated}
+        \caption{Share of lottery win spent}
+        \notinsubfile{\label{fig:USaggmpclotterywin}}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[b]{.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/FromPandemicCode/Figures/UnempSpell_Dynamics}
+        \caption{Spending upon expiry of UI benefits}
+        \notinsubfile{\label{fig:expiryUI}}
+    \end{minipage}
+    \caption{Untargeted moments}
+    \notinsubfile{\label{fig:untargetedMoments}}
+    \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in \citet{fagereng_mpc_2021}; see their Figure~A5.
 Panel (b) shows the evolution of income and spending for households who remain unemployed long enough for UI benefits to expire; see Figure~2 in \citet{ganongConsumer2019}.\normalsize}
 \end{figure}
-
 
 \ifthenelse{\boolean{Web}}{}{
   \end{document} \endinput

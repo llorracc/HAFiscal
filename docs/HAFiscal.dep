@@ -204,5 +204,13 @@
   *{file}   {Subfiles/Conclusion}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Appendix}{0000/00/00 v0.0}
+  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/Comparison_Splurge_Table}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/Splurge0/Multiplier_SplurgeComp.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Appendix-HANK}{0000/00/00 v0.0}
+  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
   *{file}   {HAFiscal.bbl}{0000/00/00 v0.0}
 }
