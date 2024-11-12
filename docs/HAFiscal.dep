@@ -179,10 +179,30 @@
   *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Subfiles/Abstract.vrb}{0000/00/00 v0.0}
   *{file}   {Subfiles.texinput}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Intro}{0000/00/00 v0.0}
+  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
   *{file}   {Subfiles/Model}{0000/00/00 v0.0}
   *{file}   {Subfiles/@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Equations/splurge}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Parameterization}{0000/00/00 v0.0}
+  *{file}   {Subfiles/@resources/tex-add-search-paths}{0000/00/00 v0.0}
+  *{file}   {./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {./Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/MPC_WealthQuartiles_Table.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Comparing-policies}{0000/00/00 v0.0}
+  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/CRRA2/Multiplier.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/CRRA2/welfare6.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/Splurge0/welfare6_SplurgeComp.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles/HANK}{0000/00/00 v0.0}
+  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/Conclusion}{0000/00/00 v0.0}
+  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
   *{file}   {HAFiscal.bbl}{0000/00/00 v0.0}
 }

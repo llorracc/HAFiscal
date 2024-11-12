@@ -1,6 +1,14 @@
  
 /* start css.sty */
+.cmr-10{font-size:83%;}
+.cmmi-10{font-size:83%;font-style: italic;}
 .ectt-1000{font-size:83%; font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
@@ -16,15 +24,42 @@
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
 .ecrm-0600{font-size:50%;}
 .ecrm-1440{font-size:116%;}
+.ecrm-1095{font-size:83%;}
 .ecrm-1000{font-size:83%;}
 .cmr-8{font-size:66%;}
 .cmmi-12{font-style: italic;}
 .cmmi-8{font-size:66%;font-style: italic;}
 .cmmi-6{font-size:50%;font-style: italic;}
 .cmsy-8{font-size:66%;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
 .cmbx-12{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
@@ -41,6 +76,56 @@
 .ecbx-1000{ font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1095{font-size:83%; font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecti-1000{font-size:83%; font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.cmsy-10x-x-109{font-size:90%;}
+.ecrm-0700{font-size:58%;}
+.ecti-0800{font-size:66%; font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
 .small-caps{font-variant: small-caps; }
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
@@ -280,6 +365,97 @@ img[src="HAFiscal42x.svg"]{vertical-align:-18.88103717338242%;}
 img[src="HAFiscal44x.svg"]{vertical-align:-0%;}
 img[src="HAFiscal45x.svg"]{vertical-align:-25%;}
 img[src="HAFiscal47x.svg"]{vertical-align:-38.6189420002002%;}
+span#colorbox1{background-color:#FFFF00;}
+span#textcolor2{background-color:#FFFF00}
+span#textcolor3{background-color:#FFFF00}
+img[src="HAFiscal48x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal49x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal50x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal51x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal52x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal54x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal55x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal56x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal57x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal58x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal59x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal60x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal61x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal62x.svg"]{vertical-align:-30.2604854689564%;}
+img[src="HAFiscal63x.svg"]{vertical-align:-30.2604854689564%;}
+img[src="HAFiscal64x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal65x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal66x.svg"]{vertical-align:-21.87489271123013%;}
+img[src="HAFiscal67x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal68x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal69x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal70x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal71x.svg"]{vertical-align:-23.17867845336025%;}
+img[src="HAFiscal72x.svg"]{vertical-align:-13.10853139803418%;}
+img[src="HAFiscal73x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal74x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal77x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal78x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal79x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal80x.svg"]{vertical-align:-30.2604854689564%;}
+img[src="HAFiscal81x.svg"]{vertical-align:-30.2604854689564%;}
+img[src="HAFiscal82x.svg"]{vertical-align:-32.04430438972081%;}
+img[src="HAFiscal83x.svg"]{vertical-align:-17.99990539536346%;}
+img[src="HAFiscal84x.svg"]{vertical-align:-17.99990539536346%;}
+img[src="HAFiscal85x.svg"]{vertical-align:-17.99990539536346%;}
+img[src="HAFiscal86x.svg"]{vertical-align:-23.17867845336025%;}
+img[src="HAFiscal87x.svg"]{vertical-align:-23.17867845336025%;}
+img[src="HAFiscal88x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal89x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal90x.svg"]{vertical-align:-23.03821077902779%;}
+img[src="HAFiscal91x.svg"]{vertical-align:-23.03821077902779%;}
+img[src="HAFiscal92x.svg"]{vertical-align:-27.55590012812809%;}
+img[src="HAFiscal93x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal94x.svg"]{vertical-align:-21.87489271123013%;}
+img[src="HAFiscal95x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal96x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal97x.svg"]{vertical-align:-21.87489271123013%;}
+img[src="HAFiscal98x.svg"]{vertical-align:-17.99993286112323%;}
+img[src="HAFiscal99x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal100x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal101x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal102x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal103x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal105x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal106x.svg"]{vertical-align:-21.87489271123013%;}
+img[src="HAFiscal107x.svg"]{vertical-align:-17.99993286112323%;}
+img[src="HAFiscal108x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal109x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal110x.svg"]{vertical-align:-21.87489271123013%;}
+img[src="HAFiscal111x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal112x.svg"]{vertical-align:-17.99993286112323%;}
+img[src="HAFiscal113x.svg"]{vertical-align:-18.70662117884699%;}
+img[src="HAFiscal114x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal115x.svg"]{vertical-align:-22.83112022151092%;}
+img[src="HAFiscal116x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal117x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal118x.svg"]{vertical-align:-0%;}
+span#colorbox4{background-color:#FFFF00;}
+img[src="HAFiscal120x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal121x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal123x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal124x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal125x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal126x.svg"]{vertical-align:-17.99990539536346%;}
+img[src="HAFiscal127x.svg"]{vertical-align:-36.11127790442295%;}
+img[src="HAFiscal129x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal130x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal131x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal132x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal133x.svg"]{vertical-align:-27.15821141042788%;}
+img[src="HAFiscal134x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal135x.svg"]{vertical-align:-22.0125786163522%;}
+img[src="HAFiscal136x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal137x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal138x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal139x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal141x.svg"]{vertical-align:-27.15821141042788%;}
+span#textcolor5{background-color:#FFFF00}
 /* end css.sty */
 
 /* Econ-ARK Basic HTML Theme styles     						 */
