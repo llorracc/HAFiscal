@@ -170,10 +170,10 @@
 \tranShkInd & - & \text{`transitory income shock'}  \\
     \permShk & - & \text{`permanent income shock'}
   \end{eqnarray}
-  \begin{align*}
+  \begin{equation}\begin{gathered}\begin{aligned}
     \permLvlInd_{t+1} & = \PermGroFac \permLvlInd_{t} \permShk_{t+1} \\
     y_{t+1} &= \permLvlInd_{t+1}\tranShkInd_{t+1} \\
-  \end{align*}
+  \end{aligned}\end{gathered}\end{equation}
 \end{frame}
 
 \begin{frame}\frametitle{Evidence?}
@@ -320,14 +320,14 @@
       \item Estimated splurge factor $\varsigma$: $\mathbf{c}_{sp,i,t} = \varsigma \mathbf{y}_{i,t}$
         \pause
       \item Remaining consumption $c_{opt,i,t}$ is chosen to maximize utility
-        \begin{align}
+        \begin{equation}\begin{gathered}\begin{aligned}
           \sum_{t=0}^{\infty}\beta_i^t (1-D)^t \mathbb{E}_0 u(\mathbf{c}_{opt,i,t}).
-        \end{align}
+        \end{aligned}\end{gathered}\end{equation}
         ($D$: end-of-life probability, $u$: stand. CRRA utility func.)	
       \item Budget constraint, given existing market resources $m_{i,t}$ and income state, and a no-borrowing constraint: 
-        \begin{align}
+        \begin{equation}\begin{gathered}\begin{aligned}
           \mathbf{m}_{i,t+1} &= R \underbrace{(\mathbf{m}_{i,t} - \mathbf{c}_{sp,i,t} - \mathbf{c}_{opt,i,t})}_{\geq 0 \text{ (no-borrowing constraint)}} + \mathbf{y}_{i,t+1}
-        \end{align}
+        \end{aligned}\end{gathered}\end{equation}
         ($R$: exogenous gross interest rate)
       \end{itemize}
 
@@ -342,13 +342,13 @@
       \begin{itemize}[<+->]
 
       \item Income subject to transitory, unempl. and permanent shocks
-        \begin{align}
+        \begin{equation}\begin{gathered}\begin{aligned}
           \mathbf{y}_{i,t} =   \begin{cases}
             \xi_{i,t}\mathbf{p}_{i,t}, & \text{if employed} \\
             0.7 \mathbf{p}_{i,t}, & \text{if unemployed for $\leq$ 2q} \\
             0.5 \mathbf{p}_{i,t}, & \text{if unemployed $\ge$ 2q} 
           \end{cases}
-        \end{align}
+        \end{aligned}\end{gathered}\end{equation}
         ($\xi_{i,t}$: trans. shock, $p$: perm. income)
         
       \item "Permanent income":  $\mathbf{p}_{i,t+1} = \underbrace{\psi_{i,t+1}}_{\text{perm. shock}} \underbrace{\Gamma_{e(i)}}_{\text{educ.-specific growth}}\mathbf{p}_{i,t}$ 
@@ -410,18 +410,18 @@
       \item Extension: We allow for aggregate demand effects from consumption on income during the recession
         
       \item The AD effect is given by
-        \begin{align}
+        \begin{equation}\begin{gathered}\begin{aligned}
           AD(C_t) =   \begin{cases}
             \Big(\frac{C_t}{\tilde{C}}\Big)^\kappa, & \text{if in a recession} \\
             1, & \text{otherwise} ,
           \end{cases}
-        \end{align}
+        \end{aligned}\end{gathered}\end{equation}
         where $\tilde{C}$ is the level of consumption in the steady state. 
         
       \item Idiosyncratic income in the extension model is then given by
-        \begin{align}
+        \begin{equation}\begin{gathered}\begin{aligned}
           \mathbf{y}_{AD,i,t} = AD(C_t)\mathbf{y}_{i,t}.
-        \end{align}
+        \end{aligned}\end{gathered}\end{equation}
       \end{itemize}
     \end{frame}
 
@@ -720,9 +720,9 @@
 		\vspace{0.6cm}
 		
 		Simple aggregation of consumer util. only satisfies principle 1 \& 2:
-		\begin{align*}
+		\begin{equation}\begin{gathered}\begin{aligned}
 			\mathcal{W}(\text{policy},Rec,AD) =\frac{1}{N}\sum_{i=1}^{N} \sum_{t=0}^{\infty} \beta_S^t u(\mathbf{c}_{it,\text{policy},Rec,AD})
-		\end{align*}
+		\end{aligned}\end{gathered}\end{equation}
 		
 		\pause
 		
@@ -847,9 +847,9 @@
 	\pause
 	
 	Simple aggregation of consumer util. only satisfies principle 1 \& 2:
-	\begin{align*}
+	\begin{equation}\begin{gathered}\begin{aligned}
 		\mathcal{W}(\text{policy},Rec,AD) =\frac{1}{N}\sum_{i=1}^{N} \sum_{t=0}^{\infty} \beta_S^t u(\mathbf{c}_{it,\text{policy},Rec,AD}) 
-	\end{align*}
+	\end{aligned}\end{gathered}\end{equation}
 	
 	\begin{itemize}[<+->]
 		\item $\mathbf{c}_{it,\text{policy},Rec,AD}$: consumption paths (including splurge) for each consumer / policy
@@ -866,11 +866,11 @@
 	
 	
 	To satisfy principle 3 we define $\mathcal{C}(\text{policy},Rec,AD) =$
-	\begin{align*}
+	\begin{equation}\begin{gathered}\begin{aligned}
 		& \bigg( \underbrace{\frac{\mathcal{W}(\text{policy},Rec,AD)-\mathcal{W}(\text{None},Rec,AD)}{\mathcal{W}^c}}_\text{\RNum{1}}  - \underbrace{\frac{PV(\text{policy},Rec)}{\mathcal{P}^c} }_\text{\RNum{2}} \bigg) \nonumber \\  
 		& -
 		\bigg( \underbrace{\frac{\mathcal{W}(\text{policy},0,0) - \mathcal{W}(\text{None},0,0)}{\mathcal{W}^c}}_\text{\RNum{3}}  - \underbrace{\frac{PV(\text{policy},0)}{\mathcal{P}^c}}_\text{\RNum{4}}  \bigg) 
-	\end{align*}
+	\end{aligned}\end{gathered}\end{equation}
 	
 	\begin{itemize}[<+->]
 		\item \RNum{1}: Policy-induced increase in agg. welfare (in bp of SS-cons.)

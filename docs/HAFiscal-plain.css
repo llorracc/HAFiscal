@@ -59,11 +59,11 @@ div.par-math-display, div.math-display{text-align:center;}
 body{ margin:1em auto; max-width:80ch; padding:0 .62em; }
 h1,h2,h3,h4,h5 { line-height:1.2; }
 @media print{ body{ max-width:none } }
-.partHead, likepartHead { font-size: 2em; }
-.chapterHead, likechapterHead { font-size: 1.7411em; }
-.sectionHead, likesectionHead { font-size: 1.5157em; }
-.subsectionHead, likesubsectionHead { font-size: 1.3195em; }
-.subsubsectionHead, likesubsubsectionHead { font-size: 1.1487em; }
+.partHead, .likepartHead { font-size: 2em; }
+.chapterHead, .likechapterHead { font-size: 1.7411em; }
+.sectionHead, .likesectionHead { font-size: 1.5157em; }
+.subsectionHead, .likesubsectionHead { font-size: 1.3195em; }
+.subsubsectionHead, .likesubsubsectionHead { font-size: 1.1487em; }
  @media (prefers-color-scheme: dark) { img[src^="HAFiscal"]{filter: invert(1); } } 
 li p.indent { text-indent: 0em }
 li p:first-child{ margin-top:0em; }
@@ -102,6 +102,7 @@ div.flushleft {text-align: left;}
 .framebox-r {text-align:right;}
 span.thank-mark{ vertical-align: super }
 span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+code.verb{font-family:monospace,monospace;}
 td p:first-child{ margin-top:0em; }
 td p:last-child{ margin-bottom:0em; }
 div.td00{ margin-left:0pt; margin-right:0pt; }
@@ -163,6 +164,10 @@ div.author{white-space: nowrap;}
 div.abstract p {margin-left:5%; margin-right:5%;}
 div.abstract {width:100%;}
 .abstracttitle{text-align:center;margin-bottom:1em;}
+.subsectionToc, .likesubsectionToc {margin-left:1em;}
+.subsubsectionToc, .likesubsubsectionToc {margin-left:2em;}
+.paragraphToc, .likeparagraphToc {margin-left:3em;}
+.subparagraphToc, .likesubparagraphToc {margin-left:4em;}
 figure.float, div.figure {margin-left: auto; margin-right: auto;}
 figure.figure {text-align:center;}
 figcaption.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:center;}
@@ -228,10 +233,52 @@ span.textso{letter-spacing: 0.3em; word-spacing: 0.3em}
 span.textul{text-decoration:underline}
 span.textst{text-decoration:line-through}
 span.textcaps{font-variant:small-caps}
+.pic-tabular { display: block; margin: 0 auto; text-align: center; }
+.pic-tabular img { display: block; margin: 0 auto; }
 .equation{ display: table; width: 1.0; margin-top: 1.5em; margin-bottom: 1.5em; }
 .equation td:first-child{ width: 0.99; text-align: center; vertical-align: middle; }
 .equation td:last-child{ width: 0.01; text-align: right; vertical-align: middle; }
 .equation-star{ display: block; text-align: center; margin-top: 1.5em; margin-bottom: 1.5em; }
 .math-display img{ /* Targets images within elements with class math-display */ display: block; /* Makes the image a block element */ margin-left: auto; /* These two margin settings together */ margin-right: auto; /* center the image horizontally */ width: 1.0; } 
+img[src="HAFiscal0x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal1x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal2x.svg"]{vertical-align:-21.87489271123013%;}
+img[src="HAFiscal3x.svg"]{vertical-align:-45.14284638069663%;}
+img[src="HAFiscal4x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal6x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal7x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal8x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal10x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal12x.svg"]{vertical-align:-23.98029938783202%;}
+img[src="HAFiscal13x.svg"]{vertical-align:-21.8748614188705%;}
+img[src="HAFiscal14x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal15x.svg"]{vertical-align:-23.17867845336025%;}
+img[src="HAFiscal16x.svg"]{vertical-align:-31.11090313904447%;}
+img[src="HAFiscal17x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal19x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal20x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal22x.svg"]{vertical-align:-28.70721018848861%;}
+img[src="HAFiscal23x.svg"]{vertical-align:-32.04430438972081%;}
+img[src="HAFiscal24x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal25x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal26x.svg"]{vertical-align:-25.38306433437407%;}
+img[src="HAFiscal27x.svg"]{vertical-align:-32.96301196149863%;}
+img[src="HAFiscal28x.svg"]{vertical-align:-28.70721018848861%;}
+img[src="HAFiscal30x.svg"]{vertical-align:-28.70721018848861%;}
+img[src="HAFiscal31x.svg"]{vertical-align:-32.96301196149863%;}
+img[src="HAFiscal32x.svg"]{vertical-align:-31.11090313904447%;}
+img[src="HAFiscal33x.svg"]{vertical-align:-31.11090313904447%;}
+img[src="HAFiscal34x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal35x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal36x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal37x.svg"]{vertical-align:-19.82381119949344%;}
+img[src="HAFiscal38x.svg"]{vertical-align:-9.211426196584562%;}
+img[src="HAFiscal39x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal40x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal41x.svg"]{vertical-align:-25.83717176230433%;}
+img[src="HAFiscal42x.svg"]{vertical-align:-18.88103717338242%;}
+img[src="HAFiscal44x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal45x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal47x.svg"]{vertical-align:-38.6189420002002%;}
 /* end css.sty */
 

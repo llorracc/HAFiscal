@@ -59,11 +59,11 @@ div.par-math-display, div.math-display{text-align:center;}
 body{ margin:1em auto; max-width:80ch; padding:0 .62em; }
 h1,h2,h3,h4,h5 { line-height:1.2; }
 @media print{ body{ max-width:none } }
-.partHead, likepartHead { font-size: 2em; }
-.chapterHead, likechapterHead { font-size: 1.7411em; }
-.sectionHead, likesectionHead { font-size: 1.5157em; }
-.subsectionHead, likesubsectionHead { font-size: 1.3195em; }
-.subsubsectionHead, likesubsubsectionHead { font-size: 1.1487em; }
+.partHead, .likepartHead { font-size: 2em; }
+.chapterHead, .likechapterHead { font-size: 1.7411em; }
+.sectionHead, .likesectionHead { font-size: 1.5157em; }
+.subsectionHead, .likesubsectionHead { font-size: 1.3195em; }
+.subsubsectionHead, .likesubsubsectionHead { font-size: 1.1487em; }
  @media (prefers-color-scheme: dark) { img[src^="HAFiscal"]{filter: invert(1); } } 
 li p.indent { text-indent: 0em }
 li p:first-child{ margin-top:0em; }
@@ -102,6 +102,7 @@ div.flushleft {text-align: left;}
 .framebox-r {text-align:right;}
 span.thank-mark{ vertical-align: super }
 span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+code.verb{font-family:monospace,monospace;}
 td p:first-child{ margin-top:0em; }
 td p:last-child{ margin-bottom:0em; }
 div.td00{ margin-left:0pt; margin-right:0pt; }
@@ -163,6 +164,10 @@ div.author{white-space: nowrap;}
 div.abstract p {margin-left:5%; margin-right:5%;}
 div.abstract {width:100%;}
 .abstracttitle{text-align:center;margin-bottom:1em;}
+.subsectionToc, .likesubsectionToc {margin-left:1em;}
+.subsubsectionToc, .likesubsubsectionToc {margin-left:2em;}
+.paragraphToc, .likeparagraphToc {margin-left:3em;}
+.subparagraphToc, .likesubparagraphToc {margin-left:4em;}
 figure.float, div.figure {margin-left: auto; margin-right: auto;}
 figure.figure {text-align:center;}
 figcaption.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:center;}
@@ -228,10 +233,380 @@ span.textso{letter-spacing: 0.3em; word-spacing: 0.3em}
 span.textul{text-decoration:underline}
 span.textst{text-decoration:line-through}
 span.textcaps{font-variant:small-caps}
+.pic-tabular { display: block; margin: 0 auto; text-align: center; }
+.pic-tabular img { display: block; margin: 0 auto; }
 .equation{ display: table; width: 1.0; margin-top: 1.5em; margin-bottom: 1.5em; }
 .equation td:first-child{ width: 0.99; text-align: center; vertical-align: middle; }
 .equation td:last-child{ width: 0.01; text-align: right; vertical-align: middle; }
 .equation-star{ display: block; text-align: center; margin-top: 1.5em; margin-bottom: 1.5em; }
 .math-display img{ /* Targets images within elements with class math-display */ display: block; /* Makes the image a block element */ margin-left: auto; /* These two margin settings together */ margin-right: auto; /* center the image horizontally */ width: 1.0; } 
+img[src="HAFiscal0x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal1x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal2x.svg"]{vertical-align:-21.87489271123013%;}
+img[src="HAFiscal3x.svg"]{vertical-align:-45.14284638069663%;}
+img[src="HAFiscal4x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal6x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal7x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal8x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal10x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal12x.svg"]{vertical-align:-23.98029938783202%;}
+img[src="HAFiscal13x.svg"]{vertical-align:-21.8748614188705%;}
+img[src="HAFiscal14x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal15x.svg"]{vertical-align:-23.17867845336025%;}
+img[src="HAFiscal16x.svg"]{vertical-align:-31.11090313904447%;}
+img[src="HAFiscal17x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal19x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal20x.svg"]{vertical-align:-38.6189420002002%;}
+img[src="HAFiscal22x.svg"]{vertical-align:-28.70721018848861%;}
+img[src="HAFiscal23x.svg"]{vertical-align:-32.04430438972081%;}
+img[src="HAFiscal24x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal25x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal26x.svg"]{vertical-align:-25.38306433437407%;}
+img[src="HAFiscal27x.svg"]{vertical-align:-32.96301196149863%;}
+img[src="HAFiscal28x.svg"]{vertical-align:-28.70721018848861%;}
+img[src="HAFiscal30x.svg"]{vertical-align:-28.70721018848861%;}
+img[src="HAFiscal31x.svg"]{vertical-align:-32.96301196149863%;}
+img[src="HAFiscal32x.svg"]{vertical-align:-31.11090313904447%;}
+img[src="HAFiscal33x.svg"]{vertical-align:-31.11090313904447%;}
+img[src="HAFiscal34x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal35x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal36x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal37x.svg"]{vertical-align:-19.82381119949344%;}
+img[src="HAFiscal38x.svg"]{vertical-align:-9.211426196584562%;}
+img[src="HAFiscal39x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal40x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal41x.svg"]{vertical-align:-25.83717176230433%;}
+img[src="HAFiscal42x.svg"]{vertical-align:-18.88103717338242%;}
+img[src="HAFiscal44x.svg"]{vertical-align:-0%;}
+img[src="HAFiscal45x.svg"]{vertical-align:-25%;}
+img[src="HAFiscal47x.svg"]{vertical-align:-38.6189420002002%;}
 /* end css.sty */
 
+/* Econ-ARK Basic HTML Theme styles     						 */
+/* path: econ-ark-tools/Web/Styling/REMARKs-HTML/					 */
+/* prior git commit 219bf537a01b96629fd51df690e48d97727664c8				 */
+/* Updates from version 1.0:								 */
+/* 1.01 - asked Claude to document what each command does				 */
+/* 1.02: 										 */
+/* - justify body and paragraphs							 */
+/* - make links less obtrusive								 */
+/* ====== Normalize.css v1.1.3 - Makes browsers render elements more consistently ====== */
+/*! normalize.css v1.1.3 | MIT License | git.io/normalize				 */
+
+/* Text justification for paragraphs */
+p {
+    text-align: justify;
+}
+
+/* Make block elements display as blocks */
+article, aside, details, figcaption, figure, footer, header, 
+hgroup, main, nav, section, summary {
+    display: block;
+}
+
+/* Make media elements display inline-block with IE7 fallback */
+audio, canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/* Hide audio without controls */
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/* Hide elements with hidden attribute */
+[hidden] {
+    display: none;
+}
+
+/* Base font settings */
+html {
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Set default font family */
+html, button, input, select, textarea {
+    font-family: sans-serif;
+}
+
+/* Remove default body margin */
+body {
+    margin: 0;
+}
+
+/* Link styling */
+a:link {
+    color: #333333;
+    text-decoration: none;
+    border: 1px solid #cccccc;
+    padding: 0 2px;
+}
+
+/* Make visited links subtly different */
+a:visited {
+    color: #666666;		/* Lighter gray than unvisited links */
+    text-decoration: none;
+    border: 1px dashed #dddddd; /* Dashed instead of solid border */
+    padding: 0 2px;
+}
+
+/* Link focus styles */
+a:focus {
+    outline: thin dotted;
+}
+
+a:active, a:hover {
+    outline: 0;
+    background-color: #f0f0f0;  /* Light gray background on hover/active */
+    /* or */
+    border-color: #999999;      /* Darker border on hover/active */
+    /* or */
+    color: #000000;            /* Darker text on hover/active */
+}
+
+/* Heading sizes and margins */
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+}
+h2 {
+    font-size: 1.5em;
+    margin: .83em 0;
+}
+h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+}
+h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+}
+h5 {
+    font-size: .83em;
+    margin: 1.67em 0;
+}
+h6 {
+    font-size: .67em;
+    margin: 2.33em 0;
+}
+
+/* Text formatting */
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+b, strong {
+    font-weight: bold;
+}
+blockquote {
+    margin: 1em 40px;
+}
+dfn {
+    font-style: italic;
+}
+
+/* Horizontal rule styling */
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/* Highlight mark styling */
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/* Paragraph and preformatted text */
+p, pre {
+    margin: 1em 0;
+}
+
+/* Code and monospace text */
+code, kbd, pre, samp {
+    font-family: monospace, serif;
+    _font-family: 'courier new', monospace;
+    font-size: 1em;
+}
+
+/* Lists styling */
+dl, menu, ol, ul {
+    margin: 1em 0;
+}
+li {
+    margin: 0.25em 0;
+}
+dd {
+    margin: 0 0 0 40px;
+}
+menu, ol, ul {
+    padding: 0 0 0 40px;
+}
+nav ul, nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+/* Image handling */
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+/* Form elements */
+fieldset {
+    border: 1px solid #f5f5f5;
+    margin: 0 2px;
+    padding: .35em .625em .75em;
+}
+
+/* ====== Main Theme Styles ====== */
+
+/* Page background and layout */
+html {
+    background-color: #f7f7f7;
+}
+
+/* Main body layout and styling */
+body {
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;        /* Center the content */
+    padding: 2rem 4rem;    /* Add padding around content */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-width: 4px 1px; /* Thicker top/bottom borders */
+    text-align: justify;   /* Add text justification */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 2rem 2rem; /* Reduce padding on mobile */
+    }
+}
+
+/* Equation table styling */
+table.equation {
+    margin: 1rem 0;
+}
+
+/* ====== Print Styles ====== */
+@media print {
+    /* Remove backgrounds and shadows when printing */
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Link handling in print */
+    a, a:visited {
+        text-decoration: underline;
+        border: 0;
+    }
+
+    /* Add titles after abbreviations in print */
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /* Hide certain links in print */
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    /* Page break rules */
+    blockquote, pre {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    img, tr {
+        page-break-inside: avoid;
+    }
+
+    /* Image sizing in print */
+    img {
+        max-width: 100% !important;
+    }
+
+    /* Page margins for print */
+    @page {
+        margin: .5cm;
+    }
+
+    /* Typography for print */
+    h2, h3, p {
+        orphans: 3;  /* Minimum lines at bottom of page */
+        widows: 3;   /* Minimum lines at top of page */
+    }
+
+    h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* ====== Utility Classes ====== */
+
+/* Hide elements but maintain layout */
+.invisible {
+    visibility: hidden;
+}
+
+/* Completely hide elements */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/* Hide elements visually but keep them available for screen readers */
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/* Make visually hidden elements focusable */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/* Clearfix for containing floats */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* IE6/7 clearfix */
+.clearfix {
+    *zoom: 1;
+}
