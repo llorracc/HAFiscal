@@ -54,7 +54,7 @@ UBspell_normal = 2           # Average duration of unemployment benefits in norm
 
 # Basic model parameters: CRRA, growth factors, unemployment parameters (for normal times)
 CRRA = 2.0                 # Coefficient of relative risk aversion (1, 2 or 3)
-splurgeZero = True
+splurgeZero = False
 if splurgeZero:
     Splurge = 0
 else:

@@ -60,7 +60,7 @@ def returnParameters(Parametrization='Baseline',OutputFor='_Main.py'):
         IncUnemp = 0.3
     elif Parametrization == 'Splurge0' or Parametrization == 'Splurge0_PVSame':
         betas_txt_location = Abs_Path_Results+'/Results/DiscFacEstim_CRRA_2.0_R_1.01_Splurge0.txt'
-        Splurge_txt_location = Abs_Path_Results+'/Target_AggMPCX_LiquWealth/Result_Splurge0.txt'
+        Splurge_txt_location = Abs_Path_Results+'/Target_AggMPCX_LiquWealth/Result_AllTarget_Splurge0.txt'
     
     
   
