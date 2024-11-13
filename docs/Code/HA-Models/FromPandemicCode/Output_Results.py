@@ -440,7 +440,7 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     output +="10y-horizon Multiplier (AD effect) &"      + mystr3(NPV_Multiplier_Rec_Check_AD[-1])             + "  & "+ mystr3(NPV_Multiplier_UI_Rec_AD[-1])               +  "  & "+  mystr3(NPV_Multiplier_Rec_TaxCut_AD[-1])  + "     \\\\ \n"
     output +="10y-horizon (1st round AD effect only) &"  + mystr3(NPV_Multiplier_Rec_Check_firstRoundAD[-1])   + "  & "+ mystr3(NPV_Multiplier_UI_Rec_firstRoundAD[-1])     +  "  & "+  mystr3(NPV_Multiplier_Rec_TaxCut_firstRoundAD[-1])  + "     \\\\ \n"
     output +="Share of policy expenditure during recession &" + mystr1(ShareDuringRecession['Check_Inc'])   + "\%  & "+ mystr1(ShareDuringRecession['UI_Inc'])  +  "\%  & "+  mystr1(ShareDuringRecession['Tax_Inc'])  + " \%    \\\\ \n"
-    output +="Share of policy cons. stimulus during recession &" + mystr1(ShareDuringRecession['Check_Cons'])   + "\%  & "+ mystr1(ShareDuringRecession['UI_Cons'])  +  "\%  & "+  mystr1(ShareDuringRecession['Tax_Cons'])  + " \%    \\\\ \n"
+    output +="Share of policy cons. stimulus during recession &" + mystr1(ShareDuringRecession['Check_Cons'])   + "\%  & "+ mystr1(ShareDuringRecession['UI_Cons'])  +  "\%  & "+  mystr1(ShareDuringRecession['Tax_Cons'])  + " \%    \\\\ \\bottomrule \n"
     output +="\\end{tabular}  \n"
 
     
@@ -570,7 +570,7 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
         output +="& Tax Cut    & UI extension    & Stimulus check    \\\\  \\midrule \n"
         output +="Recession lasts 2q &" + mystr3(PlotsforSpecificRecLength(2,'recessionTaxCut')[1][-1]) + "  & " + mystr3(PlotsforSpecificRecLength(2,'recessionUI')[1][-1]) + "  & " +  mystr3(PlotsforSpecificRecLength(2,'recessionCheck')[1][-1])  + "     \\\\ \n"
         output +="Recession lasts 4q &" + mystr3(PlotsforSpecificRecLength(4,'recessionTaxCut')[1][-1]) + "  & " + mystr3(PlotsforSpecificRecLength(4,'recessionUI')[1][-1]) + "  & " +  mystr3(PlotsforSpecificRecLength(4,'recessionCheck')[1][-1])  + "     \\\\ \n"
-        output +="Recession lasts 8q &" + mystr3(PlotsforSpecificRecLength(8,'recessionTaxCut')[1][-1]) + "  & " + mystr3(PlotsforSpecificRecLength(8,'recessionUI')[1][-1]) + "  & " +  mystr3(PlotsforSpecificRecLength(8,'recessionCheck')[1][-1])  + "     \\\\ \n"
+        output +="Recession lasts 8q &" + mystr3(PlotsforSpecificRecLength(8,'recessionTaxCut')[1][-1]) + "  & " + mystr3(PlotsforSpecificRecLength(8,'recessionUI')[1][-1]) + "  & " +  mystr3(PlotsforSpecificRecLength(8,'recessionCheck')[1][-1])  + "     \\\\ \\bottomrule \n"
         output +="\\end{tabular}  \n"
         
         with open(table_dir + 'Multiplier_RecLengths.tex','w') as f:
