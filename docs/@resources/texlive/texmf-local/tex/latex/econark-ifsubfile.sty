@@ -1,0 +1,42 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{econark-ifsubfile}[2023/06/14 Define ifsubfile condition]
+
+\RequirePackage{subfiles}
+
+\newif\ifstandalone
+
+% Check if we're in the main file or a subfile
+\@ifundefined{document@subtype}{%
+  \standalonetrue
+  \typeout{econark-ifsubfile: Compiled as standalone or main file}
+}{%
+  \def\tmp{subfile}%
+  \ifx\document@subtype\tmp
+    \standalonefalse
+    \typeout{econark-ifsubfile: Included as subfile}
+  \else
+    \standalonetrue
+    \typeout{econark-ifsubfile: Compiled as standalone or main file}
+  \fi
+}
+
+\providecommand{\onlyinsubfile}{}
+\providecommand{\notinsubfile}{}
+\providecommand{\compilingassubfile}{}
+\providecommand{\compilingasstandalone}{}
+
+\ifstandalone
+  % Define commands to be executed only when compiled standalone or as main file
+  \renewcommand{\onlyinsubfile}[1]{}
+  \renewcommand{\notinsubfile}[1]{#1}
+  \renewcommand{\compilingassubfile}[1]{}
+  \renewcommand{\compilingasstandalone}[1]{#1}
+\else
+  % Define commands to be executed when included as a subfile
+  \renewcommand{\onlyinsubfile}[1]{#1}
+  \renewcommand{\notinsubfile}[1]{}
+  \renewcommand{\compilingassubfile}[1]{#1}
+  \renewcommand{\compilingasstandalone}[1]{}
+\fi
+
+\endinput

@@ -8,20 +8,18 @@
 
 \hypertarget{parameterizing-the-model}{}\par\section{Parameterizing the model}
 
-This section describes how we set the model's parameters. First, we estimate the extent to which consumers `splurge' when receiving an income shock. Given the lack of empirical evidence of the marginal propensity to consume over time for the US, we use instead Norwegian data to estimate the splurge. Specifically, we calibrate our model to the Norwegian economy and match evidence from Norway on the profile of the marginal propensity to spend over time and across different wealth levels, as provided by \citet{fagereng_mpc_2021}.\footnote{Appendix \ref{app:Model_without_splurge} discusses an alternative calibration method, which solely relies on US data. The main results derived in that calibration are in line with those discussed in the main text.} 
+This section describes how we set the model's parameters. First, we estimate the extent to which consumers `splurge' when receiving an income shock. We do so using Norwegian data to allow the model to match the best available evidence on the profile of the marginal propensity to spend over time and across different wealth levels, as provided by \citet{fagereng_mpc_2021}. We also show that a consumer model without the splurge is inferior in matching these profiles.
 
-Second, we set up the full model on U.S. data, taking the splurge factor as given from the Norwegian estimation In the full model, agents differ according to their level of education and their subjective discount factors. A subset of the parameters in the model are calibrated equally for all types, and some parameters are calibrated to be specific to each education group. Finally, a distribution of subjective discount factors is estimated separately for each education group to match features of each within-group liquid wealth distribution.
-
+Second, we set up the full model on U.S. data, taking the splurge factor as given from the Norwegian estimation. In the full model, agents differ according to their level of education and their subjective discount factors. A subset of the parameters in the model are calibrated equally for all types, and some parameters are calibrated to be specific to each education group. Finally, a distribution of subjective discount factors is estimated separately for each education group to match features of each within-group liquid wealth distribution. 
 
 \hypertarget{estimation-of-the-splurge-factor}{}\par\subsection{Estimation of the splurge factor}
 \notinsubfile{\label{sec:splurge}}
 
-We define splurging as the act of spending out of current labor income without concern for intertemporal maximization of utility. (\colorbox{yellow}{XX}\textit{The previous sentence needs to be discussed.}) The splurge allows us to capture the shorter- and longer-term response of consumption to income shocks, especially for consumers with significant liquid wealth. \hl{The main aim of this paper, however, is to rank consumption stimulus policies, not to provide a microfoundation for the splurging behavior. We view the splurge factor as a model device that enables us to rank the policies in a model that is consistent with the best available micro-evidence of spending patterns over time after a transitory income shock. In appendix~}\ref{app:Model_without_splurge} \hl{we provide results from our model without a splurge factor. There we show that such a model provides a worse fit to the moments in the data that we are interested in, but not dramatically so, and that our conclusions regarding the ranking of the policies are not affected.}
-% CDC: Review highlighted text
+We define splurging as the act of spending our of current labor income without concern for intertemporal maximization of utility. (\textit{The previous sentence needs to be discussed.}) The splurge allows us to capture the shorter- and longer-term response of consumption to income shocks, especially for consumers with significant liquid wealth, that a standard model cannot. Specifically, we show that our model can account well for the results of \citet{fagereng_mpc_2021}, who study the effect of lottery winnings in Norway on consumption using millions of records from the Norwegian population registry. We calibrate our model to reflect the Norwegian economy and, using their results, estimate the splurge factor, as well as the distribution of discount factors in the population, to match two empirical moments. 
 
-The specific exercise we carry out in this section, is to show that our model can account well for the results of \citet{fagereng_mpc_2021}, who study the effect of lottery winnings in Norway on consumption using millions of records from the Norwegian population registry. We calibrate our model to reflect the Norwegian economy and, using their results, estimate the splurge factor, as well as the distribution of discount factors in the population, to match two empirical moments. 
+First, we take from \citet{fagereng_mpc_2021} the marginal propensity to consume out of a one-period income shock. We target not only the initial (aggregate) response of consumption to the income shock, but also the subsequent effect on consumption in years one through four after the shock. We also target the initial consumption response in the cross-section, i.e. across the quartiles of the liquid wealth distribution, for which empirical estimates also exist. 
 
-First, we take from \citet{fagereng_mpc_2021} the marginal propensity to consume out of a one-period income shock. We target not only the initial (aggregate) response of consumption to the income shock, but also the subsequent effect on consumption in years one through four after the shock. We also target the initial consumption response in the cross-section, i.e. across the quartiles of the liquid wealth distribution, for which empirical estimates are also provided. The shares of lottery winnings expended at different time horizons, as found in \citet{fagereng_mpc_2021}, are plotted in figure \ref{fig:aggmpclotterywin}. Table \ref{tab:MPC_WQ} (second row) shows the initial consumption response across liquid wealth quartiles. 
+The shares of lottery winnings expended at different time horizons, as found in \citet{fagereng_mpc_2021}, are plotted in figure \ref{fig:aggmpclotterywin}. Table \ref{tab:ComparisonSplurge} (last row) shows the initial consumption response across liquid wealth quartiles. 
 % Note that the first-year expenditure, shown in figure \ref{fig:aggmpclotterywin} to be around 0.5, is not equivalent to the initial annual MPC because the lottery winnings may occur toward the end of the year. %\citet{fagereng_mpc_2021} estimate that their suggests an initial annual MPC of 0.63.
 
 Second, we match the steady-state distribution of liquid wealth in the model to its empirical counterpart. Because of the lack of data on the liquid wealth distribution in Norway, we use the corresponding data from the United States, assuming that liquid wealth inequality is comparable across these countries.\footnote{Data from the Norwegian tax registry contains information on liquid assets, but not liquid debt. Only total debt is reported -- which is mainly mortgage debt. Therefore, we cannot construct liquid wealth as \citet{kaplan2014model} can for the U.S. \notinsubfile{\label{foot:liqwealth}}} 
@@ -80,9 +78,9 @@ Specifically, we impose as targets the cumulative liquid wealth shares for the e
 
 \begin{table}[t]
   \center
-  \input{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/MPC_WealthQuartiles_Table.tex}
-  \caption{Marginal propensities to consume across wealth quartiles and the total population as well as the wealth to income ratio, in the model and according to the data}
-  \notinsubfile{\label{tab:MPC_WQ}}
+  \input{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/Comparison_Splurge_Table.tex}
+  \caption{Marginal propensities to consume across wealth quartiles and the total population as well as the wealth to income ratio, in the model with or without splurge an according to the data}
+  \notinsubfile{\label{tab:ComparisonSplurge}}
 \end{table}
 
 
@@ -92,9 +90,13 @@ Estimates of the standard deviations of the permanent and transitory shocks are 
 
 Using the calibrated model, we simulated unexpected lottery winnings and calculate the share of the lottery spent in each year. Specifically, each simulated agent receives a lottery win in a random quarter of the first year of the simulation. The size of the lottery win is itself random and spans the range of lottery sizes found in \citet{fagereng_mpc_2021}. The estimation procedure minimizes the distance between the target and model moments by selecting the splurge factor and the distribution of discount factors in the population, where the latter are assumed to be uniformly distributed in the range $[\beta-\nabla, \beta+\nabla]$. We approximate the uniform distribution of discount factors with a discrete approximation and let the population consist of eight different types.
 
-The estimation yields a splurge factor of $0.249$ and a distribution of discount factors described by $\beta = 0.968$ and $\nabla=0.0578$. Given these estimated parameters and the remaining calibrated ones, the model is able to replicate the time path of consumption in response to a lottery win from \citet{fagereng_mpc_2021} and the targeted distribution of liquid wealth very well, see Figure \ref{fig:splurge_estimation}. Also, the targeted moments discussed in Table \ref{tab:MPC_WQ} are captured relatively well. In particular, the model is able to account for the empirical fact that MPC consume for high-wealth agents is substantially larger than zero, see the first column. 
+The estimation yields a splurge factor of $0.249$ and a distribution of discount factors described by $\beta = 0.968$ and $\nabla=0.0578$. Given these estimated parameters and the remaining calibrated ones, the model is able to replicate the time path of consumption in response to a lottery win from \citet{fagereng_mpc_2021} and the targeted distribution of liquid wealth very well (see the solid, blue line in figure \ref{fig:splurge_estimation}).
 
+The splurge is essential in matching the empirical evidence mentioned above. If we impose a zero splurge in our estimation, the model is not able to account for the exact empirical profiles. In order to generate a high initial marginal propensity to consume, the estimation yields a very wide distribution of discount factors ($\beta = 0.921$ and $\nabla=0.116$). This ensures that sufficient agents are at the liquidity constraint and sensitive to transitory income shocks to generate a high initial MPC in absence of the splurge. However, the large differences in discount factor lead to a strongly unequal distribution of liquid wealth, exceeding that observed in data. The model without the splurge also misses the time profile of the marginal propensity to consume and the distribution of initial consumption responses across wealth quartiles. Specifically, the model cannot account for the high initial MPC among the wealthiest. To compensate for that, the estimation yields more liquidity-constrained agents, and thus a higher MPC among the least wealthy. This in turn leads also to a higher spending propensity in the first year after the shock as liquidity-constrained agents spend the additional income quicker. Overall, the model fit with the data deteriorates roughly by a factor of two measured by the Euclidean norm of the targeting error.\footnote{Specifically, the Euclidean norm of the targeting error increases from 0.04 to 0.08 for the time-profile of the marginal propensity to consume when the splurge is removed, from 0.16 to 0.29 for the marginal propensity to consume across wealth quartiles and from 0.027 to 0.032 for the Lorentz curve.}
 
+The shortcomings of the model without a splurge are likely to affect the derived policy recommendations, for two reasons. 
+First, if multipliers are larger during recessions and the recession length is stochastic, the exact timing of induced consumption matters for the policies' overall effectiveness. A recession-dependent multiplier will in particular magnify the already sizeable difference in predicted consumption responses in year 1 and 2 across the models with and without the splurge.
+Second, the welfare impacts of the policies will depend on how the policies affect consumption responses across the wealth distribution. The model without the splurge predicts - counterfactually - that consumption responses are concentrated among the poorest (that are most likely to be affected by recession-induced unemployment). The model with the splurge can instead accurately capture consumption responses across the wealth distribution.
 
  
 
@@ -123,7 +125,7 @@ A period in the model is one quarter. This choice makes it realistic to consider
 
 Panel~A of table~\ref{tab:calibration}, lists parameters that are calibrated equally across all types in the model. Panel~B of table~\ref{tab:calibration}, lists parameters in the model that are education specific. For completeness, panel~C of table~\ref{tab:calibration} summarizes the parameters describing how we model a recession and the three policies we consider as potential responses to a recession. 
 
-\textbf{Preferences, survival and interest rates.} All households are assumed to have a coefficient of relative risk aversion equal to $\gamma=2$. We also assume that all households have the same propensity to splurge out of transitory income gains and set $\varsigma=0.249$, the value estimated in section~\ref{sec:splurge}. However, each education group is divided into types that differ in their subjective discount factors. The distributions of discount factors for each education group are estimated to fit the distribution of liquid wealth within that group, and this estimation is described in detail in section~\ref{sec:estimBetas}. Regardless of type, households face a constant survival probability each quarter. This probability is set to $1-1/160$, reflecting an expected working life of 40 years. The real interest rate on households' savings is set to $1$ percent per quarter. 
+\textbf{Preferences, survival and interest rates.} All households are assumed to have a coefficient of relative risk aversion equal to $\gamma=2$. We also assume that all households have the same propensity to splurge out of transitory income gains and set $\varsigma=0.306$, the value estimated in section~\ref{sec:splurge}. However, each education group is divided into types that differ in their subjective discount factors. The distributions of discount factors for each education group are estimated to fit the distribution of liquid wealth within that group, and this estimation is described in detail in section~\ref{sec:estimBetas}. Regardless of type, households face a constant survival probability each quarter. This probability is set to $1-1/160$, reflecting an expected working life of 40 years. The real interest rate on households' savings is set to $1$ percent per quarter. 
 
 
 \afterpage{
@@ -138,7 +140,7 @@ Panel~A of table~\ref{tab:calibration}, lists parameters that are calibrated equ
           \multicolumn{3}{l}{Panel (A) Parameters that apply to all types} \\ \midrule
           Parameter & Notation & \text{Value} \\ \midrule 
           Risk aversion & $\gamma$ & 2.0 \\ 
-          Splurge & $\varsigma$ & 0.249 \\ 
+          Splurge & $\varsigma$ & 0.306 \\ 
           Survival probability, quarterly & $1-D$ & 0.994 \\
           Risk free interest rate, quarterly (gross) & $R$ & 1.01 \\ 
           Standard deviation of transitory shock & $\sigma_\xi$ & 0.346 \\
@@ -224,17 +226,16 @@ Finally, the strength of the aggregate demand effect in recessions is determined
 
 Discount factor distributions are estimated separately for each education group to match the distribution of liquid wealth for households in that group. To do so, we let each education group consist of types that differ in their subjective discount factor,~$\beta$. The discount factors within each group $e\in \{d, h, c\}$ are assumed to be uniformly distributed in the range $[\beta_e-\nabla_e, \beta_e+\nabla_e]$. The parameters $\beta_e$ and $\nabla_e$ are chosen for each group separately to match the median liquid-wealth-to-permanent-income ratio and the $\nth{20}$, $\nth{40}$, $\nth{60}$, and $\nth{80}$ percentile points of the Lorenz curve for liquid wealth for that group. We approximate the uniform distribution of discount factors with a discrete approximation and let each education group consist of seven different types.
 
-Panel~A of table~\ref{tab:estimBetas} shows the estimated values of $(\beta_e, \nabla_e)$ for each education group. The panel also shows the minimum and maximum values of the discount factors we actually use in the model when we use a discrete approximation with seven values to approximate the uniform distribution of discount factors. Panel~B of table~\ref{tab:estimBetas} shows that with these estimated distributions, we can exactly match the median liquid-wealth-to-permanent-income ratios for each education group. Figure~\ref{fig:LorenzPts} shows that with the estimated distributions, the model quite closely matches the distribution of liquid wealth within each education group as well as for the population as a whole. Thus, our model does not suffer from the ``missing middle'' problem, identified in \cite{kaplanMPC2022}, in which the middle of the wealth distribution has too little wealth.  
-%Our model avoids this problem for two reasons: (1) The splurge pushes up MPCs relative to wealth, and (2) we calibrate to liquid wealth rather than total wealth.
+Panel~A of table~\ref{tab:estimBetas} shows the estimated values of $(\beta_e, \nabla_e)$ for each education group. The panel also shows the minimum and maximum values of the discount factors we actually use in the model when we use a discrete approximation with seven values to approximate the uniform distribution of discount factors. Panel~B of table~\ref{tab:estimBetas} shows that with these estimated distributions, we can exactly match the median liquid-wealth-to-permanent-income ratios for each education group. Figure~\ref{fig:LorenzPts} shows that with the estimated distributions, the model quite closely matches the distribution of liquid wealth within each education group as well as for the population as a whole. Our model does not suffer from the ``missing middle'' problem, identified in \cite{kaplanMPC2022}, in which the middle of the wealth distribution has too little wealth.  Our model avoids this problem for two reasons: (1) The splurge pushes up MPCs relative to wealth, and (2) we calibrate to liquid wealth rather than total wealth.
 
-\begin{table}[th]
+\begin{table}[tp]
   \begin{center}
     \begin{tabular}{l}
       \begin{tabular}{lccc}
-        \multicolumn{4}{l}{Panel (A) Estimated discount factor distributions} \\ \midrule
+        \multicolumn{4}{l}{Panel (A) Estimated discount factor distributions} \\ 
         & Dropout & Highschool & College \\ \midrule
-        $(\beta_e, \nabla_e)$ & (0.719, 0.318) & (0.911, 0.137) & (0.983,0.014) \\
-        (Min, max) in approximation & (0.447, 0.991) & (0.793, $0.990^*$) & (0.971, 0.995) \\
+        $(\beta_e, \nabla_e)$ & (0.735, 0.298) & (0.924, 0.137) & (0.984,0.010) \\
+        (Min, max) in approximation & (0.480, 0.991) & (0.806, $0.989^*$) & (0.976, 0.992) \\
         \midrule 
       \end{tabular} \\ \\ 
       
@@ -244,17 +245,26 @@ Panel~A of table~\ref{tab:estimBetas} shows the estimated values of $(\beta_e, \
         Median LW/ quarterly PI (data, percent) & 4.64 & 30.2 & 112.8 \\ 
         Median LW/ quarterly PI (model, percent) & 4.64 & 30.2 & 112.8 %\\
         %         $[20,40,60,80]$ pctiles of Lorenz curve (data) & $[0, 0.01, 0.6, 3.6]$ & $[0.06, 0.6, 3.0, 11.6]$ & $[0.2, 0.9, 3.3, 10.3]$ \\
-        %         $[20,40,60,80]$ pctiles of Lorenz curve (model) & $[0.0, 0.0, 0.6, 3.6]$ & $[0.05, 0.8, 3.1, 11.5]$ & $[0.3, 1.3, 3.6, 10.1]$
+        %         $[20,40,60,80]$ pctiles of Lorenz curve (model) & $[0.0, 0.0, 0.5, 3.6]$ & $[0.04, 0.9, 3.7, 11.3]$ & $[0.3, 1.5, 4.0, \phantom{0}9.9]$
         \\ \midrule 
       \end{tabular} \\ \\ 
+      
+      \begin{tabular}{lcccc}
+        \multicolumn{5}{l}{Panel (C) Non-targeted moments} \\ 
+        & Dropout & Highschool & College & Population \\ \midrule
+        Percent of total wealth (data) & 0.8 & 17.9 & 81.2 & 100 \\
+        Percent of total wealth (model) & 1.1 & 21.9 & 77.0 & 100 \\
+        Avg. annual MPC (model, incl. splurge) & 0.87 & 0.71 & 0.48 & 0.64
+        \\ \bottomrule 
+      \end{tabular}
     \end{tabular}
-    \caption{Estimated discount factor distributions and estimation targets}
+    \caption{Estimated discount factor distributions, estimation targets, and non-targeted moments}
     \notinsubfile{\label{tab:estimBetas}}
-    \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (A) shows the estimated parameters of the discount distributions for each education group. It also shows the minimum and maximum values we use in our discrete approximation to the uniform distribution of discount factors for each group. The $*$ indicates that the highest value in the uniform distribution of discount factor values violates the growth impatience condition (GIC) and has been replaced. Panel (B) shows the weighted median ratio of liquid wealth to permanent income from the 2004 SCF and in the model. In the annual data from the SCF, the annual PI is divided by 4 to obtain a quarterly number.\normalsize}
+    \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (A) shows the estimated parameters of the discount distributions for each education group. It also shows the minimum and maximum values we use in our discrete approximation to the uniform distribution of discount factors for each group. The $*$ indicates that the highest value in the uniform distribution of discount factor values violates the growth impatience condition (GIC) and has been replaced. Panel (B) shows the weighted median ratio of liquid wealth to permanent income from the 2004 SCF and in the model. In the annual data from the SCF, the annual PI is divided by 4 to obtain a quarterly number. Panel (C) shows percent of total wealth held by each education group in the 2004 SCF and in the model. It also shows the average annual MPCs calculated for each individual from the splurge and the quarterly MPCs, and then averaged by education group.\normalsize}
   \end{center}
 \end{table}
 
-One point we should note concerns the estimated discount factor distribution for the Highschool group. Panel~A of table~\ref{tab:estimBetas} reports values of $\beta_h=0.911$ and $\nabla_h=0.137$. With these values, the largest discount factors in our discrete approximation of the uniform distribution in the range $[\beta_h-\nabla_h, \beta_h+\nabla_h]$ would be greater than $1$. More importantly, the value would violate the Growth Impatience Condition (GIC), discussed in \cite{carroll2022theoretical}. (The GIC is required to prevent the ratio of total wealth to total income of any group from approaching infinity.  It does this by making sure that the growth of wealth of the group is less than or equal to the growth of income.)  We replace values violating the GIC with values close to the upper bound on $\beta$ imposed by the GIC. In panel~A of table~\ref{tab:estimBetas} the largest value is marked by a $*$ to indicate that it has been replaced to avoid violating the GIC. We always impose that the GIC is satisfied in the estimation of the discount factor distributions, but for the baseline parameter values it is only binding for the Highschool group. Thus, the estimation can select a large value of $\nabla_h$ without violating the constraint.\footnote{The constraint is imposed by calculating a discount factor $\beta^{\text{GIC}}$ where the GIC holds with equality. Then the estimation can pick how close to this value the largest discount factor is by estimating $x$ and setting the largest discount factor to $\exp(x)/(1+\exp(x)) \beta^{\text{GIC}}$.} 
+One point we should note concerns the estimated discount factor distribution for the Highschool group, however. Panel~A of table~\ref{tab:estimBetas} reports values of $\beta_h=0.924$ and $\nabla_h=0.137$. With these values, the largest discount factors in our discrete approximation of the uniform distribution in the range $[\beta_h-\nabla_h, \beta_h+\nabla_h]$ would be greater than $1$. More importantly, the value would violate the Growth Impatience Condition (GIC), discussed in \cite{carroll2022theoretical}. (The GIC is required to prevent the ratio of total wealth to total income of any group from approaching infinity.  It does this by making sure that the growth of wealth of the group is less than or equal to the growth of income).  We replace values violating the GIC with values close to the upper bound on $\beta$ imposed by the GIC. In panel~A of table~\ref{tab:estimBetas} the largest value is marked by a $*$ to indicate that it has been replaced to avoid violating the GIC. We always impose that the GIC is satisfied in the estimation of the discount factor distributions, but for the baseline parameter values it is only binding for the Highschool group. Thus, the estimation can select a large value of $\nabla_h$ without violating the constraint.\footnote{The constraint is imposed by calculating a discount factor $\beta^{\text{GIC}}$ where the GIC holds with equality. Then the estimation can pick how close to this value the largest discount factor is by estimating $x$ and setting the largest discount factor to $\exp(x)/(1+\exp(x)) \beta^{\text{GIC}}$.} 
 
 \begin{figure}[th]
   \begin{center}
@@ -266,65 +276,7 @@ One point we should note concerns the estimated discount factor distribution for
 
 Also, note that several of the types in the Dropout group have very low discount factors and are very impatient. In this way, the model fits the feature of the data for the Dropout group that the bottom quintiles do not save at all and do not accumulate any liquid wealth. Very low estimates for discount factors are in line with those obtained in the literature on payday lending.\footnote{See, for example, \cite{skiba2008payday}, who estimate two-week discount rates of $21$ percent, and \cite{allcott2021high}, who estimate an initial period discount factor between $0.74$ and $0.83$ in a model where a period is eight weeks long. Both of these papers use quasi-hyperbolic preferences, so the estimates are not directly comparable with parameters in our model. Nevertheless, they support the point that very high discount rates are necessary to model the part of the population that takes out payday loans at very high interest rates.} 
 
-\hypertarget{non-targeted-moments}{}\par\subsubsection{Implications for non-targeted moments} 
-\notinsubfile{\label{sec:nonTargetedMoments}}
-
-Before we move on to compare different consumption stimulus policies in the calibrated model, we also report implications of the model for some non-targeted moments. Panel~A of table~\ref{tab:nonTargetedMoments} shows the wealth distribution across the three education groups in the data and in the model. The model matches these shares quite closely, which may not be surprising given that we calibrate the size of each group and we manage to fit the wealth distribution within each group separately. The panel also reports the average marginal propensity to consume for the different groups. To be comparable to numbers reported in \citet{fagereng_mpc_2021}, these are calculated as the average MPC in the year of a lottery win. Lottery wins occur in a random quarter of the year that differs across individuals. The MPC for an individual depends on the spending pattern after the win, and these are averaged across individuals within each education group. 
-
-Panel~B of table~\ref{tab:nonTargetedMoments} shows similar numbers to Panel~A, sorted by quartiles of the liquid wealth distribution instead of education groups. Our model yields a slightly more concentrated liquid wealth distribution than in the data. However, it does produce a fairly high MPC even for households in the highest quartile of the liquid wealth distribution. This is consistent with the results found in the Norwegian data by \citet{fagereng_mpc_2021}, but also with recent results in \citet{graham2024mental}. In an administrative dataset from a large US financial institution, they find that the spending response to an income receipt is large across the distribution of liquid asset holdings. In our model, we obtain this result due to the inclusion of the splurge factor. As shown in Appendix~\ref{app:Model_without_splurge}, the model is not able to generate a high MPC for the highest wealth quartile without splurge consumption.  
-% CDC: cite Krueger's paper on memorable goods 
-% CDC: check citation to Graham and McDowall (2024). Add citation to Crawley as well?
-
-\begin{table}[th]
-	\begin{center}
-		\begin{tabular}{l}
-			\begin{tabular}{lcccc}
-				\multicolumn{5}{l}{Panel (A) Non-targeted moments by education group} \\ \midrule
-				& Dropout & Highschool & College & Population \\ \midrule
-				Percent of liquid wealth (data) & 0.8 & 17.9 & 81.2 & 100 \\
-				Percent of liquid wealth (model) & 1.1 & 21.9 & 77.0 & 100 \\
-				\makecell[l]{Avg. lottery-win-year MPC \\ (model, incl. splurge)} & 0.78 & 0.61 & 0.38 & 0.54
-				\\ \bottomrule 
-			\end{tabular} \\ \\ 
-			
-			\begin{tabular}{lcccc}
-				\multicolumn{5}{l}{Panel (B) Non-targeted moments by wealth quartile} \\ \midrule
-				 & WQ 4 & WQ 3 & WQ 2 & WQ 1 \\ \midrule
-				Percent of liquid wealth (data) & 0.14 & 1.60 & 8.51 & 89.76 \\
-				Percent of liquid wealth (model) & 0.09 & 0.96 & 4.55 & 94.40 \\
-				\makecell[l]{Avg. lottery-win-year MPC \\ (model, incl. splurge)} & 0.78 & 0.63 & 0.44 & 0.31
-				\\ \bottomrule 
-			\end{tabular}
-		\end{tabular}
-		\caption{Implications for non-targeted moments}
-		\notinsubfile{\label{tab:nonTargetedMoments}}
-		\parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (A) shows percent of liquid wealth held by each education group in the 2004 SCF and in the model. It also shows the average MPCs after a lottery win for each education group. The MPCs are calculated for each individual for the year of a lottery win, taking into account that the win takes place in a random quarter of the year that differs across individuals. The MPCs are averaged across individuals within each education group. Panel~(B) shows the same numbers for the population sorted into different quartiles of the liquid wealth distribution.\normalsize}
-	\end{center}
-\end{table}
-
-Finally, we consider the implications of our model for two different patterns of spending over time. The first pattern is the dynamics of spending after a lottery win from \citeauthor{fagereng_mpc_2021}. This pattern was used in the estimation of the splurge factor in section~\ref{sec:splurge}, but was not targeted when estimating the discount factor distributions for each education group in section~\ref{sec:estimBetas}. Figure~\ref{fig:USaggmpclotterywin} shows that the model that is estimated taking the value of the splurge as given, results in a distribution of spending over time that is very similar to the one found in the Norwegian data. 
-
-The second pattern concerns the dynamics of income and spending for households that become unemployed and remain unemployed long enough for unemployment benefits to expire. Figure~\ref{fig:expiryUI} shows the pattern of income and spending for such households.  \citet{ganongConsumer2019} report the empirical result that nondurable spending drops by 12 percent the month when benefits expire. Our quarterly model is broadly consistent with this, and the drop in spending the quarter after the expiry of UI benefits is 18 percent. 
-
-\begin{figure}[htb]
-    \centering
-    \begin{minipage}[b]{.48\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{\econtexRoot/Figures/IMPCs_wSplEstimated}
-        \caption{Share of lottery win spent}
-        \notinsubfile{\label{fig:USaggmpclotterywin}}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[b]{.48\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/FromPandemicCode/Figures/UnempSpell_Dynamics}
-        \caption{Spending upon expiry of UI benefits}
-        \notinsubfile{\label{fig:expiryUI}}
-    \end{minipage}
-    \caption{Untargeted moments}
-    \notinsubfile{\label{fig:untargetedMoments}}
-    \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in \citet{fagereng_mpc_2021}; see their Figure~A5. Panel (b) shows the evolution of income and spending for households who remain unemployed long enough for UI benefits to expire; see Figure~2 in \citet{ganongConsumer2019}.\normalsize}
-\end{figure}
+Finally, panel~C of table~\ref{tab:estimBetas} shows the wealth distribution across the three education groups in the data and in the model. The model matches these shares quite closely, which may not be surprising given that we calibrate the size of each group and we manage to fit the wealth distribution within each group separately. The panel also reports the average marginal propensity to consume within a year after an income shock for each education group. This measure of the annual MPC takes into account the initial splurge factor when an income shock is first received, as well as the decisions to consume out of additional income over four quarters after the shock. The average annual MPC for the population as a whole is $0.64$ in the model, which is slightly higher than the $0.63$ estimated for Norway by \cite{fagereng_mpc_2021}. 
 
 \ifthenelse{\boolean{Web}}{}{
   \end{document} \endinput
