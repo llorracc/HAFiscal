@@ -279,8 +279,11 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
         cwd              = os.getcwd()
         folders          = cwd.split(os.path.sep)
         Abs_Path_Results = "".join([x + "//" for x in folders[0:-1]],)
-        HANK_results_dir = Abs_Path_Results+'Results_HANK/' 
-        HANK_results     = loadPickle('multipliers_across_horizon.obj',HANK_results_dir,locals())   
+        HANK_results_dir = Abs_Path_Results+'Results_HANK/multipliers_across_horizon_w_splurge.obj' 
+        
+        import pickle
+        with open(HANK_results_dir, 'rb') as f:
+            HANK_results = pickle.load(f)
     
     
         fig, ax = plt.subplots()  
@@ -298,6 +301,33 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
         plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1))
         ax.set_xlabel('quarter')
         make_figs('Cummulative_multipliers_withHank', True , False, target_dir=fig_dir)
+          
+        # Show the plot  
+        plt.show()
+        
+        
+        HANK_results_dir = Abs_Path_Results+'Results_HANK/multipliers_across_horizon.obj' 
+        
+        import pickle
+        with open(HANK_results_dir, 'rb') as f:
+            HANK_results = pickle.load(f)
+    
+    
+        fig, ax = plt.subplots()  
+        
+        ax.plot(x_axis,C_Multiplier_Rec_Check_AD[0:max_T2],               color='green',linestyle='-')
+        ax.plot(x_axis,HANK_results['transfers'][0:max_T2],        color='green',linestyle=':')  
+        
+        ax.plot(x_axis,C_Multiplier_UI_Rec_AD[0:max_T2],                  color='blue',linestyle='-')
+        ax.plot(x_axis,HANK_results['UI_extensions'][0:max_T2],    color='blue',linestyle=':') 
+        
+        ax.plot(x_axis,C_Multiplier_Rec_TaxCut_AD[0:max_T2],              color='red',linestyle='-')
+        ax.plot(x_axis,HANK_results['tax_cut'][0:max_T2],          color='red',linestyle=':')  
+          
+        ax.legend(['Check','Check, HANK model','UI extension','UI extension, HANK model','Tax cut','Tax cut, HANK model'])
+        plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1))
+        ax.set_xlabel('quarter')
+        make_figs('Cummulative_multipliers_withHanknoSpluge', True , False, target_dir=fig_dir)
           
         # Show the plot  
         plt.show()

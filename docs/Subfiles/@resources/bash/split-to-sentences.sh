@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# 20241002:
-# - add '.} ' and '.) ' as sentencers
 
 add_newlines() {
     # Read the input text
@@ -11,20 +9,17 @@ add_newlines() {
 
     # Process each line
     while IFS= read -r line; do
-        # Skip lines that begin with '%'
-        if [[ $line =~ ^% ]]; then
-            printf "%s\n" "$line"
-            continue
-        fi
-
         # Extract LaTeX environments and comments from the line
         matches=$(printf "%s" "$line" | sed -n "s/.*\($pattern\).*/\1/p")
 
         # Replace LaTeX environments and comments with placeholders
         placeholder_line=$(printf "%s" "$line" | sed "s/$pattern/__PLACEHOLDER__/g")
 
+        # Regular expression pattern to match sentence endings
+        sentence_pattern='(?<=[.!?])['\''"]?(?=\s|$)'
+
         # Replace sentence endings with newline character
-        formatted_line=$(printf "%s" "$placeholder_line" | sed -E "s/([.!?][]?['\"]?[[:blank:]]+)/\1\n/g")
+        formatted_line=$(printf "%s" "$placeholder_line" | sed "s/$sentence_pattern/\n/g")
 
         # Reinsert LaTeX environments and comments back into the formatted line
         while read -r match; do

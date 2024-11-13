@@ -1,0 +1,5 @@
+# _config.yml
+liquid:
+  exclude:
+    - "*.tex"
+    - "*.md"  # If you want to exclude specific markdown files

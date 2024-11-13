@@ -4,7 +4,7 @@
   *{package}{tex4ht}      {0000/00/00 v0.0}
   *{file}   {@resources/tex-add-search-paths.tex}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {@local/econtexPaths.tex}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths.tex}{0000/00/00 v0.0}
   *{class}  {econark}     {2024/06/04 v0.0}
   *{package}{snapshot}    {2020/06/17 v2.14}
   *{package}{ifthen}      {2022/04/13 v1.1d}
@@ -69,9 +69,8 @@
   *{package}{nccfoots}    {2005/02/03 v1.2}
   *{package}{perpage}     {2014/10/25 v2.0}
   *{package}{setspace}    {2022/12/04 v6.7b}
-  *{package}{fontenc}     {0000/00/00 v0.0}
   *{package}{@local/local}{0000/00/00 v0.0}
-  *{file}   {@local/owner.tex}{0000/00/00 v0.0}
+  *{file}   {@local//owner.tex}{0000/00/00 v0.0}
   *{package}{moreverb}    {2008/06/03 v2.3a}
   *{package}{fancyvrb}    {2024/01/20 v4.5c}
   *{package}{hyperref}    {2024-01-20 v7.01h}
@@ -176,7 +175,7 @@
   *{file}   {HAFiscal-titlepage}{0000/00/00 v0.0}
   *{file}   {@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Subfiles/Abstract.vrb}{0000/00/00 v0.0}
   *{file}   {Subfiles.texinput}{0000/00/00 v0.0}
   *{file}   {Subfiles/Intro}{0000/00/00 v0.0}
@@ -185,12 +184,12 @@
   *{file}   {Subfiles/Model}{0000/00/00 v0.0}
   *{file}   {Subfiles/@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Equations/splurge}{0000/00/00 v0.0}
   *{file}   {Subfiles/Parameterization}{0000/00/00 v0.0}
   *{file}   {Subfiles/@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/MPC_WealthQuartiles_Table.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/Comparing-policies}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}

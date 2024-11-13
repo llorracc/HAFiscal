@@ -64,9 +64,10 @@ The final impulse response graph, figure \ref{fig:recessiontaxcutrelrecession}, 
 \notinsubfile{\label{sec:multipliers}}
 
 In this section, we compare the fiscal multipliers across the three stimulus policies. Specifically, we employ the cumulative multiplier, which captures the ratio between the net present value (NPV) of stimulated consumption up to horizon $t$ and the full-horizon NPV of the cost of the policy. We thus define the cumulative multiplier up to horizon $t$ as
-\begin{equation*}
+\begin{equation}
+	\label{eqn:cumMultiplier}
   M(t) = \frac{NPV(t,\Delta C)}{NPV (\infty,\Delta G)},
-\end{equation*}
+\end{equation}
 where $\Delta C$ is the additional aggregate consumption spending up to time $t$ in the policy scenario relative to the baseline and $\Delta G$ is the total government expenditure caused by the policy. The NPV of a variable $X_t$ is given by 
 $NPV(t,X) = \sum_{s=0}^{t} \left( \prod_{i=1}^{s} \frac{1}{R_i} \right) X_s$. 
 The multiplier hence captures the amount of induced consumption at different horizons relative to the total (i.e. full-horizon) cost of the policies. 
@@ -101,7 +102,7 @@ In this section, we look at the welfare implications of each stimulus policy. To
 
 Our welfare measure weights the felicity of a household at time $t$ by the inverse of the marginal utility of the same household in a counterfactual simulation in which neither the recession occurred nor the fiscal policy was implemented, discounted by the real interest rate.\footnote{Discounting at the real interest rate accounts for the fact that a redistributive policy over time will require borrowing or lending at the real interest rate. The preference discount factors of households would appear in both the numerator and the denominator---the utility and marginal utility---and therefore cancel and do not play a role in our welfare measure.} This weighting scheme means that in normal times the marginal benefit or cost to a social planner of moving a dollar of consumption from one household at one time period to another household at the same or a different time period is zero. Hence, in normal times, any re-distributive policy has zero marginal benefit. However, in a recession when the average marginal utility is higher than in normal times, there can be welfare benefits to government borrowing to allow households to consume more during the recession.
 
-Let $\mathbf{c}_{it,\textit{normal}}$ be the consumption of household $i$ at time $t$ in the baseline simulation with no recession and no fiscal policy. The (undiscounted) marginal utility of an extra unit of consumption for this household in this time period is $ u'(\mathbf{c}_{it,\textit{normal}})$.
+Let $\mathbf{c}_{it,\textit{normal}}$ be the consumption---inclusive of the splurge---of household $i$ at time $t$ in the baseline simulation with no recession and no fiscal policy. The (undiscounted) marginal utility of an extra unit of consumption for this household in this time period is $ u'(\mathbf{c}_{it,\textit{normal}})$.  
 
 Let $\mathbf{c}_{it,\textit{policy},Rec,AD}$ be the consumption of the same household under the fiscal policy, $\textit{policy}$, possibly a recession, $Rec \in \{0,1\}$, and in an economy with or without aggregate demand effects, $AD \in \{0,1\}$.\footnote{In the simulations, household $i$ experiences the same permanent and transitory shock sequence, but in the recession simulation some households experience unemployment during periods in which the same household is employed in the baseline simulation.}
 
