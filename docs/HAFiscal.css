@@ -324,10 +324,6 @@ span.textcaps{font-variant:small-caps}
 .equation td:last-child{ width: 0.01; text-align: right; vertical-align: middle; }
 .equation-star{ display: block; text-align: center; margin-top: 1.5em; margin-bottom: 1.5em; }
 .math-display img{ /* Targets images within elements with class math-display */ display: block; /* Makes the image a block element */ margin-left: auto; /* These two margin settings together */ margin-right: auto; /* center the image horizontally */ width: 1.0; } 
-span#colorbox1{background-color:#FFFF00;}
-span#textcolor2{background-color:#FFFF00}
-span#textcolor3{background-color:#FFFF00}
-span#textcolor4{background-color:#FFFF00}
 /* end css.sty */
 
 /* Econ-ARK Basic HTML Theme styles     						 */
