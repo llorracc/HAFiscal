@@ -305,26 +305,79 @@ Finally, we consider the implications of our model for two different patterns of
 
 The second pattern concerns the dynamics of income and spending for households that become unemployed and remain unemployed long enough for unemployment benefits to expire. Figure~\ref{fig:expiryUI} shows the pattern of income and spending for such households.  \citet{ganongConsumer2019} report the empirical result that nondurable spending drops by 12 percent the month when benefits expire. Our quarterly model is broadly consistent with this, and the drop in spending the quarter after the expiry of UI benefits is 18 percent. 
 
+% \begin{figure}[htb]
+%     \centering
+%     \begin{minipage}[b]{.48\linewidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{\econtexRoot/Figures/IMPCs_wSplEstimated}
+%         \caption{Share of lottery win spent}
+%         \notinsubfile{\label{fig:USaggmpclotterywin}}
+%     \end{minipage}%
+%     \hfill
+%     \begin{minipage}[b]{.48\linewidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/FromPandemicCode/Figures/UnempSpell_Dynamics}
+%         \caption{Spending upon expiry of UI benefits}
+%         \notinsubfile{\label{fig:expiryUI}}
+%     \end{minipage}
+%     \caption{Untargeted moments}
+%     \notinsubfile{\label{fig:untargetedMoments}}
+%     \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in \citet{fagereng_mpc_2021}; see their Figure~A5. Panel (b) shows the evolution of income and spending for households who remain unemployed long enough for UI benefits to expire; see Figure~2 in \citet{ganongConsumer2019}.\normalsize}
+% \end{figure}
+
 \begin{figure}[htb]
-    \centering
-    \begin{minipage}[b]{.48\linewidth}
-        \centering
+  \ifdefined\HCode
+    \HCode{<div style="text-align: center;">}
+  \fi
+  \centering
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}cc@{}}
+    \ifdefined\HCode
+      \HCode{<div style="display: flex; flex-direction: column; align-items: center; width: 48\%;">}
+    \fi
+    \subfloat[Share of lottery win spent\label{fig:USaggmpclotterywin}]{%
+      \ifdefined\HCode
         \includegraphics[width=\linewidth]{\econtexRoot/Figures/IMPCs_wSplEstimated}
-        \caption{Share of lottery win spent}
-        \notinsubfile{\label{fig:USaggmpclotterywin}}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[b]{.48\linewidth}
-        \centering
+      \else
+        \includegraphics[width=0.48\textwidth]{\econtexRoot/Figures/IMPCs_wSplEstimated}
+      \fi
+    }
+    \ifdefined\HCode
+      \HCode{</div>}
+    \fi
+    &
+    \ifdefined\HCode
+      \HCode{<div style="display: flex; flex-direction: column; align-items: center; width: 48\%;">}
+    \fi
+    \subfloat[Spending upon expiry of UI benefits\label{fig:expiryUI}]{%
+      \ifdefined\HCode
         \includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/FromPandemicCode/Figures/UnempSpell_Dynamics}
-        \caption{Spending upon expiry of UI benefits}
-        \notinsubfile{\label{fig:expiryUI}}
-    \end{minipage}
-    \caption{Untargeted moments}
-    \notinsubfile{\label{fig:untargetedMoments}}
-    \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in \citet{fagereng_mpc_2021}; see their Figure~A5. Panel (b) shows the evolution of income and spending for households who remain unemployed long enough for UI benefits to expire; see Figure~2 in \citet{ganongConsumer2019}.\normalsize}
+      \else
+        \includegraphics[width=0.48\textwidth]{\econtexRoot/Code/HA-Models/FromPandemicCode/Figures/UnempSpell_Dynamics}
+      \fi
+    }
+    \ifdefined\HCode
+      \HCode{</div>}
+    \fi
+  \end{tabular*}
+  \ifdefined\HCode
+    \HCode{<figcaption style="text-align: center; width: auto; max-width: 800px;">}
+  \fi
+  \caption{Untargeted moments}
+  \notinsubfile{\label{fig:untargetedMoments}}
+  \ifdefined\HCode
+    \HCode{<div style="text-align: justify; width: 16cm; margin: 1em auto 0 auto;">}
+  \fi
+  \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in \citet{fagereng_mpc_2021}; see their Figure~A5. Panel (b) shows the evolution of income and spending for households who remain unemployed long enough for UI benefits to expire; see Figure~2 in \citet{ganongConsumer2019}.\normalsize}
+  \ifdefined\HCode
+    \HCode{</div>}
+  \fi
+  \ifdefined\HCode
+    \HCode{</figcaption></div>}
+  \fi
 \end{figure}
 
 \ifthenelse{\boolean{Web}}{}{
   \end{document} \endinput
 }
+
+
