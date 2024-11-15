@@ -17,43 +17,43 @@ Consumers differ by their level of education and, within education group, by sub
 
 A consumer $i$ has education $e(i)$ and a subjective discount factor $\beta_i$. The consumer faces a stochastic income stream, $\mathbf{y}_{i,t}$, and chooses to consume a fraction of that income when it arrives---the `splurge', described in the introduction. With what is left over, the consumer chooses to optimize consumption without regard to the fraction that was already spent. Therefore, consumption each period for consumer $i$ can be written as
 \begin{verbatimwrite}{\EqDir/splurge}
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \mathbf{c}_{i,t} &= \mathbf{c}_{sp,i,t} + \mathbf{c}_{opt,i,t}, \notinsubfile{\label{eq:model}}
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 \end{verbatimwrite}
 \input{\EqDir/splurge}
 where $\mathbf{c}_{i,t}$ is total consumption, $\mathbf{c}_{sp,i,t}$ is the splurge consumption, and $\mathbf{c}_{opt,i,t}$ is the consumer's optimal choice of consumption after splurging. Splurge consumption is simply a fraction of income:
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \mathbf{c}_{sp,i,t} = \varsigma \mathbf{y}_{i,t},
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 while the optimized portion of consumption is chosen to maximize the perpetual-youth lifetime expected-utility-maximizing consumption, where $D$ is the end-of-life probability:
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \sum_{t=0}^{\infty}\beta_i^t (1-D)^t \mathbb{E}_0 u(\mathbf{c}_{opt,i,t}).
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 We use a standard CRRA (constant relative risk aversion) utility function, so $u(c) = c^{1-\gamma}/(1-\gamma)$ for $\gamma \neq 1$ and $u(c) = \log(c)$ for $\gamma=1$, where $\gamma$ is the coefficient of relative risk aversion. The optimization is subject to the budget constraint, given existing market resources $\mathbf{m}_{i,t}$ and income state, and a no-borrowing constraint: 
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \mathbf{a}_{i,t} &= \mathbf{m}_{i,t} - \mathbf{c}_{i,t}, \notag \\ 
   \mathbf{m}_{i,t+1} &= R \mathbf{a}_{i,t} + \mathbf{y}_{i,t+1}, \\
   \mathbf{a}_{i,t} &\geq 0,   \notag
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 where $R$ is the gross interest factor for accumulated assets $\mathbf{a}_{i,t}$.
 
 \hypertarget{the-income-process}{}\par\subsection{The income process}
 
 Consumers face a stochastic income process with permanent and transitory shocks to income, along with unemployment shocks. In normal times, consumers who become unemployed receive unemployment benefits for two quarters. Permanent income evolves according to:
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \mathbf{p}_{i,t+1} = \psi_{i,t+1}\Gamma_{e(i)}\mathbf{p}_{i,t},
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 where $\psi_{i,t+1}$ is the shock to permanent income and $\Gamma_{e(i)}$ is the average growth rate of income for the consumer's education group $e(i)$.\footnote{We model the rate of growth for permanent income for each education group and keep this rate unchanged during periods of unemployment. There is evidence, e.g.\ in \cite{davis_recessions_2011}, that unemployment, especially in a recession, leads to permanent income loss. This finding could be added to the model---see \citet{carroll2020modeling} for an example---but is not material to the evaluation of stimulus payments here so we have chosen to keep the model simple.  } The realized growth rate of permanent income for consumer $i$ is thus $\hat{\Gamma}_{i,t+1} = \psi_{i,t+1} \Gamma_{e(i)}$. The shock to permanent income is normally distributed with variance $\sigma_{\psi}^2$.
 
 The actual income a consumer receives will be subject to the individual's employment status as well as transitory shocks, $\xi_{i,t}$:
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \mathbf{y}_{i,t} =   \begin{cases}
     \xi_{i,t}\mathbf{p}_{i,t}, & \text{if employed} \\
     \rho_b \mathbf{p}_{i,t}, & \text{if unemployed with benefits} \\
     \rho_{nb} \mathbf{p}_{i,t}, & \text{if unemployed without benefits} 
   \end{cases}
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 where $\xi_{i,t}$ is normally distributed with variance $\sigma_{\xi}^2$, and $\rho_b$ and $\rho_{nb}$ are the replacement rates for an unemployed consumer who is or is not eligible for unemployment benefits, respectively. 
 
 A Markov transition matrix $\Pi$ generates the unemployment dynamics where the number of states is given by $2$ plus the number of periods that unemployment benefits last. An employed consumer can continue being employed or move to being unemployed with benefits.\footnote{That is, as long as we assume that there is at least one period of unemployment benefits.} The first row of $\Pi$ is thus given by $[1-\pi_{eu}^{e(i)}, \pi_{eu}^{e(i)}, \mathbf{0}]$, where $\pi_{eu}^{e(i)}$ indicates the probability of becoming unemployed from an employed state and $\mathbf{0}$ is a vector of zeros of the appropriate length. Note that we allow this probability to depend on the education group of consumer $i$ and will calibrate this parameter to match the average unemployment rate for each education group. Upon becoming unemployed, all consumers face a probability $\pi_{ue}$ of transitioning back into employment and a probability $1-\pi_{ue}$ of remaining unemployed with one less period of remaining benefits. After transitioning into the unemployment state where the consumer is no longer eligible for benefits, the consumer will remain in this state until becoming employed again. The probability of becoming employed is thus the same for each of the unemployment states and education groups. 	
@@ -83,16 +83,16 @@ To keep our analysis as simple as possible, we do not model the debt repayment. 
 Our baseline model is a partial equilibrium model that does not include any feedback from aggregate consumption to income. In an extension to the model, we add aggregate demand effects during the recession. The motivation for this specification comes from the idea that spending in an economy with substantial slack and in which the central bank is unable to prevent a recession will result in higher utilization rates and greater output. By contrast, government spending in an economy running at potential with an active monetary policy will not succeed in increasing output. The recent inflation experience of the U.S. provides some evidence that output responds highly non-linearly to aggregate demand. This idea is explored in a recent revival of research into non-linear Phillips curves, such as \cite{benigno2023baaack} and \cite{blanco2024nonlinear}.     
 
 With this extension, any changes in consumption away from the steady-state consumption level feed back into labor income. Aggregate demand effects are evaluated as
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   AD(C_t) =   \begin{cases}
     \Big(\frac{C_t}{\tilde{C}}\Big)^\kappa, & \text{if in a recession} \\
     1, & \text{otherwise} ,
   \end{cases}
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 where $\tilde{C}$ is the level of consumption in the steady state. Idiosyncratic income in the aggregate demand extension is multiplied by $AD(C_t)$:
-\begin{align}
+\begin{equation}\begin{gathered}\begin{aligned}
   \mathbf{y}_{AD,i,t} = AD(C_t)\mathbf{y}_{i,t}.
-\end{align}
+\end{aligned}\end{gathered}\end{equation}
 The series $\mathbf{y}_{AD,i,t}$ is then used for each consumer's budget constraint.
 
 \onlyinsubfile{\input{bibliography_blend}}
