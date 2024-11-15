@@ -9,14 +9,6 @@
 % Document has title page and table of contents and header:
 \documentclass[titlepage, headings=optiontotocandhead]{econark}
 
-\usepackage[T1]{fontenc}
-
-%\usepackage{lmodern}
-%\renewcommand{\familydefault}{\ttdefault} % Ban ugly ligatures
-
-% executeAllowed boolean true if able to run shell scripts
-%\usepackage{set-boolean-indicating-execute-permissions} 
-
 \newcommand{\texname}{HAFiscal} % Keyname for paper (optional)
 
 % Definitions unique to this paper
@@ -26,10 +18,11 @@
 % To include Appendix and Table of Contents? false->true
 \provideboolean{Appendix}
 \setboolean{Appendix}{false} % uncomment next line to include
-% \setboolean{Appendix}{true}
+\setboolean{Appendix}{true}
 \provideboolean{TOC}\setboolean{TOC}{false}
 
-\provideboolean{draftmode}\setboolean{draftmode}{true}
+\provideboolean{draftmode}\setboolean{draftmode}{false}
+%\setboolean{draftmode}{false}
 \newcommand{\Draft}{\ifthenelse{\boolean{draftmode}}}
 \Draft{\usepackage{showlabels}
   \renewcommand{\showlabelsetlabel}[1]{\tiny #1}

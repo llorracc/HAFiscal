@@ -145,6 +145,10 @@ def Simulate(Run_Dict,figs_dir,Parametrization='Baseline'):
         t0 = time()
         base_results = AggDemandEconomy.run_experiment(**base_dict_agg, Full_Output = 'ForWelfare')
         saveAsPickleUnderVarName(base_results,figs_dir,locals())
+        # For analysis purposes save full output
+        base_results_full = AggDemandEconomy.run_experiment(**base_dict_agg, Full_Output = True)
+        saveAsPickleUnderVarName(base_results_full,figs_dir,locals())
+        
         AggDemandEconomy.store_baseline(base_results['AggCons'])     
         t1 = time()
         print('Calculating agg consumption took ' + mystr(t1-t0) + ' seconds.')
@@ -165,7 +169,7 @@ def Simulate(Run_Dict,figs_dir,Parametrization='Baseline'):
             dictt['EconomyMrkv_init'] = list(np.arange(1,AggDemandEconomy.num_experiment_periods+1)*2) + [0]*20 
             dictt['EconomyMrkv_init'][0:t+1] = np.array(dictt['EconomyMrkv_init'][0:t+1]) +1
             print(dictt['EconomyMrkv_init'])
-            this_result = AggDemandEconomy.run_experiment(**dictt, Full_Output = 'ForWelfare')
+            this_result = AggDemandEconomy.run_experiment(**dictt, Full_Output = True)
             all_results += [this_result]
         for key in output_keys:
             avg_results[key] = np.sum(np.array([all_results[t][key]*recession_prob_array[t]  for t in range(max_recession_duration)]), axis=0)   
