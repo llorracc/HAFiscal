@@ -1,11 +1,10 @@
 \RequireVersions{
   *{application}{pdfTeX}  {0000/00/00 v1.40.25}
   *{format} {LaTeX2e}     {2023-11-01 v2.e}
-  *{file}   {HAFiscal.tex}{0000/00/00 v0.0}
   *{file}   {@resources/tex-add-search-paths.tex}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {@local//econtexPaths.tex}{0000/00/00 v0.0}
-  *{class}  {econark}     {2024/06/04 v0.0}
+  *{file}   {@local/econtexPaths.tex}{0000/00/00 v0.0}
+  *{class}  {@resources/texlive/texmf-local/tex/latex/econark}{2024/06/04 v0.0}
   *{package}{snapshot}    {2020/06/17 v2.14}
   *{package}{ifthen}      {2022/04/13 v1.1d}
   *{package}{changepage}  {2009/10/20 v1.0c}
@@ -70,7 +69,7 @@
   *{package}{perpage}     {2014/10/25 v2.0}
   *{package}{setspace}    {2022/12/04 v6.7b}
   *{package}{@local/local}{0000/00/00 v0.0}
-  *{file}   {@local//owner.tex}{0000/00/00 v0.0}
+  *{file}   {@local/owner.tex}{0000/00/00 v0.0}
   *{package}{moreverb}    {2008/06/03 v2.3a}
   *{package}{fancyvrb}    {2024/01/20 v4.5c}
   *{package}{hyperref}    {2024-01-20 v7.01h}
@@ -123,7 +122,7 @@
   *{package}{pdforhtml}   {0000/00/00 v0.0}
   *{package}{scrlayer-scrpage}{2023/07/07 v3.41}
   *{package}{scrlayer}    {2023/07/07 v3.41}
-  *{package}{econark-multibib}{2024/06/08 v0.0}
+  *{package}{@resources/texlive/texmf-local/tex/latex/econark-multibib}{2024/06/08 v0.0}
   *{file}   {umsa.fd}     {2013/01/14 v3.01}
   *{file}   {umsb.fd}     {2013/01/14 v3.01}
   *{file}   {t1cmtt.fd}   {2023/04/13 v2.5m}
@@ -139,7 +138,7 @@
   *{file}   {HAFiscal-titlepage}{0000/00/00 v0.0}
   *{file}   {@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
+  *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Subfiles/Abstract.vrb}{0000/00/00 v0.0}
   *{file}   {Subfiles.texinput}{0000/00/00 v0.0}
   *{file}   {Subfiles/Intro}{0000/00/00 v0.0}
