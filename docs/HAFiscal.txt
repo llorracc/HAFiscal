@@ -609,7 +609,7 @@ response of consumption to the income shock, but also the subsequent effect on c
 response in the cross-section, i.e. across the quartiles of the liquid wealth distribution,
 for which empirical estimates are also provided. The shares of lottery winnings expended
 at different time horizons, as found in Fagereng, Holm, and Natvik (2021), are plotted
-in figure 10a. Table 1 (second row) shows the initial consumption response across liquid
+in figure 1a. Table 1 (second row) shows the initial consumption response across liquid
 wealth quartiles.
 Second, we match the steady-state distribution of liquid wealth in the model to its
 empirical counterpart. Because of the lack of data on the liquid wealth distribution in
@@ -620,7 +620,7 @@ targets the cumulative liquid wealth shares for the entire population at the 20t
 (SCF) in 2004 (see section 3.2 for further details), equal 0.03 percent, 0.35 percent, 1.84
 percent, and 7.42 percent, respectively. Hence, 92.6 percent of the total liquid wealth is
 held by the top income quintile. We also target the mean liquid wealth to income ratio
-of 6.60. The data are plotted in figure 10b.
+of 6.60. The data are plotted in figure 1b.
 For this estimation exercise, the remaining model parameters are calibrated to reflect
 the Norwegian economy. Specifically, we set the real interest rate to 2 percent annually
 and the unemployment rate to 4.4 percent, in line with Aursland, Frankovic, Kanik,
