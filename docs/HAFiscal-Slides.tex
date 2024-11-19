@@ -7,7 +7,7 @@
 \input{./.econtexRoot} 
 
 \documentclass[pdflatex,aspectratio=169]{beamer}
-%\usepackage{HAFiscal-Slides}
+
 \usepackage{pdfsuppressruntime}
 
 \usepackage{multirow}
@@ -15,7 +15,7 @@
 \newbool{fullcon}\global\booltrue{fullcon}\boolfalse{fullcon} %full content, 30-40 min
 \newbool{bundesb}\global\booltrue{bundesb}\boolfalse{bundesb} %reduced, 20 min presentation
 \newbool{upenn}\global\booltrue{upenn}%\boolfalse{upenn} %reduced, 20 min presentation
-\usepackage{\econark}
+\usepackage{econark}
 
 
 % _____________ Opening slide _______________________
@@ -23,8 +23,7 @@
 
 \title[Stimulus]{Welfare and Spending Effects of Consumption Stimulus Policies}
 \author{
-  Christopher D.
-Carroll (JHU)
+  Christopher D.\ Carroll (JHU)
   \and
   Edmund Crawley (FED)
   \and
@@ -65,7 +64,7 @@ Carroll (JHU)
 
 \renewcommand{\PermGroFac}{G}
 
-\begin{document}\bibliographystyle{\econtexBibStyle}
+\begin{document}\bibliographystyle{econark}
 
 \begin{frame}[plain]
   \titlepage
@@ -241,7 +240,7 @@ Carroll (JHU)
     \begin{column}{0.5\textwidth}
       Liquid Wealth from \href{https://www.federalreserve.gov/econres/scfindex.htm}{SCF}
       
-      \includegraphics[width=\linewidth]{\FigDir/LorenzPoints.pdf}
+      \includegraphics[width=\linewidth]{\FigDir/LorenzPoints}
       
     \end{column}
     
@@ -250,7 +249,7 @@ Carroll (JHU)
     \begin{column}{0.4\textwidth}  	
       Intertemporal MPC from Fagereng, Holm, Natvik (2021)	
       
-      \includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin.pdf}
+      \includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin}
       
       Modeling device: `Splurge' in consumption, i.e. exogenously given fraction of income directly consumed
     \end{column}
@@ -468,8 +467,8 @@ length of 6q)
         \begin{frame}
           \frametitle{Step 1: iMPC from FHN (2021)}
           \centering 
-          %	\includegraphics[width=3in]{\FigDir/AggMPC_LotteryWin.pdf}
-          \includegraphics[width=3in]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin.pdf}
+          %	\includegraphics[width=3in]{\FigDir/AggMPC_LotteryWin}
+          \includegraphics[width=3in]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin}
           \begin{itemize}[<+->]
             \itemsep = .5\bigskipamount 
           \item Estimated splurge factor: $\varsigma = 0.31$; MPC across wealth distrubtion and K/Y untargeted but close to targets
@@ -552,7 +551,7 @@ length of 6q)
         \begin{frame}
           \frametitle{Step 3: Visualization of match with SCF}
           \centering
-          \includegraphics[width=4in]{\FigDir/LorenzPoints.pdf}
+          \includegraphics[width=4in]{\FigDir/LorenzPoints}
         \end{frame}
 
 

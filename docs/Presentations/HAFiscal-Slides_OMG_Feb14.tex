@@ -1,6 +1,6 @@
 \input{./econtexRoot.texinput}
 \documentclass[pdflatex,aspectratio=169]{beamer}
-\usepackage{HAFiscal-Slides}
+\usepackage{HAFiscal-Slides.pdf}
 \usepackage{multirow}
 
 %[notes,10pt,dvipsnames,aspectratio=169]
@@ -66,7 +66,7 @@
 \usepackage[font=small,skip=0pt]{caption}
 \usepackage{booktabs}
 
-\begin{document}\bibliographystyle{\econtexBibStyle}
+\begin{document}\bibliographystyle{econark}
 
 \begin{frame}[plain]
   \titlepage
@@ -132,14 +132,14 @@
 	\small Definition: Kaplan and Violante (2014) \\[-.5ex] 
 	 Modelling device: \textit{Ex-ante} heterogeneity in discount factors \normalsize}
 	\centering 
-	\includegraphics[width=3.5in]{\FigDir/LorenzPoints_dataOnly.pdf}
+	\includegraphics[width=3.5in]{\FigDir/LorenzPoints_dataOnly}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Consistent with data 2: iMPC from FHN (2021) \\ 
 	\small Modelling device: `Splurge' in consumption \normalsize}
 	\centering
-	\includegraphics[width=3in]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin_DataOnly.pdf}
+	\includegraphics[width=3in]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin_DataOnly}
 	\begin{itemize}
 	\itemsep = 0.5\bigskipamount
 	\item Auclert, Rognlie and Straub (2018): Also cite FHN for evidence on iMPCs
@@ -360,8 +360,8 @@
 \begin{frame}
 	\frametitle{iMPC from FHN (2021)}
 	\centering 
-%	\includegraphics[width=3in]{\FigDir/AggMPC_LotteryWin.pdf}
-	\includegraphics[width=3in]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin.pdf}
+%	\includegraphics[width=3in]{\FigDir/AggMPC_LotteryWin}
+	\includegraphics[width=3in]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin}
 	\begin{itemize}
 		\itemsep = .5\bigskipamount 
 		\item Estimated splurge factor: $\varsigma = 0.31$
@@ -442,7 +442,7 @@
 \begin{frame}
 \frametitle{SCF liquid wealth}
 \centering
-\includegraphics[width=4in]{\FigDir/LorenzPoints.pdf}
+\includegraphics[width=4in]{\FigDir/LorenzPoints}
 \end{frame}
 
 
