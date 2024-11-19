@@ -3183,7 +3183,7 @@ Matthew N. White (2017): “The distribution of wealth and the marginal
 propensity to consume,” Quantitative Economics, 8(3), 977–1020, At
 https://www.econ2.jhu.edu/people/ccarroll/papers/cstwMPC.
 Carroll, Christopher D (2022): “Theoretical Foundations of Buffer Stock Saving,”
-Working paper.
+Department of Economics, Working paper.
 Carroll, Christopher D, Edmund Crawley, Jiri Slacalek, Kiichi
 Tokuoka, and Matthew N White (2020): “Sticky Expectations and
 Consumption Dynamics,” American Economic Journal: Macroeconomics, 12(3), 40–
@@ -3267,7 +3267,7 @@ cost of consumption fluctuations in the presence of memorable goods,” Quantita
 economics, 11(4), 1177–1214.
 Indarte, Sasha, Raymond Kluender, Ulrike Malmendier, and Michael
 Stepner (2024): “What Explains the Consumption Decisions of Low-Income
-Households?,” .
+Households?,” Department of Economics.
 Kaplan, Greg, and Giovanni L Violante (2014): “A model of the consumption
 response to fiscal stimulus payments,” Econometrica, 82(4), 1199–1239.
 (2022): “The Marginal Propensity to Consume in Heterogeneous Agent Models,”
