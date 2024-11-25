@@ -1,6 +1,6 @@
 Welfare and Spending Effects
 of Consumption Stimulus Policies
-2024-11-18
+2024-11-25
 
 Christopher D. Carroll1
 Edmund Crawley2
@@ -3184,10 +3184,8 @@ propensity to consume,” Quantitative Economics, 8(3), 977–1020, At
 https://www.econ2.jhu.edu/people/ccarroll/papers/cstwMPC.
 Carroll, Christopher D (2022): “Theoretical Foundations of Buffer Stock Saving,”
 Department of Economics, Working paper.
-Carroll, Christopher D, Edmund Crawley, Jiri Slacalek, Kiichi
-Tokuoka, and Matthew N White (2020): “Sticky Expectations and
-Consumption Dynamics,” American Economic Journal: Macroeconomics, 12(3), 40–
-76.
+Carroll, Christopher D., Edmund Crawley, Jiri Slacalek, Kiichi Tokuoka, and Matthew N. White (2020): “Sticky Expectations and Consumption
+Dynamics,” American Economic Journal: Macroeconomics, 12(3), 40–76.
 Carroll, Christopher D, Edmund Crawley, Jiri Slacalek, and Matthew N
 White (2020): “Modeling the consumption response to the CARES act,” Covid
 Economics, 10, 62–86.
@@ -3199,12 +3197,12 @@ Christiano, Lawrence, Martin Eichenbaum, and Sergio Rebelo (2011):
 119(1), 78–121.
 Christiano, Lawrence J., Martin S. Eichenbaum, and Mathias Trabandt
 (2016): “Unemployment and Business Cycles,” Econometrica, 84(4), 1523–1569.
-
-49
-
 Cochrane, John H (1989): “The Sensitivity of Tests of the Intertemporal Allocation
 of Consumption to Near-Rational Alternatives,” The American Economic Review, pp.
 319–337.
+
+49
+
 Coenen, Günter, Christopher J Erceg, Charles Freedman, Davide
 Furceri, Michael Kumhof, René Lalonde, Douglas Laxton, Jesper
 Lindé, Annabelle Mourougane, Dirk Muir, et al. (2012): “Effects of fiscal
@@ -3240,11 +3238,11 @@ Unemployment Benefits: Evidence from Administrative Micro Data,” Working Paper
 Ganong, Peter, and Pascal Noel (2019): “Consumer Spending during
 Unemployment: Positive and Normative Implications,” American Economic Review,
 109(7), 2383–2424.
+Gjeldsregistret (2022): “Nokkeltall fra Gjeldsregisteret,” Gjeldsregistret nettside,
+Url: https://www.gjeldsregisteret.com/pages/nokkeltall.
 
 50
 
-Gjeldsregistret (2022): “Nokkeltall fra Gjeldsregisteret,” Gjeldsregistret nettside,
-Url: https://www.gjeldsregisteret.com/pages/nokkeltall.
 Gornemann, Nils, Keith Kuester, and Makoto Nakajima (2021): “Doves for
 the Rich, Hawks for the Poor? Distributional Consequences of Systematic Monetary
 Policy,” ECONtribute Discussion Papers Series 089, University of Bonn and University
@@ -3279,11 +3277,11 @@ Norges Bank Staff Memo, 5.
 Krueger, Dirk, Kurt Mitman, and Fabrizio Perri (2016): “Macroeconomics
 and household heterogeneity,” in Handbook of Macroeconomics, vol. 2, pp. 843–921.
 Elsevier.
+Kueng, Lorenz (2018): “Excess Sensitivity of High-Income Consumers*,” The
+Quarterly Journal of Economics, 133(4), 1693–1751.
 
 51
 
-Kueng, Lorenz (2018): “Excess Sensitivity of High-Income Consumers*,” The
-Quarterly Journal of Economics, 133(4), 1693–1751.
 Laibson, David, Peter Maxted, and Benjamin Moll (2022): “A Simple Mapping
 from MPCs to MPXs,” Discussion paper, National Bureau of Economic Research.
 Maxted, Peter, David Laibson, and Benjamin Moll (2024): “Present Bias
@@ -3330,12 +3328,12 @@ Ravn, Morten O., and Vincent Sterk (2017): “Job uncertainty and deep
 recessions,” Journal of Monetary Economics, 90, 125–141.
 Rotemberg, Julio J. (1982): “Sticky Prices in the United States,” Journal of Political
 Economy, 90(6), 1187–1211.
-
-52
-
 Rothstein, Jesse, and Robert G Valletta (2017): “Scraping by: Income and
 program participation after the loss of extended unemployment benefits,” Journal of
 Policy Analysis and Management, 36(4), 880–908.
+
+52
+
 Silva, José, and Manuel Toledo (2009): “Labor Turnover Costs and The Cyclical
 Behavior or Vacancies and Unemployment,” Macroeconomic Dynamics, 13(S1), 76–96.
 Skiba, Paige Marta, and Jeremy Tobacman (2008): “Payday loans, uncertainty

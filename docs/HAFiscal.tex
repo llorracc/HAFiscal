@@ -10,6 +10,8 @@
 \documentclass[titlepage, headings=optiontotocandhead]{econark}
 
 \newcommand{\texname}{HAFiscal} % Keyname for paper (optional)
+\usepackage{econark-bibfilesfind}
+\bibfilesfind{\texname}
 
 % Definitions unique to this paper
 \usepackage{@local/local} % local.sty imports packages
@@ -29,7 +31,7 @@
 
 % Standard useful packages for economics
 \usepackage{pdforhtml}         % allow compile as pdf or html
-\usepackage{econark-multibib}  % Only use bib files that exist
+%\usepackage{econark-multibib}  % Only use bib files that exist
 \bibliographystyle{econtex}
 %\usepackage{econark-titlepage} 
 
@@ -40,7 +42,7 @@
   \provideboolean{showPageHead}{\setboolean{showPageHead}{true}}
   \usepackage{scrlayer-scrpage}  % Package for page headers if PDF
   \usepackage{caption}           % allow suppression of appendix figures
-}
+} % end non Web instructions
 
 \begin{document}
 % Tell subfiles they are not being compiled as standalone files
@@ -67,8 +69,11 @@
 }{}
 
 % Make the bibliography
-%\input{bibliography_blend}
-\econarkmultibib{\texname}
+% \input{bibliography_blend}
+
+\bibliography{\bibfilesfound}
+
+%\econarkmultibib{\texname}
 \end{document}\endinput
 
 % Lines below help configure AucTeX if that is your editor
