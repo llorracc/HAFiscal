@@ -67,3 +67,24 @@ os.chdir('FromPandemicCode')
 exec(open(script_path).read())
 os.chdir('../')
 print('Concluded Step 4. \n')
+
+
+#%%
+import nbformat
+from nbconvert.preprocessors import ExecutePreprocessor
+print('Step 5: HANK Robustness Check\n')
+os.chdir('./FromPandemicCode')
+
+script_path = 'HA-Fiscal-HANK-SAM.py'
+exec(open(script_path).read())
+
+script_path = 'HA-Fiscal-HANK-SAM-clean.ipynb'
+with open(script_path) as f:
+    hank_nb = nbformat.read(f, nbformat.NO_CONVERT)
+ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
+nb_out, metadata = ep.preprocess(hank_nb)
+
+script_path = 'HA-Fiscal-HANK-SAM-executed.ipynb'
+with open(script_path, 'w', encoding='utf-8') as f:
+    nbformat.write(nb_out, f)
+print('Concluded Step 5. \n')
