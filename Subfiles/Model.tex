@@ -18,7 +18,7 @@ Consumers differ by their level of education and, within education group, by sub
 A consumer $i$ has education $e(i)$ and a subjective discount factor $\beta_i$. The consumer faces a stochastic income stream, $\mathbf{y}_{i,t}$, and chooses to consume a fraction of that income when it arrives---the `splurge', described in the introduction. With what is left over, the consumer chooses to optimize consumption without regard to the fraction that was already spent. Therefore, consumption each period for consumer $i$ can be written as
 \begin{verbatimwrite}{\EqDir/splurge}
 \begin{equation}\begin{gathered}\begin{aligned}
-  \mathbf{c}_{i,t} &= \mathbf{c}_{sp,i,t} + \mathbf{c}_{opt,i,t}, \notinsubfile{\label{eq:model}}
+  \mathbf{c}_{i,t} &= \mathbf{c}_{sp,i,t} + \mathbf{c}_{opt,i,t}, \label{eq:model}
 \end{aligned}\end{gathered}\end{equation}
 \end{verbatimwrite}
 \input{\EqDir/splurge}
@@ -34,9 +34,9 @@ while the optimized portion of consumption is chosen to maximize the perpetual-y
 We use a standard CRRA (constant relative risk aversion) utility function, so $u(c) = c^{1-\gamma}/(1-\gamma)$ for $\gamma \neq 1$ and $u(c) = \log(c)$ for $\gamma=1$, where $\gamma$ is the coefficient of relative risk aversion.
 The optimization is subject to the budget constraint, given existing market resources $\mathbf{m}_{i,t}$ and income state, and a no-borrowing constraint: 
 \begin{equation}\begin{gathered}\begin{aligned}
-  \mathbf{a}_{i,t} &= \mathbf{m}_{i,t} - \mathbf{c}_{i,t}, \notag \\ 
+  \mathbf{a}_{i,t} &= \mathbf{m}_{i,t} - \mathbf{c}_{i,t}, \\ 
   \mathbf{m}_{i,t+1} &= R \mathbf{a}_{i,t} + \mathbf{y}_{i,t+1}, \\
-  \mathbf{a}_{i,t} &\geq 0,   \notag
+  \mathbf{a}_{i,t} &\geq 0,  
 \end{aligned}\end{gathered}\end{equation}
 where $R$ is the gross interest factor for accumulated assets $\mathbf{a}_{i,t}$.
 

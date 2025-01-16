@@ -3,6 +3,7 @@
 # or see https://mg.readthedocs.io/latexmk.html
 # 
 # latexmk at unix command line will compile the paper
+$bibtex_silent_switch = '-terse';
 $do_cd = 1;
 $clean_ext = "bbl nav out snm tmp 4tc 4ct out log fls fdb_latexmk synctex.gz ps out.ps lg out";
 $bibtex_use=2;
