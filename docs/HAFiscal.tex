@@ -19,7 +19,7 @@
 % To include Appendix and Table of Contents? false->true
 \provideboolean{Appendix}
 \setboolean{Appendix}{false} % uncomment next line to include
-%\setboolean{Appendix}{true}
+\setboolean{Appendix}{true}
 \provideboolean{TOC}\setboolean{TOC}{false}
 
 \provideboolean{draftmode}\setboolean{draftmode}{true}
@@ -31,10 +31,6 @@
 
 % Standard useful packages for economics
 \usepackage{pdforhtml}         % allow compile as pdf or html
-\ifdvi
-  \setboolean{Web}{true}   
-\fi
-
 %\usepackage{econark-multibib}  % Only use bib files that exist
 \bibliographystyle{econtex}
 %\usepackage{econark-titlepage} 
@@ -47,11 +43,6 @@
   \usepackage{scrlayer-scrpage}  % Package for page headers if PDF
   \usepackage{caption}           % allow suppression of appendix figures
 } % end non Web instructions
-
-\ifthenelse{\boolean{Web}}{
-  \usepackage{endnotes}
-  \let\footnote=\endnote
-  }{}  % {Web}
 
 \begin{document}
 % Tell subfiles they are not being compiled as standalone files
@@ -76,11 +67,6 @@
 \ifthenelse{\boolean{Appendix}}{
   \appendix\subfile{Subfiles/Appendix}\pagebreak
 }{}
-
-\ifthenelse{\boolean{Web}}{
-\section*{Endnotes}
-\theendnotes
-  }{}  % {Web}
 
 % Make the bibliography
 % \input{bibliography_blend}
