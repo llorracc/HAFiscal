@@ -19,11 +19,11 @@
 % To include Appendix and Table of Contents? false->true
 \provideboolean{Appendix}
 \setboolean{Appendix}{false} % uncomment next line to include
-\setboolean{Appendix}{true}
+%\setboolean{Appendix}{true}
 \provideboolean{TOC}\setboolean{TOC}{false}
 
 \provideboolean{draftmode}\setboolean{draftmode}{true}
-\setboolean{draftmode}{false}
+%\setboolean{draftmode}{false}
 \newcommand{\Draft}{\ifthenelse{\boolean{draftmode}}}
 \Draft{\usepackage{showlabels}
   \renewcommand{\showlabelsetlabel}[1]{\tiny #1}
@@ -43,6 +43,11 @@
   \usepackage{scrlayer-scrpage}  % Package for page headers if PDF
   \usepackage{caption}           % allow suppression of appendix figures
 } % end non Web instructions
+
+\ifthenelse{\boolean{Web}}{
+  \usepackage{endnotes}
+  \let\footnote=\endnote
+  }{}  % {Web}
 
 \begin{document}
 % Tell subfiles they are not being compiled as standalone files
@@ -67,6 +72,11 @@
 \ifthenelse{\boolean{Appendix}}{
   \appendix\subfile{Subfiles/Appendix}\pagebreak
 }{}
+
+\ifthenelse{\boolean{Web}}{
+\section*{Endnotes}
+\theendnotes
+  }{}  % {Web}
 
 % Make the bibliography
 % \input{bibliography_blend}
