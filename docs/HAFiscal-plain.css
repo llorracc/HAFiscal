@@ -1,6 +1,21 @@
  
 /* start css.sty */
+.cmex-10{font-size:83%;}
+.cmr-5{font-size:41%;}
+.cmr-7{font-size:58%;}
+.cmr-10{font-size:83%;}
+.cmmi-5{font-size:41%;font-style: italic;}
+.cmmi-7{font-size:58%;font-style: italic;}
+.cmmi-10{font-size:83%;font-style: italic;}
+.cmsy-5{font-size:41%;}
+.cmsy-7{font-size:58%;}
+.cmsy-10{font-size:83%;}
 .ectt-1000{font-size:83%; font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
@@ -18,9 +33,27 @@
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
 .ecrm-0600{font-size:50%;}
 .ecrm-1440{font-size:116%;}
+.ecrm-1095{font-size:83%;}
 .ecrm-1000{font-size:83%;}
+.cmr-8{font-size:66%;}
+.cmr-6{font-size:50%;}
+.cmmi-12{font-style: italic;}
+.cmmi-8{font-size:66%;font-style: italic;}
+.cmmi-6{font-size:50%;font-style: italic;}
+.cmsy-8{font-size:66%;}
+.cmsy-6{font-size:50%;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
 .ectt-1200{ font-family: monospace,monospace;}
 .ectt-1200{ font-family: monospace,monospace;}
 .ectt-1200{ font-family: monospace,monospace;}
@@ -39,6 +72,12 @@
 .ecti-1200{ font-style: italic;}
 .ecti-1200{ font-style: italic;}
 .ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.cmbx-12{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
@@ -48,6 +87,68 @@
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1095{font-size:83%; font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1000{font-size:83%; font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecti-1000{font-size:83%; font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.cmsy-10x-x-109{font-size:90%;}
+.ecti-0800{font-size:66%; font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
 .small-caps{font-variant: small-caps; }
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}

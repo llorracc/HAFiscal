@@ -31,6 +31,10 @@
 
 % Standard useful packages for economics
 \usepackage{pdforhtml}         % allow compile as pdf or html
+\ifdvi
+  \setboolean{Web}{true}   
+\fi
+
 %\usepackage{econark-multibib}  % Only use bib files that exist
 \bibliographystyle{econtex}
 %\usepackage{econark-titlepage} 
