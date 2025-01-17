@@ -1,9 +1,7 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*- 
 \subfile{Subfiles/Intro}
-\subfile{Subfiles/Model}
-\subfile{Subfiles/Parameterization} 	
-\subfile{Subfiles/Comparing-policies}
-\subfile{Subfiles/HANK}
-%\subfile{Subfiles/Robustness} % moved to appendix
-\subfile{Subfiles/Conclusion}
-% \subfile{Subfiles/Appendix} % is controlled by boolean in main file
+%\subfile{Subfiles/Model}
+%\subfile{Subfiles/Parameterization} 	
+%\subfile{Subfiles/Comparing-policies}
+%\subfile{Subfiles/HANK}
+%\subfile{Subfiles/Conclusion}
