@@ -123,6 +123,7 @@
   *{package}{pdforhtml}   {0000/00/00 v0.0}
   *{package}{scrlayer-scrpage}{2023/07/07 v3.41}
   *{package}{scrlayer}    {2023/07/07 v3.41}
+  *{package}{endnotes}    {2020-01-02 v0.0}
   *{file}   {ifthen.4ht}  {0000/00/00 v0.0}
   *{file}   {changepage.4ht}{0000/00/00 v0.0}
   *{file}   {scrartcl.4ht}{0000/00/00 v0.0}
@@ -167,6 +168,7 @@
   *{file}   {ulem.4ht}    {0000/00/00 v0.0}
   *{file}   {soul.4ht}    {0000/00/00 v0.0}
   *{file}   {scrlayer.4ht}{0000/00/00 v0.0}
+  *{file}   {endnotes.4ht}{0000/00/00 v0.0}
   *{file}   {umsa.fd}     {2013/01/14 v3.01}
   *{file}   {umsb.fd}     {2013/01/14 v3.01}
   *{file}   {t1cmtt.fd}   {2023/04/13 v2.5m}
@@ -182,5 +184,6 @@
   *{file}   {Subfiles/Intro}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {HAFiscal.ent}{0000/00/00 v0.0}
   *{file}   {HAFiscal.bbl}{0000/00/00 v0.0}
 }
