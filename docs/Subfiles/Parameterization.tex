@@ -116,9 +116,9 @@ We use data from December 2019.
 Note that although these data let us pin down aggregate quantities, they do not solve the issue referred to in footnote~\ref{foot:liqwealth}, since we cannot link them to the tax registry at the individual level.
 We set the borrowing limit on liquid debt to zero.}
 
-Estimates of the standard deviations of the permanent and transitory shocks are taken from \citet{crawley2022parsimonious}, who estimate an income process on administrative data for Norwegian males from 1971 to 2014.
-The estimated annual variances for the permanent and transitory shocks are 0.004 and 0.033, respectively.\footnote{As shown in \citet{crawley2022parsimonious}, an income process of the form that we use here is more accurately estimated using moments in levels not differences.
-Hence, we take the numbers from column 3 of their table 4.} As in \citet{carroll2020sticky}, these are converted to quarterly values by multiplying the permanent and transitory shock variances by $1/4$ and $4$, respectively.
+Estimates of the standard deviations of the permanent and transitory shocks are taken from \citet{crawley2024parsimonious}, who estimate an income process on administrative data for Norwegian males from 1971 to 2014.
+The estimated annual variances for the permanent and transitory shocks are 0.004 and 0.033, respectively.\footnote{As shown in \citet{crawley2024parsimonious}, an income process of the form that we use here is more accurately estimated using moments in levels not differences.
+Hence, we take the numbers from column 3 of Panel C in their table 4.} As in \citet{carroll2020sticky}, these are converted to quarterly values by multiplying the permanent and transitory shock variances by $1/4$ and $4$, respectively.
 Thus, we obtain quarterly standard deviations of $\sigma_\psi=0.0316$ and $\sigma_\xi=0.363$.
 
 Using the calibrated model, we simulated unexpected lottery winnings and calculate the share of the lottery spent in each year.
@@ -200,7 +200,7 @@ The real interest rate on households' savings is set to $1$ percent per quarter.
 \afterpage{
   \thispagestyle{empty}
   \begin{table}[p]
-    \caption{Model Parameters and Recession Configuration}
+    \caption{Calibrated Model Parameters}
     \center
 %    \begin{center}
       \begin{tabular}{c}
@@ -347,7 +347,7 @@ Thus, our model does not suffer from the ``missing middle'' problem, identified 
       \begin{tabular}{lccc}
         \multicolumn{4}{l}{Panel (A) Estimated discount factor distributions} \\ \midrule
         & Dropout & Highschool & College \\ \midrule
-        $(\beta_e, \nabla_e)$ & (0.719, 0.318) & (0.911, 0.137) & (0.983,0.014) \\
+        $(\beta_e, \nabla_e)$ & (0.719, 0.318) & (0.911, 0.137) & (0.983, 0.014) \\
         (Min, max) in approximation & (0.447, 0.991) & (0.793, $0.990^*$) & (0.971, 0.995) \\
         \midrule 
       \end{tabular} \\ \\ 
@@ -387,8 +387,9 @@ Then the estimation can pick how close to this value the largest discount factor
 \begin{figure}[th]
   \begin{center}
     \includegraphics[width=.9\textwidth]{\econtexRoot/Figures/LorenzPoints_CRRA_2.0_R_1.01}
-    \caption{Distributions of liquid wealth within each educational group and for the whole population from the 2004 Survey of Consumer Finances and from the estimated model}
+    \caption{Distributions of liquid wealth within each education group and for the whole population from the 2004 Survey of Consumer Finances and from the model with estimated discount factor distributions}
     \notinsubfile{\label{fig:LorenzPts}}
+    \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: The discount factor distributions are estimated separately for each education group to fit the median liquid-wealth-to-permanent-income ratio and the $\nth{20}$, $\nth{40}$, $\nth{60}$, and $\nth{80}$ percentile points of the Lorenz curve for liquid wealth for that group. The ``Population'' panel compares the wealth distribution that results from pooling the three groups in the model to the overall wealth distribution in the data.\normalsize}
   \end{center}
 \end{figure}
 
@@ -442,7 +443,7 @@ As shown in Appendix~\ref{app:Model_without_splurge}, the model is not able to g
             \\ \bottomrule 
         \end{tabular}
     \end{tabular*}
-    \caption{Implications for non-targeted moments}
+    \caption{Model fit with respect to non-targeted moments}
     \notinsubfile{\label{tab:nonTargetedMoments}}
     \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (A) shows percent of liquid wealth held by each education group in the 2004 SCF and in the model.
 It also shows the average MPCs after a lottery win for each education group.
