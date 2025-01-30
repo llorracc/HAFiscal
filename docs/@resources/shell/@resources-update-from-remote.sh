@@ -59,6 +59,7 @@ git clone --depth 1 "$repo_url" || { echo "Failed to clone repository"; exit 1; 
 popd > /dev/null
 
 # Prepare destination
+[[ ! -d "$dest_path/@resources" ]] && mkdir  "$dest_path/@resources" 
 chmod -Rf u+w "$dest_path/@resources" || { echo "Failed to set write permissions"; exit 1; }
 
 # Handle dry run mode
@@ -73,11 +74,14 @@ fi
 opts=(
     --copy-links --recursive --owner --group --human-readable --verbose
     --exclude="'old'" --exclude="'.DS_Store'" --exclude="'auto'" --exclude="'*~'"
+    --exclude="*.tmp" 
     --checksum --delete --itemize-changes --out-format="'%i %n%L'"
 )
 
 # Check for deletions
 cmd_dryrun="rsync --dry-run ${opts[*]} $orig_path/@resources/ $dest_path/@resources/"
+echo 'cmd_dryrun='"$cmd_dryrun"
+
 deletions=$(eval "$cmd_dryrun" | grep -i deleting)
 
 if [[ -n "$deletions" ]]; then

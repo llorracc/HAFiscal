@@ -74,11 +74,12 @@ Figure~\ref{fig:splurge0_Norwayestimation} illustrates the fit without the splur
 		\includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/LiquWealth_Distribution_comparison_splurge0}
 		\caption{Distribution of liquid wealth}
 	\end{subfigure}%
-	\caption{Targets and model moments from the estimation}
+	\caption{Marginal propensity to consume over time and the liquid wealth distribution in the model with and without the splurge as well as in the data}
 	\notinsubfile{\label{fig:splurge0_Norwayestimation}}
 	\parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) shows the fit of the model to the dynamic consumption response estimated in \citet{fagereng_mpc_2021}; see their figure~A5.
 Panel (b) shows the fit of the model to the distribution of liquid wealth (see Section~\ref{sec:SCFdata} for the definition) from the 2004 SCF.\normalsize}
 \end{figure}
+
 
 While the splurge helps in matching the empirical evidence on the IMPC, the model without the splurge also performs relatively well.
 This is because the model without the splurge is able to generate a high initial marginal propensity to consume through a wider distribution of discount factors ($\beta = 0.921$ and $\nabla=0.116$) relative to the model with a splurge ($\beta = 0.968$ and $\nabla=0.0578$).
@@ -113,7 +114,7 @@ We therefore turn to the implications of this version of the model for the untar
 \begin{figure}[th]
 	\begin{center}
 		\includegraphics[width=.9\textwidth]{\econtexRoot/Figures/LorenzPoints_CRRA_2.0_R_1.01_wSplZero}
-		\caption{Distributions of liquid wealth within each educational group and for the whole population from the 2004 Survey of Consumer Finances and from the estimated model withiout splurge consumption}
+		\caption{Distributions of liquid wealth within each educational group and for the whole population from the 2004 Survey of Consumer Finances and from the model estimated with and without splurge consumption}
 		\notinsubfile{\label{fig:LorenzPtsSplZero}}
 	\end{center}
 \end{figure}
@@ -200,11 +201,12 @@ This leads to a greater number of agents being close the borrowing constraint.
 		\caption{Spending upon expiry of UI benefits}
 		\notinsubfile{\label{fig:expiryUI_wSplZero}}
 	\end{subfigure}%
-	\caption{Untargeted moments}
+	\caption{Marginal propensity to consume over time and the spending upon expiry of UI benefits in the model}
 	\notinsubfile{\label{fig:untargetedMoments_wSplZero}}
 	\parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in \citet{fagereng_mpc_2021}; see their Figure~A5.
 Panel (b) shows the evolution of income and spending for households who remain unemployed long enough for UI benefits to expire; see Figure~2 in \citet{ganongConsumer2019}.\normalsize}
 \end{figure}
+
 
 %\begin{figure}[t]
 %	\centering
@@ -219,7 +221,7 @@ Panel (b) shows the evolution of income and spending for households who remain u
 
 In this section we simulate the three fiscal policies from the main text in the estimated model without the splurge.
 The shape of the impulse response functions only marginally change relative to the model with the splurge.
-Hence, we focus on the quantitative changes as summarized by the cummulative multipliers in Figure \ref{fig:cumulativemultipliers_SplurgeComp}.
+Hence, we focus on the quantitative changes as summarized by the cumulative multipliers in Figure \ref{fig:cumulativemultipliers_SplurgeComp}.
 The figure shows the multipliers when AD effects are switched on for the model with and without the splurge.
 Table \ref{tab:Multiplier_SplurgeComp} shows the 10y-horizon multiplier across the two models.
 
@@ -239,7 +241,6 @@ Both models agree on the tax cut being the least effective policy.
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.8\linewidth]{Code/HA-Models/FromPandemicCode/Figures/Splurge0/Cummulative_multipliers_SplurgeComp}
 	\caption{Cumulative multiplier as a function of the horizon for the three policies with and without the splurge. Note: Policies are implemented during a recession with AD effect active.}
 	\notinsubfile{\label{fig:cumulativemultipliers_SplurgeComp}}
 \end{figure}
@@ -257,7 +258,7 @@ Both models agree on the tax cut being the least effective policy.
 
 
 %\subfile{Robustness}
-\subfile{Appendix-HANK}
+\subfile{\econtexRoot/Subfiles/Appendix-HANK}
 
 \ifthenelse{\boolean{Web}}{}{
 \end{document} \endinput

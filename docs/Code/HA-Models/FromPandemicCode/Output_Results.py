@@ -83,7 +83,7 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
         AddInc_Rec_TaxCut_firstRoundAD_RelRec  = getSimulationPercentDiff(recession_results_firstRoundAD,   recession_TaxCut_results_firstRoundAD,'AggIncome')
        
     
-    plt.figure()
+    plt.figure(figsize=(4, 4))
     #plt.title('Recession + tax cut', size=30)
     plt.plot(x_axis,AddInc_Rec_TaxCut_RelRec[0:max_T],              color='blue',linestyle='-')
     plt.plot(x_axis,AddInc_Rec_TaxCut_AD_RelRec[0:max_T],           color='blue',linestyle='--')
@@ -92,8 +92,8 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     plt.plot(x_axis,AddCons_Rec_TaxCut_RelRec[0:max_T],             color='red',linestyle='-')
     plt.plot(x_axis,AddCons_Rec_TaxCut_AD_RelRec[0:max_T],          color='red',linestyle='--') 
     
-    plt.legend(['Income','Income (AD effects)', \
-                'Consumption','Consumption (AD effects)'],loc='best')
+    #plt.legend(['Income','Income (AD effects)', \
+    #            'Consumption','Consumption (AD effects)'],loc='best')
     
     if Plot_1stRoundAd:
         plt.plot(x_axis,AddCons_Rec_TaxCut_firstRoundAD_RelRec[0:max_T],color='red',linestyle=':')
@@ -102,8 +102,9 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
             
     plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1.0))
     plt.xlabel('quarter')
-    plt.ylabel('% difference relative to recession')
+    #plt.ylabel('% difference relative to recession')
     #plt.savefig(fig_dir +'recession_taxcut_relrecession.pdf')
+    plt.ylim(-0.2, 6.5)
     make_figs('recession_taxcut_relrecession', True , False, target_dir=fig_dir)
     plt.show()   
     
@@ -120,7 +121,7 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
         AddCons_UI_Ext_Rec_RelRec_firstRoundAD  = getSimulationPercentDiff(recession_results_firstRoundAD,    recession_UI_results_firstRoundAD,'AggCons')
         AddInc_UI_Ext_Rec_RelRec_firstRoundAD   = getSimulationPercentDiff(recession_results_firstRoundAD,    recession_UI_results_firstRoundAD,'AggIncome')       
     
-    plt.figure()
+    plt.figure(figsize=(4, 4))
     #plt.title('Recession + UI extension', size=30)
     plt.plot(x_axis,AddInc_UI_Ext_Rec_RelRec[0:max_T],              color='blue',linestyle='-')
     plt.plot(x_axis,AddInc_UI_Ext_Rec_RelRec_AD[0:max_T],           color='blue',linestyle='--')
@@ -129,8 +130,8 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     plt.plot(x_axis,AddCons_UI_Ext_Rec_RelRec[0:max_T],             color='red',linestyle='-')
     plt.plot(x_axis,AddCons_UI_Ext_Rec_RelRec_AD[0:max_T],          color='red',linestyle='--') 
     
-    plt.legend(['Income','Income (AD effects)', \
-                'Consumption','Consumption (AD effects)'],loc='best')
+    #plt.legend(['Income','Income (AD effects)', \
+    #            'Consumption','Consumption (AD effects)'],loc='best')
     
     if Plot_1stRoundAd:
         plt.plot(x_axis,AddCons_Rec_TaxCut_firstRoundAD_RelRec[0:max_T],color='red',linestyle=':')
@@ -139,8 +140,9 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
             
     plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1.0))
     plt.xlabel('quarter')
-    plt.ylabel('% difference relative to recession')
+    #plt.ylabel('% difference relative to recession')
     #plt.savefig(fig_dir +'recession_UI_relrecession.pdf')
+    plt.ylim(-0.2, 6.5)
     make_figs('recession_UI_relrecession', True , False, target_dir=fig_dir)
     plt.show() 
     
@@ -157,7 +159,7 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
         AddInc_Rec_Check_firstRoundAD_RelRec   = getSimulationPercentDiff(recession_results_firstRoundAD,  recession_Check_results_firstRoundAD,'AggIncome')
     
     
-    plt.figure()
+    plt.figure(figsize=(4, 4))
     #plt.title('Recession + Check', size=30)
     plt.plot(x_axis,AddInc_Rec_Check_RelRec[0:max_T],              color='blue',linestyle='-')
     plt.plot(x_axis,AddInc_Rec_Check_AD_RelRec[0:max_T],           color='blue',linestyle='--')
@@ -177,6 +179,7 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1.0))
     plt.xlabel('quarter')
     plt.ylabel('% difference relative to recession')
+    plt.ylim(-0.2, 6.5)
     #plt.savefig(fig_dir +'recession_Check_relrecession.pdf')
     make_figs('recession_Check_relrecession', True , False, target_dir=fig_dir)
     plt.show()        
