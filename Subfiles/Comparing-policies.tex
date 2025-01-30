@@ -31,12 +31,33 @@ We then take the sum of the results across all recession lengths weighted by the
 
 \subsubsection{Stimulus check} 
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.8\linewidth]{\econtexRoot/Code/HA-Models/FromPandemicCode/Figures/recession_Check_relrecession}
-  \caption{Impulse responses of aggregate income and consumption to a \textbf{stimulus check} during recessions with and without aggregate demand effects}
-  \notinsubfile{\label{fig:recessioncheckrelrecession}}
+
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}[b]{.33\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/FromPandemicCode/Figures/recession_Check_relrecession}
+		\caption{stimulus check}
+		\notinsubfile{\label{fig:recessioncheckrelrecession}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.33\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Code/HA-Models/FromPandemicCode/Figures/recession_UI_relrecession}
+		\caption{UI extension}
+		\notinsubfile{\label{fig:recessionuirelrecession}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.33\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Code/HA-Models/FromPandemicCode/Figures/recession_taxcut_relrecession}
+		\caption{payroll tax cut}
+		\notinsubfile{\label{fig:recessiontaxcutrelrecession}}
+	\end{subfigure}
+	\caption{Impulse responses of aggregate income and consumption to policy shocks during recessions with and without aggregate demand effects{\label{fig:Policyrelrecession}}}
+	%\parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: \normalsize}
 \end{figure}
+
+
 
 Figure \ref{fig:recessioncheckrelrecession} shows the impulse response of income and consumption when stimulus checks are issued in the first quarter of a recession.
 In the model without a multiplier, the stimulus checks account for 5 percent of the first quarter's income.
@@ -49,12 +70,6 @@ After a couple of years, when the recession is most likely over and aggregate de
 
 \subsubsection{UI extension}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.8\linewidth]{Code/HA-Models/FromPandemicCode/Figures/recession_UI_relrecession}
-  \caption{Impulse responses of aggregate income and consumption to a \textbf{UI extension} during recessions with and without aggregate demand effects}
-  \notinsubfile{\label{fig:recessionuirelrecession}}
-\end{figure}
 
 The impulse responses in figure \ref{fig:recessionuirelrecession} show the response to a policy that extends unemployment benefits from 6 months to 12 months for a period of a year.
 In the model without aggregate demand effects, the path for income now depends on the number of consumers who receive the extended unemployment benefits.
@@ -69,12 +84,7 @@ As this extra aggregate demand induced income goes to employed consumers, more o
 
 \subsubsection{Payroll tax cut}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.8\linewidth]{Code/HA-Models/FromPandemicCode/Figures/recession_taxcut_relrecession}
-  \caption{Impulse responses of aggregate income and consumption to a \textbf{payroll tax cut} lasting eight quarters during recessions with and without aggregate demand effects}
-  \notinsubfile{\label{fig:recessiontaxcutrelrecession}}
-\end{figure}
+
 
 The final impulse response graph, figure \ref{fig:recessiontaxcutrelrecession}, shows the impulse response for a payroll tax cut that persists for two years (eight quarters).
 In the model without aggregate demand effects, income rises by close to 2 percent as the take-home pay for employed consumers goes up.
@@ -100,13 +110,14 @@ The NPV of a variable $X_t$ is given by
 $NPV(t,X) = \sum_{s=0}^{t} \left( \prod_{i=1}^{s} \frac{1}{R_i} \right) X_s$.
 
 The multiplier hence captures the amount of induced consumption at different horizons relative to the total (i.e.
-full-horizon) cost of the policies.
+full-horizon) cost of the policies.\footnote{In the case that there is no aggregate demand effect, these multipliers converge to 1 as $t$ goes to infinity.}
 
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.8\linewidth]{Code/HA-Models/FromPandemicCode/Figures/Cummulative_multipliers}
-  \caption{Cumulative multiplier as a function of the horizon for the three policies. Note: Policies are implemented during a recession with AD effect active.}
+  \caption{Cumulative multiplier as a function of the horizon for the three policies.}
+  \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Policies are implemented during a recession with aggregate demand effect active.\normalsize}
   \notinsubfile{\label{fig:cumulativemultipliers}}
 \end{figure}
 
@@ -163,6 +174,8 @@ Our welfare measure weights the felicity of a household at time $t$ by the inver
 The preference discount factors of households would appear in both the numerator and the denominator---the utility and marginal utility---and therefore cancel and do not play a role in our welfare measure.} This weighting scheme means that in normal times the marginal benefit or cost to a social planner of moving a dollar of consumption from one household at one time period to another household at the same or a different time period is zero.
 Hence, in normal times, any re-distributive policy has zero marginal benefit.
 However, in a recession when the average marginal utility is higher than in normal times, there can be welfare benefits to government borrowing to allow households to consume more during the recession.
+
+As with all social welfare measures, ours is not without ethical issues.  We have chosen our welfare measure over one with equal weights because an equal-weights measure would be increasing with the size of any redistributive policy.\footnote{Using a version of an equal-weights measure results in an even greater welfare benefit to extended unemployment insurance---see the previously distributed draft of this paper, \cite{carroll2023welfare}.  However, because the size of the extended unemployment benefits policy is much larger in a recession compared to normal times, while the size of the other two policies does not change significantly in a recession, this equal-weights measure almost mechanically favored the extended unemployment benefits policy.}  However, similar to Negishi weights, our welfare measure gives greater weight to households that are well off.\footnote{Negishi weights have been used in the climate literature as a way to separate the welfare benefits of climate mitigation policies from broader questions about global income redistribution. Our problem of separating the welfare benefits of recession mitigation policies from income redistribution in normal times is similar, but complicated by our incomplete markets setup. With complete markets, under which there is no potential benefit to redistributing consumption across time for any individual household, our measure is identical to Negishi weights.}  Furthermore, our welfare measure distinguishes between households that would have suffered unemployment in normal times and households that are made unemployed as a result of the recession—--giving the later a higher weight in the social welfare function.
 
 Let $\mathbf{c}_{it,\textit{normal}}$ be the consumption---inclusive of the splurge---of household $i$ at time $t$ in the baseline simulation with no recession and no fiscal policy.
 The (undiscounted) marginal utility of an extra unit of consumption for this household in this time period is $ u'(\mathbf{c}_{it,\textit{normal}})$.

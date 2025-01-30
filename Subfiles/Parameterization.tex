@@ -7,6 +7,7 @@
 \begin{document}
 
 \hypertarget{parameterizing-the-model}{}\par\section{Parameterizing the model}
+\notinsubfile{\label{sec:parameters}}
 
 This section describes how we set the model's parameters. First, we estimate the extent to which consumers `splurge' when receiving an income shock. Given the lack of empirical evidence of the marginal propensity to consume over time for the US, we use instead Norwegian data to estimate the splurge. Specifically, we calibrate our model to the Norwegian economy and match evidence from Norway on the profile of the marginal propensity to spend over time and across different wealth levels, as provided by \citet{fagereng_mpc_2021}.\footnote{Appendix \ref{app:Model_without_splurge} discusses an alternative calibration method, which solely relies on US data. The main results derived in that calibration are in line with those discussed in the main text.} 
 
@@ -41,7 +42,7 @@ Specifically, we impose as targets the cumulative liquid wealth shares for the e
     \caption{Distribution of liquid wealth}
     \notinsubfile{\label{fig:liquwealthdistribution}}
   \end{subfigure}%
-  \caption{Targets and model moments from the estimation}
+  \caption{Marginal propensity to consume over time and the liquid wealth distribution in the model and the data}
   \notinsubfile{\label{fig:splurge_estimation}}
   \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) shows the fit of the model to the dynamic consumption response estimated in \citet{fagereng_mpc_2021}; see their figure~A5.
 Panel (b) shows the fit of the model to the distribution of liquid wealth (see Section~\ref{sec:SCFdata} for the definition) from the 2004 SCF.\normalsize}
@@ -239,7 +240,7 @@ The real interest rate on households' savings is set to $1$ percent per quarter.
         \fi
         \parbox{16cm}{\footnotesize \vspace{.25cm} \textbf{Note}: The first three rows show numbers from the 2004 SCF.
 The fourth row are averages of growth rates from \cite{carroll2020modeling}.
-The fifth row are numbers for 2004 from statista.com, and the sixth row are calculated from these unemployment rates.\normalsize}
+The fifth row are numbers for 2004 from the Bureau of Labor Statistics, and the sixth row are calculated from these unemployment rates.\normalsize}
         \\ \\
 
         \begin{tabular}{lc}
@@ -523,7 +524,7 @@ Our quarterly model is broadly consistent with this, and the drop in spending th
         \caption{Spending upon expiry of UI benefits}
         \notinsubfile{\label{fig:expiryUI}}
     \end{subfigure}
-    \caption{Untargeted moments}
+    \caption{Marginal propensity to consume over time and the spending upon expiry of UI benefits in the model}
     \notinsubfile{\label{fig:untargetedMoments}}
     \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in \citet{fagereng_mpc_2021}; see their Figure~A5.
 Panel (b) shows the evolution of income and spending for households who remain unemployed long enough for UI benefits to expire; see Figure~2 in \citet{ganongConsumer2019}.\normalsize}
