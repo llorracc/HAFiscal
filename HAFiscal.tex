@@ -53,12 +53,6 @@
   \let\footnote=\endnote
   }{}  % {Web}
 
-\usepackage{iftex}
-\ifdefined\HCode
-  \renewcommand{\hypertarget}[2]{\Link[#1]#2\EndLink}
-\fi
-
-
 \begin{document}
 % Tell subfiles they are not being compiled as standalone files
 \renewcommand{\onlyinsubfile}[1]{}
