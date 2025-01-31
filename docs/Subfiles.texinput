@@ -1,5 +1,6 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*- 
 \subfile{Subfiles/Intro}
+\subfile{Subfiles/literature}
 \subfile{Subfiles/Model}
 \subfile{Subfiles/Parameterization} 	
 \subfile{Subfiles/Comparing-policies}

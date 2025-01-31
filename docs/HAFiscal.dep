@@ -183,6 +183,9 @@
   *{file}   {Subfiles/Intro}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/literature}{0000/00/00 v0.0}
+  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
   *{file}   {Subfiles/Model}{0000/00/00 v0.0}
   *{file}   {Subfiles/@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
