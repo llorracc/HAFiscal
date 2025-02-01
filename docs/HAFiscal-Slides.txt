@@ -1,0 +1,843 @@
+Welfare and Spending Effects of Consumption Stimulus Policies
+Christopher D. Carroll (JHU) Edmund Crawley (FED) William Du (JHU)
+Ivan Frankovic (BBK) Håkon Tretvoll (SSB)
+
+Norwegian University of Science and Technology
+2025-01-23
+Powered By
+
+Viewpoints and conclusions stated in this paper are the responsibility of the authors alone and do not
+necessarily reflect the viewpoints of The Federal Reserve Board or The Deutsche Bundesbank.
+
+Motivation
+▶ Fiscal policies that aim to boost consumption spending in recessions have been
+tried in many countries in recent decades
+▶ A lot of variation in such policies — may be due to little guidance from traditional
+macroeconomic models on which policies most effectively. . .
+▶ increase output (a ‘GDP metric’)
+▶ reduce misery (a ‘welfare metric’)
+
+▶ Development of heterogeneous agent (HA) models shows that when heterogeneity
+(in e.g. wealth, income and/or education) is taken into account, the impact of
+income shocks depends on intertemporal marginal propensity to consume or iMPC
+▶ In addition, availability of rich micro data (e.g. in Norway) provide first credible
+measures of the iMPC
+▶ This paper: Aim to evaluate three consumption stimulus policies in a HA model
+consistent with data on liquid wealth and intertemporal MPCs
+
+Related literature
+▶ Effects of transitory income shocks: Parker, Souleles, Johnson and McClelland (2013);
+Broda and Parker (2014); Fagereng, Holm and Natvik (2021); Ganong, Greig, Noel,
+Sullivan and Vavra (2022)
+▶ HA models consistent with high MPCs: Kaplan and Violante (2014); Auclert, Rognlie
+and Straub (2018); Carroll, Crawley, Slacalek and White (2020); Kaplan and Violante
+(2022)
+▶ State dependent multipliers (ZLB): Christiano, Eichenbaum and Rebelo (2011);
+Eggertson (2011); Ramey and Zubairy (2018); Hagedorn, Manovskii and Mitman (2019)
+▶ Extended unemployment insurance: Ganong, Greig, Noel, Sullivan and Vavra (2022);
+Kekre (2022)
+▶ Welfare measures in HA models: Bhandari, Evans, Golosov and Sargent (2021); Dávila
+and Schaab (2022)
+
+Quantitative Economics
+▶ These are quantitative questions: require quantitative realism ...
+▶ ... about the differences that make a difference
+▶ Unemployment is not Calvo! And this makes a big difference quantitatively
+▶ Distributions of income, wealth
+▶ Profoundly important for (i)MPCs
+
+▶ Differences in unemployment risks
+▶ Heterogeneity in income growth rates
+
+▶ Interested in multipliers, but baseline is NOT a HANK model:
+▶ HANK mechanisms behind multipliers are complex
+▶ Away from ZLB, multipliers not necessarily much different in recessions
+
+▶ Robustness Exercise: HANK model
+
+Quantitative Micro Realism
+▶ Idiosyncratic income process: Friedman/Muth (transitory and permanent shocks)
+p − ‘permanent income’
+ξ − ‘transitory income shock’
+ψ − ‘permanent income shock’
+pt+1 = Γe pt ψt+1
+yt+1 = pt+1 ξt+1
+▶ Γe : education-specific income growth
+▶ Evidence for permanent shocks: See Crawley, Holm, and Tretvoll (2024)
+
+Preferences, Beliefs, and Wealth
+Infinite horizon model: target wealth depends on ‘Growth Impatience’ condition:
+!
+(R β e,i )1/γ
+<1
+Γe E[ψ −1 ]
+|
+{z
+}
+’Growth Patience Factor’
+
+Degree of impatience (1-GPF) determines size of target
+▶ If everybody has same GPF, then target wealth is identical
+▶ Fact: Wealth much more unevenly distributed than permanent income
+⇒ need heterogeneity in GPF
+▶ (If GPF ≥ 1, target is ∞)
+We use
+▶ Ex-ante heterogeneity in discount factors β e,i
+▶ Γe or R would do as well
+
+(1)
+
+0
+
+20
+
+40 60 80 100
+Percentile
+
+College (38 pct)
+
+0
+
+20
+
+40 60 80 100
+Percentile
+Data
+
+Cumulative share of wealth
+
+25
+20
+15
+10
+5
+0
+
+Dropout (9.3 pct)
+
+25
+20
+15
+10
+5
+0
+
+Cumulative share of wealth
+
+Cumulative share of wealth
+
+Liquid Wealth from
+Survey of Consumer
+Finances (SCF)
+
+25
+20
+15
+10
+5
+0
+
+Cumulative share of wealth
+
+Consistency With Micro Evidence (1)
+
+25
+20
+15
+10
+5
+0
+
+Highschool (52.7 pct)
+
+0
+
+20
+
+40 60 80 100
+Percentile
+Population
+
+0
+
+Model
+
+20
+
+40 60 80 100
+Percentile
+
+▶ Education groups: e ∈ {”Dropout”, ”Highschool” and ”College”}
+▶ Each group has distribution of discount factors βe,i
+
+Consistency With Micro Evidence (2)
+Intertemporal MPC from Fagereng, Holm, Natvik (2021)
+
+Model
+Fagereng, Holm and Natvik (2021)
+
+0.5
+
+% of lottery win spent
+
+0.4
+0.3
+0.2
+0.1
+
+0
+
+1
+
+Modeling device: ‘Splurge’ in consumption
+
+2
+year
+
+3
+
+4
+
+Splurge consumption
+
+▶ Exogenous fraction of income directly consumed
+▶ Model consistent with spending patterns over time after a transitory income shock
+▶ Evidence: High liquid wealth hh also have high MPCs
+▶ Kueng (2018); Crawley and Kuchler (2023); Graham and McDowall (2024)
+
+▶ Possible microfoundations:
+▶ Spending on durables (Browning and Crossley, 2009; Laibson et al., 2022)
+▶ A form of present bias (Indarte et al., 2024, Maxted et al., 2024)
+
+▶ Robustness: Model w/o splurge consumption
+
+Evaluation of consumption stimulus policies in the US
+▶ Policies we consider:
+▶ Stimulus check for $1200 (means-tested)
+▶ Extension of unemployment benefits from 6 months to 1 year
+▶ Payroll tax cut by 2% for 2 years
+
+▶ Motivation:
+▶ Economic Stimulus Act of 2008 (stimulus checks)
+▶ Tax Relief, Unemployment Insurance Reauthorization, and Job Creation Act of 2010
+(UI extension and tax cut)
+
+▶ Evaluation criteria:
+▶ Spending multipliers
+▶ Welfare (only recession-related welfare impact)
+
+Preview of results
+▶ Welfare measure: Extension of UI benefits is the clear winner
+▶ Targeted at individuals with high MPCs and high recession-related welfare losses
+▶ But: higher spending may continue after recession is over
+
+▶ Spending multiplier: Stimulus check has the highest multiplier
+▶ Not well targeted, but increases income immediately
+
+▶ Tax cut
+▶ Poorly targeted and much spending likely to occur after end of recession
+
+▶ Robustness in a HANK and SAM model
+▶ Very similar pattern for cumulative multipliers
+
+Model
+
+Household problem
+▶ Idiosyncratic, stochastic income process yi,t
+▶ Estimated splurge factor ς: csp,i,t = ςyi,t
+▶ Remaining consumption copt,i,t is chosen to maximize utility
+∞
+X
+
+t
+βe,i
+(1 − D)t E0 u(copt,i,t ).
+
+(2)
+
+t=0
+
+(D: end-of-life probability, u: CRRA utility function)
+▶ Budget constraint, given existing market resources mi,t and income state, and a
+no-borrowing constraint:
+mi,t+1 = R (mi,t − csp,i,t − copt,i,t ) +yi,t+1
+|
+{z
+}
+≥0 (no-borrowing constraint)
+
+(R: exogenous gross interest rate)
+
+(3)
+
+Income process
+▶ Income subject to transitory, unempl. and permanent shocks
+
+
+ξi,t pi,t , if employed
+yi,t = 0.7pi,t , if unemployed for ≤ 2q
+
+
+0.5pi,t , if unemployed ≥ 2q
+(ξi,t : trans. shock, p: perm. income)
+▶ ”Permanent income”: pi,t+1 =
+
+ψi,t+1
+| {z }
+
+Γe(i)
+|{z}
+
+pi,t
+
+perm. shock educ.-specific growth
+
+▶ Model is a simplified model of households (no heterogeneity in hh size)
+▶ Replacement rates reflect some degree of hh incurance (Rothstein and Valetta,
+2017)
+
+(4)
+
+Employment status and recessions
+
+▶ Emplyoment status is subject to a Markov process
+▶ Employed consumer: continue being employed or become unemployed
+▶ Unemployed consumers: receives benefits for two quarters
+
+▶ Bureau of Labor Statistics: Report unemployment rates by education group
+▶ Recession is given by an MIT shock
+▶ Unemployment rate doubles in each education group
+▶ Expected length of unemployment increases from 2 to 4q
+▶ End of recession occurs as a Bernoulli process calibrated for an avg. rec. length of 6q
+
+Aggregate demand effects
+(as in Krueger, Mitman and Perri, 2016)
+
+▶ Baseline: No feedback from aggregate consumption to income
+▶ Extension: We allow for aggregate demand effects from consumption on income
+during the recession
+▶ The AD effect is given by
+(
+AD(Ct ) =
+
+Ct
+C̃
+
+1,
+
+κ
+
+, if in a recession
+
+(5)
+
+otherwise,
+
+where C̃ is the level of consumption in the steady state.
+▶ Idiosyncratic income in the extension model is then given by
+yAD,i,t = AD(Ct )yi,t .
+
+(6)
+
+Parameters — by education group More parameters
+
+Policy parameters
+
+Parameters calibrated for each education group
+Dropout
+
+Highschool
+
+College
+
+Percent of population
+Avg. quarterly PI of “newborn” agent ($1000)
+Std. dev. of log(PI) of “newborn” agent
+Avg. quarterly gross growth rate of PI (Γe )
+
+9.3
+6.2
+0.32
+1.0036
+
+52.7
+11.1
+0.42
+1.0045
+
+38.0
+14.5
+0.53
+1.0049
+
+Unemployment rate in normal times (percent)
+e , percent)
+Probability of entering unemployment (πeu
+Probability of leaving unemployment (πue )
+
+8.5
+6.2
+0.667
+
+4.4
+3.1
+0.667
+
+2.7
+1.8
+0.667
+
+▶ Mincer (1991) and Elsby and Hobjin (2010): Education groups differ in the
+incidence of unemployment, not its duration
+
+Results
+
+Untargeted moments (1)
+
+Non-targeted moments by wealth quartile
+
+Percent of liquid wealth (data)
+Percent of liquid wealth (model, baseline)
+Percent of liquid wealth (model, Splurge=0)
+Avg. lottery-win-year MPC
+(model, incl. splurge)
+Avg. lottery-win-year MPC
+(model, splurge=0)
+
+WQ 4
+
+WQ 3
+
+WQ 2
+
+WQ 1
+
+0.14
+0.09
+0.10
+
+1.60
+0.96
+1.07
+
+8.51
+4.55
+4.24
+
+89.76
+94.40
+94.60
+
+0.78
+
+0.63
+
+0.44
+
+0.31
+
+0.69
+
+0.53
+
+0.36
+
+0.14
+
+Untargeted moments (2)
+0.6
+
+Model w/estimated splurge
+Fagereng, Holm and Natvik (2021)
+
+% of lottery win spent
+
+0.4
+0.3
+0.2
+0.1
+0.0
+0.1
+
+Consumption
+Income
+
+1.0
+1 = permanent income in last period of employment
+
+0.5
+
+0.9
+0.8
+0.7
+0.6
+0.5
+
+0
+
+1
+
+2
+Year
+
+3
+
+4
+
+Figure: Share of lottery win spent
+
+0
+
+1
+2
+3
+4
+quarters since last period of employment
+
+5
+
+Figure: Spending upon expiry of UI benefits
+
+▶ Ganong and Noel (2019): UI expiry ⇒ drop of 12 percent (month)
+▶ Our model ⇒ drop of 18 percent (quarter)
+
+Multipliers
+
+1.0
+0.8
+
+MtP =
+
+NPV of induced consumption up to t
+NPV of the cost of the policy
+
+0.6
+0.4
+Stimulus check
+UI extension
+Tax cut
+
+0.2
+1
+
+10y-horizon Multiplier (no AD effect)
+10y-horizon Multiplier (AD effect)
+Share of policy expenditure during recession
+
+2
+
+3
+
+4
+
+5
+
+6 7
+quarter
+
+8
+
+9
+
+10
+
+11
+
+12
+
+Stimulus check
+
+UI extension
+
+Tax cut
+
+0.85
+1.20
+100.0%
+
+0.89
+1.18
+80.6%
+
+0.83
+0.95
+57.6 %
+
+Robustness: Multipliers in a HANK and SAM model — Setup
+▶ Evaluate the policies in a relatively standard HANK and SAM model (Du, 2024)
+▶ New Keynesian: Monopolistic competition + sticky prices
+▶ Search and matching: Random search, labor market tightness affects job finding
+and vacancy filling probabilities
+▶ Government policy: Monetary and fiscal rules
+▶ Fiscal multipliers through an intertemporal Keynesian cross mechanism
+However: No state dependence
+▶ Solution method ⇒ cannot evaluate effects starting in a deep recessionary state
+This also implies that we cannot use our welfare measure
+
+Robustness: Multipliers in a HANK and SAM model — Results
+
+1.4
+1.2
+1.0
+0.8
+0.6
+
+Check
+Check, HANK model
+UI extension
+UI extension, HANK model
+Tax cut
+Tax cut, HANK model
+
+0.4
+0.2
+1
+
+2
+
+3
+
+4
+
+5
+
+6 7
+quarter
+
+8
+
+9
+
+10
+
+11
+
+Figure: HA w/AD effects + HANK and SAM
+
+12
+
+Welfare measure
+▶ Aim: Welfare measure does not reflect benefits of redistribution in “normal” times
+▶ Want: Utility-based measure of benefits of implementing a policy in a recession
+▶ Welfare weights: u ′ (cit,normal )
+▶ Measure for a given policy with Rec, AD ∈ {0, 1}
+N
+
+∞
+
+1 X X 1 u(cit,policy,Rec,AD ) − u(cit,none,Rec,AD )
+W(policy, Rec, AD) =
+N
+Rt
+u ′ (cit,normal )
+i=1 t=0
+
+N = NPV (policy, Rec, AD)
+▶ Normal times: W(policy, 0, 0) = 1 (for ∆cit ≈ 0)
+
+Welfare results
+
+W(policy, Rec = 0, AD = 0)
+W(policy, Rec = 1, AD = 0)
+W(policy, Rec = 1, AD = 1)
+
+Stimulus check
+
+UI extension
+
+Tax cut
+
+0.96
+0.99
+1.34
+
+0.85
+1.82
+2.11
+
+0.99
+0.98
+1.10
+
+▶ Normal times: Welfare of UI extension < 1 due to concavity of u(·)
+Relatively large change in cit for small number of households
+▶ AD = 0: Benefit of UI extension since recession increases unemployment ⇒
+increased marginal utility for affected households
+▶ AD = 1: Stimulating spending during recession increases measure for all policies
+
+Conclusion: Comparing the policies
+
+▶ Comparison of three consumption stimulus policies in a HA model consistent with
+data on the distribution of liquid wealth and intertemporal MPCs
+▶ Welfare measure: UI extension is the clear bang-for-the-buck winner
+▶ The stimulus check is less well targeted, but. . .
+▶ is transferred immediately ensuring that money arrives when it is most valuable
+▶ is more easily scaled up to provide more stimulus
+
+▶ The tax cut is both poorly targeted and may yield substantial spending after the
+recession is over
+▶ Framework can be used to evaluate other candidate policies
+
+Thank you for your attention!
+▶ Access the paper, presentation slides and code at:
+https://github.com/llorracc/HAFiscal
+
+Appendix
+
+Parameters — same for all types
+Parameter
+
+Notation
+
+Value
+
+Risk aversion
+Splurge
+Survival probability, quarterly
+Risk free interest rate, quarterly (gross)
+Standard deviation of transitory shock
+Standard deviation of permanent shock
+Unemployment benefits replacement rate (share of PI)
+Unemployment income w/o benefits (share of PI)
+Avg. duration of unemp. benefits in normal times (quarters)
+Avg. duration of unemp. spell in normal times (quarters)
+Consumption elasticity of aggregate demand effect
+
+γ
+ς
+1−D
+R
+σξ
+σψ
+ρb
+ρnb
+
+2.0
+0.306
+0.994
+1.01
+0.346
+0.0548
+0.7
+0.5
+2
+1.5
+0.3
+
+Go back
+
+κ
+
+Parameters describing the policies
+Parameters describing policy experiments
+Parameter
+Change in unemployment rates in a recession
+Expected unemployment spell in a recession
+Average length of recession
+Size of stimulus check
+PI threshold for reducing check size
+PI threshold for not receiving check
+Extended unemployment benefits
+Length of payroll tax cut
+Income increase from payroll tax cut
+Belief (probability) that tax cut is extended
+
+Go back
+
+Value
+×2
+4 quarters
+6 quarters
+$1,200
+$100,000
+$150,000
+4 quarters
+8 quarters
+2 percent
+50 percent
+
+Robustness: Model w/o splurge consumption
+0.6
+
+Model w/splurge=0
+Model w/estimated splurge
+Fagereng, Holm and Natvik (2021)
+
+0.5
+
+1.0
+
+% of lottery win spent
+
+0.4
+0.8
+
+0.3
+0.6
+
+0.2
+0.4
+
+Check, splurge > 0
+Check, splurge = 0
+UI extension, splurge > 0
+UI extension, splurge = 0
+Tax cut, splurge > 0
+Tax cut, splurge = 0
+
+0.1
+0.2
+
+0.0
+0.0
+
+0.1
+
+0
+
+1
+
+2
+Year
+
+3
+
+1
+
+4
+
+W(policy, Rec = 1, AD = 1)
+
+2
+
+3
+
+4
+
+5
+
+6 7
+quarter
+
+8
+
+9
+
+10
+
+11
+
+Stimulus check
+
+UI extension
+
+Tax cut
+
+1.27(1.34)
+
+2.12(2.11)
+
+1.09(1.10)
+
+12
+
