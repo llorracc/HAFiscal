@@ -3,6 +3,10 @@
 # or see https://mg.readthedocs.io/latexmk.html
 # 
 # latexmk at unix command line will compile the paper
+$force_mode = 1;  # Need to force because otherwise bibtex repeated entry warnings cause fail
+$warnings_as_errors = 0;
+$bibtex_silent_switch = '-terse';
+$pdflatex_runs = 3;
 $bibfiles='HAFiscal.bib';
 $do_cd = 1;
 $clean_ext = "bbl nav out snm dvi idv tmp 4tc 4ct out aux log fls fdb_latexmk synctex.gz toc ps out.ps upa upb lg out html mk4 css cfg ent" ;
