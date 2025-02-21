@@ -85,18 +85,18 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     
     plt.figure(figsize=(4, 4))
     #plt.title('Recession + tax cut', size=30)
-    plt.plot(x_axis,AddInc_Rec_TaxCut_RelRec[0:max_T],              color='blue',linestyle='-')
-    plt.plot(x_axis,AddInc_Rec_TaxCut_AD_RelRec[0:max_T],           color='blue',linestyle='--')
+    plt.plot(x_axis,AddInc_Rec_TaxCut_RelRec[0:max_T],              color='#377eb8',linestyle='-')
+    plt.plot(x_axis,AddInc_Rec_TaxCut_AD_RelRec[0:max_T],           color='#377eb8',linestyle='--')
     if Plot_1stRoundAd:
-        plt.plot(x_axis,AddInc_Rec_TaxCut_firstRoundAD_RelRec[0:max_T], color='blue',linestyle=':')
-    plt.plot(x_axis,AddCons_Rec_TaxCut_RelRec[0:max_T],             color='red',linestyle='-')
-    plt.plot(x_axis,AddCons_Rec_TaxCut_AD_RelRec[0:max_T],          color='red',linestyle='--') 
+        plt.plot(x_axis,AddInc_Rec_TaxCut_firstRoundAD_RelRec[0:max_T], color='#377eb8',linestyle=':')
+    plt.plot(x_axis,AddCons_Rec_TaxCut_RelRec[0:max_T],             color='#ff7f00',linestyle='-')
+    plt.plot(x_axis,AddCons_Rec_TaxCut_AD_RelRec[0:max_T],          color='#ff7f00',linestyle='--') 
     
     #plt.legend(['Income','Income (AD effects)', \
     #            'Consumption','Consumption (AD effects)'],loc='best')
     
     if Plot_1stRoundAd:
-        plt.plot(x_axis,AddCons_Rec_TaxCut_firstRoundAD_RelRec[0:max_T],color='red',linestyle=':')
+        plt.plot(x_axis,AddCons_Rec_TaxCut_firstRoundAD_RelRec[0:max_T],color='#ff7f00',linestyle=':')
         plt.legend(['Income','Income (AD effects)','Inc, 1st round AD effects', \
                     'Consumption','Consumption (AD effects)','Cons, 1st round AD effects'])
             
@@ -123,18 +123,18 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     
     plt.figure(figsize=(4, 4))
     #plt.title('Recession + UI extension', size=30)
-    plt.plot(x_axis,AddInc_UI_Ext_Rec_RelRec[0:max_T],              color='blue',linestyle='-')
-    plt.plot(x_axis,AddInc_UI_Ext_Rec_RelRec_AD[0:max_T],           color='blue',linestyle='--')
+    plt.plot(x_axis,AddInc_UI_Ext_Rec_RelRec[0:max_T],              color='#377eb8',linestyle='-')
+    plt.plot(x_axis,AddInc_UI_Ext_Rec_RelRec_AD[0:max_T],           color='#377eb8',linestyle='--')
     if Plot_1stRoundAd:
-        plt.plot(x_axis,AddInc_UI_Ext_Rec_RelRec_firstRoundAD[0:max_T], color='blue',linestyle=':')
-    plt.plot(x_axis,AddCons_UI_Ext_Rec_RelRec[0:max_T],             color='red',linestyle='-')
-    plt.plot(x_axis,AddCons_UI_Ext_Rec_RelRec_AD[0:max_T],          color='red',linestyle='--') 
+        plt.plot(x_axis,AddInc_UI_Ext_Rec_RelRec_firstRoundAD[0:max_T], color='#377eb8',linestyle=':')
+    plt.plot(x_axis,AddCons_UI_Ext_Rec_RelRec[0:max_T],             color='#ff7f00',linestyle='-')
+    plt.plot(x_axis,AddCons_UI_Ext_Rec_RelRec_AD[0:max_T],          color='#ff7f00',linestyle='--') 
     
     #plt.legend(['Income','Income (AD effects)', \
     #            'Consumption','Consumption (AD effects)'],loc='best')
     
     if Plot_1stRoundAd:
-        plt.plot(x_axis,AddCons_Rec_TaxCut_firstRoundAD_RelRec[0:max_T],color='red',linestyle=':')
+        plt.plot(x_axis,AddCons_Rec_TaxCut_firstRoundAD_RelRec[0:max_T],color='#ff7f00',linestyle=':')
         plt.legend(['Income','Income (AD effects)','Inc, 1st round AD effects', \
                     'Consumption','Consumption (AD effects)','Cons, 1st round AD effects'])
             
@@ -161,18 +161,18 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     
     plt.figure(figsize=(4, 4))
     #plt.title('Recession + Check', size=30)
-    plt.plot(x_axis,AddInc_Rec_Check_RelRec[0:max_T],              color='blue',linestyle='-')
-    plt.plot(x_axis,AddInc_Rec_Check_AD_RelRec[0:max_T],           color='blue',linestyle='--')
+    plt.plot(x_axis,AddInc_Rec_Check_RelRec[0:max_T],              color='#377eb8',linestyle='-')
+    plt.plot(x_axis,AddInc_Rec_Check_AD_RelRec[0:max_T],           color='#377eb8',linestyle='--')
     if Plot_1stRoundAd:
-        plt.plot(x_axis,AddInc_Rec_Check_firstRoundAD_RelRec[0:max_T], color='blue',linestyle=':')
-    plt.plot(x_axis,AddCons_Rec_Check_RelRec[0:max_T],             color='red',linestyle='-')
-    plt.plot(x_axis,AddCons_Rec_Check_AD_RelRec[0:max_T],          color='red',linestyle='--') 
+        plt.plot(x_axis,AddInc_Rec_Check_firstRoundAD_RelRec[0:max_T], color='#377eb8',linestyle=':')
+    plt.plot(x_axis,AddCons_Rec_Check_RelRec[0:max_T],             color='#ff7f00',linestyle='-')
+    plt.plot(x_axis,AddCons_Rec_Check_AD_RelRec[0:max_T],          color='#ff7f00',linestyle='--') 
     
     plt.legend(['Income','Income (AD effects)', \
                 'Consumption','Consumption (AD effects)'],loc='best')
     
     if Plot_1stRoundAd:
-        plt.plot(x_axis,AddCons_Rec_TaxCut_firstRoundAD_RelRec[0:max_T],color='red',linestyle=':')
+        plt.plot(x_axis,AddCons_Rec_TaxCut_firstRoundAD_RelRec[0:max_T],color='#ff7f00',linestyle=':')
         plt.legend(['Income','Income (AD effects)','Inc, 1st round AD effects', \
                     'Consumption','Consumption (AD effects)','Cons, 1st round AD effects'])
             
@@ -248,14 +248,17 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     
     
     
-    #Cumulative
+    
+    
+    
+    #Cumulative, common plot
     C_Multiplier_UI_Rec_AD                = getNPVMultiplier(recession_results_AD,            recession_UI_results_AD,            NPV_AddInc_UI_Rec[-1])
     C_Multiplier_Rec_TaxCut_AD            = getNPVMultiplier(recession_results_AD,            recession_TaxCut_results_AD,        NPV_AddInc_Rec_TaxCut[-1])
     C_Multiplier_Rec_Check_AD             = getNPVMultiplier(recession_results_AD,            recession_Check_results_AD,         NPV_AddInc_Rec_Check[-1])
     x_axis = np.arange(1,max_T2+1)
-    plt.plot(x_axis,C_Multiplier_Rec_Check_AD[0:max_T2],               color='green',linestyle='-')
-    plt.plot(x_axis,C_Multiplier_UI_Rec_AD[0:max_T2],                  color='blue',linestyle='-')
-    plt.plot(x_axis,C_Multiplier_Rec_TaxCut_AD[0:max_T2],              color='red',linestyle='-')
+    plt.plot(x_axis,C_Multiplier_Rec_Check_AD[0:max_T2],               color='#4daf4a',linestyle='-')
+    plt.plot(x_axis,C_Multiplier_UI_Rec_AD[0:max_T2],                  color='#377eb8',linestyle='-')
+    plt.plot(x_axis,C_Multiplier_Rec_TaxCut_AD[0:max_T2],              color='#ff7f00',linestyle='-')
     plt.legend(['Stimulus check','UI extension','Tax cut',])
     plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1))
     plt.xlabel('quarter')
@@ -272,6 +275,30 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
         }
         
         saveAsPickleUnderVarName(C_Multiplier_Baseline_Results,fig_dir,locals())
+        
+    #Cumulative, single plots
+    if Parametrization=='Baseline':
+        x_axis = np.arange(1,max_T2+1)
+        plt.plot(x_axis,C_Multiplier_Rec_Check_AD[0:max_T2],                  color='#377eb8')
+        plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1))
+        plt.xlabel('quarter')
+        plt.ylim(0, 1.25)
+        make_figs('Cummulative_multiplier_Check', True , False, target_dir=fig_dir)
+        plt.show()
+        
+        plt.plot(x_axis,C_Multiplier_UI_Rec_AD[0:max_T2],                  color='#377eb8')
+        plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1))
+        plt.xlabel('quarter')
+        plt.ylim(0, 1.25)
+        make_figs('Cummulative_multiplier_UI', True , False, target_dir=fig_dir)
+        plt.show()
+        
+        plt.plot(x_axis,C_Multiplier_Rec_TaxCut_AD[0:max_T2],                  color='#377eb8')
+        plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1))
+        plt.xlabel('quarter')
+        plt.ylim(0, 1.25)
+        make_figs('Cummulative_multiplier_TaxCut', True , False, target_dir=fig_dir)
+        plt.show()
         
         
 
@@ -291,14 +318,14 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     
         fig, ax = plt.subplots()  
         
-        ax.plot(x_axis,C_Multiplier_Rec_Check_AD[0:max_T2],               color='green',linestyle='-')
-        ax.plot(x_axis,HANK_results['transfers'][0:max_T2],        color='green',linestyle=':')  
+        ax.plot(x_axis,C_Multiplier_Rec_Check_AD[0:max_T2],               color='#4daf4a',linestyle='-')
+        ax.plot(x_axis,HANK_results['transfers'][0:max_T2],        color='#4daf4a',linestyle=':')  
         
-        ax.plot(x_axis,C_Multiplier_UI_Rec_AD[0:max_T2],                  color='blue',linestyle='-')
-        ax.plot(x_axis,HANK_results['UI_extensions'][0:max_T2],    color='blue',linestyle=':') 
+        ax.plot(x_axis,C_Multiplier_UI_Rec_AD[0:max_T2],                  color='#377eb8',linestyle='-')
+        ax.plot(x_axis,HANK_results['UI_extensions'][0:max_T2],    color='#377eb8',linestyle=':') 
         
-        ax.plot(x_axis,C_Multiplier_Rec_TaxCut_AD[0:max_T2],              color='red',linestyle='-')
-        ax.plot(x_axis,HANK_results['tax_cut'][0:max_T2],          color='red',linestyle=':')  
+        ax.plot(x_axis,C_Multiplier_Rec_TaxCut_AD[0:max_T2],              color='#ff7f00',linestyle='-')
+        ax.plot(x_axis,HANK_results['tax_cut'][0:max_T2],          color='#ff7f00',linestyle=':')  
           
         ax.legend(['Check','Check, HANK model','UI extension','UI extension, HANK model','Tax cut','Tax cut, HANK model'])
         plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1))
@@ -318,14 +345,14 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     
         fig, ax = plt.subplots()  
         
-        ax.plot(x_axis,C_Multiplier_Rec_Check_AD[0:max_T2],               color='green',linestyle='-')
-        ax.plot(x_axis,HANK_results['transfers'][0:max_T2],        color='green',linestyle=':')  
+        ax.plot(x_axis,C_Multiplier_Rec_Check_AD[0:max_T2],               color='#4daf4a',linestyle='-')
+        ax.plot(x_axis,HANK_results['transfers'][0:max_T2],        color='#4daf4a',linestyle=':')  
         
-        ax.plot(x_axis,C_Multiplier_UI_Rec_AD[0:max_T2],                  color='blue',linestyle='-')
-        ax.plot(x_axis,HANK_results['UI_extensions'][0:max_T2],    color='blue',linestyle=':') 
+        ax.plot(x_axis,C_Multiplier_UI_Rec_AD[0:max_T2],                  color='#377eb8',linestyle='-')
+        ax.plot(x_axis,HANK_results['UI_extensions'][0:max_T2],    color='#377eb8',linestyle=':') 
         
-        ax.plot(x_axis,C_Multiplier_Rec_TaxCut_AD[0:max_T2],              color='red',linestyle='-')
-        ax.plot(x_axis,HANK_results['tax_cut'][0:max_T2],          color='red',linestyle=':')  
+        ax.plot(x_axis,C_Multiplier_Rec_TaxCut_AD[0:max_T2],              color='#ff7f00',linestyle='-')
+        ax.plot(x_axis,HANK_results['tax_cut'][0:max_T2],          color='#ff7f00',linestyle=':')  
           
         ax.legend(['Check','Check, HANK model','UI extension','UI extension, HANK model','Tax cut','Tax cut, HANK model'])
         plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1))
@@ -344,14 +371,14 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
         
         fig, ax = plt.subplots()  
         
-        ax.plot(x_axis,C_Multiplier_Baseline_Results['C_Multiplier_Rec_Check_AD'][0:max_T2],        color='green',linestyle='-')
-        ax.plot(x_axis,C_Multiplier_Rec_Check_AD[0:max_T2],                                         color='green',linestyle=':')  
+        ax.plot(x_axis,C_Multiplier_Baseline_Results['C_Multiplier_Rec_Check_AD'][0:max_T2],        color='#4daf4a',linestyle='-')
+        ax.plot(x_axis,C_Multiplier_Rec_Check_AD[0:max_T2],                                         color='#4daf4a',linestyle=':')  
         
-        ax.plot(x_axis,C_Multiplier_Baseline_Results['C_Multiplier_UI_Rec_AD'][0:max_T2],           color='blue',linestyle='-')
-        ax.plot(x_axis,C_Multiplier_UI_Rec_AD[0:max_T2],                                            color='blue',linestyle=':') 
+        ax.plot(x_axis,C_Multiplier_Baseline_Results['C_Multiplier_UI_Rec_AD'][0:max_T2],           color='#377eb8',linestyle='-')
+        ax.plot(x_axis,C_Multiplier_UI_Rec_AD[0:max_T2],                                            color='#377eb8',linestyle=':') 
         
-        ax.plot(x_axis,C_Multiplier_Baseline_Results['C_Multiplier_Rec_TaxCut_AD'][0:max_T2],       color='red',linestyle='-')
-        ax.plot(x_axis,C_Multiplier_Rec_TaxCut_AD[0:max_T2],                                        color='red',linestyle=':')  
+        ax.plot(x_axis,C_Multiplier_Baseline_Results['C_Multiplier_Rec_TaxCut_AD'][0:max_T2],       color='#ff7f00',linestyle='-')
+        ax.plot(x_axis,C_Multiplier_Rec_TaxCut_AD[0:max_T2],                                        color='#ff7f00',linestyle=':')  
           
         ax.legend(['Check, splurge > 0','Check, splurge = 0','UI extension, splurge > 0','UI extension, splurge = 0','Tax cut, splurge > 0','Tax cut, splurge = 0'])
         plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1))
@@ -373,43 +400,43 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     def ShareOfPolicyDuringRec(rec,TaxCut,UI,Check,recession_prob_array,max_T):  
         # considers runs different recession lengths and calculates expenditure share within those runs
         # then sums it up weighing by probability of that recession length
-        ShareDuringRecession = dict()
-        ShareDuringRecession['Tax_Inc']     = 0
-        ShareDuringRecession['Tax_Cons']    = 0
-        ShareDuringRecession['UI_Inc']      = 0
-        ShareDuringRecession['UI_Cons']     = 0
-        ShareDuringRecession['Check_Inc']   = 0
-        ShareDuringRecession['Check_Cons']  = 0
+        ShareduringRecession = dict()
+        ShareduringRecession['Tax_Inc']     = 0
+        ShareduringRecession['Tax_Cons']    = 0
+        ShareduringRecession['UI_Inc']      = 0
+        ShareduringRecession['UI_Cons']     = 0
+        ShareduringRecession['Check_Inc']   = 0
+        ShareduringRecession['Check_Cons']  = 0
              
         for i in range(max_recession_duration):      
             NPV_TaxCut                      = getSimulationDiff(rec[i],TaxCut[i],'NPV_AggIncome') 
-            ShareDuringRecession['Tax_Inc'] += NPV_TaxCut[i]/NPV_TaxCut[-1]*recession_prob_array[i]
+            ShareduringRecession['Tax_Inc'] += NPV_TaxCut[i]/NPV_TaxCut[-1]*recession_prob_array[i]
             
             NPV_Cons_TaxCut                 = getSimulationDiff(rec[i],TaxCut[i],'NPV_AggCons') 
-            ShareDuringRecession['Tax_Cons']+= NPV_Cons_TaxCut[i]/NPV_Cons_TaxCut[-1]*recession_prob_array[i]
+            ShareduringRecession['Tax_Cons']+= NPV_Cons_TaxCut[i]/NPV_Cons_TaxCut[-1]*recession_prob_array[i]
             
             
             NPV_UI                          = getSimulationDiff(rec[i],UI[i],'NPV_AggIncome') 
-            ShareDuringRecession['UI_Inc']  += NPV_UI[i]/NPV_UI[-1]*recession_prob_array[i]
+            ShareduringRecession['UI_Inc']  += NPV_UI[i]/NPV_UI[-1]*recession_prob_array[i]
             
             NPV_Cons_UI                     = getSimulationDiff(rec[i],UI[i],'NPV_AggCons') 
-            ShareDuringRecession['UI_Cons'] += NPV_Cons_UI[i]/NPV_Cons_UI[-1]*recession_prob_array[i]
+            ShareduringRecession['UI_Cons'] += NPV_Cons_UI[i]/NPV_Cons_UI[-1]*recession_prob_array[i]
             
             
             NPV_Check                           = getSimulationDiff(rec[i],Check[i],'NPV_AggIncome') 
-            ShareDuringRecession['Check_Inc']   += NPV_Check[i]/NPV_Check[-1]*recession_prob_array[i]
+            ShareduringRecession['Check_Inc']   += NPV_Check[i]/NPV_Check[-1]*recession_prob_array[i]
             
             NPV_Cons_Check                      = getSimulationDiff(rec[i],Check[i],'NPV_AggCons') 
-            ShareDuringRecession['Check_Cons']  += NPV_Cons_Check[i]/NPV_Cons_Check[-1]*recession_prob_array[i]
+            ShareduringRecession['Check_Cons']  += NPV_Cons_Check[i]/NPV_Cons_Check[-1]*recession_prob_array[i]
              
         # times 100
-        ShareDuringRecession = {key: value * 100 for key, value in ShareDuringRecession.items()} 
+        ShareduringRecession = {key: value * 100 for key, value in ShareduringRecession.items()} 
         
         # output
-        for key, value in ShareDuringRecession.items():  
+        for key, value in ShareduringRecession.items():  
             print(f"Key: {key}, Value: {value}")  
             
-        return ShareDuringRecession
+        return ShareduringRecession
         
              
     recession_all_results        = loadPickle('recession_all_results',folder_nonPVSame,locals())   
@@ -417,7 +444,7 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     recession_all_results_TaxCut = loadPickle('recessionTaxCut_all_results',saved_results_dir,locals())
     recession_all_results_Check  = loadPickle('recessionCheck_all_results',saved_results_dir,locals())
         
-    ShareDuringRecession=ShareOfPolicyDuringRec(recession_all_results,recession_all_results_TaxCut,\
+    ShareduringRecession=ShareOfPolicyDuringRec(recession_all_results,recession_all_results_TaxCut,\
                            recession_all_results_UI,recession_all_results_Check,\
                            recession_prob_array,max_recession_duration)
             
@@ -442,8 +469,8 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
     output +="10y-horizon Multiplier (no AD effect) &"   + mystr3(NPV_Multiplier_Rec_Check[-1])             + "  & "+ mystr3(NPV_Multiplier_UI_Rec[-1])               +  "  & "+  mystr3(NPV_Multiplier_Rec_TaxCut[-1])  + "     \\\\ \n"
     output +="10y-horizon Multiplier (AD effect) &"      + mystr3(NPV_Multiplier_Rec_Check_AD[-1])             + "  & "+ mystr3(NPV_Multiplier_UI_Rec_AD[-1])               +  "  & "+  mystr3(NPV_Multiplier_Rec_TaxCut_AD[-1])  + "     \\\\ \n"
     output +="10y-horizon (1st round AD effect only) &"  + mystr3(NPV_Multiplier_Rec_Check_firstRoundAD[-1])   + "  & "+ mystr3(NPV_Multiplier_UI_Rec_firstRoundAD[-1])     +  "  & "+  mystr3(NPV_Multiplier_Rec_TaxCut_firstRoundAD[-1])  + "     \\\\ \n"
-    output +="Share of policy expenditure during recession &" + mystr1(ShareDuringRecession['Check_Inc'])   + "\%  & "+ mystr1(ShareDuringRecession['UI_Inc'])  +  "\%  & "+  mystr1(ShareDuringRecession['Tax_Inc'])  + " \%    \\\\ \n"
-    output +="Share of policy cons. stimulus during recession &" + mystr1(ShareDuringRecession['Check_Cons'])   + "\%  & "+ mystr1(ShareDuringRecession['UI_Cons'])  +  "\%  & "+  mystr1(ShareDuringRecession['Tax_Cons'])  + " \%    \\\\ \\bottomrule \n"
+    output +="Share of policy expenditure during recession &" + mystr1(ShareduringRecession['Check_Inc'])   + "\%  & "+ mystr1(ShareduringRecession['UI_Inc'])  +  "\%  & "+  mystr1(ShareduringRecession['Tax_Inc'])  + " \%    \\\\ \n"
+    output +="Share of policy cons. stimulus during recession &" + mystr1(ShareduringRecession['Check_Cons'])   + "\%  & "+ mystr1(ShareduringRecession['UI_Cons'])  +  "\%  & "+  mystr1(ShareduringRecession['Tax_Cons'])  + " \%    \\\\ \\bottomrule \n"
     output +="\\end{tabular}  \n"
 
     
@@ -540,10 +567,10 @@ def Output_Results(saved_results_dir,fig_dir,table_dir,Parametrization='Baseline
                
                 plt.figure(figsize=(15,10))
                 plt.title('Recession lasts ' + str(RecLength) + 'q', size=30)
-                plt.plot(x_axis,AddInc_RelRec[0:max_T],              color='blue',linestyle='-')
-                plt.plot(x_axis,AddInc_RelRec_AD[0:max_T],           color='blue',linestyle='--')
-                plt.plot(x_axis,AddCons_RelRec[0:max_T],             color='red',linestyle='-')
-                plt.plot(x_axis,AddCons_RelRec_AD[0:max_T],          color='red',linestyle='--') 
+                plt.plot(x_axis,AddInc_RelRec[0:max_T],              color='#377eb8',linestyle='-')
+                plt.plot(x_axis,AddInc_RelRec_AD[0:max_T],           color='#377eb8',linestyle='--')
+                plt.plot(x_axis,AddCons_RelRec[0:max_T],             color='#ff7f00',linestyle='-')
+                plt.plot(x_axis,AddCons_RelRec_AD[0:max_T],          color='#ff7f00',linestyle='--') 
                 plt.legend(['Inc, no AD effects','Inc, AD effects',\
                             'Cons, no AD effects','Cons, AD effects'], fontsize=14)
                 plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 1.0))

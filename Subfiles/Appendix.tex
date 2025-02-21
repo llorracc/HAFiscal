@@ -83,7 +83,7 @@ Panel (b) shows the fit of the model to the distribution of liquid wealth (see S
 
 While the splurge helps in matching the empirical evidence on the iMPC, the model without the splurge also performs relatively well.
 This is because the model without the splurge is able to generate a high initial marginal propensity to consume through a wider distribution of discount factors ($\beta = 0.921$ and $\nabla=0.116$) relative to the model with a splurge ($\beta = 0.968$ and $\nabla=0.0578$).
-This ensures that sufficiently many agents are at the borrowing constraint and thus sensitive to transitory income shocks.
+This ensures that sufficiently many agents are at the borrowing constraint and thus sensitive to transitory income shocks.\footnote{The model without the splurge implies there is a group of highly impatient households who have discount rates close to 0.8. While this is possible, such a discount rate implies these households care very little about their consumption even just a few years in the future.}
 
 However, the model is not quite able to match the difference in spending between the initial year of the lottery win and the year after.
 The model without the splurge exhibits a higher spending propensity in the year after the shock occurs as borrowing-constrained agents spend the additional income quicker.
@@ -93,7 +93,7 @@ Relative to the baseline model, and to the data, the model without a splurge gen
 
 The reason for these two effects, becomes apparent when considering the cross-sectional implications of the models with and without the splurge across different wealth quartiles.
 While the model with the splurge can account for the empirically-observed initial MPCs among the wealthiest, the model without the splurge exhibits much lower MPCs among that group, see Table~\ref{tab:Comparison_Splurge_Table}.
-The wealthiest group will thus be very patient and have low MPCs, which can explain why the wealth distribution becomes more unequal and doesn\t quite fit the targeted distribution in the data in the version of the model without the splurge.
+The wealthiest group will thus be very patient and have low MPCs, which can explain why the wealth distribution becomes more unequal and doesn't quite fit the targeted distribution in the data in the version of the model without the splurge.
 
 
 Overall, the model fit with the data deteriorates roughly by a factor of two measured by the Euclidean norm of the targeting error.\footnote{Specifically, the Euclidean norm of the targeting error increases from 0.04 to 0.08 for the time-profile of the marginal propensity to consume when the splurge is removed, from 0.16 to 0.29 for the marginal propensity to consume across wealth quartiles and from 0.027 to 0.032 for the Lorentz curve.} 
@@ -251,7 +251,8 @@ Both models agree on the tax cut being the least effective policy.
 \begin{table}[t]
 	\center
 	\input{\econtexRoot/Code/HA-Models/FromPandemicCode/Tables/Splurge0/Multiplier_SplurgeComp.tex}
-	\caption{Multipliers, calculated for policies implemented in a recession with and without aggregate demand effects. The values outside of the brackets capture the multipliers in the model without the splurge, while those inside the brackets are the corresponding mulitipliers with the splurge.}
+	\caption{Multipliers, calculated for policies implemented in a recession with and without aggregate demand effects. }
+	\parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: The values outside of the brackets capture the multipliers in the model without the splurge, while those inside the brackets are the corresponding mulitipliers with the splurge. \normalsize}
 	\notinsubfile{\label{tab:Multiplier_SplurgeComp}}
 \end{table}
 
