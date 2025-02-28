@@ -8,7 +8,7 @@
 
 % Document has title page and table of contents and header:
 \documentclass[titlepage, headings=optiontotocandhead]{econark}
-
+\usepackage{catchfile}
 \newcommand{\texname}{HAFiscal} % Keyname for paper (optional)
 \usepackage{econark-bibfilesfind}
 \bibfilesfind{\texname}
@@ -23,7 +23,7 @@
 \provideboolean{TOC}\setboolean{TOC}{false}
 
 \provideboolean{draftmode}\setboolean{draftmode}{true}
-\setboolean{draftmode}{false}
+%\setboolean{draftmode}{false}
 \newcommand{\Draft}{\ifthenelse{\boolean{draftmode}}}
 \Draft{\usepackage{showlabels}
   \renewcommand{\showlabelsetlabel}[1]{\tiny #1}
