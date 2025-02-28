@@ -1,7 +1,6 @@
 \RequireVersions{
   *{application}{pdfTeX}  {0000/00/00 v1.40.25}
   *{format} {LaTeX2e}     {2023-11-01 v2.e}
-  *{file}   {HAFiscal.tex}{0000/00/00 v0.0}
   *{file}   {@resources/tex-add-search-paths.tex}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {@local/econtexPaths.tex}{0000/00/00 v0.0}
@@ -69,14 +68,14 @@
   *{package}{nccfoots}    {2005/02/03 v1.2}
   *{package}{perpage}     {2014/10/25 v2.0}
   *{package}{setspace}    {2022/12/04 v6.7b}
+  *{package}{econark-bibfilesfind}{2024/11/04 v0.0}
   *{package}{@local/local}{0000/00/00 v0.0}
   *{file}   {@local/owner.tex}{0000/00/00 v0.0}
   *{package}{pdfsuppressruntime}{0000/00/00 v0.0}
-  *{package}{ifxetex}     {2019/10/25 v0.7}
-  *{package}{iftex}       {2022/02/03 v1.0f}
   *{package}{moreverb}    {2008/06/03 v2.3a}
   *{package}{fancyvrb}    {2024/01/20 v4.5c}
   *{package}{hyperref}    {2024-01-20 v7.01h}
+  *{package}{iftex}       {2022/02/03 v1.0f}
   *{package}{kvdefinekeys}{2019-12-19 v1.6}
   *{package}{pdfescape}   {2019/12/09 v1.15}
   *{package}{pdftexcmds}  {2020-06-27 v0.33}
@@ -125,7 +124,6 @@
   *{package}{pdforhtml}   {0000/00/00 v0.0}
   *{package}{scrlayer-scrpage}{2023/07/07 v3.41}
   *{package}{scrlayer}    {2023/07/07 v3.41}
-  *{package}{econark-multibib}{2024/06/08 v0.0}
   *{file}   {umsa.fd}     {2013/01/14 v3.01}
   *{file}   {umsb.fd}     {2013/01/14 v3.01}
   *{file}   {t1cmtt.fd}   {2023/04/13 v2.5m}
@@ -147,6 +145,9 @@
   *{file}   {Subfiles/Intro}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/literature}{0000/00/00 v0.0}
+  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
   *{file}   {Subfiles/Model}{0000/00/00 v0.0}
   *{file}   {Subfiles/@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
@@ -160,7 +161,7 @@
   *{file}   {./Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/LiquWealth_Distribution_comparison.pdf}{0000/00/00 v0.0}
   *{file}   {./Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/MPC_WealthQuartiles_Table}{0000/00/00 v0.0}
   *{file}   {./Figures/LorenzPoints_CRRA_2.0_R_1.01.pdf}{0000/00/00 v0.0}
-  *{file}   {./Figures/IMPCs_wSplEstimated.pdf}{0000/00/00 v0.0}
+  *{file}   {./Figures/iMPCs_wSplEstimated.pdf}{0000/00/00 v0.0}
   *{file}   {./Code/HA-Models/FromPandemicCode/Figures/UnempSpell_Dynamics.pdf}{0000/00/00 v0.0}
   *{file}   {Subfiles/Comparing-policies}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
@@ -168,14 +169,21 @@
   *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Figures/recession_Check_relrecession.pdf}{0000/00/00 v0.0}
   *{file}   {Code/HA-Models/FromPandemicCode/Figures/recession_UI_relrecession.pdf}{0000/00/00 v0.0}
   *{file}   {Code/HA-Models/FromPandemicCode/Figures/recession_taxcut_relrecession.pdf}{0000/00/00 v0.0}
-  *{file}   {Code/HA-Models/FromPandemicCode/Figures/Cummulative_multipliers.pdf}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Figures/Cummulative_multiplier_Check.pdf}{0000/00/00 v0.0}
+  *{file}   {Code/HA-Models/FromPandemicCode/Figures/Cummulative_multiplier_UI.pdf}{0000/00/00 v0.0}
+  *{file}   {Code/HA-Models/FromPandemicCode/Figures/Cummulative_multiplier_TaxCut.pdf}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/CRRA2/Multiplier.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/CRRA2/welfare6.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/Splurge0/welfare6_SplurgeComp.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/HANK}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Figures/HANK_IRFs_w_splurge.pdf}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Figures/HANK_transfer_irf.pdf}{0000/00/00 v0.0}
+  *{file}   {Code/HA-Models/FromPandemicCode/Figures/HANK_UI_irf.pdf}{0000/00/00 v0.0}
+  *{file}   {Code/HA-Models/FromPandemicCode/Figures/HANK_tax_irf.pdf}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Figures/HANK_transfer_multiplier.pdf}{0000/00/00 v0.0}
+  *{file}   {Code/HA-Models/FromPandemicCode/Figures/HANK_UI_multiplier.pdf}{0000/00/00 v0.0}
+  *{file}   {Code/HA-Models/FromPandemicCode/Figures/HANK_tax_multiplier.pdf}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Figures/Cummulative_multipliers_withHank.pdf}{0000/00/00 v0.0}
   *{file}   {Subfiles/Conclusion}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
@@ -187,12 +195,11 @@
   *{file}   {Subfiles/../Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/LiquWealth_Distribution_comparison_splurge0.pdf}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/Comparison_Splurge_Table}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Figures/LorenzPoints_CRRA_2.0_R_1.01_wSplZero.pdf}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Figures/IMPCs_both.pdf}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Figures/iMPCs_both.pdf}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Figures/Splurge0/UIextension_CompSplurge0.pdf}{0000/00/00 v0.0}
-  *{file}   {Code/HA-Models/FromPandemicCode/Figures/Splurge0/Cummulative_multipliers_SplurgeComp.pdf}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/Splurge0/Multiplier_SplurgeComp.tex}{0000/00/00 v0.0}
-  *{file}   {Subfiles/Appendix-HANK}{0000/00/00 v0.0}
-  *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Subfiles/Appendix-HANK}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Subfiles/./.econtexRoot}{0000/00/00 v0.0}
+  *{file}   {Subfiles/../Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
   *{file}   {HAFiscal.bbl}{0000/00/00 v0.0}
 }
