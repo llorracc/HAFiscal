@@ -1,6 +1,24 @@
  
 /* start css.sty */
+.cmex-10{font-size:83%;}
+.cmr-5{font-size:41%;}
+.cmr-7{font-size:58%;}
+.cmr-10{font-size:83%;}
+.cmmi-5{font-size:41%;font-style: italic;}
+.cmmi-7{font-size:58%;font-style: italic;}
+.cmmi-10{font-size:83%;font-style: italic;}
+.cmsy-5{font-size:41%;}
+.cmsy-7{font-size:58%;}
+.cmsy-10{font-size:83%;}
 .ectt-1000{font-size:83%; font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
@@ -12,9 +30,127 @@
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
 .ecrm-0600{font-size:50%;}
 .ecrm-1440{font-size:116%;}
+.ecrm-1095{font-size:83%;}
 .ecrm-1000{font-size:83%;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.ecti-1200{ font-style: italic;}
+.cmr-8{font-size:66%;}
+.cmr-6{font-size:50%;}
+.cmmi-12{font-style: italic;}
+.cmmi-8{font-size:66%;font-style: italic;}
+.cmmi-6{font-size:50%;font-style: italic;}
+.cmsy-8{font-size:66%;}
+.cmsy-6{font-size:50%;}
+.cmbx-12{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
+.ecbx-1095{font-size:83%; font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1000{font-size:83%; font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
+.cmr-10x-x-109{font-size:90%;}
+.cmmi-10x-x-109{font-size:90%;font-style: italic;}
+.cmsy-10x-x-109{font-size:90%;}
+.ecti-0800{font-size:66%; font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-0800{ font-style: italic;}
+.ecti-1000{font-size:83%; font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
 .small-caps{font-variant: small-caps; }
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
@@ -234,5 +370,21 @@ figure.figure { text-align: center; width: 100margin: 1em auto; }
 .equation td:last-child{ width: 0.01; text-align: right; vertical-align: middle; }
 .equation-star{ display: block; text-align: center; margin-top: 1.5em; margin-bottom: 1.5em; }
 .math-display img{ /* Targets images within elements with class math-display */ display: block; /* Makes the image a block element */ margin-left: auto; /* These two margin settings together */ margin-right: auto; /* center the image horizontally */ width: 1.0; } 
+img[src="HAFiscal27x.svg"]{vertical-align:-25%}
+img[src="HAFiscal28x.svg"]{vertical-align:-29.03840465651838%}
+img[src="HAFiscal29x.svg"]{vertical-align:-29.03840465651838%}
+img[src="HAFiscal30x.svg"]{vertical-align:-29.03840465651838%}
+img[src="HAFiscal31x.svg"]{vertical-align:-29.03840465651838%}
+img[src="HAFiscal32x.svg"]{vertical-align:-17.99990539536346%}
+img[src="HAFiscal38x.svg"]{vertical-align:-17.99990539536346%}
+img[src="HAFiscal39x.svg"]{vertical-align:-17.76309449236255%}
+img[src="HAFiscal40x.svg"]{vertical-align:-29.03840465651838%}
+img[src="HAFiscal46x.svg"]{vertical-align:-17.99990539536346%}
+img[src="HAFiscal47x.svg"]{vertical-align:-17.76309449236255%}
+img[src="HAFiscal48x.svg"]{vertical-align:-25.83717176230433%}
+img[src="HAFiscal49x.svg"]{vertical-align:-25.83717176230433%}
+img[src="HAFiscal50x.svg"]{vertical-align:-21.87489271123013%}
+img[src="HAFiscal55x.svg"]{vertical-align:-21.87489271123013%}
+img[src="HAFiscal56x.svg"]{vertical-align:-31.11090313904447%}
 /* end css.sty */
 
