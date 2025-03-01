@@ -16,11 +16,13 @@ The household block follows closely to the main text with a few exceptions. Firs
 
 \subsection{Goods Market}
 
-There is a continuum of  monopolistically competitive intermediate goods producers indexed by $j \in [0,1]$ who produce intermediate goods $Y_{jt}$ to be sold to a final goods producer at price $P_{jt}$. We assume intermediate goods producers consume all profits each period.  
+A continuum of monopolistically competitive intermediate goods producers, indexed by \( j \in [0,1] \), produces intermediate goods \( Y_{jt} \), which are sold to a final goods producer at price \( P_{jt} \). Each period, these producers fully consume their profits.
+
 
 \subsubsection{Final Goods Producer}
 
-A perfectly competitive final goods producer purchases intermediate goods $Y_{jt}$ for $j \in [0,1]$, from intermediate goods producers at price $P_{jt}$ and produces a final good $Y_{t}$ according to a CES production function given by 
+A perfectly competitive final goods producer purchases intermediate goods \( Y_{jt} \) from intermediate good producer $j$ at price \( P_{jt} \) and produces the final good \( Y_t \) using a CES production function:
+
 $$ Y_{t} = \left(\int_{0}^{1} Y_{jt}^{\frac{\epsilon_{p}-1}{\epsilon_{p}}}\, dj\right)^{\frac{\epsilon_{p}}{\epsilon_{p}-1}},$$ 
 where $\epsilon_{p}$ is the elasticity of substitution.
 
@@ -41,7 +43,8 @@ $$Y_{jt} =  Z L_{jt},$$
 where $Z$ is total factor productivity.
 %\vspace{.3cm}
   
-Each intermediate goods producer hires labor~$L_{t}$ from a labor agency at cost~$h_{t}$. Given the cost of labor, each intermediate goods producer chooses~$P_{jt}$ to maximize its profits facing price stickiness a la \cite{Rotemberg1982}. HANK models with sticky prices produce countercyclical profits which combined with households with high MPCs can lead to countercyclical consumption responses out of dividends. Therefore, we simply assume that intermediate goods producers consume all profits rather than distributing them to households. We therefore abstract from consumption behavior in response to firm profits. Intermediate goods producers maximize profits by solving:
+Each intermediate goods producer hires labor \( L_t \) from a labor agency at cost \( h_t \). Given this labor cost, each producer sets \( P_{jt} \) to maximize profits while facing price stickiness à la \cite{Rotemberg1982}. In HANK models with sticky prices, profits tend to be countercyclical, and when households have high MPCs, this can generate countercyclical consumption responses to dividends. To simplify, we assume that intermediate goods producers fully consume their profits rather than distributing them to households, thereby abstracting from consumption responses to firm profits. Each producer maximizes profits by solving:
+
 $$J_{t}\left(P_{jt}\right) = \max_{\{P_{jt}\}} \left\{\frac{P_{jt}Y_{jt}}{P_{t}} - h_{t} L_{jt} -  \frac{\varphi}{2}\left( \frac{P_{jt} - P_{jt-1}}{P_{jt-1}} \right)^{2} Y_{t}  + J_{t+1}\left(P_{jt+1}\right) \right\},$$ 
 
 where $\varphi$ determines the cost of adjusting the price and, hence, the degree of price stickiness. 
@@ -58,7 +61,8 @@ where $\Pi_{t} = \frac{P_{t}}{P_{t+1}}$.
 
 \subsection{Labor market}
 
-A risk neutral labor agency sells labor $N_{t}$ to intermediate goods producers at cost~$h_{t}$ by hiring households at the wage~$w_t$. To hire households, the labor agency posts vacancies~$v_{t}$ that are filled with probability~$\phi_{t}$. Household's search is random. Following~\cite{Bardoczy2022}, we assume the labor agency cannot observe the labor productivity of individual households. Instead, the agency can only observe the average productivity of all employed workers which is always equal to one. 
+A risk-neutral labor agency supplies labor \( N_t \) to intermediate goods producers at cost \( h_t \) by hiring households at wage \( w_t \). To hire workers, the agency posts vacancies \( v_t \), which are filled with probability \( \phi_t \). Household job search is random. Following \cite{Bardoczy2022}, we assume the labor agency cannot observe individual household productivity. Instead, it only observes the average productivity of all employed workers, which is normalized to one.
+
 
 \textbf{Labor agency.} The labor agency determines how many vacancies to post and how much labor to sell by solving the following problem: 
 $$J_{t}(N_{t-1})  = \max_{N_{t},v_{t}} \left\{( h_{t} - w_{t}) N_{t}- \kappa v_{t} + \mathrm{E_{t}}\left[ \frac{J_{t+1}(N_{t})}{1 + r^{a}_{t}}\right]\right\},$$
@@ -70,17 +74,17 @@ The parameters $\kappa$ and $\omega$ are, respectively, the cost of posting a va
 The resulting job creation curve is:
 $$ \frac{\kappa}{\phi_{t}}  = (h_{t} - w_{t})+  (1-\omega)\mathrm{E_{t}}\left[   \frac{\kappa}{(1+r^{a}_{t}) \phi_{t+1}} \right].$$
 
-\textbf{Matching.} Matching between households and the labor agency follows a Cobb-Douglas matching function:
+\textbf{Matching.} The matching process between households and the labor agency follows a Cobb-Douglas matching function:
 $$m_{t} = \chi e_{t}^{\alpha} v_{t}^{1-\alpha},$$ 
 where $m_{t}$ is the mass of matches, $e_{t}$ is the mass of job searchers, $\alpha$ is the matching function elasticity, and $\chi$ is a matching efficiency parameter.
 
-The vacancy filling probability $\phi_{t}$ and the job finding probabilities $\eta_{t}$ evolve according to:
+The vacancy filling probability \( \phi_t \) and the job finding probability \( \eta_t \) evolve as follows:
 $$\eta_{t} = \chi \Theta_{it}^{1-\alpha} $$
 %$$\eta_{t}(X) = \chi q(X) \Theta_{it}^{1-\alpha} $$
 $$ \phi_{t} = \chi \Theta_{t}^{-\alpha} $$ 
 where $\Theta_{t} = \frac{v_{t}}{e_{t}}$ is labor market tightness.
 
-\textbf{Wage Determination.} Similar to \cite{Gornemann2021} and \cite{Blanchard2010}, we assume the real wage follows the rule:
+\textbf{Wage Determination.} Following \cite{Gornemann2021} and \cite{Blanchard2010}, we assume the real wage evolves according to the following rule:
 $$log\left(\frac{w_{t}}{w_{ss}}\right)  = \phi_w log\left( \frac{ w_{t-1}}{ w_{ss}} \right) +   (1 - \phi_w) log\left( \frac{N_{t}}{N_{ss}}\right),$$
 where $\phi_w$ dictates the extent of real wage rigidity. 
 
@@ -91,21 +95,21 @@ The government issues long term bonds $B_{t}$ at price $q^{b}_{t}$ in period $t$
 The bond price satisfies the no arbitrage condition:
 $$q^{b}_{t} = \frac{ 1  + \delta \mathrm{E}_{t}[q^{b}_{t+1}]}{1+r^{a}_{t}}.$$ 
 
-The government finances its expenditures with debt and taxes and faces a budget constraint given by: 
+The government funds its expenditures through debt and taxes, subject to the following budget constraint:
 $$ (1 + \delta q^{b}_{t})B_{t-1} + G_{t}  + S_{t} = \tau_{t} w_{t} N_{t}+ q^{b}_{t}B_{t},$$
 where $S_{t}$ are payments for unemployment insurance and other transfers.
 
-For all stimulus policies excluding the tax cuts, we follow \cite{Auclert2020} and let the tax rate adjusts to stabilize the debt to GDP ratio:
+For all stimulus policies, except tax cuts, we follow \cite{Auclert2020} and allow the tax rate to adjust in order to stabilize the debt-to-GDP ratio:
 $$\tau_{t} - \tau_{ss} = \phi_{B} q^{b}_{ss} \frac{B_{t-1} - B_{ss} }{Y_{ss}}$$
 where $\phi_{B}$ governs the speed of adjustment. 
 
-For the tax cuts, we assume:
+For the tax cuts, we assume government expenditures adjust following:
 $$G_{t} - G_{ss} = \phi_{G} q^{b}_{ss} \frac{B_{t-1} - B_{ss} }{Y_{ss}}$$
 where $\phi_{G}$ governs the speed of adjustment of government spending in response to debt. 
 
 \subsection{Monetary Policy}
 
-The central bank follows a simple Taylor rule where it only responds to inflation: 
+The central bank follows a standard Taylor rule that responds solely to inflation:
 $$i_{t} = r^{*} +\phi_{\pi} \pi_{t},$$ 
 where $\phi_{\pi}$ is the coefficient on inflation. Inflation is given by $\pi_t = P_t/P_{t-1}-1$, and~$r^{*}$ is the steady state interest rate. 
 
@@ -121,9 +125,9 @@ An equilibrium in this economy is a sequence of:
 Such that: 
 \begin{itemize}[label=--]
 \item $\left(c_{it}(m)\right)_{t=0}^{\infty}$  solves the household's maximization problem given $\left( w_{t}, \eta_{t},  r^{a}_{t} , \tau_{t} \right)_{t=0}^{\infty}$.
-\item The final goods producer and intermediate goods producers maximize their objective functions.
-\item The nominal interest rate is set according to the central bank's Taylor rule.
-\item The tax rate is determined by the fiscal rule and the government budget constraint holds.
+\item The final goods producer and intermediate goods producers both maximize their respective objective functions.
+\item The nominal interest rate is determined by the central bank's Taylor rule.
+\item The tax rate is set according to the fiscal rule, ensuring that the government budget constraint is satisfied.
 \item The value of assets is equal to the value of government bonds:
  $$A_t =  q^{b}_{t}B_{t}.$$
 \item The goods market clears\footnote{Note if profits were not held by firms then the goods market condition would be $ C_{t}  + G_{t}  = Y_{t} -  \kappa v_{t} - \frac{\varphi}{2}\left( \frac{P_{t}}{P_{t-1}} - 1\right)^{2} Y_{t}  $.  In particular, since firm profits are $D_{t} = Y_{t} -  w_{t} N_{t}  - \kappa v_{t} - \frac{\varphi}{2}\left( \frac{P_{t}}{P_{t-1}} - 1\right)^{2} Y_{t} $, then the goods market condition would become $ C_{t}  + G_{t}  =w_{t} N_{t}  + D_{t} = Y_{t} -  \kappa v_{t} - \frac{\varphi}{2}\left( \frac{P_{t}}{P_{t-1}} - 1\right)^{2} Y_{t}  $. }: 

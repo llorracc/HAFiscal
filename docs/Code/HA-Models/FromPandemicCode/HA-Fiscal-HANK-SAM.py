@@ -823,11 +823,11 @@ for e,educ in enumerate(education_groups):
 
 import pickle
 
-# Obj = {'C' :CJAC_dict_temp , 'A': AJAC_dict_temp , 'C_by_educ':  CJAC_dict_educ_temp , 'A_by_educ':  AJAC_dict_educ_temp  }
+Obj = {'C' :CJAC_dict_temp , 'A': AJAC_dict_temp , 'C_by_educ':  CJAC_dict_educ_temp , 'A_by_educ':  AJAC_dict_educ_temp  }
                 
-# fileObj = open('HA_Fiscal_Jacs.obj', 'wb')
-# pickle.dump(Obj,fileObj)
-# fileObj.close()     
+fileObj = open('HA_Fiscal_Jacs.obj', 'wb')
+pickle.dump(Obj,fileObj)
+fileObj.close()     
 
    
 
@@ -844,13 +844,13 @@ import pickle
 
 
 
+"""
 
 #%%
 plt.plot(CJACs_weighted[4].T[30])
 plt.plot(np.zeros(bigT))
 plt.show()
 #%%
-
 import sequence_jacobian as sj
 
 from sequence_jacobian.classes import JacobianDict, SteadyStateDict
@@ -1254,11 +1254,11 @@ Jacobian_Dict = JacobianDict( { 'C' : {'eta' : CJAC_dict_temp['eta'],
                                           } } )
 
 
-"""
+
 # Jacobian_Dict = JacobianDict( { 'C' : CJAC_dict_temp ,
                                     
 #                                     'A' : AJAC_dict_temp } )
-"""
+
                  
 UJAC_dict = JacobianDict( {    'N': {'eta': UJAC[0]},
 
@@ -1274,7 +1274,7 @@ UJAC_dict = JacobianDict( {    'N': {'eta': UJAC[0]},
 
 
 
-"""
+
 
 Obj =  { 'C' : {'eta' : CJAC_JF, 
                                             'r': CJACR,
@@ -1405,7 +1405,7 @@ def stick_jacob(J,theta):
 
 #%%
 
-
+"""
 
 HANK_SAM = create_model([Jacobian_Dict, 
                           fiscal,
@@ -1676,7 +1676,7 @@ fig.tight_layout()
 
 #%%
 
-
+"""
 
 
 

@@ -17,7 +17,7 @@ Second, we set up the full model on U.S. data, taking the splurge factor as give
 \hypertarget{estimation-of-the-splurge-factor}{}\par\subsection{Estimation of the splurge factor}
 \notinsubfile{\label{sec:splurge}}
 
-The splurge allows us to capture the shorter- and longer-term response of consumption to income shocks, especially for consumers with significant liquid wealth. The main aim of this paper, however, is to rank consumption stimulus policies, not to provide a microfoundation for the splurging behavior. We view the splurge factor as a model device that enables us to rank the policies in a model that is consistent with the best available micro-evidence of spending patterns over time after a transitory income shock. In appendix~\ref{app:Model_without_splurge} we provide results from our model without a splurge factor. There we show that such a model provides a worse fit to the moments in the data that we are interested in, but not dramatically so, and that our conclusions regarding the ranking of the policies are not affected.
+The splurge allows us to capture the shorter- and longer-term response of consumption to income shocks, especially for consumers with significant liquid wealth. The main aim of this paper, however, is to rank consumption stimulus policies, not to provide a microfoundation for the splurging behavior. We view the splurge factor as a model device that enables us to rank the policies in a model that is consistent with the best available micro-evidence of spending patterns over time after a transitory income shock. In appendix~\ref{app:Model_without_splurge} we provide results from our model without a splurge factor. There we show that such a model provides a worse fit to the moments in the data that we are interested in, but not dramatically so, and that our conclusions regarding the ranking of the policies are not affected. However, in our view, this version of the model requires households with unreasonable low discount rates.
 
 
 The specific exercise we carry out in this section, is to show that our model can account well for the results of \citet{fagereng_mpc_2021}, who study the effect of lottery winnings in Norway on consumption using millions of records from the Norwegian population registry. We calibrate our model to reflect the Norwegian economy and, using their results, estimate the splurge factor, as well as the distribution of discount factors in the population, to match two empirical moments. 
@@ -179,13 +179,10 @@ A period in the model is one quarter.
 This choice makes it realistic to consider stimulus policies that are implemented in the same period as a recession starts.
 
 
-\subsubsection{Calibrated parameters} 
+\subsubsection{Calibrated parameters --- Normal times} 
 \notinsubfile{\label{sec:calib}}
 
-Panel~A of table~\ref{tab:calibration}, lists parameters that are calibrated equally across all types in the model.
-Panel~B of table~\ref{tab:calibration}, lists parameters in the model that are education specific.
-For completeness, panel~C of table~\ref{tab:calibration} summarizes the parameters describing how we model a recession and the three policies we consider as potential responses to a recession.
-
+Table~\ref{tab:calibration} presents our calibration of the model parameters in normal times. Panel~A lists parameters that are calibrated equally across all types in the model, and Panel~B lists parameters in the model that are education specific. In the next subsection we present how certain model parameters are changes when the economy enters a recession. 
 
 \textbf{Preferences, survival and interest rates.} All households are assumed to have a coefficient of relative risk aversion equal to $\gamma=2$.
 We also assume that all households have the same propensity to splurge out of transitory income gains and set $\varsigma=0.249$, the value estimated in section~\ref{sec:splurge}.
@@ -200,7 +197,7 @@ The real interest rate on households' savings is set to $1$ percent per quarter.
 \afterpage{
   \thispagestyle{empty}
   \begin{table}[p]
-    \caption{Calibrated Model Parameters}
+    \caption{Calibrated Model Parameters --- Normal times}
     \center
 %    \begin{center}
       \begin{tabular}{c}
@@ -241,32 +238,32 @@ The real interest rate on households' savings is set to $1$ percent per quarter.
         \parbox{16cm}{\footnotesize \vspace{.25cm} \textbf{Note}: The first three rows show numbers from the 2004 SCF.
 The fourth row are averages of growth rates from \cite{carroll2020modeling}.
 The fifth row are numbers for 2004 from the Bureau of Labor Statistics, and the sixth row are calculated from these unemployment rates.\normalsize}
-        \\ \\
-
-        \begin{tabular}{lc}
-          \toprule 
-          \multicolumn{2}{l}{Panel (C) Parameters describing policy experiments} \\ \midrule 
-          Parameter & Value \\ \midrule 
-          Change in unemployment rates in a recession & $\times 2$ \\ 
-          Expected unemployment spell in a recession & 4 quarters \\ 
-          Average length of recession & 6 quarters \\ 
-          Size of stimulus check & \$1,200 \\ 
-          PI threshold for reducing check size & \$100,000 \\ 
-          PI threshold for not receiving check & \$150,000 \\ 
-          Extended unemployment benefits & 4 quarters \\
-          Length of payroll tax cut & 8 quarters \\ 
-          Income increase from payroll tax cut & 2 percent \\ 
-          Belief (probability) that tax cut is extended & 50 percent 		
-          \\ \bottomrule
-        \end{tabular} 
+%        \\ \\
+%
+%        \begin{tabular}{lc}
+%          \toprule 
+%          \multicolumn{2}{l}{Panel (C) Parameters describing policy experiments} \\ \midrule 
+%          Parameter & Value \\ \midrule 
+%          Change in unemployment rates in a recession & $\times 2$ \\ 
+%          Expected unemployment spell in a recession & 4 quarters \\ 
+%          Average length of recession & 6 quarters \\ 
+%          Size of stimulus check & \$1,200 \\ 
+%          PI threshold for reducing check size & \$100,000 \\ 
+%          PI threshold for not receiving check & \$150,000 \\ 
+%          Extended unemployment benefits & 4 quarters \\
+%          Length of payroll tax cut & 8 quarters \\ 
+%          Income increase from payroll tax cut & 2 percent \\ 
+%          Belief (probability) that tax cut is extended & 50 percent 		
+%          \\ \bottomrule
+%        \end{tabular} 
 
       \end{tabular}
 %    \end{center}
     \begin{tabular}{p{16cm}}
 %      \parbox{16cm}{
       \medskip
-      \small Panel (A) shows parameters calibrated the same for all types. Panel (B) shows parameters calibrated for each education group. Panel (C) shows the numbers describing how we model a recession and the three policies we consider. ``PI'' refers to permanent income.
-      % }
+      \small Panel (A) shows parameters calibrated the same for all types. Panel (B) shows parameters calibrated for each education group. ``PI'' refers to permanent income.
+      % Panel (C) shows the numbers describing how we model a recession and the three policies we consider.}
       \end{tabular}
     \notinsubfile{\label{tab:calibration}}
   \end{table}
@@ -304,9 +301,7 @@ states from 2004 to mid-2008 of 26 weeks, reported by \cite{rothstein2017scrapin
 
 
 The probability of transitioning out of unemployment is set to match the average duration of an unemployment spell in normal times.
-In data from the Bureau of Labor Statistics, this average duration was 19.6 weeks or 1.5 quarters in 2004.
-We do not have data on  education-specific duration rates, however, so we set the average duration of unemployment to 1.5 quarters for all households.
-This implies that the transition probability from unemployment to employment is set to $\pi_{ue}=2/3$.
+In data from the Bureau of Labor Statistics, this average duration was 19.6 weeks or 1.5 quarters in 2004. We do not have data on  education-specific duration rates, however, so we set the average duration of unemployment to 1.5 quarters for all households. This implies that the transition probability from unemployment to employment is set to $\pi_{ue}=2/3$.
 
 
 The Bureau of Labor Statistics provide data on unemployment rates for different education groups, and we match the average rate in each group in 2004 by setting an education-specific probability of transitioning from employment into unemployment.
@@ -321,6 +316,75 @@ In that sense, our calibration is consistent with short-term job-finding rates b
 
 Finally, the strength of the aggregate demand effect in recessions is determined by the consumption elasticity of productivity.
 We follow \cite{kmpHandbook2016} and set this to $\kappa=0.3$.
+
+
+\subsubsection{Calibrated parameters --- Recession} 
+\notinsubfile{\label{sec:calibRecession}}
+
+Table~\ref{tab:calibrationRecession} shows the model parameters that change when a recession hits. Panel~A shows the change in two parameters that apply to all types, and Panel~B shows changes in some parameters that differ across education groups. For completeness, panel~C summarizes the remaining parameters describing how we model a recession and the three policies we consider as potential responses to a recession.
+
+The two immediate changes that occur at the outset of a recession is that the unemployment rate doubles for all education groups, and the expected duration of an unemployment spell increases from $1.5$ to $4$ quarters. The duration of unemployment is the same across the three education groups, and this implies that the probability of leaving unemployment is set to $\pi_{ue} = 0.25$ in a recession. 
+
+The increase in the expected duration of unemployment combined with the doubling of the education-specific unemployment rates pin down new values for the probabilities of transitioning from employment to unemployment during the recession. Due to the large increase in the unemployment duration, the values that we obtain end up being slightly smaller than those transition probabilities in normal times. The probability $\pi_{eu}$ in a recession is set to $5.1$ percent for the Dropout group, $2.4$ percent for the Highschool group, and $1.4$ for the College group. 
+
+Our calibration of the transition probabilities between employment and unemployment during a recession are thus broadly in line with the results of \citet{elsby2010labor}. They find that unemployment duration does not vary much between education groups and that the flow from unemployment to employment drops sharply for all groups in a recession. The flow into unemployment is more stable, but they find that it tends to increase a little bit in recessions.\footnote{See the bottom row of Figure~8 in \citet{elsby2010labor} for these results.} This differs from the small decrease in the transition probabilities from employment into unemployment that our calibration strategy implies, which follows from our choice of targeting a doubling of the unemployment rate for each group rather than an even larger increase. 
+
+  \begin{table}[p]
+	\caption{Calibrated Model Parameters --- Recession}
+	\center
+	%    \begin{center}
+		\begin{tabular}{c}
+			\begin{tabular}{lcd{3}} 
+				\toprule
+				\multicolumn{3}{l}{Panel (A) Parameters that apply to all types} \\ \midrule
+				Parameter & Notation & \text{Value} \\ \midrule 
+				Avg. duration of unemp. spell in a recession (quarters) & & 4 \\
+				Probability of leaving unemployment in a recession & $\pi_{ue}$ & 0.25 
+				\\ \bottomrule 
+			\end{tabular} \\ \\
+			
+			\begin{tabular}{lccc}
+				\toprule 
+				\multicolumn{4}{l}{Panel (B) Parameters calibrated for each education group} \\ \midrule
+				& Dropout & Highschool & College \\ \midrule
+				Unemployment rate at the start of a recession (percent) & \phantom{0}17.0 & \phantom{0}8.8 & \phantom{0}5.4 \\ 
+				Probability of entering unemployment ($\pi_{eu}^{e}$, percent) & \phantom{0}5.1 & \phantom{0}2.4 & \phantom{0}1.4 
+				\\ \bottomrule 
+			\end{tabular} \\ \\
+%			\ifdefined\HCode
+%			\HCode{<div style="text-align: justify; width: 16cm;  margin: 1em auto 0 auto;">}
+%			\fi
+%			\parbox{16cm}{\footnotesize \vspace{.25cm} \textbf{Note}: Education-specific model parameters that change in a recession.\normalsize}
+%			\\ \\
+			
+			\begin{tabular}{lc}
+				\toprule 
+				\multicolumn{2}{l}{Panel (C) Parameters describing policy experiments} \\ \midrule 
+				Parameter & Value \\ \midrule 
+				%Change in unemployment rates in a recession & $\times 2$ \\ 
+				%Expected unemployment spell in a recession & 4 quarters \\ 
+				Average length of recession & 6 quarters \\ 
+				Size of stimulus check & \$1,200 \\ 
+				PI threshold for reducing check size & \$100,000 \\ 
+				PI threshold for not receiving check & \$150,000 \\ 
+				Extended unemployment benefits & 4 quarters \\
+				Length of payroll tax cut & 8 quarters \\ 
+				Income increase from payroll tax cut & 2 percent \\ 
+				Belief (probability) that tax cut is extended & 50 percent 		
+				\\ \bottomrule
+			\end{tabular} 
+			
+		\end{tabular}
+		%    \end{center}
+	\begin{tabular}{p{16cm}}
+		%      \parbox{16cm}{
+			\medskip
+			\small Panel (A) shows the parameters that apply to all types that change in a recession. Panel (B) shows the education-specific model parameters that change in a recession. Panel (C) shows numbers further describing how we model a recession and the three policies we consider. ``PI'' refers to permanent income.
+			% }
+	\end{tabular}
+	\notinsubfile{\label{tab:calibrationRecession}}
+\end{table}
+
 
 
 
