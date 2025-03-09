@@ -147,10 +147,10 @@ $$ L_{t} =  N_{t}.$$
 \makebox[\textwidth]{\begin{tabular}{l c c l}
 Description & Parameter & Value & Source/Target \\ \hline
 Elasticity of Substitution & $\epsilon_{p}$ & 6 & Standard \\
-Price Adjustment Costs & $\varphi$ & 96.9 & \cite{Ravn2017} \\
+Price Adjustment Costs & $\varphi$ & 96.9 & \cite{Ravn2017,Ravn2021} \\
 Vacancy Cost & $\kappa$ & 0.056 & $\frac{\kappa}{w\phi} = 0.071$ \\
 Job Separation Rate & $\omega$ & 0.092 & Match $\pi(eu)$ for Highschool group \\
-Matching Elasticity & $\alpha$ & 0.65 & \cite{Ravn2017} \\
+Matching Elasticity & $\alpha$ & 0.65 & \cite{Ravn2017,Ravn2021} \\
 Job Finding Probability & $\eta_{ss}$ & 0.67 & $\pi(ue)$ in section~\ref{sec:calib} \\
 Vacancy Filling Rate & $\phi_{ss}$ & 0.71 & den Haan et al. (\citeyear{DenHaan2000}) \\
 Real Wage Rigidity parameter & $\phi_{w}$ & 0.837 & Gornemann et al. (\citeyear{Gornemann2021}) \\
@@ -164,8 +164,8 @@ Taylor Rule Inflation Coefficient & $\phi_{\pi}$ & 1.5 & Standard \\ \hline
 
 \section{Calibration of Non-Household Blocks }
 
-The elasticity of substitution is set to 6, and the price adjustment cost parameter is set to 96.9 as in \cite{Ravn2017}.
-The vacancy cost is set to 7\% of the real wage as in \cite{Christiano2016}.\footnote{The range of plausible values lie between $4\%$ and $14\%$ \cite{Silva2009}} The matching elasticity is 0.65 following \cite{Ravn2017}. The job separation rate is set to 0.092. As in section~\ref{sec:calib}, we set the job finding probability in the steady state for the unemployed $\eta_{ss}$ to 0.67. Along with the job separation rate, this gives a probability of transitioning from employment to unemployment within a quarter of $3.1$ percent which is the value we use for the Highschool group in section~\ref{sec:calib}. The quarterly vacancy filling rate is 0.71 as in \cite{DenHaan2000} (and together with our other choices, this pins down the matching efficiency $\chi$). The degree of wage rigidity $\phi_w$ is set to 0.837 following \cite{Gornemann2021}. The tax rate is set to 0.3 and government spending is set to clear the government budget constraint. The parameters that dictate the speed of fiscal adjustment, $\phi_{B}$ and $\phi_{G}$, are set to 0.015, the lower bound of the estimates in \cite{Auclert2020}.\footnote{The speed of adjustment parameter is set to the lower bound to ensure that the policies evaluated in the HANK and SAM model are almost entirely deficit financed.} Furthermore, the decay rate of government coupons is set to $\delta = 0.95$ to match a maturity of 5 years.\footnote{The duration of bonds in the model is $\frac{(1+r)^4}{(1+r)^4 - \delta}$} Finally, the Taylor rule coefficient on inflation is set to the standard value of $\phi_{\pi}=1.5$. 
+The elasticity of substitution is set to 6, and the price adjustment cost parameter is set to 96.9 as in \cite{Ravn2017,Ravn2021}.
+The vacancy cost is set to 7\% of the real wage as in \cite{Christiano2016}.\footnote{The range of plausible values lie between $4\%$ and $14\%$ \cite{Silva2009}} The matching elasticity is 0.65 following \cite{Ravn2017,Ravn2021}. The job separation rate is set to 0.092. As in section~\ref{sec:calib}, we set the job finding probability in the steady state for the unemployed $\eta_{ss}$ to 0.67. Along with the job separation rate, this gives a probability of transitioning from employment to unemployment within a quarter of $3.1$ percent which is the value we use for the Highschool group in section~\ref{sec:calib}. The quarterly vacancy filling rate is 0.71 as in \cite{DenHaan2000} (and together with our other choices, this pins down the matching efficiency $\chi$). The degree of wage rigidity $\phi_w$ is set to 0.837 following \cite{Gornemann2021}. The tax rate is set to 0.3 and government spending is set to clear the government budget constraint. The parameters that dictate the speed of fiscal adjustment, $\phi_{B}$ and $\phi_{G}$, are set to 0.015, the lower bound of the estimates in \cite{Auclert2020}.\footnote{The speed of adjustment parameter is set to the lower bound to ensure that the policies evaluated in the HANK and SAM model are almost entirely deficit financed.} Furthermore, the decay rate of government coupons is set to $\delta = 0.95$ to match a maturity of 5 years.\footnote{The duration of bonds in the model is $\frac{(1+r)^4}{(1+r)^4 - \delta}$} Finally, the Taylor rule coefficient on inflation is set to the standard value of $\phi_{\pi}=1.5$. 
 
 
 \ifthenelse{\boolean{Web}}{}{
