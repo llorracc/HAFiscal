@@ -178,7 +178,7 @@
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Subfiles/Abstract.vrb}{0000/00/00 v0.0}
-  *{file}   {acknowledgments.tex}{0000/00/00 v0.0}
+  *{file}   {acknowledgments.texinput}{0000/00/00 v0.0}
   *{file}   {Subfiles.texinput}{0000/00/00 v0.0}
   *{file}   {Subfiles/Intro}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
