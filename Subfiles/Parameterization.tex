@@ -49,55 +49,6 @@ Panel (b) shows the fit of the model to the distribution of liquid wealth (see S
 \end{figure}
 
 
-% \newcommand{\iMPC}{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/AggMPC_LotteryWin_comparison}
-% \newcommand{\LiqDist}{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/LiquWealth_Distribution_comparison}
-% \begin{figure}[htb]
-%   \ifdefined\HCode
-%     \HCode{<div style="text-align: center;">}
-%   \fi
-%   \centering
-%   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}cc@{}}
-%     \ifdefined\HCode
-%       \HCode{<div style="display: flex; flex-direction: column; align-items: center; width: 48\%;">}
-%     \fi
-%     \subfloat[Share of lottery win spent\label{fig:aggmpclotterywin}]{%
-%       \ifdefined\HCode
-%         \includegraphics[width=\linewidth]{\iMPC}
-%       \else
-%         \includegraphics[width=0.48\textwidth]{\iMPC}
-%       \fi
-%     }
-%     \ifdefined\HCode
-%       \HCode{</div>}
-%     \fi
-%     &
-%     \ifdefined\HCode
-%       \HCode{<div style="display: flex; flex-direction: column; align-items: center; width: 48\%;">}
-%     \fi
-%     \subfloat[Distribution of liquid wealth\label{fig:liquwealthdistribution}]{%
-%       \ifdefined\HCode
-%         \includegraphics[width=\linewidth]{\LiqDist}
-%       \else
-%         \includegraphics[width=0.48\textwidth]{\LiqDist}
-%       \fi
-%     }
-%     \ifdefined\HCode
-%       \HCode{</div>}
-%     \fi
-%   \end{tabular*}
-%   \ifdefined\HCode
-%     \HCode{<figcaption style="text-align: center; width: auto; max-width: 800px;">}
-%   \fi
-%   \caption{Targets and model moments from the estimation}
-%   \notinsubfile{\label{fig:splurge_estimation}}
-%   \ifdefined\HCode
-%     \HCode{<div style="text-align: justify; width: 16cm;  margin: 1em auto 0 auto;">}
-%   \fi
-
-% \parbox{14cm}{
-%   \footnotesize \vspace{.15cm} Panel (a) shows the fit of the model to the dynamic consumption response estimated in \citet{fagereng_mpc_2021}; see their figure~A5. Panel (b) shows the fit of the model to the distribution of liquid wealth (see Section~\ref{sec:SCFdata} for the definition) from the 2004 SCF.\normalsize}
-% \end{figure}
-
 \begin{table}[t]
   \center
   \input{\econtexRoot/Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/MPC_WealthQuartiles_Table}
@@ -516,33 +467,6 @@ The MPCs are averaged across individuals within each education group.
 Panel~(B) shows the same numbers for the population sorted into different quartiles of the liquid wealth distribution.\normalsize}
   \end{table}
   
-% \begin{table}[th]
-% 	\begin{center}
-% 		\begin{tabular}{l}
-% 			\begin{tabular}{lcccc}
-% 				\multicolumn{5}{l}{Panel (A) Non-targeted moments by education group} \\ \midrule
-% 				& Dropout & Highschool & College & Population \\ \midrule
-% 				Percent of liquid wealth (data) & 0.8 & 17.9 & 81.2 & 100 \\
-% 				Percent of liquid wealth (model) & 1.1 & 21.9 & 77.0 & 100 \\
-% 				\makecell[l]{Avg. lottery-win-year MPC \\ (model, incl. splurge)} & 0.78 & 0.61 & 0.38 & 0.54
-% 				\\ \bottomrule 
-% 			\end{tabular} \\ \\ 
-			
-% 			\begin{tabular}{lcccc}
-% 				\multicolumn{5}{l}{Panel (B) Non-targeted moments by wealth quartile} \\ \midrule
-% 				 & WQ 4 & WQ 3 & WQ 2 & WQ 1 \\ \midrule
-% 				Percent of liquid wealth (data) & 0.14 & 1.60 & 8.51 & 89.76 \\
-% 				Percent of liquid wealth (model) & 0.09 & 0.96 & 4.55 & 94.40 \\
-% 				\makecell[l]{Avg. lottery-win-year MPC \\ (model, incl. splurge)} & 0.78 & 0.63 & 0.44 & 0.31
-% 				\\ \bottomrule 
-% 			\end{tabular}
-% 		\end{tabular}
-% 		\caption{Implications for non-targeted moments}
-% 		\notinsubfile{\label{tab:nonTargetedMoments}}
-% 		\parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (A) shows percent of liquid wealth held by each education group in the 2004 SCF and in the model. It also shows the average MPCs after a lottery win for each education group. The MPCs are calculated for each individual for the year of a lottery win, taking into account that the win takes place in a random quarter of the year that differs across individuals. The MPCs are averaged across individuals within each education group. Panel~(B) shows the same numbers for the population sorted into different quartiles of the liquid wealth distribution.\normalsize}
-% 	\end{center}
-% \end{table}
-
 Finally, we consider the implications of our model for two different patterns of spending over time.
 The first pattern is the dynamics of spending after a lottery win from \citeauthor{fagereng_mpc_2021}.
 This pattern was used in the estimation of the splurge factor in section~\ref{sec:splurge}, but was not targeted when estimating the discount factor distributions for each education group in section~\ref{sec:estimBetas}.
@@ -554,27 +478,6 @@ The second pattern concerns the dynamics of income and spending for households t
 Figure~\ref{fig:expiryUI} shows the pattern of income and spending for such households.
 \citet{ganongConsumer2019} report the empirical result that nondurable spending drops by 12 percent the month when benefits expire.
 Our quarterly model is broadly consistent with this, and the drop in spending the quarter after the expiry of UI benefits is 18 percent.
-
-
-% \begin{figure}[htb]
-%     \centering
-%     \begin{minipage}[b]{.48\linewidth}
-%         \centering
-%         \includegraphics[width=\linewidth]{\econtexRoot/Figures/iMPCs_wSplEstimated}
-%         \caption{Share of lottery win spent}
-%         \notinsubfile{\label{fig:USaggmpclotterywin}}
-%     \end{minipage}%
-%     \hfill
-%     \begin{minipage}[b]{.48\linewidth}
-%         \centering
-%         \includegraphics[width=\linewidth]{\econtexRoot/Code/HA-Models/FromPandemicCode/Figures/UnempSpell_Dynamics}
-%         \caption{Spending upon expiry of UI benefits}
-%         \notinsubfile{\label{fig:expiryUI}}
-%     \end{minipage}
-%     \caption{Untargeted moments}
-%     \notinsubfile{\label{fig:untargetedMoments}}
-%     \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in \citet{fagereng_mpc_2021}; see their Figure~A5. Panel (b) shows the evolution of income and spending for households who remain unemployed long enough for UI benefits to expire; see Figure~2 in \citet{ganongConsumer2019}.\normalsize}
-% \end{figure}
 
 \begin{figure}[htb]
     \centering
@@ -592,8 +495,10 @@ Our quarterly model is broadly consistent with this, and the drop in spending th
     \end{subfigure}
     \caption{Marginal propensity to consume over time and the spending upon expiry of UI benefits in the model}
     \notinsubfile{\label{fig:untargetedMoments}}
-    \parbox{16cm}{\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in \citet{fagereng_mpc_2021}; see their Figure~A5.
-Panel (b) shows the evolution of income and spending for households who remain unemployed long enough for UI benefits to expire; see Figure~2 in \citet{ganongConsumer2019}.\normalsize}
+\begin{minipage}{16cm}
+\small \vspace{.15cm} \textbf{Note}: Panel (a) compares the dynamic consumption response in the model to the estimates in {\citet{fagereng_mpc_2021}}; see their Figure~A5.
+Panel (b) shows the evolution of income and spending for households who remain unemployed long enough for UI benefits to expire; see Figure~2 in {\citet{ganongConsumer2019}}.\normalsize
+\end{minipage}
   \end{figure}
   
 % \begin{figure}[htb]
