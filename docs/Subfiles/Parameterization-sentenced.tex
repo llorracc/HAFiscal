@@ -133,7 +133,10 @@ This choice makes it realistic to consider stimulus policies that are implemente
 \subsubsection{Calibrated parameters --- Normal times} 
 \notinsubfile{\label{sec:calib}}
 
-Table~\ref{tab:calibration} presents our calibration of the model parameters in normal times. Panel~A lists parameters that are calibrated equally across all types in the model, and Panel~B lists parameters in the model that are education specific. In the next subsection we present how certain model parameters are changes when the economy enters a recession. 
+Table~\ref{tab:calibration} presents our calibration of the model parameters in normal times.
+Panel~A lists parameters that are calibrated equally across all types in the model, and Panel~B lists parameters in the model that are education specific.
+In the next subsection we present how certain model parameters are changes when the economy enters a recession.
+
 
 \textbf{Preferences, survival and interest rates.} All households are assumed to have a coefficient of relative risk aversion equal to $\gamma=2$.
 We also assume that all households have the same propensity to splurge out of transitory income gains and set $\varsigma=0.249$, the value estimated in section~\ref{sec:splurge}.
@@ -252,7 +255,9 @@ states from 2004 to mid-2008 of 26 weeks, reported by \cite{rothstein2017scrapin
 
 
 The probability of transitioning out of unemployment is set to match the average duration of an unemployment spell in normal times.
-In data from the Bureau of Labor Statistics, this average duration was 19.6 weeks or 1.5 quarters in 2004. We do not have data on  education-specific duration rates, however, so we set the average duration of unemployment to 1.5 quarters for all households. This implies that the transition probability from unemployment to employment is set to $\pi_{ue}=2/3$.
+In data from the Bureau of Labor Statistics, this average duration was 19.6 weeks or 1.5 quarters in 2004.
+We do not have data on  education-specific duration rates, however, so we set the average duration of unemployment to 1.5 quarters for all households.
+This implies that the transition probability from unemployment to employment is set to $\pi_{ue}=2/3$.
 
 
 The Bureau of Labor Statistics provide data on unemployment rates for different education groups, and we match the average rate in each group in 2004 by setting an education-specific probability of transitioning from employment into unemployment.
@@ -272,13 +277,23 @@ We follow \cite{kmpHandbook2016} and set this to $\kappa=0.3$.
 \subsubsection{Calibrated parameters --- Recession} 
 \notinsubfile{\label{sec:calibRecession}}
 
-Table~\ref{tab:calibrationRecession} shows the model parameters that change when a recession hits. Panel~A shows the change in two parameters that apply to all types, and Panel~B shows changes in some parameters that differ across education groups. For completeness, panel~C summarizes the remaining parameters describing how we model a recession and the three policies we consider as potential responses to a recession.
+Table~\ref{tab:calibrationRecession} shows the model parameters that change when a recession hits.
+Panel~A shows the change in two parameters that apply to all types, and Panel~B shows changes in some parameters that differ across education groups.
+For completeness, panel~C summarizes the remaining parameters describing how we model a recession and the three policies we consider as potential responses to a recession.
 
-The two immediate changes that occur at the outset of a recession is that the unemployment rate doubles for all education groups, and the expected duration of an unemployment spell increases from $1.5$ to $4$ quarters. The duration of unemployment is the same across the three education groups, and this implies that the probability of leaving unemployment is set to $\pi_{ue} = 0.25$ in a recession. 
+The two immediate changes that occur at the outset of a recession is that the unemployment rate doubles for all education groups, and the expected duration of an unemployment spell increases from $1.5$ to $4$ quarters.
+The duration of unemployment is the same across the three education groups, and this implies that the probability of leaving unemployment is set to $\pi_{ue} = 0.25$ in a recession.
 
-The increase in the expected duration of unemployment combined with the doubling of the education-specific unemployment rates pin down new values for the probabilities of transitioning from employment to unemployment during the recession. Due to the large increase in the unemployment duration, the values that we obtain end up being slightly smaller than those transition probabilities in normal times. The probability $\pi_{eu}$ in a recession is set to $5.1$ percent for the Dropout group, $2.4$ percent for the Highschool group, and $1.4$ for the College group. 
 
-Our calibration of the transition probabilities between employment and unemployment during a recession are thus broadly in line with the results of \citet{elsby2010labor}. They find that unemployment duration does not vary much between education groups and that the flow from unemployment to employment drops sharply for all groups in a recession. The flow into unemployment is more stable, but they find that it tends to increase a little bit in recessions.\footnote{See the bottom row of Figure~8 in \citet{elsby2010labor} for these results.} This differs from the small decrease in the transition probabilities from employment into unemployment that our calibration strategy implies, which follows from our choice of targeting a doubling of the unemployment rate for each group rather than an even larger increase. 
+The increase in the expected duration of unemployment combined with the doubling of the education-specific unemployment rates pin down new values for the probabilities of transitioning from employment to unemployment during the recession.
+Due to the large increase in the unemployment duration, the values that we obtain end up being slightly smaller than those transition probabilities in normal times.
+The probability $\pi_{eu}$ in a recession is set to $5.1$ percent for the Dropout group, $2.4$ percent for the Highschool group, and $1.4$ for the College group.
+
+
+Our calibration of the transition probabilities between employment and unemployment during a recession are thus broadly in line with the results of \citet{elsby2010labor}.
+They find that unemployment duration does not vary much between education groups and that the flow from unemployment to employment drops sharply for all groups in a recession.
+The flow into unemployment is more stable, but they find that it tends to increase a little bit in recessions.\footnote{See the bottom row of Figure~8 in \citet{elsby2010labor} for these results.} This differs from the small decrease in the transition probabilities from employment into unemployment that our calibration strategy implies, which follows from our choice of targeting a doubling of the unemployment rate for each group rather than an even larger increase.
+
 
   \begin{table}[p]
 	\caption{Calibrated Model Parameters --- Recession}
