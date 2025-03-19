@@ -22,14 +22,14 @@ from Output_Results import Output_Results
 
 #%%
 
-Run_Main                = True
-Run_EqualPVs            = True
-Run_ADElas_robustness   = True
-Run_CRRA1_robustness    = True
-Run_CRRA3_robustness    = True
-Run_Rfree_robustness    = True
-Run_Rspell_robustness   = True
-Run_LowerUBnoB          = True
+Run_Main                = False 
+Run_EqualPVs            = False 
+Run_ADElas_robustness   = False
+Run_CRRA1_robustness    = False
+Run_CRRA3_robustness    = False
+Run_Rfree_robustness    = False
+Run_Rspell_robustness   = False
+Run_LowerUBnoB          = False
 Run_Splurge0            = True
 
 
@@ -40,11 +40,11 @@ Run_Dict['Run_Check_Recession']     = True
 Run_Dict['Run_UB_Ext_Recession']    = True
 Run_Dict['Run_TaxCut_Recession']    = True
 Run_Dict['Run_Check']               = True
-Run_Dict['Run_UB_Ext']              = True
-Run_Dict['Run_TaxCut']              = True
-Run_Dict['Run_AD ']                 = True
-Run_Dict['Run_1stRoundAD']          = True
-Run_Dict['Run_NonAD']               = True
+Run_Dict['Run_UB_Ext']              = True 
+Run_Dict['Run_TaxCut']              = True 
+Run_Dict['Run_AD ']                 = False 
+Run_Dict['Run_1stRoundAD']          = False 
+Run_Dict['Run_NonAD']               = True 
 # For PVSame some of this automatically set to False
 
 #%% Execute main Simulation

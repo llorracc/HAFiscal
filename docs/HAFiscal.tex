@@ -8,21 +8,14 @@
 
 % Document has title page and table of contents and header:
 \documentclass[titlepage, headings=optiontotocandhead]{econark}
-
-\usepackage[T1]{fontenc}
-
-%\usepackage{lmodern}
-%\renewcommand{\familydefault}{\ttdefault} % Ban ugly ligatures
-
-% executeAllowed boolean true if able to run shell scripts
-%%%%%%%\usepackage{set-boolean-indicating-execute-permissions} 
-
+\usepackage{catchfile}
 \newcommand{\texname}{HAFiscal} % Keyname for paper (optional)
+\usepackage{econark-bibfilesfind}
+\bibfilesfind{\texname}
 
 % Definitions unique to this paper
 \usepackage{@local/local} % local.sty imports packages
 \usepackage{@local/owner} % for urls that are constructed
-
 % To include Appendix and Table of Contents? false->true
 \provideboolean{Appendix}
 \setboolean{Appendix}{false} % uncomment next line to include
@@ -30,6 +23,7 @@
 \provideboolean{TOC}\setboolean{TOC}{false}
 
 \provideboolean{draftmode}\setboolean{draftmode}{true}
+\setboolean{draftmode}{false}
 \newcommand{\Draft}{\ifthenelse{\boolean{draftmode}}}
 \Draft{\usepackage{showlabels}
   \renewcommand{\showlabelsetlabel}[1]{\tiny #1}
@@ -37,8 +31,12 @@
 
 % Standard useful packages for economics
 \usepackage{pdforhtml}         % allow compile as pdf or html
-\usepackage{econark-multibib}  % Only use bib files that exist
-\bibliographystyle{econtex}
+\ifdvi
+  \setboolean{Web}{false}   
+\fi
+
+%\usepackage{econark-multibib}  % Only use bib files that exist
+\bibliographystyle{econark}
 %\usepackage{econark-titlepage} 
 
 % When compiling Web version of paper, construct targets/anchors
@@ -48,7 +46,12 @@
   \provideboolean{showPageHead}{\setboolean{showPageHead}{true}}
   \usepackage{scrlayer-scrpage}  % Package for page headers if PDF
   \usepackage{caption}           % allow suppression of appendix figures
-}
+} % end non Web instructions
+
+\ifthenelse{\boolean{Web}}{
+  \usepackage{endnotes}
+  \let\footnote=\endnote
+  }{}  % {Web}
 
 \begin{document}
 % Tell subfiles they are not being compiled as standalone files
@@ -74,9 +77,17 @@
   \appendix\subfile{Subfiles/Appendix}\pagebreak
 }{}
 
+\ifthenelse{\boolean{Web}}{
+\section*{Endnotes}
+\theendnotes
+  }{}  % {Web}
+
 % Make the bibliography
-%\input{bibliography_blend}
-\econarkmultibib{\texname}
+% \input{bibliography_blend}
+
+\bibliography{\bibfilesfound}
+
+%\econarkmultibib{\texname}
 \end{document}\endinput
 
 % Lines below help configure AucTeX if that is your editor

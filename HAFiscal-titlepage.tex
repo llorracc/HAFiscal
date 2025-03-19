@@ -2,7 +2,7 @@
 \input{@resources/tex-add-search-paths}  % allow latex to find custom stuff
 \input{./.econtexRoot}\documentclass[HAFiscal]{subfiles}
 \externaldocument{\econtexRoot/HAFiscal}
-\input{}
+%\usepackage{catchfile}
 
 \begin{document}
 % Attempted to make all lines used for Web version contain {Web} (or version with only single curly brace at end) so can be removed with sed
@@ -18,8 +18,6 @@
   \href{https://econ-ark.org}{\includegraphics{\ResourcesDir/PoweredByEconARK}}
 }
 
-% \date{\today}
-%\renewcommand{\forcedate}{December 20, 2022}\date{\forcedate}
 \date{\today}
 
 
@@ -27,7 +25,7 @@
 
 \hypertarget{abstract}{}
 \begin{verbatimwrite}{\econtexRoot/Subfiles/Abstract.vrb}
-  Using a heterogeneous agent model calibrated to match measured spending dynamics over four years following an income shock (\cite{fagereng_mpc_2021}), we assess the effectiveness of three fiscal stimulus policies employed during recent recessions.  Unemployment insurance (UI) extensions are the clear ``bang for the buck'' winner when effectiveness is measured in utility terms.  Stimulus checks are second best and have two advantages (over UI): they arrive and are spent faster, and they are scalable to any desired size.  A temporary (two-year) cut in the rate of wage taxation is considerably less effective than the other policies and has negligible effects in the version of our model without a multiplier.
+  Using a heterogeneous agent model calibrated to match measured spending dynamics over four years following an income shock (\cite{fagereng_mpc_2021}), we assess the effectiveness of three fiscal stimulus policies employed during recent recessions.  Unemployment insurance (UI) extensions are the clear ``bang for the buck'' winner when effectiveness is measured in utility terms.  Stimulus checks are second best and have two advantages (over UI): they arrive faster, and they are scalable to any desired size.  A temporary (two-year) cut in the rate of wage taxation is considerably less effective than the other policies and has negligible effects in the version of our model without a multiplier.
 \end{verbatimwrite}
 \input{\econtexRoot/Subfiles/Abstract.vrb}
 
@@ -37,20 +35,19 @@
 \newcommand{\REMARK}{\href{https://github.com/econ-ark/REMARK}{REMARK}}
 \begin{footnotesize}
   \parbox{0.9\textwidth}{
-  \begin{center}
+%  \begin{center}
     \begin{tabbing}
       \texttt{~~~~~~~~~~~} \= \=  \\ 
 %      \texttt{~~~\REMARK:~} \= \= \texttt{\url{https://econ-ark.org/materials/hafiscal}} \\ 
 %      \texttt{Dashboard:~} \> \> \texttt{\href{https://econ-ark.org/materials/hafiscal}{Click `Launch Dashboard' Button}} \\
-      \texttt{~~~~~html:~} \> \> \texttt{\href{https://\owner.github.io/HAFiscal/}{https://\owner.github.io/HAFiscal/}} \\ % Owner is defined in Resources/owner.tex
+      \texttt{~~~~~html:~} \> \> \texttt{\href{https://\owner.github.io/HAFiscal/}{https://\owner.github.io/HAFiscal/}} \\ % Owner is defined in @local/owner.tex
       \texttt{~~~~~~PDF:~} \> \> \texttt{\href{https://github.com/\owner/HAFiscal/blob/master/HAFiscal.pdf}{HAFiscal.pdf}} \\ 
-%      \texttt{~~~Slides:~} \> \> \texttt{\href{https://github.com/\owner/HAFiscal/blob/master/HAFiscal-Slides.pdf}{HAFiscal-Slides.pdf}} \\
+      \texttt{~~~Slides:~} \> \> \texttt{\href{https://\owner.github.io/HAFiscal/HAFiscal-Slides.pdf}{https://\owner.github.io/HAFiscal/HAFiscal-Slides.pdf}} \\ % Owner is defined in @local/owner.tex
       \texttt{~~~GitHub:~} \> \> \texttt{\href{https://github.com/\owner/HAFiscal}{https://github.com/\owner/HAFiscal}} \\
     \end{tabbing}
-  \end{center}
+%  \end{center}
 } % end \parbox{\textwidth}
 \end{footnotesize}
-
 
 \begin{authorsinfo}
   \noindent \name{\href{https://www.econ2.jhu.edu/people/ccarroll}{Carroll: Department of Economics, Johns Hopkins University}, \href{mailto:ccarroll@jhu.edu}{\texttt{ccarroll@jhu.edu}}, and \href{https://nber.org}{NBER}}. \newline
@@ -62,14 +59,55 @@
 
 \pagenumbering{gobble} % Prevent numbering for pages including the TOC and title page
 
+% 3) Wrapper to conditionally \input a file if it exists & isn’t empty.
+\newcommand{\thanksInput}[1]{%
+  \IfFileExists{\econtexRoot/Subfiles/#1.tex}%
+    {\ignorespaces\input{\econtexRoot/Subfiles/#1.tex}\unskip}%  % if exists
+    {}%                                                     % if empty/nonexistent
+  }%
+  
 
-\ifthenelse{\boolean{Web}}{
-}{
-  \begin{minipage}{0.9\textwidth}
-    \footnotesize The views expressed in this paper are those of the authors and do not necessarily represent those of the Federal Reserve Board, the Deutsche Bundesbank and the Eurosystem, or Statistics Norway. This project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No. 851891).
-  \end{minipage}
+\hypertarget{abstract}{}
+%\begin{verbatimwrite}{\econtexRoot/Subfiles/thanks.vrb}
+\vfill
+\begin{minipage}{\textwidth}
+\footnotesize The views expressed in this paper are those of the authors and do not necessarily represent those of the Federal Reserve Board, the Deutsche Bundesbank and the Eurosystem, or Statistics Norway. This project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No. 851891) and from the Research Council of Norway (grant No. 326419).
 
-}
+%\input{acknowledgments-snippets.tex}
+\input{acknowledgments.texinput}
+\end{minipage}
+
+% The authors would like to thank workshop audiences at \input{\econtexRoot/Subfiles/thanks-talks_CDC},%
+% \thanksInput{thanks-talks_DuW}\thanksInput{thanks-talks_EC}\thanksInput{thanks-talks_HT}\thanksInput{thanks-talks_IF}%
+%  for valuable feedback on the paper during presentations.  We would also like to thank  \input{\econtexRoot/Subfiles/thanks-persons_CDC},%
+% \thanksInput{thanks-persons_DuW}%
+% \thanksInput{thanks-persons_EC}%
+% \thanksInput{thanks-persons_HT}%\IfFileExistsAndNotEmpty{\econtexRoot/Subfiles/thanks-persons_IF}{ and }{}%
+% \thanksInput{thanks-persons_IF}% 
+% for insightful comments on drafts of the paper.
+%\end{verbatimwrite}
+%\input{\econtexRoot/Subfiles/thanks.vrb}
+
+% \ifthenelse{\boolean{Web}}{
+% }{
+%   \begin{minipage}{0.9\textwidth}
+%     \footnotesize The views expressed in this paper are those of the authors and do not necessarily represent those of the Federal Reserve Board, the Deutsche Bundesbank and the Eurosystem, or Statistics Norway. This project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No. 851891).
+% The authors would like to thank workshop audiences at \input{\econtexRoot/Subfiles/thanks-talks_CDC},%
+% \thanksInput{thanks-talks_DuW}%
+% \thanksInput{thanks-talks_EC}%
+% \thanksInput{thanks-talks_HT}%
+% \IfFileExistsAndNotEmpty{\econtexRoot/Subfiles/thanks-talks_IF}{ and }{}%
+% \thanksInput{thanks-talks_IF}%
+%  for valuable feedback on the paper during presentations.  We would also like to thank  \input{\econtexRoot/Subfiles/thanks-persons_CDC},%
+% \thanksInput{thanks-persons_DuW}%
+% \thanksInput{thanks-persons_EC}%
+% \thanksInput{thanks-persons_HT}\IfFileExistsAndNotEmpty{\econtexRoot/Subfiles/thanks-persons_IF}{ and }{}%
+% \thanksInput{thanks-persons_IF}% 
+% for insightful comments on drafts of the paper.
+
+%   \end{minipage}
+% }
+
 \titlepagefinish
 
 \end{document}\endinput

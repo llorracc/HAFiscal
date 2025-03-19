@@ -23,7 +23,9 @@
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
 .ectt-1000{ font-family: monospace,monospace;}
+.ectt-1000{ font-family: monospace,monospace;}
 .ecbx-2074{font-size:166%; font-weight: bold;}
+.ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
 .ecbx-2074{ font-weight: bold;}
@@ -47,6 +49,21 @@
 .cmmi-6{font-size:50%;font-style: italic;}
 .cmsy-8{font-size:66%;}
 .cmsy-6{font-size:50%;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ectt-1200{ font-family: monospace,monospace;}
+.ecti-1200{ font-style: italic;}
 .ecti-1200{ font-style: italic;}
 .ecti-1200{ font-style: italic;}
 .ecti-1200{ font-style: italic;}
@@ -74,7 +91,9 @@
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
 .ecbx-1200{ font-weight: bold;}
+.ecbx-1200{ font-weight: bold;}
 .ecbx-1095{font-size:83%; font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
 .ecbx-1095{ font-weight: bold;}
@@ -100,6 +119,7 @@
 .ecbx-1000{ font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
 .ecbx-1000{ font-weight: bold;}
+.ecbx-1000{ font-weight: bold;}
 .ecti-1000{font-size:83%; font-style: italic;}
 .ecti-1000{ font-style: italic;}
 .ecti-1000{ font-style: italic;}
@@ -113,8 +133,12 @@
 .ecti-1000{ font-style: italic;}
 .ecti-1000{ font-style: italic;}
 .ecti-1000{ font-style: italic;}
+.ecti-1000{ font-style: italic;}
+.cmr-10x-x-109{font-size:90%;}
+.cmmi-10x-x-109{font-size:90%;font-style: italic;}
 .cmsy-10x-x-109{font-size:90%;}
 .ecti-0800{font-size:66%; font-style: italic;}
+.ecti-0800{ font-style: italic;}
 .ecti-0800{ font-style: italic;}
 .ecti-0800{ font-style: italic;}
 .ecti-0800{ font-style: italic;}
@@ -319,16 +343,49 @@ span.textso{letter-spacing: 0.3em; word-spacing: 0.3em}
 span.textul{text-decoration:underline}
 span.textst{text-decoration:line-through}
 span.textcaps{font-variant:small-caps}
+figure.figure { display: flex; flex-direction: column; align-items: center; width: 100margin: 1em auto; text-align: center; }
+figure.figure img { max-width: 100height: auto; margin: 0 auto; }
+figure.figure .center { width: 100text-align: center; }
+.center { display: flex; flex-direction: column; align-items: center; width: 100margin: 0 auto; text-align: center; }
+.subfigure img { max-width: 100height: auto; }
+figure.figure .parbox { margin: 1em auto; max-width: 16cm; text-align: justify; }
+.subfigure figcaption { margin-top: 0.5em; text-align: center; width: 100}
+figure.figure > figcaption { text-align: center; width: 100margin: 1em auto; }
+.subfigure .caption { text-align: center; width: 100margin: 0.5em auto; }
+.subfigure .caption .id { display: inline; }
+.subfigure .caption .content { display: inline; }
+figure.figure > .caption { text-align: center; width: 100margin: 1em auto; }
+figure.figure > .caption .id { display: inline; }
+figure.figure > .caption .content { display: inline; }
+.subfigure { display: inline-block; width: 48margin: 0 1vertical-align: top; text-align: center; }
+.subfigure img { display: block; margin: 0 auto; max-width: 100}
+figure.figure { text-align: center; width: 100margin: 1em auto; }
+figure.figure { width: 100margin: 1em auto; text-align: center; }
+figure.figure img { max-width: 90width: auto; height: auto; margin: 0 auto; }
+.subfigure { display: inline-block; width: 48margin: 0 1vertical-align: top; }
+.subfigure figcaption { margin-top: 0.5em; }
+figure.figure { text-align: center; width: 100margin: 1em auto; }
 .equation{ display: table; width: 1.0; margin-top: 1.5em; margin-bottom: 1.5em; }
 .equation td:first-child{ width: 0.99; text-align: center; vertical-align: middle; }
 .equation td:last-child{ width: 0.01; text-align: right; vertical-align: middle; }
 .equation-star{ display: block; text-align: center; margin-top: 1.5em; margin-bottom: 1.5em; }
 .math-display img{ /* Targets images within elements with class math-display */ display: block; /* Makes the image a block element */ margin-left: auto; /* These two margin settings together */ margin-right: auto; /* center the image horizontally */ width: 1.0; } 
-span#colorbox1{background-color:#FFFF00;}
-span#textcolor2{background-color:#FFFF00}
-span#textcolor3{background-color:#FFFF00}
-span#colorbox4{background-color:#FFFF00;}
-span#textcolor5{background-color:#FFFF00}
+img[src="HAFiscal27x.svg"]{vertical-align:-25%}
+img[src="HAFiscal28x.svg"]{vertical-align:-29.03840465651838%}
+img[src="HAFiscal29x.svg"]{vertical-align:-29.03840465651838%}
+img[src="HAFiscal30x.svg"]{vertical-align:-29.03840465651838%}
+img[src="HAFiscal31x.svg"]{vertical-align:-29.03840465651838%}
+img[src="HAFiscal32x.svg"]{vertical-align:-17.99990539536346%}
+img[src="HAFiscal38x.svg"]{vertical-align:-17.99990539536346%}
+img[src="HAFiscal39x.svg"]{vertical-align:-17.76309449236255%}
+img[src="HAFiscal40x.svg"]{vertical-align:-29.03840465651838%}
+img[src="HAFiscal46x.svg"]{vertical-align:-17.99990539536346%}
+img[src="HAFiscal47x.svg"]{vertical-align:-17.76309449236255%}
+img[src="HAFiscal48x.svg"]{vertical-align:-25.83717176230433%}
+img[src="HAFiscal49x.svg"]{vertical-align:-25.83717176230433%}
+img[src="HAFiscal50x.svg"]{vertical-align:-21.87489271123013%}
+img[src="HAFiscal55x.svg"]{vertical-align:-21.87489271123013%}
+img[src="HAFiscal56x.svg"]{vertical-align:-31.11090313904447%}
 /* end css.sty */
 
 /* Econ-ARK Basic HTML Theme styles     						 */

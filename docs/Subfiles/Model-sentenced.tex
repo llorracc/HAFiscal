@@ -5,23 +5,7 @@
 \input{./.econtexRoot} 
 
 \documentclass[\econtexRoot/HAFiscal]{subfiles}
-%\documentclass{article}
 \onlyinsubfile{\externaldocument{\econtexRoot/HAFiscal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
-
-\usepackage{microtype}
-\DisableLigatures{encoding = *, family = *}
-
-% \usepackage[T1]{fontenc}
-% \def\nolig#1{\def\do##1{\catcode`##1=\active
-%     \begingroup\lccode`\~=`##1\lowercase{\endgroup
-%         \def~}{##1}}\do#1}
-%   \nolig{f}
-  
-% \usepackage[disable=ligatures]{microtype}
-\usepackage[tightpage]{preview}
-%\usepackage{fontspec}
-%\defaultfontfeatures{Ligatures=NoCommon}
-
 
 \begin{document}
 \notinsubfile{\renewcommand{\econtexRoot}{.}}
@@ -29,12 +13,12 @@
 \hypertarget{model}{}\par\section{Model}
 \notinsubfile{\label{sec:model}}
 
-Consumers differ by education and, within education group, by subjective discount factors (calibrated to match the within-group distribution of liquid wealth). We first describe each kind of consumer's problem, given an income process with permanent and transitory shocks calibrated to their type, as well as type-specific shocks to employment. The next step describes the arrival of a recession and the policies we study as potential fiscal policy responses. The last section discusses an extension incorporating aggregate demand effects that induce feedback from aggregate consumption to income and (via the marginal propensity to consume) back to consumption, amplifying the effect of a recession when it occurs. 
+Consumers differ by their level of education and, within education group, by subjective discount factors (calibrated to match the within-group distribution of liquid wealth). We first describe each kind of consumer's problem, given an income process with permanent and transitory shocks calibrated to their type, as well as type-specific shocks to employment. The next step describes the arrival of a recession and the policies we study as potential fiscal policy responses. The last section discusses an extension incorporating aggregate demand effects that induce feedback from aggregate consumption to income and (via the marginal propensity to consume) back to consumption, amplifying the effect of a recession when it occurs. 
 
-A consumer $i$ has education $e(i)$ and a subjective discount factor $\beta_i$. The consumer faces a stochastic income stream, $\mathbf{y}_{i,t}$, and chooses to consume some of that income when it arrives (the `splurge') and then to optimize consumption with what is left over. Therefore, consumption each period for consumer $i$ can be written as
+A consumer $i$ has education $e(i)$ and a subjective discount factor $\beta_i$. The consumer faces a stochastic income stream, $\mathbf{y}_{i,t}$, and chooses to consume a fraction of that income when it arrives---the `splurge', described in the introduction.\footnote{One attractive feature of the splurge assumption is that it is also consistent with evidence from \cite{ganongConsumer2019}, that spending drops sharply following the large and predictable drop in income after the exhaustion of unemployment benefits; see below.} With what is left over, the consumer chooses to optimize consumption without regard to the fraction that was already spent. Therefore, consumption each period for consumer $i$ can be written as
 \begin{verbatimwrite}{\EqDir/splurge}
 \begin{equation}\begin{gathered}\begin{aligned}
-  \mathbf{c}_{i,t} &= \mathbf{c}_{sp,i,t} + \mathbf{c}_{opt,i,t}, \notinsubfile{\label{eq:model}}
+  \mathbf{c}_{i,t} &= \mathbf{c}_{sp,i,t} + \mathbf{c}_{opt,i,t}, \label{eq:model}
 \end{aligned}\end{gathered}\end{equation}
 \end{verbatimwrite}
 \input{\EqDir/splurge}
@@ -50,9 +34,9 @@ while the optimized portion of consumption is chosen to maximize the perpetual-y
 We use a standard CRRA (constant relative risk aversion) utility function, so $u(c) = c^{1-\gamma}/(1-\gamma)$ for $\gamma \neq 1$ and $u(c) = \log(c)$ for $\gamma=1$, where $\gamma$ is the coefficient of relative risk aversion.
 The optimization is subject to the budget constraint, given existing market resources $\mathbf{m}_{i,t}$ and income state, and a no-borrowing constraint: 
 \begin{equation}\begin{gathered}\begin{aligned}
-  \mathbf{a}_{i,t} &= \mathbf{m}_{i,t} - \mathbf{c}_{i,t}, \notag \\ 
+  \mathbf{a}_{i,t} &= \mathbf{m}_{i,t} - \mathbf{c}_{i,t}, \\ 
   \mathbf{m}_{i,t+1} &= R \mathbf{a}_{i,t} + \mathbf{y}_{i,t+1}, \\
-  \mathbf{a}_{i,t} &\geq 0,   \notag
+  \mathbf{a}_{i,t} &\geq 0,  
 \end{aligned}\end{gathered}\end{equation}
 where $R$ is the gross interest factor for accumulated assets $\mathbf{a}_{i,t}$.
 
@@ -101,34 +85,43 @@ Second, conditional on the recession continuing, the employment transition matri
 In our baseline calibration, discussed in detail in section~\ref{sec:calib}, we set the expected length of an unemployment spell to one and a half quarters in normal times, and this length increases to four quarters in a recession.
 Third, the end of the recession occurs as a Bernoulli process calibrated for an average length of recession of six quarters.
 Finally, at the end of a recession, the employment transition matrix switches back to its original probabilities, and, as a result, the unemployment rate trends down over time, back to its steady-state level.
+The details of how certain model parameters change in a recession are presented in section~\ref{sec:calibRecession}.
 
-\paragraph{Stimulus check.} In this policy response, the government sends money to every consumer that directly increases the individual's market resources.
+
+\paragraph{Policies.} The policies we consider in response to a recession are inspired by the Economic Stimulus Act of 2008 and the Tax Relief, Unemployment Insurance Reauthorization, and Job Creation Act of 2010.
+The former included means tested stimulus checks in the form of tax rebates, and the latter included both an extension of unemployment benefits and a tax cut.
+Based on these examples we therefore consider the following stimulus policies in our framework: 
+
+\paragraph{1.
+Stimulus check.} In this policy response, the government sends money to every consumer that directly increases the household's market resources.
 The checks are means-tested depending on permanent income.
-A check for \$1,200 is sent to every consumer with permanent income less than \$100,000, and this amount is then linearly reduced to zero for consumers with a permanent income greater than \$150,000.
+A check for \$1,200 is sent to every household with permanent income less than \$100,000, and this amount is then linearly reduced to zero for households with a permanent income greater than \$150,000.
 Similar policies were implemented in the U.S.
 in 2001, 2008, and during the pandemic.
 
-\paragraph{Extended unemployment benefits.} In this policy response, unemployment benefits are extended from two quarters to four quarters.
+\paragraph{2.
+Extended unemployment benefits.} In this policy response, unemployment benefits are extended from two quarters to four quarters.
 That is, those who become unemployed at the start of the recession, or who were already unemployed, will receive unemployment benefits for up to four quarters (including quarters leading up to the recession).
 Those who become unemployed one quarter into the recession will receive up to three quarters of unemployment benefits.
 These extended unemployment benefits will occur regardless of whether the recession ends, and no further extensions are granted if the recession continues.
 This policy reflects temporary changes made to unemployment benefits in the U.S.
 following the great recession.
 
-\paragraph{Payroll tax cut.} In this policy response, employee-side payroll taxes are reduced for a period of eight quarters.\footnote{Although payroll taxes are paid by both the employer and the employee, the payroll tax cuts in the U.S.
+\paragraph{3.
+Payroll tax cut.} In this policy response, employee-side payroll taxes are reduced for a period of eight quarters.\footnote{Although payroll taxes are paid by both the employer and the employee, the payroll tax cuts in the U.S.
 have been applied only the employee side.} During this period, which continues irrespective of whether the recession continues or ends, employed consumers' income is increased by 2 percent.
-The income of unemployed consumers is unchanged by this policy.
-Consumers also believe there is a 50-50 chance that the tax cut will be extended by another two years if the recession has not ended when the first tax cut expires.\footnote{The belief that the payroll tax cut may be extended makes little difference to the results.} A payroll tax cut was introduced in the U.S.
-in 2010.
+The income of the unemployed is unchanged by this policy.
+Households also believe there is a 50-50 chance that the tax cut will be extended by another two years if the recession has not ended when the first tax cut expires.\footnote{The belief that the payroll tax cut may be extended makes little difference to the results.} The payroll tax cut introduced in the U.S.
+in 2010 was itself an extension of previously implemented cuts and had a two-year horizon.
 
 \paragraph{Financing the policies.} Some work in the HA macro literature has shown that if taxes are raised immediately to offset any fiscal stimulus, results can be very different than they would be if, as occurs in reality, recessionary policies are debt financed.
-Typical fiscal rules assume that any increase in debt gets financed over a long interval.
-Since much of our analysis effectively normalizes our policies' size so that the total cost of each policy (and therefore the associated debt) is the same, almost all of the effects of any particular fiscal rule should be very similar for each of our policies so long as the great majority of the debt is repaid after the short recessionary period that is our main focus.
+However, typical fiscal rules assume that any increase in debt gets financed over a long interval.
+Accordingly, almost all of the effects of any particular fiscal rule will be  similar for each of our policies so long as the great majority of the debt is repaid after the short recessionary period that is our main focus.
 
 To keep our analysis as simple as possible, we do not model the debt repayment.
 Any of a variety of fiscal rules could be imposed for the period following our short period of interest, but we did not want to choose any particular fiscal rule in order to avoid making a choice that has little consequence for our key question.
 Advocates of alternative fiscal rules likely already have intuitions about how such rules' economic consequences differ, but those consequences---under our partial equilibrium analysis---will be similar for all three policies we consider.
-Alternative choices of fiscal rules will therefore not affect the ranking of policies that is our principal concern.\footnote{In our general equilibrium analysis in section\ref{sec:hank}, we apply a fiscal rule that assumes debt is slowly paid back over time.}
+Alternative choices of fiscal rules will therefore not affect the ranking of policies that is our principal concern.\footnote{In our general equilibrium analysis in section~\ref{sec:hank}, we apply a fiscal rule that assumes debt is slowly paid back over time.}
 
 
 \hypertarget{aggregate-demand-effects}{}\par\subsection{Aggregate demand effects}

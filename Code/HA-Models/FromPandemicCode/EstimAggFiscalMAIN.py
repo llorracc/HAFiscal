@@ -166,7 +166,7 @@ def calcLorenzPts(Agents):
 
     return LorenzPts
 # -----------------------------------------------------------------------------
-def calcMPCbyEd(Agents):
+def calcMPCbyEdSimple(Agents):
     '''
     Calculate the average MPC for each education type. 
     Assumption: Agents is organized by EducType and there are DiscFacCount
@@ -366,7 +366,7 @@ def calcMPCbyWealthQ(Agents,lotterySize):
     '''
 
     TypeCount = len(Agents)
-    multi_thread_commands_fake(Agents, ['solve()', 'initialize_sim()', 'simulate()', 'unpack_cFunc()'])
+#    multi_thread_commands_fake(Agents, ['solve()', 'initialize_sim()', 'simulate()', 'unpack_cFunc()'])
     WealthNow = np.concatenate([(1-ThisType.Splurge)*ThisType.state_now["aLvl"] for ThisType in Agents])
 
     # Get wealth quartile cutoffs and distribute them to each consumer type
@@ -520,32 +520,41 @@ def calcMPCbyWealthQ(Agents,lotterySize):
                     MPC_List_Add_Lottery_Bin[y].append(MPC_this_type_d[type_num,:,k,y])
                 elif ThisType.EducType == 1:
                     MPC_List_Add_Lottery_Bin[y].append(MPC_this_type_h[type_num,:,k,y])
-                elif ThisType.EducType == 0:
+                elif ThisType.EducType == 2:
                     MPC_List_Add_Lottery_Bin[y].append(MPC_this_type_c[type_num,:,k,y])
+
+    # Calculate aggregate MPC and MPCx
+    simulated_IMPCs = np.zeros((N_Year_Sim))
+    for y in range(N_Year_Sim):
+        MPC_array = np.concatenate(MPC_List_Add_Lottery_Bin[y])
+        simulated_IMPCs[y] = np.mean(MPC_array)
 
     #Create a list of wealth and MPCs
     MPC_list = np.array([])
     for type_num, ThisType in zip(range(TypeCount), Agents):
         if ThisType.EducType == 0:
-            MPC_list = np.concatenate((MPC_list, MPC_this_type_d[type_num, :, 4, 0] ))
+            MPC_list = np.concatenate((MPC_list, MPC_this_type_d[type_num, :, k, 0] ))
         elif ThisType.EducType == 1:
-            MPC_list = np.concatenate((MPC_list, MPC_this_type_h[type_num, :, 4, 0] ))
+            MPC_list = np.concatenate((MPC_list, MPC_this_type_h[type_num, :, k, 0] ))
         elif ThisType.EducType == 2:
-            MPC_list = np.concatenate((MPC_list, MPC_this_type_c[type_num, :, 4, 0] ))
+            MPC_list = np.concatenate((MPC_list, MPC_this_type_c[type_num, :, k, 0] ))
 
     MPCbyWQ = np.zeros(5)
     betaByWQ = np.zeros(5)
     PIbyWQ = np.zeros(5)
     wealthByWQ = np.zeros(5)
+    pctWealthByWQ = np.zeros(5)
     UnempByWQ = np.zeros(5)
     UnempAll = UnempAll > 0
     educByWQ = np.zeros(5)
     numWQ = np.zeros(5)
+    totalWealth = np.sum(wealth_list)
     for qq in range(4):
         MPCbyWQ[qq] = np.mean(MPC_list[WealthQsAll==qq])
         betaByWQ[qq] = np.mean(betasAll[WealthQsAll==qq])
         PIbyWQ[qq] = np.mean(PIsAll[WealthQsAll==qq])
         wealthByWQ[qq] = np.mean(wealth_list[WealthQsAll==qq])
+        pctWealthByWQ[qq] = np.sum(wealth_list[WealthQsAll==qq])/totalWealth*100
         UnempByWQ[qq] = np.sum(UnempAll[WealthQsAll==qq])/np.sum(WealthQsAll==qq)
         educByWQ[qq] = np.mean(educAll[WealthQsAll==qq])
         numWQ[qq] = np.sum(WealthQsAll==qq)
@@ -553,9 +562,15 @@ def calcMPCbyWealthQ(Agents,lotterySize):
     betaByWQ[4] = np.mean(betasAll)
     PIbyWQ[4] = np.mean(PIsAll)
     wealthByWQ[4] = np.mean(wealth_list)
+    pctWealthByWQ[4] = np.sum(wealth_list)/totalWealth*100
     UnempByWQ[4] = np.sum(UnempAll)/len(UnempAll)
     educByWQ[4] = np.mean(educAll)
     numWQ[4] = len(WealthQsAll)
+    
+    MPCbyEd = np.zeros(4)
+    for edType in range(3):
+        MPCbyEd[edType] = np.mean(MPC_list[educAll==edType])
+    MPCbyEd[3] = np.mean(MPC_list)
     
     sorted_wealth_MPC = np.stack((wealth_list, MPC_list))[:,wealth_list.argsort()]
     total_agents = len(MPC_list)
@@ -575,7 +590,7 @@ def calcMPCbyWealthQ(Agents,lotterySize):
     simulated_MPC_means_smoothed[2] = np.average(sorted_wealth_MPC[1],weights=quartile3_weights)
     simulated_MPC_means_smoothed[3] = np.average(sorted_wealth_MPC[1],weights=quartile4_weights)
     simulated_MPC_means_smoothed[4] = np.average(sorted_wealth_MPC[1])
-    
+
     # #if estimation_mode==False or target == 'AGG_MPC_plus_Liqu_Wealth_plusKY_plusMPC':     
     # # Calculate average within each MPC set
     # simulated_MPC_means = np.zeros((N_Lottery_Win_Sizes,k,N_Year_Sim))
@@ -602,6 +617,8 @@ def calcMPCbyWealthQ(Agents,lotterySize):
     sMPCs = simulated_MPC_means_smoothed
     print('Wealth by WQ = ['+str(round(wealthByWQ[0],4))+', '+str(round(wealthByWQ[1],4))+', '+str(round(wealthByWQ[2],4))+', '
               +str(round(wealthByWQ[3],4))+', '+str(round(wealthByWQ[4],4))+']')
+    print('Wealth share by WQ = ['+str(round(pctWealthByWQ[0],4))+', '+str(round(pctWealthByWQ[1],4))+
+          ', '+str(round(pctWealthByWQ[2],4))+', '+str(round(pctWealthByWQ[3],4))+']')
     print('sMPCs = ['+str(round(sMPCs[0],3))+', '+str(round(sMPCs[1],3))+', '+str(round(sMPCs[2],3))+', '
                   +str(round(sMPCs[3],3))+', '+str(round(sMPCs[4],3))+']')
     print('betas by WQ = ['+str(round(betaByWQ[0],4))+', '+str(round(betaByWQ[1],4))+', '+str(round(betaByWQ[2],4))+', '
@@ -615,7 +632,9 @@ def calcMPCbyWealthQ(Agents,lotterySize):
     print('Num in each WQ = ['+str(numWQ[0])+', '+str(numWQ[1])+', '+str(numWQ[2])+', '
                   +str(numWQ[3])+', '+str(numWQ[4])+']\n')
     
-    return MPCbyWQ
+    
+    calculatedMPCs = namedtuple("calculatedMPCs", ["MPCbyWQ", "MPCbyEd", "simulated_IMPCs"])
+    return calculatedMPCs(MPCbyWQ, MPCbyEd, simulated_IMPCs)
 
 
 # =============================================================================
@@ -792,9 +811,12 @@ def betasObjFunc(betas, spreads, GICfactors, target_option=1, print_mode=False, 
 
     if print_mode or print_file:
         WealthShares = calcWealthShareByEd(TypeListNew)
-        MPCsByEd = calcMPCbyEd(TypeListNew)
+        MPCsByEdSimple = calcMPCbyEdSimple(TypeListNew)
         MPCsByWQsimple = calcMPCbyWealthQsimple(TypeListNew)
-        MPCsByWQ = calcMPCbyWealthQ(TypeListNew, 5)
+        calculatedMPCs = calcMPCbyWealthQ(TypeListNew, 5)
+        MPCsByWQ = calculatedMPCs.MPCbyWQ
+        MPCsByEd = calculatedMPCs.MPCbyEd
+        IMPCs = calculatedMPCs.simulated_IMPCs
 
     # If not estimating, print stats by education level
     if print_mode:
@@ -820,9 +842,9 @@ def betasObjFunc(betas, spreads, GICfactors, target_option=1, print_mode=False, 
               + ' C = ' + mystr(Stats.LWoPI[2]))
         print('Wealth Shares: D = ' + mystr(WealthShares[0]) + \
               ' H = ' + mystr(WealthShares[1]) + ' C = ' + mystr(WealthShares[2]))
-        print('Average MPCs by Ed. (incl. splurge) = ['+str(round(MPCsByEd.MPCsA[0],3))+', '
-                      +str(round(MPCsByEd.MPCsA[1],3))+', '+str(round(MPCsByEd.MPCsA[2],3))+', '
-                      +str(round(MPCsByEd.MPCsA[3],3))+']')
+        print('Average MPCs by Ed. (incl. splurge) = ['+str(round(MPCsByEdSimple.MPCsA[0],3))+', '
+                      +str(round(MPCsByEdSimple.MPCsA[1],3))+', '+str(round(MPCsByEdSimple.MPCsA[2],3))+', '
+                      +str(round(MPCsByEdSimple.MPCsA[3],3))+']')
         print('Average annual MPCs by Wealth (incl. splurge) = ['+str(round(MPCsByWQsimple.MPCsA[0],3))+', '
                       +str(round(MPCsByWQsimple.MPCsA[1],3))+', '+str(round(MPCsByWQsimple.MPCsA[2],3))+', '
                       +str(round(MPCsByWQsimple.MPCsA[3],3))+', '+str(round(MPCsByWQsimple.MPCsA[4],3))+']\n')
@@ -832,6 +854,11 @@ def betasObjFunc(betas, spreads, GICfactors, target_option=1, print_mode=False, 
         print('Average lottery-win-year MPCs by Wealth (incl. splurge) = ['+str(round(MPCsByWQ[0],3))+', '
                       +str(round(MPCsByWQ[1],3))+', '+str(round(MPCsByWQ[2],3))+', '
                       +str(round(MPCsByWQ[3],3))+', '+str(round(MPCsByWQ[4],3))+']\n')
+        print('Average lottery-win-year MPCs by Education (incl. splurge) = ['+str(round(MPCsByEd[0],3))+', '
+                      +str(round(MPCsByEd[1],3))+', '+str(round(MPCsByEd[2],3))+', '
+                      +str(round(MPCsByEd[3],3))+']\n')
+        print('IMPCs over time = ['+str(round(IMPCs[0],3))+', '+str(round(IMPCs[1],3))+', '
+                      +str(round(IMPCs[2],3))+', '+str(round(IMPCs[3],3))+', '+str(round(IMPCs[4],3))+']\n')
 
     if print_file:
         with open(filename, 'a') as resFile: 
@@ -849,9 +876,9 @@ def betasObjFunc(betas, spreads, GICfactors, target_option=1, print_mode=False, 
             resFile.write('\tTotal LW/Total PI: D = ' + mystr(Stats.LWoPI[0]) + ' H = ' + mystr(Stats.LWoPI[1]) \
                   + ' C = ' + mystr(Stats.LWoPI[2])+'\n')
             
-            resFile.write('\tAverage MPCs by Ed. (incl. splurge) = ['+str(round(MPCsByEd.MPCsA[0],3))+', '
-                          +str(round(MPCsByEd.MPCsA[1],3))+', '+str(round(MPCsByEd.MPCsA[2],3))+', '
-                          +str(round(MPCsByEd.MPCsA[3],3))+']\n')
+            resFile.write('\tAverage MPCs by Ed. (simple, incl. splurge) = ['+str(round(MPCsByEdSimple.MPCsA[0],3))+', '
+                          +str(round(MPCsByEdSimple.MPCsA[1],3))+', '+str(round(MPCsByEdSimple.MPCsA[2],3))+', '
+                          +str(round(MPCsByEdSimple.MPCsA[3],3))+']\n')
             resFile.write('\tAverage annual MPCs by Wealth (incl. splurge) = ['+str(round(MPCsByWQsimple.MPCsA[0],3))+', '
                           +str(round(MPCsByWQsimple.MPCsA[1],3))+', '+str(round(MPCsByWQsimple.MPCsA[2],3))+', '
                           +str(round(MPCsByWQsimple.MPCsA[3],3))+', '+str(round(MPCsByWQsimple.MPCsA[4],3))+']\n')
@@ -861,6 +888,11 @@ def betasObjFunc(betas, spreads, GICfactors, target_option=1, print_mode=False, 
             resFile.write('\tAverage lottery-win-year MPCs by Wealth (incl. splurge) = ['+str(round(MPCsByWQ[0],3))+', '
                           +str(round(MPCsByWQ[1],3))+', '+str(round(MPCsByWQ[2],3))+', '
                           +str(round(MPCsByWQ[3],3))+', '+str(round(MPCsByWQ[4],3))+']\n')
+            resFile.write('\tAverage lottery-win-year MPCs by Education (incl. splurge) = ['+str(round(MPCsByEd[0],3))+', '
+                          +str(round(MPCsByEd[1],3))+', '+str(round(MPCsByEd[2],3))+', '
+                          +str(round(MPCsByEd[3],3))+']\n')
+            resFile.write('\tIMPCs over time = ['+str(round(IMPCs[0],3))+', '+str(round(IMPCs[1],3))+', '
+                          +str(round(IMPCs[2],3))+', '+str(round(IMPCs[3],3))+', '+str(round(IMPCs[4],3))+']\n')
         
     return distance 
 # -----------------------------------------------------------------------------
@@ -977,7 +1009,7 @@ def betasObjFuncEduc(beta, spread, GICx, educ_type=2, print_mode=False, print_fi
 # -----------------------------------------------------------------------------
 
 #%% Estimate discount factor distributions separately for each education type
-estimateDiscFacs = True 
+estimateDiscFacs = False 
 if estimateDiscFacs:
     if IncUnemp == 0.7 and IncUnempNoBenefits == 0.5:
         # Baseline unemployment system: 
@@ -995,7 +1027,7 @@ if estimateDiscFacs:
     
     print('Estimation results saved in ' + df_resFileStr)
     
-    for edType in [1]:
+    for edType in [0,1,2]:
         f_temp = lambda x : betasObjFuncEduc(x[0],x[1],x[2], educ_type=edType)
         if edType == 0:
             initValues = [0.75, 0.3, 6]       # Dropouts
@@ -1012,9 +1044,10 @@ if estimateDiscFacs:
               ' GIC factor = ' + mystr4(np.exp(opt_params[2])/(1+np.exp(opt_params[2]))))
     
         if edType == 0:
-            mode = 'w'      # Overwrite old file...
+            #mode = 'w'      # Overwrite old file...
+            mode = 'a'      # Append to old file...
         else:
-            mode = 'a'      # ...but append all results in same file 
+            mode = 'a'      # ...and append further results to the same file 
         with open(df_resFileStr, mode) as f: 
             outStr = repr({'EducationGroup' : edType, 'beta' : opt_params[0], 'nabla' : opt_params[1], 'GICx' : opt_params[2]})
             f.write(outStr+'\n')
@@ -1026,7 +1059,7 @@ if estimateDiscFacs:
               +', Splurge = '+str(Splurge) +'\n')
 
 #%% Read in estimates and calculate all results:
-calcAllResults = False
+calcAllResults = True
 if calcAllResults:
     printResToFile  = True
     
@@ -1049,7 +1082,7 @@ if calcAllResults:
     print('Loading estimates from ' + df_resFileStr + '\n')
     
     if printResToFile:
-        with open(ar_resFileStr, 'w') as resFile: 
+        with open(ar_resFileStr, 'a') as resFile: 
             print('Saving all model results in ' + ar_resFileStr + '\n')
             resFile.write('Results for parameters:\n')
             resFile.write('R = '+str(round(Rfree_base[0],2))+', CRRA = '+str(round(CRRA,2))
@@ -1149,7 +1182,7 @@ if run_additional_analysis:
 
 #%% Plot of MPCs
 if run_additional_analysis:
-    mpcs = calcMPCbyEd(AggDemandEconomy.agents)
+    mpcs = calcMPCbyEdSimple(AggDemandEconomy.agents)
     
     plt.plot(range(len(mpcs[0])), np.sort(mpcs[0]))
     plt.xlabel('Agents')

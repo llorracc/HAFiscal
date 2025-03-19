@@ -588,13 +588,24 @@ if Plot_Output:
     plt.figure()
     LorenzAxis = np.arange(101,dtype=float)
     plt.plot(LorenzAxis,SplurgeNot0_Sol['Lorenz_Data_Adj'] ,'b-',linewidth=2)
+    plt.scatter(np.array([20,40,60,80,100]),np.hstack([lorenz_target,1]),c='black', marker='o')
+    plt.xlabel('Liquid wealth percentile',fontsize=12)
+    plt.ylabel('Cumulative liquid wealth share',fontsize=12)
+    plt.legend(['Model','Data'])
+    make_figs('LiquWealth_Distribution_comparison', True , False, target_dir=Abs_Path+'/Figures/')
+    plt.show()  
+    
+    # Plot Lorentz curve
+    plt.figure()
+    LorenzAxis = np.arange(101,dtype=float)
+    plt.plot(LorenzAxis,SplurgeNot0_Sol['Lorenz_Data_Adj'] ,'b-',linewidth=2)
     plt.plot(LorenzAxis,Splurge0_Sol['Lorenz_Data_Adj']    ,'r:',linewidth=2)
     plt.scatter(np.array([20,40,60,80,100]),np.hstack([lorenz_target,1]),c='black', marker='o')
     plt.xlabel('Liquid wealth percentile',fontsize=12)
     plt.ylabel('Cumulative liquid wealth share',fontsize=12)
     plt.legend(['Model, splurge $\geq$ 0','Model, splurge = 0','Data'])
-    make_figs('LiquWealth_Distribution_comparison', True , False, target_dir=Abs_Path+'/Figures/')
-    plt.show()  
+    make_figs('LiquWealth_Distribution_comparison_splurge0', True , False, target_dir=Abs_Path+'/Figures/')
+    plt.show() 
     
     # Plot Agg MPCx
     plt.figure()
@@ -606,8 +617,20 @@ if Plot_Output:
     plt.xticks(np.arange(min(xAxis), max(xAxis)+1, 1.0))
     plt.xlabel('year')
     plt.ylabel('% of lottery win spent')
-    make_figs('AggMPC_LotteryWin_comparison', True , False, target_dir=Abs_Path+'/Figures/')
+    make_figs('AggMPC_LotteryWin_comparison_splurge0', True , False, target_dir=Abs_Path+'/Figures/')
     plt.show()  
+    
+    # Plot Agg MPCx
+    plt.figure()
+    xAxis = np.arange(0,5)
+    plt.plot(xAxis,SplurgeNot0_Sol['simulated_MPC_mean_add_Lottery_Bin'] ,'b-',linewidth=2)
+    plt.scatter(xAxis,Agg_MPCX_target,c='black', marker='o')
+    plt.legend(['Model','Fagereng, Holm and Natvik (2021)'])
+    plt.xticks(np.arange(min(xAxis), max(xAxis)+1, 1.0))
+    plt.xlabel('year')
+    plt.ylabel('% of lottery win spent')
+    make_figs('AggMPC_LotteryWin_comparison', True , False, target_dir=Abs_Path+'/Figures/')
+    plt.show() 
     
     # Table initial MPCs along wealth q
     
@@ -631,11 +654,29 @@ if Plot_Output:
                                 mystr2(Splurge0_Sol['simulated_MPC_mean_add_Lottery_Bin'][0])   + " & "+ mystr2(Splurge0_Sol['KY_Model'])  + " \\\\ \n"
     output +="Data &"+          mystr2(MPC_target[2,3])                                         + " & "+ mystr2(MPC_target[2,2])+ " & "+  \
                                 mystr2(MPC_target[2,1])                                         + " & "+ mystr2(MPC_target[2,0]) + " & "+  \
-                                mystr2(Agg_MPCX_target[0])                                      + " & "+ mystr2(KY_target)  + " \\\\ \n"
+                                mystr2(Agg_MPCX_target[0])                                      + " & "+ mystr2(KY_target)  + " \\\\ \\bottomrule \n"
     output +="\\end{tabular}  \n"
     
     
     with open(Abs_Path+'/Figures/Comparison_Splurge_Table.tex','w') as f:
+        f.write(output)
+        f.close()   
+        
+    
+    output  ="\\begin{tabular}{@{}lcccccc@{}} \n"
+    output +="\\toprule \n"
+    output +="                  & \multicolumn{5}{c}{MPC} &   \\\\   \n"
+    output +="                  &  1st WQ  & 2nd WQ  & 3rd WQ & 4th WQ  & Agg  &  K/Y  \\\\  \\midrule \n"
+    output +="Model &"+mystr2(SplurgeNot0_Sol['simulated_MPC_means_smoothed'][3])      + " & "+ mystr2(SplurgeNot0_Sol['simulated_MPC_means_smoothed'][2])+ " & "+  \
+                                mystr2(SplurgeNot0_Sol['simulated_MPC_means_smoothed'][1])      + " & "+ mystr2(SplurgeNot0_Sol['simulated_MPC_means_smoothed'][0]) + " & "+  \
+                                mystr2(SplurgeNot0_Sol['simulated_MPC_mean_add_Lottery_Bin'][0])+ " & "+ mystr2(SplurgeNot0_Sol['KY_Model'])  + " \\\\ \n"
+    output +="Data &"+          mystr2(MPC_target[2,3])                                         + " & "+ mystr2(MPC_target[2,2])+ " & "+  \
+                                mystr2(MPC_target[2,1])                                         + " & "+ mystr2(MPC_target[2,0]) + " & "+  \
+                                mystr2(Agg_MPCX_target[0])                                      + " & "+ mystr2(KY_target)  + " \\\\ \\bottomrule \n"
+    output +="\\end{tabular}  \n"
+    
+    
+    with open(Abs_Path+'/Figures/MPC_WealthQuartiles_Table.tex','w') as f:
         f.write(output)
         f.close()   
     

@@ -67,3 +67,16 @@ os.chdir('FromPandemicCode')
 exec(open(script_path).read())
 os.chdir('../')
 print('Concluded Step 4. \n')
+
+print('Step 5: HANK Robustness Check\n')
+os.chdir('./FromPandemicCode')
+
+# compute household Jacobians
+script_path = 'HA-Fiscal-HANK-SAM.py'
+exec(open(script_path).read())
+
+# run HANK-SAM experiments
+script_path = 'HA-Fiscal-HANK-SAM-to-python.py'
+exec(open(script_path).read())
+os.chdir('../')
+print('Concluded Step 5. \n')
