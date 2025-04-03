@@ -1,0 +1,27 @@
+---
+description: Sharing working files from HAFiscal project
+globs: 
+alwaysApply: false
+---
+---
+description: Include relevant files for AI context
+globs:
+  - "@**/*.tex"
+  - "@**/*.texinput"
+  - "@**/*.bib"
+  - "@**/*.bbl"
+  - "@**/*.aux"
+  - "@**/*.sty"
+  - "@**/*.txt"
+  - "@**/*.md"
+  - "@**/*.log"
+  - "@**/*.latexmkrc*"
+  - "@**/*.sh"
+  - "!@.specstory/**"
+  - "!@Code/**"
+  - "!@*resources/**"
+  - "!@docs/**"
+  - "!@*old/**"
+---
+
+Whenever the user asks a question about a file, use this file to find the code.
