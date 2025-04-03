@@ -1,5 +1,6 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*-  # Config emacs auctex
-% Slides for presentation at the Norwegian University of Science and Technology, January 23, 2025.
+% 20250403: CDC: Vanderbilt LAEF (macro-labor) conference
+% 20250123: HT: Norwegian University of Science and Technology, January 23, 2025.
 
 % allow latex to find custom stuff
 \input{@resources/tex-add-search-paths}  
@@ -18,8 +19,8 @@
 \newbool{fullcon}\global\booltrue{fullcon}\boolfalse{fullcon} %full content, 30-40 min
 \newbool{bundesb}\global\booltrue{bundesb}\boolfalse{bundesb} %reduced, 20 min presentation
 \newbool{upenn}\global\booltrue{upenn}\boolfalse{upenn} %90 min presentation
-\newbool{ntnu}\global\booltrue{ntnu}\boolfalse{ntnu} %60 min presentation
-\newbool{vblt}\global\booltrue{vblt}%\boolfalse{vblt} %60 min presentation
+\newbool{ntnu}\global\booltrue{ntnu} \boolfalse %60 min presentation
+%\newbool{vblt}\global\booltrue{vblt} %\boolfalse %60 min presentation
 
 \usepackage{econark}
 
@@ -40,9 +41,9 @@
   H{\aa}kon Tretvoll (SSB)
 }
 
-\ifbool{vblt}{\date[April 4, 2025]{4th Annual Workshop on Labor Markets and Macroeconomic Outcomes \\Vanderbilt University} \\ \medskip 2025-04-04  \\ \medskip \medskip \medskip} %\href{https://econ-ark.org/}{\small Powered By}} \\ \includegraphics[width=0.5in]{./@resources/econ-ark/econ-ark-logo-small.png}}
+%\ifbool{vblt}{\date[\today]{4$^{\text{th}}$ Annual Workshop on Labor Markets and Macroeconomic Outcomes \\ Vanderbilt University} \\ \medskip 2025-04-24  \\ \medskip \medskip \medskip \href{https://econ-ark.org/}{\small Powered By} \\ \includegraphics[width=0.5in]{./@resources/econ-ark/econ-ark-logo-small.png}}}
 
-%\ifbool{ntnu}{\date[\today]{Norwegian University of Science and Technology \\ \medskip 2025-01-23  \\ \medskip \medskip \medskip \href{https://econ-ark.org/}{\small Powered By} \\ \includegraphics[width=0.5in]{./@resources/econ-ark/econ-ark-logo-small.png}}}
+\ifbool{ntnu}{\date[\today]{Norwegian University of Science and Technology \\ \medskip 2025-01-23  \\ \medskip \medskip \medskip \href{https://econ-ark.org/}{\small Powered By} \\ \includegraphics[width=0.5in]{./@resources/econ-ark/econ-ark-logo-small.png}}}
 
 \ifbool{upenn}{\date[\today]{University of Pennsylvania, 2024-11-06  \\ \medskip \medskip \medskip \href{https://econ-ark.org/}{\small Powered By} \\ \includegraphics[width=0.5in]{./@resources/econ-ark/econ-ark-logo-small.png}}}
 
