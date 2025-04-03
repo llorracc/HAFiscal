@@ -1,0 +1,47 @@
+# Cursor Rules for LaTeX Project
+# Include all relevant LaTeX and documentation files in any subdirectory
+
+# LaTeX source files
+**/*.tex
+**/*.texinput
+
+# Bibliography files
+**/*.bib
+
+# Bibliography list files
+**/*.bbl
+
+# LaTeX auxiliary files
+**/*.aux
+
+# Style files
+**/*.sty
+
+# Text files
+**/*.txt
+
+# Markdown files
+**/*.md
+
+# Log files
+**/*.log
+
+# LaTeX make configuration files
+**/*.latexmkrc*
+
+# Shell script files
+**/*.sh
+
+# Exclude specific directories
+!.specstory/**
+!Code/**
+!*resources/**
+!docs/**
+!*old/**
+
+# You can add more specific inclusions or exclusions below
+# For example, to exclude certain directories:
+# !node_modules/**
+# !.git/**
+
+# Include all relevant LaTeX and documentation files in any subdirectory
