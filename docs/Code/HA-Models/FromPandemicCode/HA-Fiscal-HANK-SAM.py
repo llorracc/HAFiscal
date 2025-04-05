@@ -1,10 +1,8 @@
-# import os
-
-# os.chdir('./Code/HA-Models/FromPandemicCode')
+import os
 
 import numpy as np
 from HARK.distribution import DiscreteDistribution
-from HARK.ConsumptionSaving.ConsMarkovModel import MarkovConsumerType
+from ConsMarkovModel import MarkovConsumerType
 from copy import deepcopy
 from Parameters import returnParameters
 import scipy.sparse as sp
@@ -665,8 +663,8 @@ for e in range(num_educ_types): #education type
                 
                 
 
-                
-                
+            print(BaseTypeList[e])
+
             CJac, AJac, C_ss, A_ss = compute_type_jacobian(BaseTypeList[e], dict, beta, IncDist, IncDist_dx, param)
             
             # if d == 6:
@@ -830,7 +828,7 @@ pickle.dump(Obj,fileObj)
 fileObj.close()     
 
    
-
+os.chdir("../")
 
 
 # obj = open('HA_Fiscal_Jacs.obj', 'rb')

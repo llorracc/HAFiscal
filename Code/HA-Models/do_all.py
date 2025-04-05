@@ -73,10 +73,10 @@ os.chdir('./FromPandemicCode')
 
 # compute household Jacobians
 script_path = 'HA-Fiscal-HANK-SAM.py'
-exec(open(script_path).read())
+os.system("python " + script_path) 
 
 # run HANK-SAM experiments
 script_path = 'HA-Fiscal-HANK-SAM-to-python.py'
-exec(open(script_path).read())
+os.system("python " + script_path)  
 os.chdir('../')
 print('Concluded Step 5. \n')

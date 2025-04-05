@@ -9,15 +9,15 @@
 \hypertarget{parameterizing-the-model}{}\par\section{Parameterizing the model}
 \notinsubfile{\label{sec:parameters}}
 
-This section describes how we set the model's parameters. First, we estimate the extent to which consumers `splurge' when receiving an income shock. Given the lack of empirical evidence of the marginal propensity to consume over time for the US, we use instead Norwegian data to estimate the splurge. Specifically, we calibrate our model to the Norwegian economy and match evidence from Norway on the profile of the marginal propensity to spend over time and across different wealth levels, as provided by \citet{fagereng_mpc_2021}.\footnote{Appendix \ref{app:Model_without_splurge} discusses an alternative calibration method, which solely relies on US data. The main results derived in that calibration are in line with those discussed in the main text.} 
+This section describes how we set the model's parameters. First, we estimate the extent to which consumers `splurge' when receiving an income shock. Given the lack of empirical evidence on the marginal propensity to consume over time for the US, we instead use Norwegian data to estimate the splurge. Specifically, we calibrate our model to the Norwegian economy and match evidence from Norway on the profile of the marginal propensity to spend over time and across different wealth levels, as provided by \citet{fagereng_mpc_2021}.\footnote{Appendix \ref{app:Model_without_splurge} discusses an alternative calibration method, which solely relies on US data. The main results derived in that calibration are in line with those discussed in the main text.}
 
-Second, we set up the full model on U.S. data, taking the splurge factor as given from the Norwegian estimation In the full model, agents differ according to their level of education and their subjective discount factors. A subset of the parameters in the model are calibrated equally for all types, and some parameters are calibrated to be specific to each education group. Finally, a distribution of subjective discount factors is estimated separately for each education group to match features of each within-group liquid wealth distribution.
+Second, we set up the full model on U.S. data, taking the splurge factor as given from the Norwegian estimation. In the full model, agents differ according to their level of education and their subjective discount factors. A subset of the parameters in the model are calibrated equally for all types, and some parameters are calibrated to be specific to each education group. Finally, a distribution of subjective discount factors is estimated separately for each education group to match features of each within-group liquid wealth distribution.
 
 
 \hypertarget{estimation-of-the-splurge-factor}{}\par\subsection{Estimation of the splurge factor}
 \notinsubfile{\label{sec:splurge}}
 
-The splurge allows us to capture the shorter- and longer-term response of consumption to income shocks, especially for consumers with significant liquid wealth. The main aim of this paper, however, is to rank consumption stimulus policies, not to provide a microfoundation for the splurging behavior. We view the splurge factor as a model device that enables us to rank the policies in a model that is consistent with the best available micro-evidence of spending patterns over time after a transitory income shock. In appendix~\ref{app:Model_without_splurge} we provide results from our model without a splurge factor. There we show that such a model provides a worse fit to the moments in the data that we are interested in, but not dramatically so, and that our conclusions regarding the ranking of the policies are not affected. However, in our view, this version of the model requires households with unreasonable low discount rates.
+The splurge allows us to capture the shorter- and longer-term response of consumption to income shocks, especially for consumers with significant liquid wealth. The main aim of this paper, however, is to rank consumption stimulus policies, not to provide a microfoundation for the splurging behavior. We view the splurge factor as a model device that enables us to rank the policies in a model that is consistent with the best available micro-evidence of spending patterns over time after a transitory income shock. In appendix~\ref{app:Model_without_splurge} we provide results from our model without a splurge factor. There we show that such a model provides a worse fit to the moments in the data that we are interested in, but not dramatically so, and that our conclusions regarding the ranking of the policies are not affected. However, in our view, this version of the model requires households with unreasonably low discount factors.
 
 
 The specific exercise we carry out in this section, is to show that our model can account well for the results of \citet{fagereng_mpc_2021}, who study the effect of lottery winnings in Norway on consumption using millions of records from the Norwegian population registry. We calibrate our model to reflect the Norwegian economy and, using their results, estimate the splurge factor, as well as the distribution of discount factors in the population, to match two empirical moments. 
@@ -76,12 +76,12 @@ Using the calibrated model, we simulated unexpected lottery winnings and calcula
 Specifically, each simulated agent receives a lottery win in a random quarter of the first year of the simulation.
 The size of the lottery win is itself random and spans the range of lottery sizes found in \citet{fagereng_mpc_2021}.
 The estimation procedure minimizes the distance between the target and model moments by selecting the splurge factor and the distribution of discount factors in the population, where the latter are assumed to be uniformly distributed in the range $[\beta-\nabla, \beta+\nabla]$.
-We approximate the uniform distribution of discount factors with a discrete approximation and let the population consist of eight different types.
+We approximate the uniform distribution of discount factors with a discrete approximation and let the population consist of seven different types.
 
 The estimation yields a splurge factor of $0.249$ and a distribution of discount factors described by $\beta = 0.968$ and $\nabla=0.0578$.
 Given these estimated parameters and the remaining calibrated ones, the model is able to replicate the time path of consumption in response to a lottery win from \citet{fagereng_mpc_2021} and the targeted distribution of liquid wealth very well, see Figure \ref{fig:splurge_estimation}.
 Also, the targeted moments discussed in Table \ref{tab:MPC_WQ} are captured relatively well.
-In particular, the model is able to account for the empirical fact that MPC consume for high-wealth agents is substantially larger than zero, see the first column.
+In particular, the model is able to account for the empirical fact, in the first column, that the MPC for high-wealth agents is substantially larger than zero.
 
 
 
@@ -116,7 +116,7 @@ households.
 \notinsubfile{\label{sec:paramsFull}}
 
 With households classified into the three education groups using the SCF data, we proceed to set the parameters of the model as follows.
-First, we calibrate a set of parameters that apply to all types of houesholds in the model.
+First, we calibrate a set of parameters that apply to all types of households in the model.
 Second, we calibrate another set of parameters that are specific to each education group to capture broad differences across these groups.
 Finally, given the calibrated parameters we estimate discount factor distributions for each education group that allow us to match the distribution of liquid wealth in each group.
 
@@ -133,7 +133,7 @@ This choice makes it realistic to consider stimulus policies that are implemente
 \subsubsection{Calibrated parameters --- Normal times} 
 \notinsubfile{\label{sec:calib}}
 
-Table~\ref{tab:calibration} presents our calibration of the model parameters in normal times. Panel~A lists parameters that are calibrated equally across all types in the model, and Panel~B lists parameters in the model that are education specific. In the next subsection we present how certain model parameters are changes when the economy enters a recession. 
+Table~\ref{tab:calibration} presents our calibration of the model parameters in normal times. Panel~A lists parameters that are calibrated equally across all types in the model, and Panel~B lists parameters in the model that are education specific. In the next subsection we present how certain model parameters change when the economy enters a recession.
 
 \textbf{Preferences, survival and interest rates.} All households are assumed to have a coefficient of relative risk aversion equal to $\gamma=2$.
 We also assume that all households have the same propensity to splurge out of transitory income gains and set $\varsigma=0.249$, the value estimated in section~\ref{sec:splurge}.
@@ -477,7 +477,7 @@ Figure~\ref{fig:USaggmpclotterywin} shows that the model that is estimated takin
 The second pattern concerns the dynamics of income and spending for households that become unemployed and remain unemployed long enough for unemployment benefits to expire.
 Figure~\ref{fig:expiryUI} shows the pattern of income and spending for such households.
 \citet{ganongConsumer2019} report the empirical result that nondurable spending drops by 12 percent the month when benefits expire.
-Our quarterly model is broadly consistent with this, and the drop in spending the quarter after the expiry of UI benefits is 18 percent.
+Our quarterly model is broadly consistent with this as the drop in spending the quarter after the expiry of UI benefits is 18 percent.
 
 \begin{figure}[htb]
     \centering
