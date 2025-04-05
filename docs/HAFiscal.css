@@ -1,157 +1,179 @@
  
 /* start css.sty */
-.cmex-10{font-size:83%;}
-.cmr-5{font-size:41%;}
-.cmr-7{font-size:58%;}
-.cmr-10{font-size:83%;}
-.cmmi-5{font-size:41%;font-style: italic;}
-.cmmi-7{font-size:58%;font-style: italic;}
-.cmmi-10{font-size:83%;font-style: italic;}
-.cmsy-5{font-size:41%;}
-.cmsy-7{font-size:58%;}
-.cmsy-10{font-size:83%;}
-.ectt-1000{font-size:83%; font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ectt-1000{ font-family: monospace,monospace;}
-.ecbx-2074{font-size:166%; font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecbx-2074{ font-weight: bold;}
-.ecrm-0600{font-size:50%;}
-.ecrm-1440{font-size:116%;}
-.ecrm-1095{font-size:83%;}
-.ecrm-1000{font-size:83%;}
-.cmr-8{font-size:66%;}
-.cmr-6{font-size:50%;}
-.cmmi-12{font-style: italic;}
-.cmmi-8{font-size:66%;font-style: italic;}
-.cmmi-6{font-size:50%;font-style: italic;}
-.cmsy-8{font-size:66%;}
-.cmsy-6{font-size:50%;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ectt-1200{ font-family: monospace,monospace;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.ecti-1200{ font-style: italic;}
-.cmbx-12{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1200{ font-weight: bold;}
-.ecbx-1095{font-size:83%; font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1095{ font-weight: bold;}
-.ecbx-1000{font-size:83%; font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecbx-1000{ font-weight: bold;}
-.ecti-1000{font-size:83%; font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.ecti-1000{ font-style: italic;}
-.cmr-10x-x-109{font-size:90%;}
-.cmmi-10x-x-109{font-size:90%;font-style: italic;}
-.cmsy-10x-x-109{font-size:90%;}
-.ecti-0800{font-size:66%; font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.ecti-0800{ font-style: italic;}
-.small-caps{font-variant: small-caps; }
+.ec-lmbx-12x-x-172{font-size:172%; font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmbx-12x-x-172{ font-weight: bold;}
+.ec-lmr-6{font-size:50%;}
+.ec-lmr-12x-x-120{font-size:120%;}
+.rm-lmr-10{font-size:83%;}
+.rm-lmr-7{font-size:58%;}
+.lmmi-10{font-size:83%;}
+.lmmi-7{font-size:58%;}
+.lmsy-10{font-size:83%;}
+.lmsy7-{font-size:58%;}
+.lmex-10{font-size:83%;}
+.ec-lmr-10x-x-109{font-size:90%;}
+.ec-lmr-10{font-size:83%;}
+.ec-lmtt-10{font-size:83%; font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
+.rm-lmr-5{font-size:41%;}
+.lmmi-5{font-size:41%;}
+.lmsy5-{font-size:41%;}
+.rm-lmr-8{font-size:66%;}
+.rm-lmr-6{font-size:50%;}
+.lmmi-8{font-size:66%;}
+.lmmi-6{font-size:50%;}
+.lmsy8-{font-size:66%;}
+.lmsy6-{font-size:50%;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.ec-lmri-12{ font-style:italic;}
+.rm-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-12{ font-weight: bold;}
+.ec-lmbx-10x-x-109{font-size:90%; font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10{font-size:83%; font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmri-10{font-size:83%; font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.ec-lmri-10{ font-style:italic;}
+.rm-lmr-10x-x-109{font-size:90%;}
+.lmmi-10x-x-109{font-size:90%;}
+.lmsy-10x-x-109{font-size:90%;}
+.ec-lmri-8{font-size:66%; font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
+.ec-lmcsc-10x-x-120{ font-variant: small-caps;}
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
 p + p{margin-top:1em;}

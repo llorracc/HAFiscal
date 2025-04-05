@@ -120,6 +120,7 @@
   *{package}{soul}        {2023-06-14 v3.1}
   *{package}{soul-ori}    {2023-06-14 v3.1}
   *{package}{@local/owner}{0000/00/00 v0.0}
+  *{package}{lmodern}     {2015/05/01 v1.6.1}
   *{package}{pdforhtml}   {0000/00/00 v0.0}
   *{package}{scrlayer-scrpage}{2023/07/07 v3.41}
   *{package}{scrlayer}    {2023/07/07 v3.41}
@@ -167,10 +168,16 @@
   *{file}   {ulem.4ht}    {0000/00/00 v0.0}
   *{file}   {soul.4ht}    {0000/00/00 v0.0}
   *{file}   {scrlayer.4ht}{0000/00/00 v0.0}
+  *{file}   {t1lmr.fd}    {2015/05/01 v1.6.1}
+  *{file}   {ot1lmr.fd}   {2015/05/01 v1.6.1}
+  *{file}   {omllmm.fd}   {2015/05/01 v1.6.1}
+  *{file}   {omslmsy.fd}  {2015/05/01 v1.6.1}
+  *{file}   {omxlmex.fd}  {2015/05/01 v1.6.1}
   *{file}   {umsa.fd}     {2013/01/14 v3.01}
   *{file}   {umsb.fd}     {2013/01/14 v3.01}
-  *{file}   {t1cmtt.fd}   {2023/04/13 v2.5m}
-  *{file}   {t1cmss.fd}   {2023/04/13 v2.5m}
+  *{file}   {t1lmtt.fd}   {2015/05/01 v1.6.1}
+  *{file}   {t1lmss.fd}   {2015/05/01 v1.6.1}
+  *{file}   {ts1lmr.fd}   {2015/05/01 v1.6.1}
   *{-------}{Document-specific files:}{----}
   *{package}{bookmark}    {2023-12-10 v1.31}
   *{file}   {HAFiscal-titlepage}{0000/00/00 v0.0}
