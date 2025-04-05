@@ -8,29 +8,24 @@
 \hypertarget{related-literature}{}\par\subsection{Related literature}
 \notinsubfile{\label{sec:lit}}
 
-%% Microeconomic Credibility
 
 Our paper is part of the growing literature using structural heterogeneous agent models to examine effects of countercyclical fiscal policies.
 
-Because the quantitative implications of HA models depend profoundly on getting certain microeconomic details right, we begin with a brief synopsis of what we view as the relevant takeaways from the micro literature.%%%\footnote{\cite{coenen2012effects} analyses the effects of different fiscal policies using seven different Two Agent New Keynesian (TANK) models, but such models make no attempt to match the key microeconomic facts.} %%% I think this footnote should be deleted.  I don't see why we should cite this 
+Because the quantitative implications of HA models depend profoundly on getting certain microeconomic details right, we begin with a brief synopsis of what we view as the relevant takeaways from the micro literature.%%%\footnote{\cite{coenen2012effects} analyses the effects of different fiscal policies using seven different Two Agent New Keynesian (TANK) models, but such models make no attempt to match the key microeconomic facts.} %
 
-%%% iMPC and excess initial MPC
 \hypertarget{microeconomic-evidence}{}
 \subsubsection{Microeconomic Evidence}
 For our purposes, the single most important kind of micro evidence is on the iMPC; we explicitly target our partial equilibrium model to match the microeconomic iMPC estimates of \cite{fagereng_mpc_2021}, whose evidence is the gold standard because their millions of datapoints allow precise estimates over a long horizon (five years) and because their natural experiment is almost ideal (a lottery win is a random shock by construction).  Particularly striking is their evidence on the excess initial MPC.  Any worry that their Norwegian evidence might not apply in other countries is allayed by results in a new paper by \cite{kotsogiannisMPCs}, who use data from a Greek lottery and find that the induced extra monthly spending in the first three months after the win is triple the induced extra spending in the remaining observed months.
 
 There are, of course, many prominent papers dating all the way back to \cite{friedman:windfalls} finding that the initial spending response to shocks is vastly greater than implied by a representative agent model (in particular a steady stream of state-of-the-art papers by Jonathan Parker and his collaborators). In much of that literature there has been some evidence that the initial spending response was out of line with the subsequent effects (see, e.g., \cite{parker2013consumer}; \cite{broda2014economic}; \cite{jpsTax}), but data limitations usually made it difficult to sharply pin down the temporal pattern of spending (especially beyond the six month horizon).
 
-%%% High MPCs among Wealthy
 
 Another striking result in \cite{fagereng_mpc_2021} was that even households with high liquid wealth exhibited high MPC's.  \cite{boehm2025fivefacts}, \cite{graham2024mental}, \cite{crawley2023MicroMacro}, and \cite{kueng2018excess} among others also provide strong evidence of high MPCs for high-liquid-wealth households.\footnote{The ``infrequent consumption good'' model of \cite{melcangiStock} has a similar flavor, but is not about MPC's.  It aims at accounting for high saving rates among high-income households during normal times and high consumption during episodes where the infrequent consumption good becomes available (such as high-end health care or education expenses).}
 
 \hypertarget{microeconomic-theories}{}
 \subsubsection{Microeconomic Theories}
-%% Micro Theories of the excess initial MPC
 A rapidly growing recent literature has used a variety of data sources to reconfirm the high initial MPC, but with an eye to providing theoretical explanations. We sketch this literature because different theories might have different implications for the spending consequences of a shock.
 
-%%% Durables
 
 One possibility is that the burst of initial spending is rationalizable if the spending is on durables \citep{bcShocksStocks}.  
 \cite{mankiw:durgoods} showed that in the frictionless case, spending on durable goods should be vastly more responsive to an income shock than spending on nondurables. 
@@ -38,24 +33,20 @@ It seems plausible that a model with a large number of goods that are durable at
 
 \cite{lmmPresentBias} combine a simplified model of durables spending with the assumption common in behavioral economics that spending decisions are influenced by ``present bias'' (people have time-inconsistent preferences).  They present a back-of-the-envelope calculation that yields a rough estimate that the ratio of initial spending on durables to the spending that would occur if all spending were nondurable is roughly three to one (not far from the ratio estimated in the Greek lottery episode studied by \cite{kotsogiannisMPCs}).
 
-%%% Behavioral
 
 \cite{indarte2024explains} use high frequency bank account data to study spending responses to the U.S.\ 2021 stimulus, and find sustantial ``excess MPC's'' especially among low income households; like \cite{lmmPresentBias} they lean toward present bias as an explanation.\footnote{A related theoretical insight is provided by \citet{Lian2023-ca}, who shows that households anticipating their own future consumption mistakes can rationally exhibit higher current MPCs; this is because they know that any additional savings would be likely be disposed of suboptimally in the future.}
 
 The logic of \cite{akerlof1985near} and \cite{cochrane1989sensitivity} suggests that the utility consequences of `near-rational' deviations from frictionless rational behavior is small.
 In that spirit, \cite{BoutrosWindfall} and \cite{ilutEconomic} present models with bounded rationality and costly re-optimization.  Building on this logic, \cite{ansQuickfix} argue that costs of reoptimization cause consumers to resort to simple ``quick-fix'' consumption heuristics; for small shocks, most people in their survey report that they anticipate that their MPC's would be one or zero.
 
-%%% Us: 'splurge'
 The `splurge' component of our consumption model is a simple modelling device that lets the model match the empirical evidence, regardless of what the right deep explanation(s) may be. As we will show, the model with our splurge component is consistent with all of what we described above as the key `takeaways' from the micro literature. 
 
-%% Macro Setting: MIT Shocks, Discretionary Policy
-%%% TANK in footnote?  or kill?
 \hypertarget{macroeconomic-models}{}
 \subsubsection{Macroeconomic Models}
 Turning now to the macroeconomic setting, a number of papers have addressed questions that are similar in spirit to ours.  For example, \cite{mckay2016role}, \cite{mckay2021optimal}, and \cite{phan2024welfare} have examined the role of automatic stabilizers in HA models.
 
 But we follow much of the recent literature in treating recessions as `MIT shocks' -- unanticipated events. And the policies we examine are discretionary, which arguably makes sense as reflecting what occurs when the automatic stabilizers have not automatically prevented a recession.\footnote{
-  In our model (and most others in the literature we are contributing to) consumers do not adjust their labor supply in response to stimulus policies. %% This is footnote material because we are not deviating from most other people do, but we need to bow to the gods in recognizing the existence of the objection.  (In seminars I always get someone who has a whiny question `what about moral hazard!')
+  In our model (and most others in the literature we are contributing to) consumers do not adjust their labor supply in response to stimulus policies. 
   This assumption is broadly consistent with the empirical findings in \cite{ganong2022spending} and \cite{chodorow2016limited}.
   However, the literature is conflicted on this subject; \cite{hagedorn2017impact} and \cite{hagedorn2019unemployment} argue that extensions of unemployment insurance affect both search decisions and vacancy creation leading to a rise in unemployment. 
 \cite{kekre2022unemp}, on the other hand, evaluates the effect of extending unemployment insurance in the period from 2008 to 2014, and finds that this extension raised aggregate demand and implied a lower unemployment rate than without the policy. 
@@ -64,7 +55,7 @@ Finally, \cite{cohenDisemployment} conduct a meta-analysis of the literature on 
 A relevant early contribution is by \cite{kaplan2014model} who build a model where agents save in both liquid and illiquid assets. %
 Their model yields a substantial consumption response to a stimulus payment, since MPCs are high both for low-wealth households and for the many households (in their model) with high net worth but little liquid assets (the ``wealthy hand-to-mouth'').  (Though the subsequent literature finding high MPC's even by wealthy households with ample liquidity casts doubt on this mechanism.)
 
-\cite{bayercoronavirus} study discretionary fiscal policies implemented after a large shock, in their case the COVID-19 pandemic. % %%%% [ ] covid 
+\cite{bayercoronavirus} study discretionary fiscal policies implemented after a large shock, in their case the COVID-19 pandemic. % %%
 They find that targeted stimulus through an increase in unemployment benefits has a much larger effect than an untargeted policy.
 In contrast, we find that untargeted stimulus checks have slightly larger spending effects than a targeted policy extending eligibility for unemployment insurance. %
 The difference derives from the fact that -- in our model as in the data -- even middle- and high-liquid-wealth consumers have relatively high MPCs, which means that much more of the stimulus checks get spent quickly.
@@ -75,7 +66,6 @@ But the model in that paper does not match the subsequently published evidence a
 
 Another related paper is \cite{broer2025stimulus}, who analyze the output response to different fiscal policies in a HANK and SAM model similar to the one we present in our robustness exercise. As we do in Section~\ref{sec:hank}, they examine the policies in a steady state rather than a recession. Unlike us, they do not calibrate their model to match the wealth distribution and the iMPCs, and they do not evaluate the policies using a welfare metric as we do in our baseline partial equilibrium setting. 
 
-%%% Multipliers
 One criterion to rank policies is the extent to which induced spending is ``multiplied,'' and our paper therefore relates to the vast literature discussing the size and timing of any multiplier. 
 Our focus is on policies pursued in the Great Recession, a period when monetary policy was essentially fixed at the zero lower bound (ZLB). 
 We therefore do not consider monetary policy responses to the policies we evaluate in our primary analysis, and our work thus relates to papers such as \cite{christiano2011government} and \cite{eggertsson2011fiscal}, who argue that fiscal multipliers are higher in such circumstances. 
