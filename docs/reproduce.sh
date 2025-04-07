@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# Change directory to the location of the Python script
-cd Code/HA-Models
+# To reproduce all the computational results of the paper:
 
-# Run the Python script
-python do_all.py
+./reproduce/reproduce_computed.sh
+
+# To reproduce a minimal set of the computational results
+
+./reproduce/reproduce_computed_min.sh
+
+# To reproduce the text of the document:
+# - assuming that you have a full installation of texlive on your computer
+
+./reproduce_document.sh

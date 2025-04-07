@@ -1,7 +1,7 @@
 ---
 title: "Welfare and Spending Effects of Consumption Stimulus Policies"
 author: "Christopher Carroll, Edmund Crawley, Ivan Fancovic, Hakon Tretvoll"
-date: 2022/12/18
+date: 2025/04/07
 
 ---
 # Welfare and Spending Effects of Consumption Stimulus Policies
@@ -15,7 +15,7 @@ Using a heterogeneous agent model calibrated to match measured spending dynamics
 To reproduce all the computational results of the paper:
 
 ```
-	/bin/bash reproduce_document.sh
+	/bin/bash reproduce_computed.sh
 ```
 
 To produce pdf version of the paper from a unix (macOS/linux) command line:
