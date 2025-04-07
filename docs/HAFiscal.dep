@@ -1,10 +1,10 @@
 \RequireVersions{
   *{application}{pdfTeX}  {0000/00/00 v1.40.25}
-  *{format} {LaTeX2e}     {2023-11-01 v2.e}
-  *{package}{tex4ht}      {0000/00/00 v0.0}
-  *{file}   {@resources/tex-add-search-paths.tex}{0000/00/00 v0.0}
+  *{format} {LaTeX2e}     {2022-11-01 v2.e}
+  *{file}   {@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {@local/econtexPaths.tex}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
+  *{package}{tex4ht}      {0000/00/00 v0.0}
   *{class}  {econark}     {2024/06/04 v0.0}
   *{package}{snapshot}    {2020/06/17 v2.14}
   *{package}{ifthen}      {2022/04/13 v1.1d}
@@ -12,24 +12,24 @@
   *{package}{currfile}    {2022/10/10 v0.8}
   *{package}{kvoptions}   {2022-06-15 v3.15}
   *{package}{keyval}      {2022/05/29 v1.15}
-  *{package}{ltxcmds}     {2023-12-04 v1.26}
+  *{package}{ltxcmds}     {2020-05-10 v1.25}
   *{package}{kvsetkeys}   {2022-10-05 v1.19}
   *{package}{filehook}    {2022/10/25 v0.8b}
   *{package}{filehook-2020}{2022/10/25 v0.8b}
-  *{class}  {scrartcl}    {2023/07/07 v3.41}
-  *{package}{scrkbase}    {2023/07/07 v3.41}
-  *{package}{scrbase}     {2023/07/07 v3.41}
-  *{package}{scrlfile}    {2023/07/07 v3.41}
-  *{package}{scrlfile-hook}{2023/07/07 v3.41}
-  *{package}{scrlogo}     {2023/07/07 v3.41}
-  *{package}{tocbasic}    {2023/07/07 v3.41}
-  *{file}   {scrsize12pt.clo}{2023/07/07 v3.41}
-  *{package}{typearea}    {2023/07/07 v3.41}
+  *{class}  {scrartcl}    {2022/10/12 v3.38}
+  *{package}{scrkbase}    {2022/10/12 v3.38}
+  *{package}{scrbase}     {2022/10/12 v3.38}
+  *{package}{scrlfile}    {2022/10/12 v3.38}
+  *{package}{scrlfile-hook}{2022/10/12 v3.38}
+  *{package}{scrlogo}     {2022/10/12 v3.38}
+  *{package}{tocbasic}    {2022/10/12 v3.38}
+  *{file}   {scrsize12pt.clo}{2022/10/12 v3.38}
+  *{package}{typearea}    {2022/10/12 v3.38}
   *{package}{fontenc}     {0000/00/00 v0.0}
-  *{package}{babel}       {2024/02/07 v24.2}
+  *{package}{babel}       {2023/02/13 v3.86}
   *{file}   {english.ldf} {2017/06/06 v3.3r}
   *{file}   {babel-english.tex}{0000/00/00 v0.0}
-  *{package}{amsmath}     {2023/05/13 v2.17o}
+  *{package}{amsmath}     {2022/04/08 v2.17n}
   *{package}{amstext}     {2021/08/26 v2.01}
   *{package}{amsgen}      {1999/11/30 v2.0}
   *{package}{amsbsy}      {1999/11/29 v1.2d}
@@ -38,16 +38,16 @@
   *{package}{amsfonts}    {2013/01/14 v3.01}
   *{package}{amsthm}      {2020/05/29 v2.20.6}
   *{package}{xpatch}      {2020/03/25 v0.3a}
-  *{package}{expl3}       {2024-02-20 v3}
-  *{file}   {l3backend-dvips.def}{2024-02-20 v3}
-  *{package}{xparse}      {2024-02-18 v3}
+  *{package}{expl3}       {2023-02-22 v3}
+  *{file}   {l3backend-dvips.def}{2023-01-16 v3}
+  *{package}{xparse}      {2023-02-02 v3}
   *{package}{etoolbox}    {2020/10/05 v2.5k}
   *{package}{cancel}      {2013/04/12 v2.2}
-  *{package}{verbatim}    {2023-11-06 v1.5v}
-  *{package}{dcolumn}     {2023/07/08 v1.06}
-  *{package}{array}       {2023/10/16 v2.5g}
+  *{package}{verbatim}    {2022-07-02 v1.5u}
+  *{package}{dcolumn}     {2014/10/28 v1.06}
+  *{package}{array}       {2022/09/04 v2.5g}
   *{package}{hhline}      {2020/01/04 v2.04}
-  *{package}{xcolor}      {2023/11/15 v3.01}
+  *{package}{xcolor}      {2022/06/12 v2.14}
   *{file}   {color.cfg}   {2016/01/02 v1.6}
   *{file}   {dvips.def}   {2022/09/22 v3.1e}
   *{file}   {mathcolor.ltx}{0000/00/00 v0.0}
@@ -55,7 +55,7 @@
   *{package}{appendix}    {2020/02/08 v1.2c}
   *{package}{datetime2}   {2021/03/21 v1.5.7}
   *{package}{tracklang}   {2022/12/13 v1.6.1}
-  *{file}   {tracklang.tex}{2022/12/13 v1.6.1}
+  *{file}   {tracklang}   {0000/00/00 v0.0}
   *{package}{xkeyval}     {2022/06/16 v2.9}
   *{file}   {xkeyval.tex} {2014/12/03 v2.7a}
   *{file}   {datetime2-english.ldf}{2019/10/21 v1.05}
@@ -64,7 +64,7 @@
   *{package}{url}         {2013/09/16 v3.4}
   *{package}{optional}    {2005/01/26 v2.2b;}
   *{package}{natbib}      {2010/09/13 v8.31b}
-  *{package}{footmisc}    {2023/07/05 v6.0f}
+  *{package}{footmisc}    {2022/03/08 v6.0d}
   *{package}{manyfoot}    {2019/08/03 v1.11}
   *{package}{nccfoots}    {2005/02/03 v1.2}
   *{package}{perpage}     {2014/10/25 v2.0}
@@ -75,26 +75,27 @@
   *{package}{iftex}       {2022/02/03 v1.0f}
   *{package}{econark-bibfilesfind}{2024/11/04 v0.0}
   *{package}{@local/local}{0000/00/00 v0.0}
-  *{file}   {@local/owner.tex}{0000/00/00 v0.0}
+  *{file}   {@local//owner}{0000/00/00 v0.0}
   *{package}{pdfsuppressruntime}{0000/00/00 v0.0}
   *{package}{moreverb}    {2008/06/03 v2.3a}
-  *{package}{fancyvrb}    {2024/01/20 v4.5c}
-  *{package}{hyperref}    {2024-01-20 v7.01h}
+  *{package}{fancyvrb}    {2023/01/19 v4.5a}
+  *{package}{hyperref}    {2023-02-07 v7.00v}
+  *{package}{pdftexcmds}  {2020-06-27 v0.33}
   *{package}{kvdefinekeys}{2019-12-19 v1.6}
   *{package}{pdfescape}   {2019/12/09 v1.15}
-  *{package}{pdftexcmds}  {2020-06-27 v0.33}
   *{package}{hycolor}     {2020-01-27 v1.10}
+  *{package}{letltxmacro} {2019/12/03 v1.6}
   *{package}{auxhook}     {2019-12-17 v1.6}
-  *{package}{nameref}     {2023-11-26 v2.56}
+  *{package}{nameref}     {2022-05-17 v2.50}
   *{package}{refcount}    {2019/12/15 v3.6}
   *{package}{gettitlestring}{2019/12/15 v1.6}
-  *{file}   {pd1enc.def}  {2024-01-20 v7.01h}
+  *{file}   {pd1enc.def}  {2023-02-07 v7.00v}
   *{package}{intcalc}     {2019/12/15 v1.3}
-  *{file}   {puenc.def}   {2024-01-20 v7.01h}
+  *{file}   {puenc.def}   {2023-02-07 v7.00v}
   *{package}{bitset}      {2019/12/09 v1.3}
   *{package}{bigintcalc}  {2019/12/15 v1.5}
   *{package}{atbegshi-ltx}{2021/01/10 v1.0c}
-  *{file}   {htex4ht.def} {2024-01-20 v7.01h}
+  *{file}   {htex4ht.def} {2023-02-07 v7.00v}
   *{package}{inputenc}    {2021/02/14 v1.3d}
   *{package}{fontenc}     {0000/00/00 v0.0}
   *{package}{multirow}    {2021/03/15 v2.8}
@@ -105,27 +106,26 @@
   *{package}{trig}        {2021/08/11 v1.11}
   *{file}   {graphics.cfg}{2016/06/04 v1.11}
   *{package}{booktabs}    {2020/01/12 v1.61803398}
-  *{package}{afterpage}   {2023/07/04 v1.08}
+  *{package}{afterpage}   {2014/10/28 v1.08}
   *{package}{placeins}    {2005/04/18 v2.2}
   *{package}{subfiles}    {2020/11/14 v2.2}
   *{package}{import}      {2020/04/01 v6.2}
-  *{package}{xr-hyper}    {2024-01-20 v7.01h}
+  *{package}{xr-hyper}    {2023-02-07 v7.00v}
   *{package}{makecell}    {2009/08/03 v0.1e}
-  *{package}{subcaption}  {2023/07/28 v1.6b}
-  *{package}{caption}     {2023/08/05 v3.6o}
-  *{package}{caption3}    {2023/07/31 v2.4d}
-  *{file}   {caption-koma.sto}{2023/09/08 v2.0e}
+  *{package}{subcaption}  {2023/02/19 v1.6}
+  *{package}{caption}     {2023/03/12 v3.6j}
+  *{package}{caption3}    {2023/03/12 v2.4}
+  *{file}   {caption-koma.sto}{2022/12/27 v2.0c}
   *{package}{enumitem}    {2019/06/20 v3.9}
   *{package}{ulem}        {2019/11/18 v0.0}
-  *{package}{soul}        {2023-06-14 v3.1}
-  *{package}{soul-ori}    {2023-06-14 v3.1}
+  *{package}{soul}        {2023-02-18 v3.0}
+  *{package}{soul-ori}    {2023-02-18 v3.0}
   *{package}{@local/owner}{0000/00/00 v0.0}
   *{package}{lmodern}     {2015/05/01 v1.6.1}
   *{package}{pdforhtml}   {0000/00/00 v0.0}
-  *{package}{scrlayer-scrpage}{2023/07/07 v3.41}
-  *{package}{scrlayer}    {2023/07/07 v3.41}
+  *{package}{scrlayer-scrpage}{2022/10/12 v3.38}
+  *{package}{scrlayer}    {2022/10/12 v3.38}
   *{file}   {ifthen.4ht}  {0000/00/00 v0.0}
-  *{file}   {changepage.4ht}{0000/00/00 v0.0}
   *{file}   {scrartcl.4ht}{0000/00/00 v0.0}
   *{file}   {babel.4ht}   {0000/00/00 v0.0}
   *{file}   {english.4ht} {0000/00/00 v0.0}
@@ -179,11 +179,11 @@
   *{file}   {t1lmss.fd}   {2015/05/01 v1.6.1}
   *{file}   {ts1lmr.fd}   {2015/05/01 v1.6.1}
   *{-------}{Document-specific files:}{----}
-  *{package}{bookmark}    {2023-12-10 v1.31}
+  *{package}{bookmark}    {2020-11-06 v1.29}
   *{file}   {HAFiscal-titlepage}{0000/00/00 v0.0}
   *{file}   {@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Subfiles/Abstract.vrb}{0000/00/00 v0.0}
   *{file}   {acknowledgments.texinput}{0000/00/00 v0.0}
   *{file}   {Subfiles.texinput}{0000/00/00 v0.0}
@@ -196,19 +196,19 @@
   *{file}   {Subfiles/Model}{0000/00/00 v0.0}
   *{file}   {Subfiles/@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Equations/splurge}{0000/00/00 v0.0}
   *{file}   {Subfiles/Parameterization}{0000/00/00 v0.0}
   *{file}   {Subfiles/@resources/tex-add-search-paths}{0000/00/00 v0.0}
   *{file}   {./.econtexRoot}{0000/00/00 v0.0}
-  *{file}   {@local/econtexPaths}{0000/00/00 v0.0}
+  *{file}   {@local//econtexPaths}{0000/00/00 v0.0}
   *{file}   {./Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/MPC_WealthQuartiles_Table}{0000/00/00 v0.0}
   *{file}   {Subfiles/Comparing-policies}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/CRRA2/Multiplier.tex}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/CRRA2/welfare6.tex}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/Splurge0/welfare6_SplurgeComp.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles//../Code/HA-Models/FromPandemicCode/Tables/CRRA2/Multiplier.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles//../Code/HA-Models/FromPandemicCode/Tables/CRRA2/welfare6.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles//../Code/HA-Models/FromPandemicCode/Tables/Splurge0/welfare6_SplurgeComp.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/HANK}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
@@ -218,8 +218,8 @@
   *{file}   {Subfiles/Appendix}{0000/00/00 v0.0}
   *{file}   {Subfiles/./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/Comparison_Splurge_Table}{0000/00/00 v0.0}
-  *{file}   {Subfiles/../Code/HA-Models/FromPandemicCode/Tables/Splurge0/Multiplier_SplurgeComp.tex}{0000/00/00 v0.0}
+  *{file}   {Subfiles//../Code/HA-Models/Target_AggMPCX_LiquWealth/Figures/Comparison_Splurge_Table}{0000/00/00 v0.0}
+  *{file}   {Subfiles//../Code/HA-Models/FromPandemicCode/Tables/Splurge0/Multiplier_SplurgeComp.tex}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Subfiles/Appendix-HANK}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Subfiles/./.econtexRoot}{0000/00/00 v0.0}
   *{file}   {Subfiles/../Subfiles/@local/econtexPaths}{0000/00/00 v0.0}
