@@ -76,7 +76,6 @@
   *{package}{@local/local}{0000/00/00 v0.0}
   *{file}   {@local//owner}{0000/00/00 v0.0}
   *{package}{pdfsuppressruntime}{0000/00/00 v0.0}
-  *{package}{ifxetex}     {2019/10/25 v0.7}
   *{package}{moreverb}    {2008/06/03 v2.3a}
   *{package}{fancyvrb}    {2023/01/19 v4.5a}
   *{package}{hyperref}    {2023-02-07 v7.00v}
